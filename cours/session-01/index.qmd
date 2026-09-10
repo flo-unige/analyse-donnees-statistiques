@@ -1,0 +1,18 @@
+---
+title: "Session 1 — À compléter"
+subtitle: "Contenu en préparation"
+---
+
+::: {.coming-soon}
+Contenu de la première session
+:::
+
+## Structure prévue
+
+- introduction et objectifs d’apprentissage ;
+- vidéos accompagnées de leurs contenus complémentaires ;
+- synthèse et points essentiels ;
+- transition vers le travail pratique correspondant.
+
+[Poursuivre vers la session 2 →](../session-02/index.qmd)
+

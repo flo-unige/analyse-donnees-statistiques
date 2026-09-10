@@ -1,0 +1,18 @@
+---
+title: "Ressources"
+subtitle: "Repères communs pour le cours et les travaux pratiques"
+format-links: false
+---
+
+::: {.coming-soon}
+A compléter
+:::
+
+## Ressources prévues
+
+- prise en main de Python et de Jupyter ;
+- conventions de présentation du code ;
+- aide sur `pandas`, `numpy`, `matplotlib` et `seaborn` ;
+- interprétation et présentation des résultats ;
+- génération et remise des rapports PDF.
+

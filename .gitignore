@@ -1,0 +1,17 @@
+**/.quarto/
+/_site/
+/.jupyter_cache/
+/.ipynb_checkpoints/
+**/.ipynb_checkpoints/
+**/__pycache__/
+*.py[cod]
+*.log
+.DS_Store
+Thumbs.db
+.venv/
+/env/
+/.env
+
+
+**/*.quarto_ipynb
+tp/**/*_rapport.pdf

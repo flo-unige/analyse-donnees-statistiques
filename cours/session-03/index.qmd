@@ -1,0 +1,11 @@
+---
+title: "Session 3 — À compléter"
+subtitle: "Contenu en préparation"
+---
+
+::: {.coming-soon}
+Contenu de la troisième session.
+:::
+
+[Revenir à la session 2](../session-02/index.qmd) · [Poursuivre vers la session 4 →](../session-04/index.qmd)
+

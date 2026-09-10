@@ -1,0 +1,30 @@
+---
+title: "Travaux pratiques"
+subtitle: "Analyser des données avec Python"
+format-links: false
+---
+
+Les travaux pratiques permettront d’écrire et de compléter du code Python / R.
+
+## Parcours prévu
+
+1. Ouvrir la page du TP.
+2. Consulter ses objectifs et les données utilisées.
+3. Démarrer ou télécharger le carnet `.ipynb` (et R).
+4. Compléter le code et les réponses ouvertes.
+5. Générer le rapport PDF avec Quarto et Typst.
+6. Déposer le rapport sur Moodle.
+
+::: {.callout-important title="Environnement de travail à décider"}
+Les carnets restent compatibles avec un environnement Python local et avec JupyterHub UNIGE, à voir quel environnement est retenu au final.
+:::
+
+## Liste des TP
+
+- [TP 1 — à compléter](tp-01/index.qmd)
+- [TP 2 — à compléter](tp-02/index.qmd)
+- [TP 3 — à compléter](tp-03/index.qmd)
+- [TP 4 — à compléter](tp-04/index.qmd)
+- [TP 5 — à compléter](tp-05/index.qmd)
+- [TP 6 — à compléter](tp-06/index.qmd)
+

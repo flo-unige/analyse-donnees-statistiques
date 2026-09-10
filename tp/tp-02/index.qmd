@@ -1,0 +1,12 @@
+---
+title: "TP 2 — À compléter"
+subtitle: "Page de lancement provisoire"
+format-links: false
+---
+
+::: {.coming-soon}
+A compléter
+:::
+
+[Télécharger le carnet provisoire](TP02_etudiant.ipynb){.btn .btn-primary download="TP02_etudiant.ipynb"}
+

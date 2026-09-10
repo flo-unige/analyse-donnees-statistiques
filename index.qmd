@@ -1,0 +1,53 @@
+---
+title: "Analyse de données statistiques"
+subtitle: "Comprendre, pratiquer et interpréter l’analyse de données avec Python"
+format-links: false
+---
+
+::: {.hero-course}
+## Bienvenue dans le cours
+
+Ce site réunit les contenus théoriques, les exemples et les travaux pratiques du cours **Analyse de données statistiques**.
+
+Le cours s’adresse à des étudiantes et étudiants qui débutent en analyse de données. Il privilégie une progression intuitive, des exemples concrets et une interprétation rigoureuse des résultats.
+:::
+
+## Organisation
+
+::: {.course-grid}
+::: {.course-card}
+### Cours
+
+Six sessions théoriques structurées autour de vidéos courtes, de textes explicatifs, d’exemples et d’illustrations.
+
+[Accéder aux sessions →](cours/session-01/index.qmd)
+:::
+
+::: {.course-card}
+### Travaux pratiques
+
+Des carnets pour écrire du code Python / R, analyser des données et présenter les résultats.
+
+[Accéder aux TP →](tp/index.qmd)
+:::
+
+::: {.course-card}
+### Ressources
+
+Les informations générales, les références utiles et, ultérieurement, les fiches d’aide du cours.
+
+[Consulter les ressources →](ressources/index.qmd)
+:::
+:::
+
+## Parcours conseillé
+
+1. Visionner les vidéos et lire les contenus complémentaires de la session.
+2. Vérifier les points essentiels à retenir.
+3. Ouvrir le travail pratique correspondant.
+4. Compléter le carnet Python et interpréter les résultats.
+5. Générer le rapport demandé et le déposer selon les consignes du cours.
+
+::: {.callout-note title="Site en construction"}
+Ebauche de la session 2 uniquement pour le moment.
+:::

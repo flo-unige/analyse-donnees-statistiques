@@ -1,0 +1,11 @@
+---
+title: "Session 6 — À compléter"
+subtitle: "Contenu en préparation"
+---
+
+::: {.coming-soon}
+Contenu de la sixième session.
+:::
+
+[Revenir à la session 5](../session-05/index.qmd)
+

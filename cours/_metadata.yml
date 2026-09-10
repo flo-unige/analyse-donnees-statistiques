@@ -1,0 +1,15 @@
+format:
+  html: default
+  typst:
+    toc: true
+    papersize: a4
+    margin:
+      x: 2.2cm
+      y: 2.2cm
+    fig-format: png
+
+format-links:
+  - html
+  - format: typst
+    text: "PDF"
+    icon: file-pdf

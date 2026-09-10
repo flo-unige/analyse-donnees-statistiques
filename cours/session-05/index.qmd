@@ -1,0 +1,11 @@
+---
+title: "Session 5 — À compléter"
+subtitle: "Contenu en préparation"
+---
+
+::: {.coming-soon}
+Contenu de la cinquième session.
+:::
+
+[Revenir à la session 4](../session-04/index.qmd) · [Poursuivre vers la session 6 →](../session-06/index.qmd)
+
