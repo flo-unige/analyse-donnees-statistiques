@@ -146,7 +146,7 @@ data_2025 = data_2025[data_2025$area_km2>1000,]
 
 Un **échantillon aléatoire** est un sous-ensemble d'observations sélectionnées de manière telle que chaque observation ait une chance connue d'être sélectionnée. L'échantillonnage aléatoire réduit le risque de biais de sélection et constitue une base importante de l'inférence statistique.
 
-![](Quarto/Inference/images/echantillon.png)
+![](images/echantillon.png)
 
 ### Tirer aléatoirement des valeurs de `pop`
 
@@ -246,7 +246,7 @@ Avec un seuil usuel de (alpha = 0,05) :
 
 > Ne pas rejeter H0 ne signifie pas que H0 est démontrée vraie.
 >
-> ![](Quarto/Inference/images/principes.png)
+> ![](images/principes.png)
 
 ### Exemple 1 — échantillon issu d'une distribution normale
 
@@ -377,9 +377,9 @@ Les tests **non paramétriques** reposent sur moins d'hypothèses distributionne
 
 La décision ne doit pas reposer uniquement sur un test de normalité. Il faut aussi examiner les histogrammes, les valeurs extrêmes, la taille des échantillons et les hypothèses propres au test envisagé.
 
-![](Quarto/Inference/images/parametric2.png)
+![](images/parametric2.png)
 
-![](Quarto/Inference/images/parametric3.png)
+![](images/parametric3.png)
 
 ### Tester la normalité de toutes les variables quantitatives
 
@@ -461,7 +461,7 @@ data_2025 |>
 
 ## Comparaison de 2 moyennes
 
-![](Quarto/Inference/images/twosamples.png)
+![](images/twosamples.png)
 
 Nous comparons ici **l'Europe** et **l'Afrique**.
 
@@ -560,7 +560,7 @@ test_wilcoxon
 
 ## Comparaison de plus de 2 moyennes
 
-![](Quarto/Inference/images/moresamples.png)
+![](images/moresamples.png)
 
 Nous étendons maintenant la comparaison aux **quatre continents** présents dans les données.
 
@@ -643,7 +643,7 @@ ggplot(
 
 ### ANOVA
 
-![](Quarto/Inference/images/anova.png)
+![](images/anova.png)
 
 L'ANOVA teste si toutes les moyennes peuvent être considérées comme identiques.
 
