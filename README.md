@@ -63,6 +63,11 @@ Les documents Python et R doivent être rendus localement. Leurs résultats
 sont enregistrés dans `_freeze/`, qui doit être versionné. GitHub peut ainsi
 reconstruire le site sans installer Python, R ou leurs bibliothèques.
 
+Les workflows GitHub activent le profil `_quarto-ci.yml`, qui impose
+`freeze: true`. Ils ne réexécutent donc jamais les calculs. Localement,
+`freeze: auto` reste actif afin de recalculer un document lorsque sa source a
+été modifiée.
+
 ## Publication
 
 Le workflow `.github/workflows/publish.yml` construit le site et le publie

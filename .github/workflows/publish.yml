@@ -19,6 +19,7 @@ jobs:
   build:
     if: github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
+    timeout-minutes: 10
     steps:
       - name: Récupérer le dépôt
         uses: actions/checkout@v6
@@ -29,7 +30,7 @@ jobs:
           version: "1.10.18"
 
       - name: Construire le site
-        run: quarto render
+        run: quarto render --profile ci
 
       - name: Préparer GitHub Pages
         uses: actions/configure-pages@v5

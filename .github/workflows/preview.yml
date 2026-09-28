@@ -16,6 +16,7 @@ concurrency:
 jobs:
   build-preview:
     runs-on: ubuntu-latest
+    timeout-minutes: 10
     steps:
       - name: Récupérer le dépôt
         uses: actions/checkout@v6
@@ -26,7 +27,7 @@ jobs:
           version: "1.10.18"
 
       - name: Construire le site
-        run: quarto render
+        run: quarto render --profile ci
 
       - name: Conserver le site pour vérification
         uses: actions/upload-artifact@v4

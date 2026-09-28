@@ -14,6 +14,7 @@ Thumbs.db
 
 
 **/*.quarto_ipynb
+**/*.quarto_ipynb_*
 tp/**/*_rapport.pdf
 
 /.quarto/
