@@ -17,6 +17,7 @@ concurrency:
 
 jobs:
   build:
+    if: github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
     steps:
       - name: Récupérer le dépôt
@@ -24,16 +25,8 @@ jobs:
 
       - name: Installer Quarto
         uses: quarto-dev/quarto-actions/setup@v2
-
-      - name: Installer Python
-        uses: actions/setup-python@v6
         with:
-          python-version: "3.11"
-          cache: pip
-          cache-dependency-path: requirements-site.txt
-
-      - name: Installer les bibliothèques Python
-        run: python -m pip install -r requirements-site.txt
+          version: "1.10.18"
 
       - name: Construire le site
         run: quarto render
@@ -47,6 +40,7 @@ jobs:
           path: _site
 
   deploy:
+    if: github.ref == 'refs/heads/main'
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
