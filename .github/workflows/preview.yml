@@ -1,0 +1,37 @@
+name: Prévisualiser le site Quarto
+
+on:
+  workflow_dispatch:
+  pull_request:
+    branches:
+      - main
+
+permissions:
+  contents: read
+
+concurrency:
+  group: quarto-preview-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build-preview:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Récupérer le dépôt
+        uses: actions/checkout@v6
+
+      - name: Installer Quarto
+        uses: quarto-dev/quarto-actions/setup@v2
+        with:
+          version: "1.10.18"
+
+      - name: Construire le site
+        run: quarto render --profile ci --use-freezer
+
+      - name: Conserver le site pour vérification
+        uses: actions/upload-artifact@v4
+        with:
+          name: apercu-site-${{ github.run_id }}
+          path: _site
+          retention-days: 7
