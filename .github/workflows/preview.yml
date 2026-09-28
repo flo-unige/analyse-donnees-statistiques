@@ -27,7 +27,7 @@ jobs:
           version: "1.10.18"
 
       - name: Construire le site
-        run: quarto render --profile ci
+        run: quarto render --profile ci --use-freezer
 
       - name: Conserver le site pour vérification
         uses: actions/upload-artifact@v4
