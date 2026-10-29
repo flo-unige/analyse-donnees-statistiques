@@ -1,0 +1,6 @@
+format:
+  html:
+    code-summary: "Afficher le code R"
+
+execute:
+  error: false

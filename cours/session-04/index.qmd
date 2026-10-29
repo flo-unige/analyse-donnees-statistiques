@@ -1,29 +1,37 @@
 ---
 title: "Statistiques inférentielles : Hypothèses et tests"
+subtitle: "Comprendre les tests, les appliquer dans R et interpréter leurs résultats"
+author: "Support pédagogique pour le cours d’Anthony Lehmann"
 lang: fr
-format: 
+format:
   html:
+    theme: cosmo
     toc: true
     toc-depth: 3
     number-sections: true
     smooth-scroll: true
     code-fold: false
     code-tools: true
+    embed-resources: false
+    fig-cap-location: bottom
 execute:
   echo: true
-  warning: false
+  warning: true
   message: false
+  cache: false
 ---
 
-# Objectifs
+# Objectifs et fil conducteur
+
+Ce cours présente les principes des tests statistiques avec des exemples des principaux tests utilisés ilsutrés par des exemples créés à partir des données du site GapMinder et codés dans R.
 
 À la fin de cette séance, vous devriez être capable de :
 
--   comprendre le principe des tests statistiques ;
--   tester la distribution d'une variable ;
--   savoir choisir le bon test ;
--   exécuter des tests dans **R** (et transposer la démarche dans Python) ;
--   savoir interpréter le résultat des tests.
+- comprendre le principe des tests statistiques ;
+- tester la distribution d'une variable ;
+- savoir choisir le bon test ;
+- exécuter des tests dans **R** (et transposer la démarche dans Python) ;
+- savoir interpréter le résultat des tests.
 
 # Données
 
@@ -31,21 +39,9 @@ execute:
 
 Gapminder met à disposition de nombreux indicateurs démographiques, économiques, sociaux et environnementaux par pays.
 
-### Vidéo d'introduction
-
-```{=html}
-<div style="position:relative;padding-bottom:56.25%;height:0;overflow:hidden;margin-bottom:1rem;">
-  <iframe
-    src="https://www.youtube-nocookie.com/embed/jbkSRLYSojo"
-    title="Gapminder video"
-    style="position:absolute;top:0;left:0;width:100%;height:100%;border:0;"
-    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-    allowfullscreen>
-  </iframe>
-</div>
-```
-
 ### Explorer les données Gapminder
+
+Regarder comment la relation entre le Produit Intérieur Brut (GDP) et l'espérance de vie (Lex) a évolué depuis 1800. Nous allons travaillé ensuite avec ces variables.
 
 ```{=html}
 <iframe
@@ -93,11 +89,7 @@ library(rnaturalearth)
 
 data_path <- "data/data 2025.xlsx"
 
-data_2025 <- read_excel(
-  data_path,
-  sheet = "clean"
-)
-
+data_2025 <- read_excel(data_path,sheet = "clean")
 
 summary(data_2025)
 ```
@@ -146,7 +138,7 @@ data_2025 = data_2025[data_2025$area_km2>1000,]
 
 Un **échantillon aléatoire** est un sous-ensemble d'observations sélectionnées de manière telle que chaque observation ait une chance connue d'être sélectionnée. L'échantillonnage aléatoire réduit le risque de biais de sélection et constitue une base importante de l'inférence statistique.
 
-![](images/echantillon.png)
+{{< video videos/web/session_4_principes.mp4 width="800">}}
 
 ### Tirer aléatoirement des valeurs de `pop`
 
@@ -234,28 +226,26 @@ ggplot(data_2025, aes(x = pop)) +
 
 Un test statistique part généralement de deux hypothèses :
 
--   **H0**, l'hypothèse nulle : absence d'effet, de différence ou d'écart à une distribution de référence ;
--   **H1**, l'hypothèse alternative : présence d'un effet, d'une différence ou d'un écart.
+- **H0**, l'hypothèse nulle : absence d'effet, de différence ou d'écart à une distribution de référence ;
+- **H1**, l'hypothèse alternative : présence d'un effet, d'une différence ou d'un écart.
 
 La **p-value** représente la probabilité d'obtenir un résultat au moins aussi extrême que celui observé si H0 est vraie.
 
 Avec un seuil usuel de (alpha = 0,05) :
 
--   si `p < 0.05`, on rejette H0 ;
--   si `p >= 0.05`, on ne dispose pas d'éléments suffisants pour rejeter H0.
+- si `p < 0.05`, on rejette H0 ;
+- si `p >= 0.05`, on ne dispose pas d'éléments suffisants pour rejeter H0.
 
-> Ne pas rejeter H0 ne signifie pas que H0 est démontrée vraie.
->
-> ![](images/principes.png)
+> Ne pas rejeter H0 ne signifie pas que H0 est démontrée vraie.Exemple 1 — échantillon issu d'une distribution normale
 
-### Exemple 1 — échantillon issu d'une distribution normale
+{{< video videos/web/session_4_moyennes.mp4 width="800">}}
 
 Nous générons 50 observations d'une loi normale standard, visualisons leur distribution et appliquons le test de **Shapiro-Wilk**.
 
 Pour ce test :
 
--   H0 : les données sont compatibles avec une distribution normale ;
--   H1 : les données ne sont pas compatibles avec une distribution normale.
+- H0 : les données sont compatibles avec une distribution normale ;
+- H1 : les données ne sont pas compatibles avec une distribution normale.
 
 ```{r}
 #| label: normal-sample
@@ -310,6 +300,10 @@ shapiro.test(echantillon_uniforme)
 **Attention :** avec seulement 50 observations, un test de normalité peut parfois ne pas détecter un écart à la normalité. Il faut donc interpréter le test conjointement avec les graphiques.
 
 ### Exemple 3 — tester la normalité de `gdp`
+
+{{< video videos/web/session_4_normalite.mp4 width="800">}}
+
+### 
 
 ```{r}
 #| label: shapiro-gdp
@@ -370,18 +364,12 @@ Les tests **paramétriques** utilisent des hypothèses sur la distribution des d
 Les tests **non paramétriques** reposent sur moins d'hypothèses distributionnelles et sont souvent basés sur les rangs.
 
 | Question                        | Paramétrique      | Non paramétrique      |
-|---------------------------------|-------------------|-----------------------|
+|-------------------------------|-------------------|----------------------|
 | Comparer 2 groupes indépendants | test t de Student | Wilcoxon–Mann-Whitney |
 | Comparer plus de 2 groupes      | ANOVA             | Kruskal-Wallis        |
 | Tester la normalité             | Shapiro-Wilk      | —                     |
 
-La décision ne doit pas reposer uniquement sur un test de normalité. Il faut aussi examiner les histogrammes, les valeurs extrêmes, la taille des échantillons et les hypothèses propres au test envisagé.
-
-![](images/parametric2.png)
-
-![](images/parametric3.png)
-
-### Tester la normalité de toutes les variables quantitatives
+La décision ne doit pas reposer uniquement sur un test de normalité. Il faut aussi examiner les histogrammes, les valeurs extrêmes, la taille des échantillons et les hypothèses propres au test envisagé.Tester la normalité de toutes les variables quantitatives
 
 ```{r}
 #| label: normality-all-numeric
@@ -459,9 +447,9 @@ data_2025 |>
   theme_minimal()
 ```
 
-## Comparaison de 2 moyennes
+## Comparaison de moyennes
 
-![](images/twosamples.png)
+{{< video videos/web/session_4_anova.mp4 width="800">}}
 
 Nous comparons ici **l'Europe** et **l'Afrique**.
 
@@ -523,8 +511,8 @@ Nous comparons la moyenne des deux groupes.
 
 Hypothèses :
 
--   H0 : la lex est identique en Europe et en Afrique ;
--   H1 : les lex moyens diffèrent.
+- H0 : la lex est identique en Europe et en Afrique ;
+- H1 : les lex moyens diffèrent.
 
 La version classique du test de Student suppose notamment l'indépendance, une normalité raisonnable au sein des groupes et l'égalité des variances. Ici, `var.equal = TRUE` demande explicitement la version classique de Student.
 
@@ -559,8 +547,6 @@ test_wilcoxon
 > Le test de Wilcoxon–Mann-Whitney est souvent présenté comme une comparaison des distributions. Plus précisément, il teste un décalage dans les rangs ; son interprétation comme comparaison de médianes suppose notamment des distributions de forme comparable.
 
 ## Comparaison de plus de 2 moyennes
-
-![](images/moresamples.png)
 
 Nous étendons maintenant la comparaison aux **quatre continents** présents dans les données.
 
@@ -641,14 +627,12 @@ ggplot(
   theme_stats
 ```
 
-### ANOVA
+### 
 
-![](images/anova.png)
+### L'ANOVA teste si toutes les moyennes peuvent être considérées comme identiques.
 
-L'ANOVA teste si toutes les moyennes peuvent être considérées comme identiques.
-
--   H0 : les quatres régions ont la même life expectency ;
--   H1 : au moins une moyenne diffère.
+- H0 : les quatres régions ont la même life expectency ;
+- H1 : au moins une moyenne diffère.
 
 ```{r}
 #| label: anova-lex
@@ -697,8 +681,8 @@ tibble(residus = residus_anova) |>
 
 Le test de Kruskal-Wallis est l'alternative non paramétrique à l'ANOVA à un facteur.
 
--   H0 : les groupes ont des distributions de rangs comparables ;
--   H1 : au moins un groupe diffère.
+- H0 : les groupes ont des distributions de rangs comparables ;
+- H1 : au moins un groupe diffère.
 
 ```{r}
 #| label: kruskal-wallis-density
@@ -710,6 +694,214 @@ test_kruskal <- kruskal.test(
 
 test_kruskal
 ```
+
+## Indépendance entre deux variables qualitatives : test du χ²
+
+Les tests précédents comparaient une variable quantitative entre plusieurs groupes. Le **test du χ² d'indépendance** recherche une association entre **deux variables qualitatives**, à partir d'un tableau d'effectifs.
+
+### Question et variables utilisées
+
+La proportion de pays ayant une espérance de vie d'au moins 75 ans est-elle la même dans les quatre régions ?
+
+Nous utilisons le même jeu de données :
+
+- `region` : région du monde ;
+- `classe_lex` : espérance de vie inférieure à 75 ans ou d'au moins 75 ans.
+
+Le seuil de 75 ans est choisi pour cet exercice, avant d'examiner le résultat. Transformer une variable quantitative en catégories fait perdre de l'information : cette démarche sert ici à illustrer le test du χ².
+
+### Préparer les données
+
+Chaque pays doit apparaître une seule fois et appartenir à une seule modalité de chaque variable. Les valeurs manquantes sont exclues.
+
+{{< video videos/web/session_4_chi2.mp4 width="800">}}
+
+```{r}
+#| label: chi2-prepare
+
+donnees_chi2 <- four_regions |>
+  filter(is.finite(lex)) |>
+  mutate(
+    region = factor(region),
+    classe_lex = factor(
+      if_else(lex < 75, "Moins de 75 ans", "75 ans ou plus"),
+      levels = c("Moins de 75 ans", "75 ans ou plus")
+    )
+  )
+
+donnees_chi2 |>
+  select(name, region, lex, classe_lex) |>
+  head(10)
+```
+
+### Construire le tableau de contingence
+
+Un **tableau de contingence** croise les modalités des deux variables. Chaque cellule contient un nombre de pays, et non un pourcentage.
+
+```{r}
+#| label: chi2-contingency
+
+tableau_chi2 <- xtabs(
+  ~ region + classe_lex,
+  data = donnees_chi2
+)
+
+# Effectifs observés et totaux
+addmargins(tableau_chi2)
+
+# Pourcentages au sein de chaque région
+round(100 * prop.table(tableau_chi2, margin = 1), 1)
+```
+
+### Visualiser les proportions
+
+```{r}
+#| label: chi2-proportions
+#| fig-width: 9
+#| fig-height: 5
+#| fig-cap: "Répartition des classes d'espérance de vie dans chaque région."
+
+ggplot(donnees_chi2, aes(x = region, fill = classe_lex)) +
+  geom_bar(position = "fill", colour = "white") +
+  scale_y_continuous(labels = scales::label_percent()) +
+  scale_fill_manual(values = c("#D98C45", "#4682B4")) +
+  labs(
+    title = "Espérance de vie et région du monde",
+    subtitle = "Chaque région représente 100 % de ses pays",
+    x = "Région",
+    y = "Proportion de pays",
+    fill = "Espérance de vie"
+  ) +
+  theme_stats
+```
+
+### Formuler les hypothèses
+
+- **H0 :** la région et la classe d'espérance de vie sont indépendantes. Les proportions des deux classes sont identiques entre les régions dans la population de référence.
+- **H1 :** les deux variables sont associées. Au moins une région présente une répartition différente.
+
+Sous H0, l'effectif attendu dans chaque cellule est :
+
+$$
+E_{ij} =
+\frac{\text{total de la ligne } i \times \text{total de la colonne } j}
+{\text{effectif total}}
+$$
+
+La statistique du test mesure l'écart entre effectifs observés et attendus :
+
+$$
+\chi^2 = \sum_{i,j} \frac{(O_{ij} - E_{ij})^2}{E_{ij}}
+$$
+
+Plus les écarts sont importants, plus la statistique est élevée. Pour un tableau de quatre régions et deux classes, le nombre de degrés de liberté est $(4-1)(2-1)=3$.
+
+### Vérifier les effectifs attendus
+
+L'approximation par la loi du χ² demande des effectifs attendus suffisamment grands. Une règle courante est :
+
+- aucun effectif attendu inférieur à 1 ;
+- au moins 80 % des effectifs attendus supérieurs ou égaux à 5.
+
+Ces conditions concernent les **effectifs attendus**, pas les effectifs observés.
+
+```{r}
+#| label: chi2-expected
+
+# Calcul des effectifs attendus sous H0
+effectifs_attendus <- outer(
+  rowSums(tableau_chi2),
+  colSums(tableau_chi2)
+) / sum(tableau_chi2)
+
+dimnames(effectifs_attendus) <- dimnames(tableau_chi2)
+
+round(effectifs_attendus, 2)
+
+conditions_chi2 <- all(effectifs_attendus >= 1) &&
+  mean(effectifs_attendus >= 5) >= 0.80
+
+conditions_chi2
+```
+
+### Exécuter le test
+
+Si les effectifs sont suffisants, nous utilisons l'approximation classique. Sinon, nous calculons une p-value par simulation de Monte-Carlo.
+
+```{r}
+#| label: chi2-test
+
+set.seed(123)
+
+if (conditions_chi2) {
+  test_chi2 <- chisq.test(tableau_chi2, correct = FALSE)
+} else {
+  test_chi2 <- chisq.test(
+    tableau_chi2,
+    simulate.p.value = TRUE,
+    B = 99999
+  )
+}
+
+test_chi2
+```
+
+Pour un tableau 2 × 2 avec de faibles effectifs attendus, le test exact de Fisher est également une solution courante : `fisher.test(tableau)`.
+
+### Interpréter le résultat
+
+```{r}
+#| label: chi2-interpretation
+
+cat(
+  "Méthode :", test_chi2$method,
+  "\nStatistique du χ² :", round(unname(test_chi2$statistic), 2),
+  "\np-value :", format.pval(test_chi2$p.value, digits = 3),
+  "\n\n"
+)
+
+if (test_chi2$p.value < 0.05) {
+  cat(
+    "Au seuil de 5 %, on rejette H0 :",
+    "les données indiquent une association entre la région",
+    "et la classe d'espérance de vie."
+  )
+} else {
+  cat(
+    "Au seuil de 5 %, on ne rejette pas H0 :",
+    "les données ne permettent pas de conclure à une association.",
+    "Cela ne démontre pas l'indépendance."
+  )
+}
+```
+
+Un résultat significatif indique une **association**, sans établir que la région cause les différences d'espérance de vie.
+
+### Quantifier l'association : V de Cramér
+
+La p-value ne mesure pas l'intensité de l'association. Le **V de Cramér** complète le test : il varie de 0 à 1. Une valeur proche de 0 indique une faible association ; son importance s'interprète dans le contexte de l'étude.
+
+```{r}
+#| label: chi2-cramer
+
+n_chi2 <- sum(tableau_chi2)
+
+v_cramer <- sqrt(
+  unname(test_chi2$statistic) /
+    (n_chi2 * min(nrow(tableau_chi2) - 1, ncol(tableau_chi2) - 1))
+)
+
+tibble(
+  nombre_pays = n_chi2,
+  V_Cramer = v_cramer
+)
+```
+
+### Limites de cet exemple
+
+Le test suppose l'indépendance des observations. Or les pays peuvent partager des caractéristiques géographiques, historiques ou économiques. De plus, ces données constituent un ensemble de pays disponibles plutôt qu'un échantillon aléatoire. L'interprétation inférentielle reste donc conditionnelle à ces hypothèses.
+
+Les conclusions portent uniquement sur les pays conservés après le filtrage et sur les classes définies par le seuil de 75 ans.
 
 # Interprétation générale
 
@@ -724,10 +916,22 @@ La significativité statistique ne renseigne pas à elle seule sur l'importance 
 
 # Résumé : quel test choisir ?
 
-| Objectif | Nombre de groupes | Conditions principales | Test |
-|----|---:|----|----|
-| Tester la normalité | 1 variable | données quantitatives | Shapiro-Wilk |
-| Comparer des moyennes | 2 | hypothèses paramétriques raisonnables | Student / Welch |
-| Comparer des rangs | 2 | approche non paramétrique | Wilcoxon–Mann-Whitney |
-| Comparer des moyennes | \> 2 | hypothèses paramétriques raisonnables | ANOVA |
-| Comparer des rangs | \> 2 | approche non paramétrique | Kruskal-Wallis |
+Le choix dépend d'abord du type de variables, de la question posée et de l'indépendance ou de l'appariement des observations. Le tableau ci-dessous concerne les comparaisons de groupes indépendants.
+
+| Objectif | Variables | Groupes | Conditions principales | Test |
+|---------------|---------------|---------------|---------------|---------------|
+| Tester la normalité | Une variable quantitative ou des résidus | — | 3 à 5 000 valeurs ; compléter par histogramme et QQplot | Shapiro-Wilk |
+| Comparer deux moyennes | Une quantitative et une qualitative | 2 | Observations indépendantes ; normalité raisonnable au sein des groupes ou effectifs suffisants ; sensibilité aux valeurs extrêmes | Test t de Welch ; Student si égalité des variances justifiée |
+| Comparer deux distributions à partir des rangs | Une quantitative ou ordinale et une qualitative | 2 | Observations indépendantes ; formes comparables pour interpréter une différence de position | Wilcoxon–Mann-Whitney |
+| Comparer plusieurs moyennes | Une quantitative et une qualitative | Plus de 2 | Observations indépendantes ; résidus approximativement normaux ; variances comparables | ANOVA classique ; ANOVA de Welch si variances inégales |
+| Comparer plusieurs distributions à partir des rangs | Une quantitative ou ordinale et une qualitative | Plus de 2 | Observations indépendantes ; formes comparables pour interpréter une différence de position | Kruskal-Wallis |
+| Tester une association entre catégories | Deux variables qualitatives | Au moins 2 modalités par variable | Effectifs de pays indépendants ; effectifs attendus suffisants | χ² d'indépendance |
+| Tester une association avec de faibles effectifs | Deux variables qualitatives | Au moins 2 modalités par variable | Examiner les effectifs attendus et les dimensions du tableau | Fisher, notamment en 2 × 2, ou χ² avec p-value simulée |
+
+**À retenir :**
+
+- Ne pas choisir un test uniquement à partir de Shapiro-Wilk.
+- Pour comparer des moyennes, examiner la distribution au sein des groupes et les résidus, plutôt que seulement la distribution globale.
+- Le χ² utilise des effectifs, pas directement des pourcentages.
+- Une association significative ne démontre pas une relation causale.
+- Toujours compléter la p-value par des graphiques et une mesure de l'importance de l'effet.
