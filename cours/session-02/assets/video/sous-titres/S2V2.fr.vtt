@@ -1,0 +1,1846 @@
+WEBVTT
+
+1
+00:00:00.500 --> 00:00:04.101
+Pour l'instant, on a vu comment
+une question de recherche
+
+2
+00:00:04.181 --> 00:00:08.101
+nous mène vers une population puis
+un échantillon, et finalement vers notre
+
+3
+00:00:08.181 --> 00:00:12.049
+tableau, qui nous permet d'organiser
+toutes les données qu'on a récoltées.
+
+4
+00:00:12.129 --> 00:00:14.609
+Alors ça, c'est très bien,
+mais si on a fait des
+
+5
+00:00:14.689 --> 00:00:17.756
+centaines, voire des milliers
+d'observations, ça commence à
+
+6
+00:00:17.836 --> 00:00:20.903
+devenir un enfer sur Terre pour
+comprendre tout le contenu.
+
+7
+00:00:20.983 --> 00:00:22.504
+Donc on va prendre un exemple.
+
+8
+00:00:22.584 --> 00:00:25.144
+Imaginons qu'on ait
+relevé, à Genève-Cointrin,
+
+9
+00:00:25.236 --> 00:00:27.763
+la température maximale de chaque jour.
+
+10
+00:00:27.843 --> 00:00:30.840
+Donc on veut regarder
+la distribution de cette température.
+
+11
+00:00:30.920 --> 00:00:33.656
+Donc on a 365 observations,
+chaque ligne représente un
+
+12
+00:00:33.736 --> 00:00:36.942
+jour de l'année et on a la température
+maximale correspondante.
+
+13
+00:00:37.022 --> 00:00:40.905
+On peut se demander : quelles sont
+les valeurs les plus fréquentes ?
+
+14
+00:00:40.985 --> 00:00:43.773
+Comment est-ce qu'elles sont
+dispersées dans l'espace ?
+
+15
+00:00:43.853 --> 00:00:46.200
+Est-ce qu'il y a
+des valeurs qui sont rares ?
+
+16
+00:00:46.292 --> 00:00:48.549
+Et pour ça, justement,
+on va construire ce qu'on
+
+17
+00:00:48.629 --> 00:00:51.372
+appelle un histogramme qui est
+un exemple de distribution.
+
+18
+00:00:51.452 --> 00:00:54.293
+Et de manière générale,
+la distribution, justement, c'est un
+
+19
+00:00:54.373 --> 00:00:58.041
+graphique pour voir comment les données
+sont espacées et étalées entre elles.
+
+20
+00:00:58.121 --> 00:01:00.816
+Alors ici, on a une distribution
+qu'on appelle empirique.
+
+21
+00:01:00.896 --> 00:01:02.277
+Empirique, ça veut dire quoi ?
+
+22
+00:01:02.357 --> 00:01:04.662
+Ça veut dire que ça se
+rapporte à une expérience.
+
+23
+00:01:04.742 --> 00:01:07.680
+Ce sont donc des données
+qu'on a observées et rangées
+
+24
+00:01:07.760 --> 00:01:10.747
+ensemble pour faire cet
+histogramme. On va revenir
+
+25
+00:01:10.827 --> 00:01:14.040
+ensemble sur la manière
+de construire un histogramme.
+
+26
+00:01:14.260 --> 00:01:16.402
+Donc voilà, ça c'est une distribution
+
+27
+00:01:16.482 --> 00:01:19.664
+empirique sur des données
+qu'on a vraiment récoltées.
+
+28
+00:01:20.532 --> 00:01:23.096
+Alors, comment construit-on
+un histogramme ?
+
+29
+00:01:23.176 --> 00:01:26.908
+D'abord, il faut parler
+des classes, ou « bins » en anglais.
+
+30
+00:01:26.988 --> 00:01:30.474
+On va décomposer notre axe des x, ici la
+
+31
+00:01:30.554 --> 00:01:35.454
+température maximale, en différents
+intervalles, de 0 à 40 degrés.
+
+32
+00:01:35.534 --> 00:01:38.097
+Chaque intervalle a une largeur de 5
+
+33
+00:01:38.177 --> 00:01:41.436
+degrés : on a donc les classes
+de 0 à 5, de 5 à 10, etc.
+
+34
+00:01:41.752 --> 00:01:46.081
+Donc voilà les températures qui
+vont de 0 à 40 et ici chaque
+
+35
+00:01:46.161 --> 00:01:50.491
+classe a une largeur de 5 degrés
+: de 0 à 5, de 5 à 10, etc.
+
+36
+00:01:50.571 --> 00:01:54.459
+Si j'ai, par exemple,
+la valeur de 12,4 degrés,
+
+37
+00:01:54.539 --> 00:01:58.648
+je vais la mettre dans la classe
+correspondante ici entre
+
+38
+00:01:58.728 --> 00:02:02.844
+10 et 15 degrés. Une classe,
+c'est donc un intervalle.
+
+39
+00:02:02.936 --> 00:02:06.340
+Et ensuite, pour chacune
+des valeurs qu'on a observées à
+
+40
+00:02:06.420 --> 00:02:10.260
+Genève-Cointrin, on va la placer
+dans la classe correspondante.
+
+41
+00:02:10.340 --> 00:02:13.184
+Par exemple, la donnée
+ici de 5 degrés, je vais
+
+42
+00:02:13.264 --> 00:02:16.357
+la mettre dans la classe
+entre 5 et 10 degrés, etc.
+
+43
+00:02:16.437 --> 00:02:19.655
+Et à chaque fois que j'ai
+un point qui rentre dans la
+
+44
+00:02:19.735 --> 00:02:22.952
+classe, je vais augmenter
+la taille de la barre de 1.
+
+45
+00:02:23.032 --> 00:02:25.254
+C'est comme ça que se construit
+
+46
+00:02:25.334 --> 00:02:28.909
+cet histogramme. Il nous
+permet de voir qu'on a plus
+
+47
+00:02:28.989 --> 00:02:32.237
+de données entre 10 et 15
+degrés que par exemple de
+
+48
+00:02:32.317 --> 00:02:36.414
+données entre 35 et 40 degrés,
+qui sont relativement rares.
+
+49
+00:02:36.494 --> 00:02:41.700
+Ici, on a rangé nos 365 observations.
+Si on prend la hauteur des barres
+
+50
+00:02:41.780 --> 00:02:47.132
+et qu'on additionne ces hauteurs,
+on doit bien obtenir 365.
+
+51
+00:02:48.408 --> 00:02:52.106
+Notre histogramme nous
+permet de voir certaines
+
+52
+00:02:52.186 --> 00:02:56.298
+propriétés de la distribution
+de nos données.
+
+53
+00:02:56.378 --> 00:02:58.783
+La première, c'est quelles
+sont les fréquences ?
+
+54
+00:02:58.863 --> 00:03:02.250
+Donc là, c'est ce qu'on vient
+de dire, c'est entre 10 et 15 degrés.
+
+55
+00:03:02.330 --> 00:03:04.476
+On peut lire qu'on a 77 jours dans l'année
+
+56
+00:03:04.556 --> 00:03:05.938
+qui tombent dans cette classe.
+
+57
+00:03:06.018 --> 00:03:08.131
+Ça ne nous dit pas exactement comment sont
+
+58
+00:03:08.211 --> 00:03:10.898
+distribuées les données
+à l'intérieur de cette classe.
+
+59
+00:03:10.978 --> 00:03:13.822
+Je ne sais pas si j'ai plus
+de températures proches de 10 degrés
+
+60
+00:03:13.902 --> 00:03:16.955
+que de 15 °, mais en tout cas
+je sais qu'il y a 77 jours dans
+
+61
+00:03:17.035 --> 00:03:19.983
+l'année où la température
+maximale était entre 10 ° et 15 °.
+
+62
+00:03:20.063 --> 00:03:22.204
+Et pour ça je lis la hauteur de la barre.
+
+63
+00:03:22.776 --> 00:03:26.924
+On peut aussi se demander quelle
+est l'étendue de cette distribution.
+
+64
+00:03:27.004 --> 00:03:30.511
+L'étendue c'est simplement
+la différence entre la valeur
+
+65
+00:03:30.591 --> 00:03:34.995
+minimale et la valeur maximale qui
+est atteinte par le jeu de données.
+
+66
+00:03:35.075 --> 00:03:40.120
+Ici notre intervalle va de 1 ° jusqu'à
+36,4 ° quand je regarde les données brutes.
+
+67
+00:03:40.200 --> 00:03:42.810
+Ici quand on lit l'histogramme on pourrait
+
+68
+00:03:42.890 --> 00:03:46.285
+avoir l'impression que
+l'étendue va de 0 jusqu'à 40 °.
+
+69
+00:03:46.762 --> 00:03:48.502
+On peut aussi se poser la question de la
+
+70
+00:03:48.582 --> 00:03:50.822
+forme générale de la distribution,
+tout simplement.
+
+71
+00:03:50.902 --> 00:03:52.233
+Est-ce qu'elle est symétrique ?
+
+72
+00:03:52.313 --> 00:03:55.054
+Est-ce qu'un côté paraît
+plus peuplé que l'autre ?
+
+73
+00:03:55.134 --> 00:03:57.875
+Par exemple ici, on voit qu'on
+a plus de températures qui sont
+
+74
+00:03:57.955 --> 00:04:01.014
+relativement basses que de températures
+qui sont relativement hautes.
+
+75
+00:04:01.094 --> 00:04:03.289
+Il y a une forme d'asymétrie
+dans la distribution.
+
+76
+00:04:03.369 --> 00:04:06.338
+On peut aussi se demander s'il
+y a un ou plusieurs groupes.
+
+77
+00:04:06.418 --> 00:04:09.102
+Ici, c'est assez difficile
+de répondre, mais on voit
+
+78
+00:04:09.194 --> 00:04:12.252
+un seul gros pic. On
+peut se poser la question
+
+79
+00:04:12.332 --> 00:04:15.588
+de l'existence
+de sous-populations, par exemple.
+
+80
+00:04:15.668 --> 00:04:18.626
+On peut aussi se demander s'il
+y a des valeurs inhabituelles.
+
+81
+00:04:18.706 --> 00:04:21.615
+Donc, par exemple, ici, on voit
+qu'on a une température très
+
+82
+00:04:21.695 --> 00:04:24.653
+haute et qu'il y en a très peu
+qui sont dans cette catégorie.
+
+83
+00:04:24.733 --> 00:04:27.292
+Et donc ça, peut-être que
+c'est une erreur de mesure.
+
+84
+00:04:27.372 --> 00:04:30.958
+Dans ce cas-là, il faudrait vérifier
+ou corriger avant de faire l'analyse.
+
+85
+00:04:31.050 --> 00:04:34.983
+Mais c'est peut-être la partie
+la plus intéressante de vos données :
+
+86
+00:04:35.063 --> 00:04:39.152
+là vous avez un événement rare qui va
+vous mettre sur la piste de quelque chose.
+
+87
+00:04:39.232 --> 00:04:42.853
+Il ne faut pas systématiquement
+conclure à une erreur.
+
+88
+00:04:42.933 --> 00:04:47.126
+C'est quelque chose qu'on
+va répéter plusieurs fois.
+
+89
+00:04:47.206 --> 00:04:49.680
+Mais en tout cas, il faut
+commencer à repérer ces
+
+90
+00:04:49.760 --> 00:04:52.366
+valeurs surprenantes avant
+de faire notre analyse.
+
+91
+00:04:53.130 --> 00:04:56.810
+Donc voilà, maintenant on peut lire
+les données du tableau de manière visuelle.
+
+92
+00:04:56.890 --> 00:04:58.904
+Mais attention parce
+qu'on perd en précision
+
+93
+00:04:58.984 --> 00:05:01.283
+par rapport à voir toutes
+les données une par une.
+
+94
+00:05:01.363 --> 00:05:03.092
+C'est ce que je disais tout à l'heure.
+
+95
+00:05:03.172 --> 00:05:06.994
+Ici, je ne peux pas savoir si j'ai
+plus de données proches de 10 degrés
+
+96
+00:05:07.074 --> 00:05:09.044
+que de 15 °, je sais simplement que j'ai
+
+97
+00:05:09.124 --> 00:05:11.410
+beaucoup de données qui
+sont entre 10 et 15 °.
+
+98
+00:05:11.490 --> 00:05:14.090
+Et donc c'est pour ça que
+le tableau, c'est lui qui
+
+99
+00:05:14.170 --> 00:05:17.034
+nous donne vraiment la quantité
+maximale d'informations.
+
+100
+00:05:17.114 --> 00:05:19.032
+Ça, c'est simplement une manière de se
+
+101
+00:05:19.112 --> 00:05:22.318
+représenter les données
+de manière plus visuelle.
+
+102
+00:05:24.202 --> 00:05:26.338
+Ensuite, en termes de lisibilité du
+
+103
+00:05:26.418 --> 00:05:29.747
+diagramme, il faut faire attention
+à la largeur des classes.
+
+104
+00:05:29.827 --> 00:05:33.610
+Alors ici par exemple, j'ai pris
+des largeurs qui sont de 5 °, ce qui
+
+105
+00:05:33.690 --> 00:05:37.667
+est plutôt un bon compromis entre
+le niveau de détail et la lisibilité.
+
+106
+00:05:38.147 --> 00:05:41.065
+Mais il faut aussi faire
+attention à ne pas en choisir trop
+
+107
+00:05:41.145 --> 00:05:44.420
+peu, sinon on ne verra pas bien
+les détails de la distribution, ni
+
+108
+00:05:44.500 --> 00:05:47.469
+non plus trop, parce que sinon,
+dans ce cas-là, on risque de
+
+109
+00:05:47.549 --> 00:05:51.026
+perdre totalement en lisibilité
+et de ne rien comprendre aux données.
+
+110
+00:05:51.106 --> 00:05:53.262
+Mais l'avantage, c'est
+de percevoir beaucoup
+
+111
+00:05:53.342 --> 00:05:55.956
+plus facilement la forme
+générale de la distribution.
+
+112
+00:05:56.036 --> 00:05:59.869
+Donc voilà, faire un histogramme
+de la distribution empirique, ça ne sert pas
+
+113
+00:05:59.949 --> 00:06:04.167
+seulement à illustrer notre analyse dans
+un rapport : c'est aussi un outil important
+
+114
+00:06:04.259 --> 00:06:08.142
+pour mener notre analyse exploratoire.
+C'est là qu'on va repérer
+
+115
+00:06:08.222 --> 00:06:12.215
+des structures, des asymétries ou alors
+des valeurs inhabituelles qui vont
+
+116
+00:06:12.295 --> 00:06:16.619
+nous mener vers une piste pour simplement
+mieux comprendre notre jeu de données.
+
+117
+00:06:16.699 --> 00:06:20.417
+Là maintenant, on va se focaliser
+un peu plus sur les indicateurs qui
+
+118
+00:06:20.497 --> 00:06:24.295
+sont utiles pour quantifier vraiment
+la variabilité dans nos données.
+
+119
+00:06:24.547 --> 00:06:28.526
+Et le premier exemple que vous connaissez
+toutes et tous, c'est la moyenne.
+
+120
+00:06:28.606 --> 00:06:31.611
+Donc par exemple, je prends
+différentes durées de trajet.
+
+121
+00:06:31.691 --> 00:06:35.291
+Ici, j'en ai 7 qui sont des durées
+en minutes de chacun des trajets.
+
+122
+00:06:35.371 --> 00:06:37.888
+Au total, ça fait 280
+minutes et on voit qu'il y
+
+123
+00:06:37.968 --> 00:06:40.648
+a des trajets qui sont
+quand même assez disparates.
+
+124
+00:06:40.728 --> 00:06:42.218
+J'ai une valeur de 34, de 21.
+
+125
+00:06:42.298 --> 00:06:44.382
+De l'autre côté, j'ai une valeur de 110.
+
+126
+00:06:44.462 --> 00:06:46.331
+La moyenne, qu'est-ce qu'elle fait ?
+
+127
+00:06:46.411 --> 00:06:49.686
+C'est simplement répartir
+de manière égale toutes ces valeurs.
+
+128
+00:06:49.766 --> 00:06:52.039
+Donc si je prends les 280 minutes totales,
+
+129
+00:06:52.131 --> 00:06:55.193
+et que je les divise par 7,
+j'obtiens 40 minutes et donc on
+
+130
+00:06:55.273 --> 00:06:58.762
+pourrait attribuer à chaque
+trajet une durée de 40 minutes.
+
+131
+00:06:58.842 --> 00:07:00.732
+Alors attention avec la moyenne parce
+
+132
+00:07:00.812 --> 00:07:03.289
+qu'elle est assez sensible
+aux valeurs extrêmes.
+
+133
+00:07:03.369 --> 00:07:05.739
+Par exemple ici vous
+voyez que cette valeur de
+
+134
+00:07:05.819 --> 00:07:08.615
+110, elle va beaucoup pousser
+la moyenne vers le haut.
+
+135
+00:07:08.695 --> 00:07:12.222
+Si je venais à la retirer, la moyenne
+tomberait plutôt à 28,3 minutes.
+
+136
+00:07:12.302 --> 00:07:15.572
+Retirer une observation, il faut
+faire très attention quand on le
+
+137
+00:07:15.652 --> 00:07:18.664
+fait, parce que comme je disais
+avant, ça peut être soit une
+
+138
+00:07:18.744 --> 00:07:22.426
+erreur, soit une donnée intéressante,
+mais on voit ici que la moyenne, ce
+
+139
+00:07:22.506 --> 00:07:25.959
+n'est pas forcément toujours
+l'indicateur le plus pertinent.
+
+140
+00:07:26.559 --> 00:07:28.889
+C'est en raison de cette
+sensibilité qu'on va
+
+141
+00:07:28.969 --> 00:07:31.708
+introduire un deuxième
+indicateur : la médiane.
+
+142
+00:07:31.788 --> 00:07:34.374
+Alors ce qu'on fait ici
+c'est qu'on prend toutes les
+
+143
+00:07:34.454 --> 00:07:37.655
+données et puis d'abord on va
+les mettre dans l'ordre croissant.
+
+144
+00:07:37.735 --> 00:07:41.757
+Donc on prend du plus petit au plus grand
+et on va regarder la valeur du milieu.
+
+145
+00:07:41.837 --> 00:07:44.833
+Donc la médiane, elle, nous
+donne la valeur pour laquelle la
+
+146
+00:07:44.913 --> 00:07:48.655
+moitié des données se trouve au-dessous
+et la moitié se trouve au-dessus.
+
+147
+00:07:48.747 --> 00:07:51.556
+Ici on a 7 valeurs donc on
+en met 3 de chaque côté et la
+
+148
+00:07:51.636 --> 00:07:54.445
+valeur centrale qui est de 27,
+ça nous donne la médiane.
+
+149
+00:07:54.525 --> 00:07:57.850
+Alors pour trouver le milieu, il
+faut faire attention parce que là
+
+150
+00:07:57.930 --> 00:08:01.513
+on avait un nombre impair : trois
+valeurs de chaque côté et une au centre.
+
+151
+00:08:01.593 --> 00:08:04.660
+Par contre si on a un nombre
+pair de données, eh ben là on va
+
+152
+00:08:04.740 --> 00:08:07.910
+mettre trois valeurs d'un côté
+et trois de l'autre. Pour les deux
+
+153
+00:08:07.990 --> 00:08:11.343
+valeurs qui sont au centre,
+on va prendre leur moyenne.
+
+154
+00:08:11.435 --> 00:08:16.535
+C'est pour cela qu'ici,
+la médiane vaut 24 minutes.
+
+155
+00:08:16.615 --> 00:08:20.761
+Donc, voyez la différence
+de sensibilité entre avant et après.
+
+156
+00:08:20.841 --> 00:08:24.919
+Quand j'avais ma moyenne qui
+était à 40, le fait d'enlever la
+
+157
+00:08:24.999 --> 00:08:29.281
+donnée de 110, ça nous faisait
+tomber à 28,3 minutes en moyenne.
+
+158
+00:08:29.361 --> 00:08:31.735
+Alors que la médiane, elle, quand on
+
+159
+00:08:31.815 --> 00:08:35.087
+enlève cette donnée de 110,
+on tombe de 27 à 24.
+
+160
+00:08:35.179 --> 00:08:42.179
+C'est en cela que la médiane est
+moins sensible aux valeurs extrêmes.
+
+161
+00:08:43.339 --> 00:08:47.690
+Et du coup, il y a un autre indicateur
+qu'on peut aussi utiliser, c'est le mode.
+
+162
+00:08:47.770 --> 00:08:49.573
+Donc le mode qu'est-ce que c'est ?
+
+163
+00:08:49.653 --> 00:08:51.591
+Le mode, c'est tout simplement
+
+164
+00:08:52.171 --> 00:08:55.022
+la valeur la plus
+fréquente dans nos données.
+
+165
+00:08:55.102 --> 00:08:58.570
+Donc ici, si je prends ces 7 données
+encore une fois, la valeur de 21
+
+166
+00:08:58.650 --> 00:09:02.221
+minutes, elle revient deux fois
+et donc c'est elle qui définit le mode.
+
+167
+00:09:02.301 --> 00:09:05.410
+Il y a plus de valeurs égales à 21
+que de n'importe quelle autre valeur.
+
+168
+00:09:05.490 --> 00:09:08.135
+L'avantage du mode, c'est
+qu'il ne s'applique pas
+
+169
+00:09:08.215 --> 00:09:11.580
+uniquement aux valeurs
+numériques, contrairement à la
+
+170
+00:09:11.660 --> 00:09:15.077
+moyenne et à la médiane : il
+convient aussi aux catégories.
+
+171
+00:09:15.157 --> 00:09:18.191
+Donc là, par exemple, j'ai
+différents types de locomotion :
+
+172
+00:09:18.283 --> 00:09:20.675
+le vélo, les transports
+publics, la marche, etc.
+
+173
+00:09:20.755 --> 00:09:24.328
+Et en fait, le vélo constitue le mode
+de cette série tout simplement
+
+174
+00:09:24.408 --> 00:09:28.062
+parce que j'ai 18 valeurs contrairement
+aux autres où j'en ai moins.
+
+175
+00:09:28.543 --> 00:09:31.882
+Alors ça c'est un avantage du mode
+comparé à la moyenne et à la médiane.
+
+176
+00:09:31.962 --> 00:09:34.969
+C'est qu'il s'applique aux variables
+catégorielles et numériques,
+
+177
+00:09:35.049 --> 00:09:38.340
+alors que la médiane et la moyenne ne
+s'appliquent qu'aux variables numériques.
+
+178
+00:09:38.420 --> 00:09:40.144
+Mais il y a aussi des défauts du mode.
+
+179
+00:09:40.224 --> 00:09:42.899
+Par exemple, c'est au niveau
+de la précision de la mesure.
+
+180
+00:09:42.979 --> 00:09:45.938
+Donc là ici, la température c'est
+une quantité qui est continue.
+
+181
+00:09:46.018 --> 00:09:48.217
+Donc comme on avait vu
+dans la vidéo précédente,
+
+182
+00:09:48.297 --> 00:09:50.924
+continue ça veut dire que vous
+pouvez augmenter autant la
+
+183
+00:09:51.004 --> 00:09:53.868
+précision que vous voulez et il
+existera toujours des valeurs.
+
+184
+00:09:53.948 --> 00:09:56.227
+Vous n'avez pas besoin
+de compter de pas en pas.
+
+185
+00:09:56.447 --> 00:10:00.975
+Ici la température, si on l'a mesurée
+à l'entier, donc ici on a des valeurs de
+
+186
+00:10:01.055 --> 00:10:05.937
+18, 18, 21, 21 : le mode est 18 degrés,
+car cette valeur apparaît trois fois.
+
+187
+00:10:06.017 --> 00:10:09.363
+Par contre si j'augmente
+la précision, eh bien je me rends
+
+188
+00:10:09.443 --> 00:10:13.203
+compte que ces valeurs de 18 °
+sont en réalité toutes différentes.
+
+189
+00:10:13.283 --> 00:10:16.512
+Et ici j'ai un autre mode qui
+apparaît qui est de 20,5 °.
+
+190
+00:10:16.592 --> 00:10:19.583
+Et si j'augmente encore
+la précision, bah là en fait
+
+191
+00:10:19.663 --> 00:10:23.267
+je n'ai plus de mode unique.
+
+192
+00:10:23.359 --> 00:10:26.888
+Cette augmentation de la précision
+fait qu'au bout d'un moment,
+
+193
+00:10:26.968 --> 00:10:30.794
+c'est extrêmement improbable d'avoir
+des valeurs qui sont exactement les mêmes.
+
+194
+00:10:30.874 --> 00:10:34.552
+Donc c'est là où le mode parfois ne
+s'applique pas forcément de manière très
+
+195
+00:10:34.632 --> 00:10:38.587
+intuitive pour les variables continues.
+Il faut faire attention à cela.
+
+196
+00:10:39.135 --> 00:10:41.972
+Comment est-ce qu'on choisit
+en pratique le bon indicateur ?
+
+197
+00:10:42.052 --> 00:10:44.112
+Il n'y a pas de recette
+miracle pour choisir
+
+198
+00:10:44.192 --> 00:10:47.029
+l'indicateur, mais il faut bien
+garder en tête ce que chacun
+
+199
+00:10:47.109 --> 00:10:50.044
+décrit pour pouvoir l'utiliser
+dans le meilleur des contextes.
+
+200
+00:10:50.124 --> 00:10:52.426
+La moyenne, c'est quand
+on veut avoir une idée de
+
+201
+00:10:52.506 --> 00:10:54.906
+la manière dont se répartissent
+globalement nos données.
+
+202
+00:10:54.986 --> 00:10:56.802
+La médiane, elle nous permet d'avoir le
+
+203
+00:10:56.882 --> 00:10:59.459
+centre d'une série qui est ordonnée.
+
+204
+00:10:59.551 --> 00:11:03.235
+Tandis que le mode donne la valeur
+dominante. Il faut toujours faire
+
+205
+00:11:03.315 --> 00:11:07.264
+attention à notre question de recherche
+pour sélectionner le bon indicateur.
+
+206
+00:11:07.344 --> 00:11:10.074
+Et comme on l'a vu, la médiane,
+par exemple, c'est un
+
+207
+00:11:10.154 --> 00:11:12.989
+indicateur qui est moins
+sensible aux valeurs extrêmes.
+
+208
+00:11:13.069 --> 00:11:16.488
+Donc là, on avait des valeurs qui
+étaient extrêmement hautes, mais
+
+209
+00:11:16.568 --> 00:11:19.881
+il peut aussi s'agir
+de valeurs extrêmement faibles,
+
+210
+00:11:19.961 --> 00:11:23.486
+tandis que la moyenne est un peu
+plus sensible et le mode, lui, peut
+
+211
+00:11:23.566 --> 00:11:27.171
+être sensible à la précision de votre
+variable si elle est continue.
+
+212
+00:11:29.183 --> 00:11:32.204
+Alors on va faire un petit
+détour vers certains
+
+213
+00:11:32.284 --> 00:11:35.503
+pièges dans lesquels on
+pourrait éviter de tomber.
+
+214
+00:11:35.583 --> 00:11:39.924
+Par exemple, je vous
+donne cette information :
+
+215
+00:11:40.004 --> 00:11:44.491
+« La durée moyenne des trajets de mes
+utilisateurs a augmenté de 12 %. »
+
+216
+00:11:44.991 --> 00:11:47.647
+Alors la question qu'on
+peut se poser, c'est par
+
+217
+00:11:47.727 --> 00:11:51.180
+exemple, est-ce que tous les trajets
+sont devenus plus longs ?
+
+218
+00:11:51.260 --> 00:11:55.454
+Il est tout à fait possible que
+j'aie un ou deux trajets, voire plus,
+
+219
+00:11:55.534 --> 00:11:59.786
+qui ont vraiment tiré la moyenne vers
+le haut et qui l'ont fait augmenter de
+
+220
+00:11:59.866 --> 00:12:04.117
+12 %, alors que la majorité des autres
+trajets n'a pas augmenté en durée.
+
+221
+00:12:04.197 --> 00:12:07.480
+Il est aussi possible que l'ensemble ou
+
+222
+00:12:07.560 --> 00:12:10.979
+une grande majorité des trajets
+aient augmenté d'environ 12 %.
+
+223
+00:12:11.591 --> 00:12:15.437
+Cette information est donc incomplète,
+
+224
+00:12:15.517 --> 00:12:19.854
+parce que ce chiffre de 12 %, il ne nous
+donne pas la réalité de manière absolue.
+
+225
+00:12:19.934 --> 00:12:22.798
+C'est-à-dire que si ma moyenne
+initiale, c'était de 10
+
+226
+00:12:22.878 --> 00:12:26.670
+minutes, une augmentation de 12
+% ne fait ajouter que 1,2 minute.
+
+227
+00:12:26.750 --> 00:12:30.105
+Par contre, si ma moyenne de base,
+c'est 50 minutes, là tout de
+
+228
+00:12:30.185 --> 00:12:33.675
+suite une augmentation de 12 %,
+ça représente 6 minutes en plus.
+
+229
+00:12:33.767 --> 00:12:37.115
+Vous voyez que même avec ce chiffre
+des 12 %, parce qu'il est
+
+230
+00:12:37.195 --> 00:12:40.825
+relatif et pas absolu, il ne décrit
+pas forcément la même réalité.
+
+231
+00:12:40.905 --> 00:12:44.197
+C'est pourquoi le titre « La durée
+moyenne a augmenté de 12 % »
+
+232
+00:12:44.277 --> 00:12:46.895
+il n'est pas suffisant,
+il ne donne pas toute la
+
+233
+00:12:46.975 --> 00:12:51.110
+représentation de la réalité parce
+qu'il nous manque les valeurs de départ.
+
+234
+00:12:51.190 --> 00:12:54.731
+Donc faire très attention
+typiquement avec ce genre de chiffre.
+
+235
+00:12:55.475 --> 00:12:57.330
+Là, on va avoir autre chose qui est la
+
+236
+00:12:57.410 --> 00:13:00.232
+différence entre nos observations
+et le modèle théorique.
+
+237
+00:13:00.312 --> 00:13:03.032
+On a vu tout à l'heure la notion
+d'histogramme, qui représentait
+
+238
+00:13:03.112 --> 00:13:05.984
+la distribution empirique
+de nos données avec nos classes.
+
+239
+00:13:06.064 --> 00:13:07.766
+Mais une distribution, ce n'est pas
+
+240
+00:13:07.846 --> 00:13:10.312
+forcément empirique, ça
+peut aussi être théorique.
+
+241
+00:13:10.392 --> 00:13:13.701
+On va voir quelques distributions
+théoriques dans ce cours.
+
+242
+00:13:14.201 --> 00:13:17.508
+Que représente
+une distribution théorique ?
+
+243
+00:13:17.588 --> 00:13:20.290
+C'est une répartition
+possible des valeurs qui
+
+244
+00:13:20.370 --> 00:13:23.132
+est décrite par un certain
+modèle mathématique.
+
+245
+00:13:23.212 --> 00:13:26.700
+Ici, vous allez voir qu'on fait
+référence à la distribution
+
+246
+00:13:26.780 --> 00:13:31.175
+normale ou gaussienne, qui est celle
+qui est la plus fréquemment utilisée.
+
+247
+00:13:31.255 --> 00:13:32.929
+Alors qu'est-ce qu'on a ici ?
+
+248
+00:13:33.009 --> 00:13:35.005
+On a l'axe des x,
+
+249
+00:13:35.097 --> 00:13:39.214
+qui représente les valeurs de nos
+données. Sur l'axe des y, on a la densité.
+
+250
+00:13:39.294 --> 00:13:43.902
+C'est un peu comme la fréquence
+à laquelle apparaissent ces données.
+
+251
+00:13:43.982 --> 00:13:47.173
+Donc la distribution gaussienne
+elle a aussi une moyenne qui
+
+252
+00:13:47.253 --> 00:13:50.498
+en l'occurrence est la même
+chose que la médiane parce qu'une
+
+253
+00:13:50.578 --> 00:13:53.987
+distribution gaussienne ou une
+distribution normale est toujours
+
+254
+00:13:54.067 --> 00:13:57.501
+symétrique : j'aurai
+autant de données à gauche
+
+255
+00:13:57.593 --> 00:13:59.986
+qu'à droite de ma moyenne, et donc la
+
+256
+00:14:00.066 --> 00:14:03.541
+moyenne est exactement
+la même chose que la médiane.
+
+257
+00:14:04.281 --> 00:14:07.855
+Alors là je vous donne la fonction
+de la distribution normale, vous n'avez pas
+
+258
+00:14:07.935 --> 00:14:11.416
+besoin de l'apprendre par cœur, mais
+c'est important de regarder à quoi elle
+
+259
+00:14:11.496 --> 00:14:15.398
+ressemble parce qu'elle nous donne une idée
+de comment fonctionne cette distribution.
+
+260
+00:14:15.478 --> 00:14:18.068
+Cette distribution est
+caractérisée par deux indicateurs.
+
+261
+00:14:18.148 --> 00:14:21.722
+Donc c'est ce qu'on vient de dire, c'est
+la moyenne qui est représentée par la
+
+262
+00:14:21.802 --> 00:14:25.597
+lettre grecque mu, et l'écart-type, donné
+par la lettre grecque sigma. Il décrit
+
+263
+00:14:25.689 --> 00:14:28.599
+l'étalement de la distribution
+et la fréquence
+
+264
+00:14:28.679 --> 00:14:31.929
+d'apparition des valeurs extrêmes.
+
+265
+00:14:32.397 --> 00:14:36.256
+Donc voilà, encore une fois, pas besoin
+de connaître cette formule, mais on va
+
+266
+00:14:36.336 --> 00:14:40.397
+regarder un petit peu qu'est-ce qui se
+passe quand on change ces deux indicateurs.
+
+267
+00:14:40.477 --> 00:14:43.679
+Donc là, j'ai une moyenne qui vaut
+5 et un écart-type qui vaut 1.
+
+268
+00:14:43.759 --> 00:14:46.204
+Mais si je modifie la moyenne,
+tout simplement, la
+
+269
+00:14:46.284 --> 00:14:49.032
+courbe va être décalée vers
+la gauche ou vers la droite.
+
+270
+00:14:49.112 --> 00:14:52.849
+Donc ici, ma moyenne est passée à 3,
+donc elle est décalée vers la gauche.
+
+271
+00:14:52.941 --> 00:14:55.895
+Si je l'augmente à 7, elle
+est décalée vers la droite.
+
+272
+00:14:55.975 --> 00:14:58.143
+Donc la moyenne, elle déplace la courbe.
+
+273
+00:14:58.223 --> 00:15:01.795
+L'écart-type, quant à lui,
+modifie l'étalement.
+
+274
+00:15:01.875 --> 00:15:05.392
+Donc si je tombe à un écart-type
+qui est plus petit, ici 0,6, on
+
+275
+00:15:05.472 --> 00:15:09.157
+voit que la courbe devient un peu
+plus pointue autour de la moyenne.
+
+276
+00:15:09.237 --> 00:15:12.078
+Tandis que si j'ai un écart-type
+qui monte à 1,5, là
+
+277
+00:15:12.158 --> 00:15:15.249
+mes données sont,
+à l'inverse, très étalées.
+
+278
+00:15:15.341 --> 00:15:18.684
+En fait, il me suffit justement
+de ces deux indicateurs pour pouvoir
+
+279
+00:15:18.764 --> 00:15:21.856
+décrire parfaitement cette
+distribution qui est encore une fois
+
+280
+00:15:21.936 --> 00:15:25.732
+théorique, mais on va le voir, elle va
+nous aider dans beaucoup de contextes.
+
+281
+00:15:25.812 --> 00:15:28.753
+Attention aussi : la surface
+totale sous la courbe
+
+282
+00:15:28.833 --> 00:15:31.823
+est toujours égale à 1.
+Comme on l'a dit pour les
+
+283
+00:15:31.903 --> 00:15:35.377
+probabilités, la somme des probabilités
+doit toujours être égale à 1.
+
+284
+00:15:35.949 --> 00:15:37.751
+Alors maintenant on peut se demander
+
+285
+00:15:37.831 --> 00:15:40.155
+comment utiliser cette
+distribution théorique.
+
+286
+00:15:40.235 --> 00:15:42.978
+Donc on pourrait en principe
+se dire très bien, moi je
+
+287
+00:15:43.058 --> 00:15:46.009
+vais regarder la probabilité
+que ma valeur soit égale à 4.
+
+288
+00:15:46.089 --> 00:15:48.937
+En fait ça on ne peut pas
+le faire avec une distribution
+
+289
+00:15:49.017 --> 00:15:52.491
+normale, avec une distribution
+théorique parce qu'elle est continue.
+
+290
+00:15:52.571 --> 00:15:56.017
+Obtenir exactement 4,
+ce n'est pas juste 4 :
+
+291
+00:15:56.097 --> 00:15:59.649
+c'est 4,0000, avec une infinité
+de zéros après la virgule.
+
+292
+00:15:59.729 --> 00:16:03.122
+En pratique, vous n'aurez jamais
+cette valeur-là dans la réalité.
+
+293
+00:16:03.202 --> 00:16:06.193
+C'est pourquoi, si vous demandez la
+probabilité d'obtenir exactement cette valeur,
+
+294
+00:16:06.285 --> 00:16:08.931
+on peut argumenter que
+cette probabilité est nulle.
+
+295
+00:16:09.011 --> 00:16:12.512
+Et c'est pour ça que pour
+les distributions continues, ce dont on a
+
+296
+00:16:12.592 --> 00:16:16.094
+besoin, c'est de regarder la probabilité
+d'être dans un intervalle.
+
+297
+00:16:16.174 --> 00:16:20.477
+Si je demande la probabilité d'être
+entre 4 et 5, on peut la calculer.
+
+298
+00:16:20.557 --> 00:16:23.844
+On va passer les détails, on doit
+calculer l'intégrale de cette
+
+299
+00:16:23.924 --> 00:16:27.345
+fonction sur cet intervalle. À la fin,
+cela nous donne environ 34 % de chances
+
+300
+00:16:27.437 --> 00:16:30.821
+d'avoir une valeur de x
+comprise entre 4 et 5.
+
+301
+00:16:30.901 --> 00:16:33.147
+C'est comme ça qu'on
+utilise ces distributions.
+
+302
+00:16:33.227 --> 00:16:36.017
+Encore une fois, on ne rentre
+pas dans les détails dans ce
+
+303
+00:16:36.097 --> 00:16:39.233
+cours, mais gardez bien en tête
+que lorsqu'on a des distributions
+
+304
+00:16:39.313 --> 00:16:42.301
+théoriques continues, on ne
+demande pas la probabilité d'avoir
+
+305
+00:16:42.381 --> 00:16:45.449
+une valeur, mais d'être dans
+un certain intervalle de valeurs.
+
+306
+00:16:45.933 --> 00:16:49.115
+Alors pourquoi est-ce que
+la distribution normale est si
+
+307
+00:16:49.195 --> 00:16:52.434
+importante et pourquoi elle
+apparaît autant dans plein de
+
+308
+00:16:52.514 --> 00:16:56.162
+systèmes physiques et de systèmes
+écologiques qu'on va étudier ?
+
+309
+00:16:56.242 --> 00:17:00.297
+Tout simplement parce qu'elle nous
+permet de prendre en compte plein de
+
+310
+00:17:00.377 --> 00:17:04.898
+petits effets, de petites erreurs
+qui vont se combiner pour, à
+
+311
+00:17:04.978 --> 00:17:09.521
+la fin donner des événements qui se
+comportent comme une distribution normale.
+
+312
+00:17:09.613 --> 00:17:12.962
+Supposons que je fasse une étude
+dans laquelle je vais mesurer
+
+313
+00:17:13.042 --> 00:17:17.130
+différentes concentrations. Par
+exemple, mon capteur va peut-être donner
+
+314
+00:17:17.210 --> 00:17:21.034
+des valeurs un peu supérieures,
+tandis que la température va peut-être
+
+315
+00:17:21.114 --> 00:17:24.780
+avoir des valeurs légèrement inférieures
+par rapport à la réalité et je
+
+316
+00:17:24.860 --> 00:17:28.262
+vais avoir plein de petits facteurs
+comme ça qui vont faire que la
+
+317
+00:17:28.342 --> 00:17:32.721
+concentration mesurée fluctue
+autour des véritables valeurs.
+
+318
+00:17:33.379 --> 00:17:36.769
+Tous ces petits facteurs peuvent altérer
+la mesure de concentration et créer de
+
+319
+00:17:36.849 --> 00:17:40.615
+petites erreurs qui s'accumulent.
+Au total, quand on fait leur somme,
+
+320
+00:17:40.695 --> 00:17:44.367
+elles vont s'approcher de zéro parce que
+oui la température peut baisser un tout
+
+321
+00:17:44.447 --> 00:17:48.400
+petit peu la concentration
+mesurée, tandis que mon capteur
+
+322
+00:17:48.480 --> 00:17:52.199
+peut-être qu'il est calibré pour compter
+un peu plus que ce qu'il y a en réalité.
+
+323
+00:17:52.279 --> 00:17:55.642
+Mais quand je fais la somme totale
+de tous ces petits effets, ils vont
+
+324
+00:17:55.722 --> 00:17:59.625
+s'annuler entre eux et donc je vais avoir
+quelque chose qui est assez symétrique.
+
+325
+00:17:59.705 --> 00:18:01.592
+J'ai autant d'erreurs qui tirent vers le
+
+326
+00:18:01.672 --> 00:18:03.707
+haut, que d'erreurs
+qui tirent vers le bas.
+
+327
+00:18:03.787 --> 00:18:05.625
+Et c'est pour ça que dans la nature, on
+
+328
+00:18:05.705 --> 00:18:08.084
+obtient autant de fois
+cette distribution normale.
+
+329
+00:18:08.164 --> 00:18:10.279
+Vous allez la retrouver
+absolument partout.
+
+330
+00:18:10.371 --> 00:18:12.954
+Attention, ça ne veut pas
+dire qu'on a toujours des
+
+331
+00:18:13.034 --> 00:18:17.055
+distributions normales, mais on la trouve
+quand même beaucoup dans la nature.
+
+332
+00:18:17.571 --> 00:18:20.108
+Par contre, il y a certains
+événements ou certains
+
+333
+00:18:20.188 --> 00:18:23.406
+phénomènes qui ne peuvent pas
+être décrits par une distribution
+
+334
+00:18:23.486 --> 00:18:26.547
+normale. Prenons ici
+l'exemple des précipitations.
+
+335
+00:18:26.627 --> 00:18:29.322
+Donc on regarde ici
+les précipitations qui ont lieu à
+
+336
+00:18:29.402 --> 00:18:32.462
+Genève-Cointrin entre 2023
+et 2025, soit pendant 1 096 jours.
+
+337
+00:18:32.542 --> 00:18:34.975
+Et on voit très clairement
+qu'il y a beaucoup de
+
+338
+00:18:35.055 --> 00:18:38.953
+précipitations qui sont très faibles,
+donc entre 0 et 5 mm par jour, et il y
+
+339
+00:18:39.033 --> 00:18:42.279
+en a extrêmement peu qui tombent
+dans les valeurs très hautes.
+
+340
+00:18:43.103 --> 00:18:45.502
+Donc là on a même au total 651 jours pour
+
+341
+00:18:45.582 --> 00:18:48.827
+lesquels il n'y a aucune
+précipitation qui est mesurée.
+
+342
+00:18:48.907 --> 00:18:52.998
+C'est pour cela que la classe de 0 à 5
+de cet histogramme est aussi grande.
+
+343
+00:18:53.078 --> 00:18:56.202
+Là typiquement c'est
+une situation où la distribution
+
+344
+00:18:56.282 --> 00:18:59.587
+normale ne s'applique pas
+du tout à ce genre de données.
+
+345
+00:18:59.667 --> 00:19:03.698
+Même si on zoome, on se rend
+compte que cela cachait les valeurs
+
+346
+00:19:03.778 --> 00:19:08.131
+les plus hautes, qui peuvent atteindre
+47,6 mm en une seule journée.
+
+347
+00:19:08.223 --> 00:19:10.619
+Donc typiquement quand
+on a une asymétrie, on
+
+348
+00:19:10.699 --> 00:19:13.094
+ne peut pas utiliser
+la distribution normale.
+
+349
+00:19:13.174 --> 00:19:16.010
+Un autre type de situation
+dans lequel on ne peut pas
+
+350
+00:19:16.090 --> 00:19:19.751
+utiliser la distribution normale,
+c'est quand on a des sous-groupes.
+
+351
+00:19:19.831 --> 00:19:22.172
+Donc ici on a un histogramme
+sur lequel on a
+
+352
+00:19:22.252 --> 00:19:24.868
+le taux de survie de deux
+espèces qui est mesuré.
+
+353
+00:19:24.948 --> 00:19:28.579
+Donc ici on voit que ça va de 20
+% jusqu'à 95 % de taux de survie.
+
+354
+00:19:28.671 --> 00:19:30.864
+On voit que les deux espèces A et B
+
+355
+00:19:30.944 --> 00:19:33.676
+n'ont tout simplement
+pas la même distribution.
+
+356
+00:19:33.756 --> 00:19:37.863
+C'est-à-dire que pour l'espèce A,
+on a un pic aux alentours de 40 % de
+
+357
+00:19:37.943 --> 00:19:42.469
+survie et pour l'espèce B, on a un autre
+pic aux alentours de 80 % de survie.
+
+358
+00:19:42.549 --> 00:19:46.596
+Typiquement, si on avait appliqué
+la distribution normale théorique à
+
+359
+00:19:46.676 --> 00:19:51.043
+ce genre de situation, on n'aurait
+pas pu observer ces deux sous-groupes.
+
+360
+00:19:51.135 --> 00:19:55.046
+Dans une telle situation,
+il faudrait étudier chacune
+
+361
+00:19:55.126 --> 00:19:59.090
+des espèces une à une en appliquant
+à chacune la distribution normale parce
+
+362
+00:19:59.170 --> 00:20:03.404
+qu'on voit que, si je ne prends que
+l'espèce A, cela ressemble à quelque chose
+
+363
+00:20:03.484 --> 00:20:07.557
+d'assez symétrique et normal. C'est
+pareil pour l'espèce B, mais quand je
+
+364
+00:20:07.637 --> 00:20:11.843
+mets les deux ensemble, la distribution
+normale, eh bien elle ne convient pas.
+
+365
+00:20:11.935 --> 00:20:15.828
+Si on fait une petite synthèse, on
+a vu que l'histogramme montre la
+
+366
+00:20:15.908 --> 00:20:20.751
+répartition d'une variable dans l'espace,
+quelles sont les valeurs que vont prendre
+
+367
+00:20:20.831 --> 00:20:25.080
+mes différentes données et comment
+elles sont étendues, tandis qu'on a vu
+
+368
+00:20:25.160 --> 00:20:29.647
+certains indicateurs qui permettent
+de résumer les propriétés de mes données.
+
+369
+00:20:29.727 --> 00:20:32.099
+On a vu la médiane, la moyenne, le mode.
+
+370
+00:20:32.191 --> 00:20:35.108
+Et on a vu aussi la distribution
+normale, qui représente une
+
+371
+00:20:35.188 --> 00:20:38.054
+distribution théorique qui
+s'applique à plein de phénomènes
+
+372
+00:20:38.134 --> 00:20:41.401
+naturels et dans laquelle la moyenne
+et la médiane sont égales.
+
+373
+00:20:41.481 --> 00:20:43.348
+On a un deuxième
+indicateur : l'écart-type,
+
+374
+00:20:43.428 --> 00:20:46.145
+quartiles, qu'on verra en détail
+un petit peu plus tard.
+
+375
+00:20:46.225 --> 00:20:49.791
+Avec ces deux indicateurs,
+cette distribution normale
+
+376
+00:20:49.871 --> 00:20:53.667
+permet de quantifier justement, comme
+je viens de dire, plein de phénomènes.
+
+377
+00:20:54.171 --> 00:20:56.476
+Ce qu'il nous manque maintenant,
+c'est de bien décrire cet
+
+378
+00:20:56.556 --> 00:20:59.537
+écart-type. C'est ce qu'on va
+faire dans la prochaine vidéo.

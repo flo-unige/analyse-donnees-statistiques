@@ -1,11 +1,9 @@
 ---
-title: "Session 6 — À compléter"
-subtitle: "Contenu en préparation"
+title: "Session 6 : En construction"
+format-links: false
+toc: false
 ---
 
-::: {.coming-soon}
-Contenu de la sixième session.
-:::
+**En construction**
 
-[Revenir à la session 5](../session-05/index.qmd)
-
+Le contenu de cette session sera mis à disposition ultérieurement.

@@ -9,19 +9,10 @@ project:
     - cours/session-04/index.qmd
     - cours/session-05/index.qmd
     - cours/session-06/index.qmd
-    - tp/index.qmd
-    - tp/tp-01/index.qmd
-    - tp/tp-02/index.qmd
-    - tp/tp-03/index.qmd
-    - tp/tp-04/index.qmd
-    - tp/tp-05/index.qmd
-    - tp/tp-06/index.qmd
-    - ressources/index.qmd
   resources:
     - cours/session-02/assets/interactifs/**
+    - cours/session-02/assets/video/**
     - cours/session-02/data/**
-    - tp/**/*.ipynb
-    - tp/**/data/**
 
 quarto-required: "1.10.18"
 
@@ -36,11 +27,7 @@ website:
       - text: "Accueil"
         href: index.qmd
       - text: "Cours"
-        href: cours/session-01/index.qmd
-      - text: "Travaux pratiques"
-        href: tp/index.qmd
-      - text: "Ressources"
-        href: ressources/index.qmd
+        href: cours/session-02/index.qmd
   sidebar:
     - title: "Cours"
       style: docked
@@ -51,16 +38,6 @@ website:
         - cours/session-04/index.qmd
         - cours/session-05/index.qmd
         - cours/session-06/index.qmd
-    - title: "Travaux pratiques"
-      style: docked
-      contents:
-        - tp/index.qmd
-        - tp/tp-01/index.qmd
-        - tp/tp-02/index.qmd
-        - tp/tp-03/index.qmd
-        - tp/tp-04/index.qmd
-        - tp/tp-05/index.qmd
-        - tp/tp-06/index.qmd
   page-footer:
     background: "#2c3e50"
     foreground: light
@@ -86,6 +63,6 @@ format:
 execute:
   freeze: auto
   warning: false
-  error: true
+  error: false
 
 lang: fr

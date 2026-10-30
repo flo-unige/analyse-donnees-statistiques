@@ -1,0 +1,10 @@
+site,type_milieu,qualite_ecologique,algues,nombre_taxons,nitrates_mg_l
+S01,ruisseau,tres bonne,FALSE,21,1
+S02,riviere,bonne,FALSE,18,2
+S03,riviere,bonne,TRUE,14,3
+S04,canal,moyenne,FALSE,16,3
+S05,ruisseau,moyenne,TRUE,12,4
+S06,riviere,bonne,FALSE,19,5
+S07,canal,moyenne,TRUE,11,6
+S08,ruisseau,bonne,FALSE,17,7
+S09,riviere,mauvaise,TRUE,8,14

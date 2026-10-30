@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Plus de sites, moins de biais ?</title>
+  <link rel="stylesheet" href="biais-echantillon.css">
+</head>
+<body>
+<main>
+  <header>
+    <h1>Plus de sites, moins de biais ?</h1>
+    <p>Vous souhaitez estimer la concentration moyenne en nitrates de <strong>900 sites fictifs</strong>. Leur moyenne, connue dans cette simulation, est de <strong>5 mg/L</strong>.</p>
+  </header>
+  <p><strong>À vous d'essayer :</strong> gardez d'abord les sites éloignés exclus et augmentez l'effectif jusqu'à 500. La moyenne se rapproche-t-elle de 5 mg/L ? Ouvrez ensuite l'accès à ces secteurs et augmentez à nouveau l'effectif jusqu'à 500, puis comparez les résultats obtenus à effectif égal.</p>
+  <div class="settings">
+    <div>
+      <label for="size">1. Nombre de sites observés : <output id="size-value" for="size">30</output></label>
+      <input id="size" type="range" min="5" max="500" value="30" step="5" aria-describedby="size-help" disabled>
+    </div>
+    <div>
+      <label for="coverage">2. Accès aux 300 sites éloignés</label>
+      <select id="coverage" disabled>
+        <option value="0">Aucun site éloigné accessible</option>
+        <option value="50">La moitié des sites éloignés accessibles</option>
+        <option value="100">Tous les sites éloignés accessibles</option>
+      </select>
+    </div>
+  </div>
+  <div class="zones" aria-label="Couverture du bassin">
+    <div><strong>Proches des routes</strong><span>600 sites accessibles</span><span>Moyenne de ce secteur : 3 mg/L</span></div>
+    <div id="far-zone"><strong>Éloignés des routes</strong><span id="far-available">0 site accessible sur 300</span><span>Moyenne de ce secteur : 9 mg/L</span></div>
+  </div>
+  <p id="coverage-summary" class="coverage-summary"></p>
+  <section aria-labelledby="chart-title">
+    <h2 id="chart-title">Si nous répétions cette campagne 100 fois…</h2>
+    <p class="small">Chaque point représente la moyenne d'un échantillon de même taille, tiré avec le même accès aux sites.</p>
+    <figure>
+      <svg id="chart" role="img" aria-labelledby="chart-label chart-description"></svg>
+      <figcaption class="legend"><span><i class="target"></i> Moyenne du bassin : 5 mg/L</span><span><i class="accessible"></i> <span id="pool-legend">Moyenne des sites accessibles</span></span></figcaption>
+    </figure>
+    <p id="interpretation"></p>
+  </section>
+  <p id="error" role="alert" hidden>L'animation n'a pas pu être chargée. La comparaison statique est disponible dans le PDF.</p>
+  <noscript>JavaScript est nécessaire pour cette simulation interactive. Consultez la comparaison statique du PDF.</noscript>
+</main>
+<script src="biais-echantillon.js"></script>
+</body>
+</html>

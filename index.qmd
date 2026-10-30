@@ -1,53 +1,22 @@
 ---
 title: "Analyse de données statistiques"
-subtitle: "Comprendre, pratiquer et interpréter l’analyse de données avec Python"
+subtitle: "Comprendre et interpréter les données"
 format-links: false
+toc: false
 ---
 
-::: {.hero-course}
 ## Bienvenue dans le cours
 
-Ce site réunit les contenus théoriques, les exemples et les travaux pratiques du cours **Analyse de données statistiques**.
+Ce cours s’adresse aux étudiantes et étudiants qui débutent en analyse de données. Il privilégie des explications intuitives, des exemples concrets et une interprétation rigoureuse des résultats.
 
-Le cours s’adresse à des étudiantes et étudiants qui débutent en analyse de données. Il privilégie une progression intuitive, des exemples concrets et une interprétation rigoureuse des résultats.
-:::
+## La session 2 est disponible
 
-## Organisation
+Retrouvez les vidéos, les textes explicatifs, les animations et les exemples de code de la **session 2 : Concepts de base de probabilité et de statistique**. Le support est également disponible au format PDF depuis la page de la session.
 
-::: {.course-grid}
-::: {.course-card}
-### Cours
+[Étudier la session 2](cours/session-02/index.qmd){.btn .btn-primary}
 
-Six sessions théoriques structurées autour de vidéos courtes, de textes explicatifs, d’exemples et d’illustrations.
+Commencez par les vidéos, puis utilisez les textes et les animations pour reprendre les notions à votre rythme.
 
-[Accéder aux sessions →](cours/session-01/index.qmd)
-:::
+## Les autres sessions
 
-::: {.course-card}
-### Travaux pratiques
-
-Des carnets pour écrire du code Python / R, analyser des données et présenter les résultats.
-
-[Accéder aux TP →](tp/index.qmd)
-:::
-
-::: {.course-card}
-### Ressources
-
-Les informations générales, les références utiles et, ultérieurement, les fiches d’aide du cours.
-
-[Consulter les ressources →](ressources/index.qmd)
-:::
-:::
-
-## Parcours conseillé
-
-1. Visionner les vidéos et lire les contenus complémentaires de la session.
-2. Vérifier les points essentiels à retenir.
-3. Ouvrir le travail pratique correspondant.
-4. Compléter le carnet Python et interpréter les résultats.
-5. Générer le rapport demandé et le déposer selon les consignes du cours.
-
-::: {.callout-note title="Site en construction"}
-Ebauche de la session 2 uniquement pour le moment.
-:::
+La session 1 se déroule en classe. Les pages des sessions 1, 3, 4, 5 et 6 sont indiquées **« En construction »** et ne proposent pas encore de contenu.
