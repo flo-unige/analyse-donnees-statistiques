@@ -5,11 +5,14 @@ project:
     - index.qmd
     - cours/session-01/index.qmd
     - cours/session-02/index.qmd
+    - cours/session-02/index-en.qmd
     - cours/session-03/index.qmd
     - cours/session-04/index.qmd
     - cours/session-05/index.qmd
     - cours/session-06/index.qmd
   resources:
+    - cours/session-02/assets/language.css
+    - cours/session-02/assets/language.js
     - cours/session-02/assets/interactifs/**
     - cours/session-02/assets/video/**
     - cours/session-02/data/**
@@ -29,7 +32,8 @@ website:
       - text: "Cours"
         href: cours/session-02/index.qmd
   sidebar:
-    - title: "Cours"
+    - id: cours
+      title: "Cours"
       style: docked
       contents:
         - cours/session-01/index.qmd

@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>More sites, less bias?</title>
+  <link rel="stylesheet" href="biais-echantillon.css">
+</head>
+<body>
+<main>
+  <header>
+    <h1>More sites, less bias?</h1>
+    <p>You want to estimate the mean nitrate concentration across <strong>900 fictional sites</strong>. Their mean, which is known in this simulation, is <strong>5 mg/L</strong>.</p>
+  </header>
+  <p><strong>Try it yourself:</strong> first leave the remote sites excluded and increase the sample size to 500. Does the mean move closer to 5 mg/L? Then make those areas accessible. The sample size returns to five sites. Increase it to 500 again and compare the results at the same sample size.</p>
+  <div class="settings">
+    <div>
+      <label for="size">1. Number of observed sites: <output id="size-value" for="size">30</output></label>
+      <input id="size" type="range" min="5" max="500" value="30" step="5" aria-describedby="size-help" disabled>
+    </div>
+    <div>
+      <label for="coverage">2. Access to the 300 remote sites</label>
+      <select id="coverage" disabled>
+        <option value="0">No remote sites accessible</option>
+        <option value="50">Half the remote sites accessible</option>
+        <option value="100">All remote sites accessible</option>
+      </select>
+    </div>
+  </div>
+  <div class="zones" aria-label="Coverage of the basin">
+    <div><strong>Near roads</strong><span>600 accessible sites</span><span>Mean in this area: 3 mg/L</span></div>
+    <div id="far-zone"><strong>Far from roads</strong><span id="far-available">0 of 300 sites accessible</span><span>Mean in this area: 9 mg/L</span></div>
+  </div>
+  <p id="coverage-summary" class="coverage-summary"></p>
+  <section aria-labelledby="chart-title">
+    <h2 id="chart-title">What if we repeated this campaign 100 times?</h2>
+    <p class="small">Each point represents the mean of a sample drawn with the same size and the same access to sites.</p>
+    <figure>
+      <svg id="chart" role="img" aria-labelledby="chart-label chart-description"></svg>
+      <figcaption class="legend"><span><i class="target"></i> Basin mean: 5 mg/L</span><span><i class="accessible"></i> <span id="pool-legend">Mean of accessible sites</span></span></figcaption>
+    </figure>
+    <p id="interpretation"></p>
+  </section>
+  <p id="error" role="alert" hidden>The animation could not be loaded. A static comparison is available in the PDF.</p>
+  <noscript>This interactive simulation requires JavaScript. See the static comparison in the PDF.</noscript>
+</main>
+<script src="biais-echantillon.js"></script>
+</body>
+</html>

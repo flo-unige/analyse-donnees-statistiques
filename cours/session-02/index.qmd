@@ -8,6 +8,7 @@ format:
     theme: cosmo
     css:
       - ../../styles.css
+      - assets/language.css
       - assets/video/vendor/videojs-8.23.8/video-js.min.css
       - assets/video/lecteur.css
     toc: true
@@ -32,9 +33,7 @@ format:
     include-after-body:
       - text: |
           <script src="../session-02/assets/interactifs/cadrage-complements.js"></script>
-          <script src="../session-02/assets/video/vendor/videojs-8.23.8/video.min.js"></script>
-          <script src="../session-02/assets/video/vendor/videojs-8.23.8/fr.js"></script>
-          <script src="../session-02/assets/video/lecteur.js"></script>
+          <script src="../session-02/assets/video/charger-lecteur.js"></script>
   typst:
     toc: true
     papersize: a4
@@ -53,6 +52,11 @@ execute:
   warning: false
   error: false
 ---
+
+```{=html}
+<nav class="course-language" aria-label="Langue du cours"><span aria-current="page" lang="fr">Français</span><a href="index-en.html" lang="en" hreflang="en">English</a></nav>
+```
+
 
 Toutes les notions de la session sont entièrement présentées dans les vidéos. Les textes qui les accompagnent sont là pour en résumer le contenu et proposer des animations complémentaires. Vous pouvez les lire avant ou après la vidéo, selon vos préférences.
 

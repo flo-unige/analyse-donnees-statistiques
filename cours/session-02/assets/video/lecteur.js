@@ -18,7 +18,7 @@
       fluid: true,
       responsive: true,
       aspectRatio: '16:9',
-      language: 'fr',
+      language: document.documentElement.lang.startsWith('en') ? 'en' : 'fr',
       textTrackSettings: false,
       playbackRates: [0.5, 0.75, 1, 1.25, 1.5, 1.75, 2],
       controlBar: { skipButtons: { backward: 5, forward: 5 } },

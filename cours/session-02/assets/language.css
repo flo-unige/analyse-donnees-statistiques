@@ -1,0 +1,24 @@
+/* Language choice stays at the top right of the course, including on mobile. */
+main.content { position: relative; }
+main.content > header#title-block-header { padding-top: 2.8rem; }
+.course-language {
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: flex;
+  gap: .15rem;
+  padding: .2rem;
+  border: 1px solid #b8c6ce;
+  border-radius: .35rem;
+  font-size: .9rem;
+  line-height: 1.4;
+}
+.course-language a, .course-language span {
+  padding: .3rem .65rem;
+  border-radius: .2rem;
+  text-decoration: none;
+}
+.course-language [aria-current="page"] { background: #245c79; color: #fff; }
+.course-language a:hover { background: #edf3f6; }
+.course-language a:focus-visible { outline: 3px solid #8b1e5a; outline-offset: 2px; }
+@media print { .course-language { display: none; } }

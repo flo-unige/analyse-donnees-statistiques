@@ -1,5 +1,53 @@
 # Analyse de données statistiques
 
+## Préparation locale de la session 2 bilingue
+
+Cette copie de travail est sur la branche locale `preparation/session-02`.
+Elle ajoute une traduction anglaise au cours français validé, sans publication.
+
+- Français : `cours/session-02/index.qmd`.
+- Anglais : `cours/session-02/index-en.qmd`.
+- Le sélecteur Français / English apparaît en haut à droite de chaque page.
+- Les deux pages utilisent le même CSV, les mêmes vidéos et les mêmes fichiers
+  de sous-titres. La piste anglaise est sélectionnée par défaut sur la page anglaise.
+- Les textes, exemples Python, graphiques et animations anglais sont traduits.
+  Les noms de colonnes et catégories du CSV restent ceux du fichier commun,
+  avec leur signification expliquée en anglais.
+- Chaque langue possède son PDF : `index.pdf` et `index-en.pdf`.
+- La navigation générale reste celle du site français. Sur la page anglaise,
+  ses libellés sont traduits et les liens vers les pages françaises sont signalés.
+
+Pour un aperçu avec les deux langues et leurs PDF, construire le site puis
+le servir en HTTP depuis cette copie de travail :
+
+```powershell
+conda activate analyse-donnees
+quarto render
+python -m http.server 8772 --bind 127.0.0.1 --directory _site
+```
+
+Ouvrir `http://127.0.0.1:8772/cours/session-02/`, puis utiliser le bouton English.
+Pour reconstruire uniquement les pages de cours pendant la rédaction :
+
+```powershell
+quarto render cours/session-02/index.qmd
+quarto render cours/session-02/index-en.qmd
+```
+
+Les animations partagent leur logique et leurs données entre les langues.
+Les images anglaises de variance et les deux figures statiques sont générées
+par `scripts/generate_session02_english_figures.py`. Ce script vérifie les
+résultats contre le manifeste français et ne modifie pas les ressources françaises.
+
+Le chargement Video.js passe par `assets/video/charger-lecteur.js`, qui gère
+aussi les pages Jupyter où Quarto ajoute RequireJS. Il utilise une copie
+encapsulée `video.global.min.js`, générée par `scripts/prepare_videojs_global.py`,
+pour charger Video.js sans dépendre de RequireJS ni modifier celui-ci.
+Le fichier original fourni par Video.js et les sous-titres restent inchangés.
+
+Lors des révisions suivantes, mettre à jour les deux textes et leurs sorties
+dans `_freeze/`. Ne pas envoyer cette branche sur GitHub sans validation.
+
 ## Version étudiante publiée
 
 La branche `main` contient uniquement le cours validé de la **session 2**, avec ses quatre vidéos hébergées sur Mediaserver, leurs sous-titres, les animations, les données pédagogiques, les exemples Python et le PDF construit par Quarto.

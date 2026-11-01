@@ -1,5 +1,6 @@
 'use strict';
 (async function () {
+  const english = document.documentElement.lang === 'en';
   const heading = document.querySelector('h1');
   const figure = document.querySelector('img');
   const explanation = document.getElementById('explanation');
@@ -9,7 +10,7 @@
   let timer = null;
   const resize = () => parent.postMessage({type: 'complement-height', height: Math.ceil(document.body.getBoundingClientRect().height)}, location.origin);
   try {
-    const response = await fetch('complements.json');
+    const response = await fetch(english ? 'complements-en.json' : 'complements.json');
     if (!response.ok) throw new Error('Chargement indisponible');
     const models = await response.json();
     const animation = new URLSearchParams(location.search).get('animation');
@@ -22,8 +23,8 @@
     document.querySelector('label').textContent = model.control;
     slider.max = model.frames.length - 1;
     slider.value = model.default;
-    const pause = () => { clearInterval(timer); timer = null; play.textContent = 'Lancer l’animation'; play.setAttribute('aria-pressed', 'false'); };
-    play.textContent = 'Lancer l’animation';
+    const pause = () => { clearInterval(timer); timer = null; play.textContent = (english ? 'Play animation' : 'Lancer l’animation'); play.setAttribute('aria-pressed', 'false'); };
+    play.textContent = (english ? 'Play animation' : 'Lancer l’animation');
     // Précharger les images suivantes pour une lecture sans clignotement.
     const preload = index => {
       for (const frame of model.frames.slice(index + 1, index + 6)) {
@@ -35,7 +36,7 @@
       figure.src = frame.image;
       figure.alt = frame.description;
       explanation.textContent = frame.description;
-      value.textContent = `${index + 1} sur ${model.frames.length}`;
+      value.textContent = `${index + 1} ${english ? "of" : "sur"} ${model.frames.length}`;
       slider.setAttribute('aria-valuetext', frame.label);
       preload(index);
       if (!manualOnly) {
@@ -66,7 +67,7 @@
     new ResizeObserver(resize).observe(document.body);
     show();
   } catch (error) {
-    explanation.textContent = 'Le complément ne peut pas être chargé. Consulter la figure statique dans le PDF.';
+    explanation.textContent = (english ? 'The interactive example could not be loaded. See the static figure in the PDF.' : 'Le complément ne peut pas être chargé. Consulter la figure statique dans le PDF.');
     document.querySelectorAll('button, input').forEach(control => { control.disabled = true; });
     console.error(error);
   }
