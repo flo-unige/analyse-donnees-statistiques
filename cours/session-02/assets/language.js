@@ -1,6 +1,19 @@
 /* Translate the shared site navigation on the English course page only.
    Quarto's own controls are translated by the page's lang: en metadata. */
 (() => {
+  // Keep the selected programming language when using the course navigation.
+  const currentPage = location.pathname.split('/').pop() || 'index.html';
+  const isR = currentPage.endsWith('-r.html');
+  if (isR) {
+    document.querySelectorAll('.navbar-nav a, #quarto-sidebar a').forEach(link => {
+      if (!/\/session-02\/(?:index(?:-en)?\.html)?$/.test(link.pathname)) return;
+      link.setAttribute('href', currentPage);
+      if (link.closest('#quarto-sidebar')) {
+        link.classList.add('active');
+        link.setAttribute('aria-current', 'page');
+      }
+    });
+  }
   if (!document.documentElement.lang.startsWith('en')) return;
   document.title = document.title.replace('Analyse de données statistiques', 'Statistical Data Analysis');
   const set = (selector, text) => document.querySelectorAll(selector)
@@ -13,7 +26,7 @@
     if (text === 'Accueil') label.textContent = 'Home (French)';
     if (text === 'Cours') {
       label.textContent = 'Course';
-      link.setAttribute('href', 'index-en.html');
+      link.setAttribute('href', currentPage);
     }
     if (text === 'Site créé avec Quarto') label.textContent = 'Built with Quarto';
   });
@@ -24,7 +37,7 @@
       if (session === '2') {
         label.textContent = 'Session 2: Foundations of probability and statistics';
         const link = label.closest('a');
-        link?.setAttribute('href', 'index-en.html');
+        link?.setAttribute('href', currentPage);
         link?.classList.add('active');
         link?.setAttribute('aria-current', 'page');
       } else {

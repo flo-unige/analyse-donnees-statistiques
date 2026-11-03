@@ -32,6 +32,7 @@ format:
           </style>
     include-after-body:
       - text: |
+          <script src="../session-02/assets/language.js"></script>
           <script src="../session-02/assets/interactifs/cadrage-complements.js"></script>
           <script src="../session-02/assets/video/charger-lecteur.js"></script>
   typst:
@@ -54,7 +55,10 @@ execute:
 ---
 
 ```{=html}
+<div class="course-choices">
 <nav class="course-language" aria-label="Langue du cours"><span aria-current="page" lang="fr">Français</span><a href="index-en.html" lang="en" hreflang="en">English</a></nav>
+<nav class="course-code" aria-label="Langage des exemples"><span aria-current="page">Python</span><a href="index-r.html">R</a></nav>
+</div>
 ```
 
 

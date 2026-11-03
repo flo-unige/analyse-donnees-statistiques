@@ -6,6 +6,8 @@ project:
     - cours/session-01/index.qmd
     - cours/session-02/index.qmd
     - cours/session-02/index-en.qmd
+    - cours/session-02/index-r.qmd
+    - cours/session-02/index-en-r.qmd
     - cours/session-03/index.qmd
     - cours/session-04/index.qmd
     - cours/session-05/index.qmd

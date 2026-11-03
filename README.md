@@ -3,21 +3,26 @@
 ## Préparation locale de la session 2 bilingue
 
 Cette copie de travail est sur la branche locale `preparation/session-02`.
-Elle ajoute une traduction anglaise au cours français validé, sans publication.
+Elle ajoute une traduction anglaise et des exemples R au cours français validé,
+sans publication.
 
-- Français : `cours/session-02/index.qmd`.
-- Anglais : `cours/session-02/index-en.qmd`.
-- Le sélecteur Français / English apparaît en haut à droite de chaque page.
-- Les deux pages utilisent le même CSV, les mêmes vidéos et les mêmes fichiers
+- Français / Python : `cours/session-02/index.qmd`.
+- Anglais / Python : `cours/session-02/index-en.qmd`.
+- Français / R : `cours/session-02/index-r.qmd`.
+- Anglais / R : `cours/session-02/index-en-r.qmd`.
+- Les sélecteurs Français / English et Python / R apparaissent en haut à droite.
+  Changer une option conserve l'autre, sans nécessiter JavaScript.
+- Les quatre pages utilisent le même CSV, les mêmes vidéos et les mêmes fichiers
   de sous-titres. La piste anglaise est sélectionnée par défaut sur la page anglaise.
 - Les textes, exemples Python, graphiques et animations anglais sont traduits.
   Les noms de colonnes et catégories du CSV restent ceux du fichier commun,
   avec leur signification expliquée en anglais.
-- Chaque langue possède son PDF : `index.pdf` et `index-en.pdf`.
+- Chaque combinaison possède son PDF : `index.pdf`, `index-en.pdf`,
+  `index-r.pdf` et `index-en-r.pdf`.
 - La navigation générale reste celle du site français. Sur la page anglaise,
   ses libellés sont traduits et les liens vers les pages françaises sont signalés.
 
-Pour un aperçu avec les deux langues et leurs PDF, construire le site puis
+Pour un aperçu avec les deux langues, les deux langages et leurs PDF, construire le site puis
 le servir en HTTP depuis cette copie de travail :
 
 ```powershell
@@ -32,7 +37,22 @@ Pour reconstruire uniquement les pages de cours pendant la rédaction :
 ```powershell
 quarto render cours/session-02/index.qmd
 quarto render cours/session-02/index-en.qmd
+quarto render cours/session-02/index-r.qmd
+quarto render cours/session-02/index-en-r.qmd
 ```
+
+Les exemples R n'utilisent que les fonctions livrées avec R, notamment
+`read.csv()`, `table()`, `hist()`, `dnorm()`, `pnorm()`, `var()` et `sd()`.
+Pour construire les pages du site, R doit être installé et accessible à Quarto,
+avec `knitr` et `rmarkdown`. Ces deux packages servent à la construction du site,
+pas aux calculs que les étudiants copient. Les rendus ont été vérifiés avec R 4.6.1.
+
+Les douze blocs R correspondent aux douze blocs Python et gardent les mêmes
+identifiants. Les données, classes d'histogramme et indicateurs sont identiques.
+La simulation conserve le même modèle, mais utilise `set.seed(2026)` et `runif()` :
+ses deux campagnes donnent 63 % puis 70 %, contre 61 % puis 59 % en Python.
+Les commentaires de résultats sont adaptés dans les pages R. Ne pas remplacer
+ces résultats par ceux de Python lors d'une synchronisation des textes.
 
 Les animations partagent leur logique et leurs données entre les langues.
 Les images anglaises de variance et les deux figures statiques sont générées
@@ -45,7 +65,7 @@ encapsulée `video.global.min.js`, générée par `scripts/prepare_videojs_globa
 pour charger Video.js sans dépendre de RequireJS ni modifier celui-ci.
 Le fichier original fourni par Video.js et les sous-titres restent inchangés.
 
-Lors des révisions suivantes, mettre à jour les deux textes et leurs sorties
+Lors des révisions suivantes, mettre à jour les quatre versions et leurs sorties
 dans `_freeze/`. Ne pas envoyer cette branche sur GitHub sans validation.
 
 ## Version étudiante publiée
