@@ -2,6 +2,9 @@ name: Prévisualiser le site Quarto
 
 on:
   workflow_dispatch:
+  push:
+    branches:
+      - preparation/session-02
   pull_request:
     branches:
       - main
@@ -34,4 +37,4 @@ jobs:
         with:
           name: apercu-site-${{ github.run_id }}
           path: _site
-          retention-days: 7
+          retention-days: 30

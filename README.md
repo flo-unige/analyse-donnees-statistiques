@@ -3,8 +3,14 @@
 ## Préparation locale de la session 2 bilingue
 
 Cette copie de travail est sur la branche locale `preparation/session-02`.
-Elle ajoute une traduction anglaise et des exemples R au cours français validé,
-sans publication.
+Elle ajoute une traduction anglaise et des exemples R au cours français validé.
+Elle est également disponible sur GitHub, sans modification de `main` ni du site
+étudiant publié. Chaque envoi sur cette branche construit un aperçu téléchargeable
+dans les artefacts du workflow « Prévisualiser le site Quarto », conservé 30 jours.
+Après extraction du ZIP, lancer `python -m http.server 8772 --bind 127.0.0.1`
+dans le dossier contenant `index.html`, puis ouvrir
+`http://127.0.0.1:8772/cours/session-02/`. Les vidéos restent sur Mediaserver
+et nécessitent une connexion Internet.
 
 - Français / Python : `cours/session-02/index.qmd`.
 - Anglais / Python : `cours/session-02/index-en.qmd`.
@@ -66,7 +72,8 @@ pour charger Video.js sans dépendre de RequireJS ni modifier celui-ci.
 Le fichier original fourni par Video.js et les sous-titres restent inchangés.
 
 Lors des révisions suivantes, mettre à jour les quatre versions et leurs sorties
-dans `_freeze/`. Ne pas envoyer cette branche sur GitHub sans validation.
+dans `_freeze/`. Les mises à jour de cette branche ne publient pas le site étudiant.
+Ne pas les fusionner dans `main` sans validation explicite.
 
 ## Version étudiante publiée
 
