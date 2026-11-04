@@ -507,3 +507,17 @@ The variability between sites brings us to one final question: **how does the me
 The **law of large numbers** describes the related idea of convergence. For independent observations from the same distribution with a finite mean, the sample mean tends towards the population mean as the sample size grows. As in the variance animation, we can treat the nine concentrations in the file as a small fictional population and draw independent samples **with replacement**. Each concentration remains available after a draw and can therefore be selected again. As the draws accumulate, their mean tends towards **5 mg/L**, though it need not move closer with every new observation.
 
 Finally, let us return to coverage of the basin, which we explored in the first animation. If we select only sites near roads, collecting more observations may stabilise the mean around a value that does not represent the whole basin. Similarly, taking more measurements with a poorly calibrated sensor does not remove its systematic error. The **law of large numbers is therefore no substitute for a study design suited to the target population**, and it does not turn the distribution of concentrations into a normal distribution.
+
+# Questions about this session {#questions-session-02}
+
+Is a concept still unclear, does a result surprise you, or would you like to explore an example further? Post your question in the SpeakUp space below. Take a moment to read other students’ questions and vote for those you would like answered. Sorting by votes brings the questions of greatest interest to the group to the top.
+
+This space is shared by the French and English versions of the course and by students using Python or R. If your question is about code, mention the language you are using and the example you are working on.
+
+::: {.content-visible when-format="html"}
+<iframe class="speakup-room" src="https://web.speakup.info/room/join/93131?theme=UniGE&amp;lang=en" title="SpeakUp: questions and votes for session 2, room 93131" loading="lazy" style="display:block;width:100%;height:clamp(480px,80vh,760px);border:1px solid #ccd6dc;border-radius:6px"></iframe>
+
+If the room does not appear within this page, use the link below.
+:::
+
+[Open the SpeakUp room for session 2](https://web.speakup.info/room/join/93131?theme=UniGE&lang=en){target="_blank" rel="noopener"}. **Room code: 93131.**

@@ -559,3 +559,17 @@ La dispersion entre les sites nous amène à une dernière question : **comment 
 C'est ce que décrit la **loi des grands nombres** : pour des observations indépendantes, de même distribution et de moyenne finie, la moyenne de l'échantillon tend vers celle de la population lorsque l'effectif augmente. Comme dans l'animation sur la variance, nous pouvons traiter les neuf concentrations du fichier comme une petite population fictive et y effectuer des tirages indépendants **avec remise**. Chaque concentration reste disponible après un tirage, ce qui permet de la sélectionner à nouveau. À mesure que les tirages s'accumulent, leur moyenne tend vers **5 mg/L**, sans forcément s'en rapprocher à chaque nouvelle observation.
 
 Pour finir, retournons à la question de la couverture du bassin, explorée dans la première animation du cours. Si nous sélectionnons uniquement les sites proches des routes, davantage de relevés peut stabiliser la moyenne autour d'une valeur qui ne représente pas tout le bassin. De même, multiplier les mesures avec un capteur mal calibré ne corrige pas son erreur systématique. La **loi des grands nombres ne remplace donc pas un protocole adapté à la population cible**, et elle ne transforme pas non plus la distribution des concentrations en loi normale.
+
+# Vos questions sur la session {#questions-session-02}
+
+Une notion reste floue, un résultat vous surprend ou vous aimeriez approfondir un exemple ? Posez votre question dans l’espace SpeakUp ci-dessous. Prenez aussi le temps de lire les questions des autres étudiant-es et de voter pour celles dont la réponse vous serait utile. Le classement par votes permet de retrouver les questions qui intéressent le plus le groupe.
+
+Cet espace est commun aux versions française et anglaise du cours, ainsi qu’aux exemples en Python et en R. Si votre question porte sur un code, précisez le langage utilisé et l’exemple concerné.
+
+::: {.content-visible when-format="html"}
+<iframe class="speakup-room" src="https://web.speakup.info/room/join/93131?theme=UniGE&amp;lang=fr" title="SpeakUp : questions et votes de la session 2, salle 93131" loading="lazy" style="display:block;width:100%;height:clamp(480px,80vh,760px);border:1px solid #ccd6dc;border-radius:6px"></iframe>
+
+Si la salle ne s’affiche pas dans cette page, utilisez le lien ci-dessous.
+:::
+
+[Ouvrir la salle SpeakUp de la session 2](https://web.speakup.info/room/join/93131?theme=UniGE&lang=fr){target="_blank" rel="noopener"}. **Code de la salle : 93131.**
