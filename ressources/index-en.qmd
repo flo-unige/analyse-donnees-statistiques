@@ -23,10 +23,21 @@ format:
 </div>
 ```
 
-::: {.coming-soon}
-## Coming soon
+## Bibliographic references
 
-General information and useful references will be collected here as the course progresses.
-:::
+- Campesato O. 2023. *Statistics Using Python*. Mercury Learning.
+- Dalgaard P. 2002. *Introductory Statistics with R*. Statistics and Computing. Springer.
+- Dodge Y. 2001. *Premiers pas en statistique*. Springer.
+- Downey A.B. 2014. *Think Stats: Exploratory Data Analysis in Python*. 2nd edition. Green Tea Press.
+- Field A. 2024. *Discovering Statistics Using IBM SPSS Statistics*. 6th edition. SAGE Publications.
+- Haslwanter T. 2016. *An Introduction to Statistics with Python: With Applications in the Life Sciences*. Statistics and Computing. Springer.
+- Millot G. 2011. *Comprendre et réaliser les tests statistiques à l’aide de R. Manuel de biostatistique*. 2ème édition. De Boeck. 767 p.
+- Paradis E. 2005. [*R pour les débutants*](http://www.cran.r-project.org/doc/contrib/Paradis-rdebuts_fr.pdf).
+- Wheater C.P. & Cook P.A. 2000. *Using statistics to understand the environment*. Routledge. 245 p.
+- Jones, E., Harden, S., & Crawley, M. J. (2023). *The R book* (3rd ed.). John Wiley & Sons.
+
+## Moodle
+
+[Course Moodle link](https://moodle.unige.ch/course/view.php?id=21845)
 
 [Back to home →](../index-en.qmd)
