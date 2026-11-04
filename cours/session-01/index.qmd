@@ -22,9 +22,8 @@ format:
 </div>
 ```
 
-Cette première session présente les objectifs du cours, son organisation en classe inversée et les modalités d’évaluation. Nous discutons aussi du choix entre R et Python et de l’usage critique de l’IA. La seconde partie introduit les bases de la programmation à travers des exemples en Python : variables, structures de données, fonctions, conditions et boucles, puis premiers tableaux avec pandas et lecture des messages d’erreur.
+Cette première session présente les objectifs du cours, son organisation en classe inversée et les modalités d'évaluation. Nous discutons aussi du choix entre R et Python et de l'usage critique de l'IA. La seconde partie introduit les bases de la programmation à travers des exemples en Python ou en R, selon votre choix.
 
 Les slides du cours en salle de la première session sont téléchargeables ici :
 
 - [Partie 1 - Présentation et organisation du cours (.pptx)](fichiers/Session-1-Partie-1.pptx){download="Session 1 - Partie 1.pptx"}
-- [Partie 2 - Introduction à la programmation en Python (.pptx)](fichiers/Session-1-Partie-2.pptx){download="Session 1 - Partie 2.pptx"}

@@ -61,7 +61,7 @@ website:
       - text: "Accueil"
         href: index.qmd
       - text: "Cours"
-        href: cours/session-02/index.qmd
+        href: cours/session-01/index.qmd
       - text: "Travaux pratiques"
         href: tp/index.qmd
       - text: "Ressources"

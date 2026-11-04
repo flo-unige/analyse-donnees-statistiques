@@ -31,6 +31,8 @@ Téléchargez le carnet dans la langue de votre choix, puis ouvrez-le dans Jupyt
 - [Télécharger le TP Python - Français (.ipynb)](fichiers/Session1_decouverte_Python_FR.ipynb){download="Session1_decouverte_Python_FR.ipynb"}
 - [Télécharger le TP Python - English (.ipynb)](fichiers/Session1_decouverte_Python_EN.ipynb){download="Session1_decouverte_Python_EN.ipynb"}
 
+- [Télécharger les slides - Introduction à la programmation en Python (.pptx)](fichiers/Session-1-Partie-2.pptx){download="Session 1 - Partie 2.pptx"}
+
 ## R
 
 Téléchargez et décompressez l’archive : elle contient les consignes du TP au format Word et les fichiers de données.

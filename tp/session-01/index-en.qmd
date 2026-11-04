@@ -31,6 +31,8 @@ Download the notebook in your preferred language, then open it in Jupyter Notebo
 - [Download the Python practical - Français (.ipynb)](fichiers/Session1_decouverte_Python_FR.ipynb){download="Session1_decouverte_Python_FR.ipynb"}
 - [Download the Python practical - English (.ipynb)](fichiers/Session1_decouverte_Python_EN.ipynb){download="Session1_decouverte_Python_EN.ipynb"}
 
+- [Download the slides - Introduction to programming in Python (.pptx, in French)](fichiers/Session-1-Partie-2.pptx){download="Session 1 - Partie 2.pptx"}
+
 ## R
 
 Download and extract the archive: it contains the practical instructions in Word format and the data files.

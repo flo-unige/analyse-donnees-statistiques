@@ -38,7 +38,7 @@ The course is designed for students who are new to data analysis or would like t
 
 Here you will find the materials for the seven theory sessions covering the key concepts. Apart from the first session, taught in class, the sessions include short videos, explanatory texts and examples. The code blocks provided will be useful during the practical sessions.
 
-[Explore the sessions →](cours/session-02/index-en.qmd)
+[Explore the sessions →](cours/session-01/index-en.qmd)
 :::
 
 ::: {.course-card}

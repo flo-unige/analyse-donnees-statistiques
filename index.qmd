@@ -38,7 +38,7 @@ Le cours s'adresse aux étudiant-es qui débutent en analyse de données ou souh
 
 Vous trouverez le contenu des sept sessions théoriques qui couvrent les notions essentielles. À l'exception de la première session, présentée en salle, les sessions contiennent des vidéos courtes, des textes explicatifs et des exemples. Les blocs de code fournis seront utiles lors des travaux pratiques.
 
-[Accéder aux sessions →](cours/session-02/index.qmd)
+[Accéder aux sessions →](cours/session-01/index.qmd)
 :::
 
 ::: {.course-card}
