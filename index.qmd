@@ -1,6 +1,5 @@
 ---
 title: "Analyse de données statistiques"
-subtitle: "Comprendre, pratiquer et interpréter l’analyse de données avec Python et R"
 lang: fr
 format-links: false
 toc: false
@@ -28,7 +27,7 @@ format:
 
 Ce site réunit les contenus théoriques, les exemples et les travaux pratiques du cours **Analyse de données statistiques**.
 
-Le cours s’adresse aux étudiant-es qui débutent en analyse de données ou souhaitent découvrir Python ou R. Il privilégie une progression intuitive et des exemples concrets, avec un accent sur la compréhension des méthodes et l’interprétation des résultats plutôt que sur les démonstrations mathématiques.
+Le cours s'adresse aux étudiant-es qui débutent en analyse de données ou souhaitent découvrir Python ou R. Il privilégie une progression intuitive et des exemples concrets, avec un accent sur la compréhension des méthodes et l'interprétation des résultats plutôt que sur les démonstrations mathématiques.
 :::
 
 ## Organisation
@@ -37,7 +36,7 @@ Le cours s’adresse aux étudiant-es qui débutent en analyse de données ou so
 ::: {.course-card}
 ### Cours
 
-Sept sessions théoriques pour découvrir les notions essentielles. À l’exception de la première session, présentée en salle, les contenus associent vidéos courtes, textes explicatifs et exemples.
+Vous trouverez le contenu des sept sessions théoriques qui couvrent les notions essentielles. À l'exception de la première session, présentée en salle, les sessions contiennent des vidéos courtes, des textes explicatifs et des exemples. Les blocs de code fournis seront utiles lors des travaux pratiques.
 
 [Accéder aux sessions →](cours/session-02/index.qmd)
 :::
@@ -53,7 +52,7 @@ Des carnets (*notebooks*) en Python ou R pour mettre les notions en pratique lor
 ::: {.course-card}
 ### Ressources
 
-Les informations générales et les références utiles pour accompagner votre apprentissage.
+Les informations générales et les références utiles.
 
 [Consulter les ressources →](ressources/index.qmd)
 :::

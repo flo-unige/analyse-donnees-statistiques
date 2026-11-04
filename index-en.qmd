@@ -1,6 +1,5 @@
 ---
 title: "Statistical Data Analysis"
-subtitle: "Understand, practise and interpret data analysis with Python and R"
 lang: en
 format-links: false
 toc: false
@@ -37,7 +36,7 @@ The course is designed for students who are new to data analysis or would like t
 ::: {.course-card}
 ### Course
 
-Seven theory sessions introduce the key concepts. Apart from the first session, taught in class, the materials combine short videos, explanatory texts and examples.
+Here you will find the materials for the seven theory sessions covering the key concepts. Apart from the first session, taught in class, the sessions include short videos, explanatory texts and examples. The code blocks provided will be useful during the practical sessions.
 
 [Explore the sessions →](cours/session-02/index-en.qmd)
 :::
@@ -53,7 +52,7 @@ Python or R notebooks to put the concepts into practice during computer lab sess
 ::: {.course-card}
 ### Resources
 
-General information and useful references to support your learning.
+General information and useful references.
 
 [Browse resources →](ressources/index-en.qmd)
 :::
