@@ -5,6 +5,7 @@ on:
   push:
     branches:
       - preparation/session-02
+      - preparation/accueil-bilingue
   pull_request:
     branches:
       - main

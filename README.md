@@ -1,5 +1,13 @@
 # Analyse de données statistiques
 
+## Accueil bilingue en préparation
+
+La branche `preparation/accueil-bilingue` propose un accueil français / anglais,
+avec des pages d’attente bilingues pour les TP et les ressources. Aucun carnet
+ni contenu de TP non validé n’est inclus. Les liens conservent la langue choisie
+entre l’accueil, ces pages et la session 2. Le workflow de prévisualisation
+construit cette branche sans publier sur GitHub Pages.
+
 ## Session 2 bilingue, avec exemples Python et R
 
 La session 2 est disponible en français et en anglais, avec des exemples Python
@@ -26,7 +34,7 @@ et nécessitent une connexion Internet.
 - Chaque combinaison possède son PDF : `index.pdf`, `index-en.pdf`,
   `index-r.pdf` et `index-en-r.pdf`.
 - La navigation générale reste celle du site français. Sur la page anglaise,
-  ses libellés sont traduits et les liens vers les pages françaises sont signalés.
+  ses libellés sont traduits ; l’accueil, les TP et les ressources renvoient aux pages anglaises.
 
 Pour un aperçu avec les deux langues, les deux langages et leurs PDF, construire le site puis
 le servir en HTTP depuis cette copie de travail :

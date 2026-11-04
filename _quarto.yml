@@ -3,6 +3,11 @@ project:
   output-dir: _site
   render:
     - index.qmd
+    - index-en.qmd
+    - tp/index.qmd
+    - tp/index-en.qmd
+    - ressources/index.qmd
+    - ressources/index-en.qmd
     - cours/session-01/index.qmd
     - cours/session-02/index.qmd
     - cours/session-02/index-en.qmd
@@ -13,6 +18,7 @@ project:
     - cours/session-05/index.qmd
     - cours/session-06/index.qmd
   resources:
+    - assets/**
     - cours/session-02/assets/language.css
     - cours/session-02/assets/language.js
     - cours/session-02/assets/interactifs/**
@@ -33,6 +39,10 @@ website:
         href: index.qmd
       - text: "Cours"
         href: cours/session-02/index.qmd
+      - text: "Travaux pratiques"
+        href: tp/index.qmd
+      - text: "Ressources"
+        href: ressources/index.qmd
   sidebar:
     - id: cours
       title: "Cours"

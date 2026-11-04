@@ -1,0 +1,32 @@
+---
+title: "Practical work"
+subtitle: "Put the concepts into practice with Python or R"
+lang: en
+format-links: false
+toc: false
+sidebar: false
+format:
+  html:
+    code-tools: false
+    css:
+      - ../styles.css
+      - ../cours/session-02/assets/language.css
+      - ../assets/accueil.css
+    include-after-body:
+      - text: |
+          <script src="../assets/site-language.js"></script>
+---
+
+```{=html}
+<div class="course-choices">
+<nav class="course-language" aria-label="Page language"><a href="index.html" lang="fr" hreflang="fr">Français</a><span aria-current="page" lang="en">English</span></nav>
+</div>
+```
+
+::: {.coming-soon}
+## Coming soon
+
+Notebooks and instructions for the practical sessions will be added here as the course progresses.
+:::
+
+[Back to home →](../index-en.qmd)
