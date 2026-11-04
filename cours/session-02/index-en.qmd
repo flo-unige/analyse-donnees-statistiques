@@ -17,7 +17,7 @@ format:
     smooth-scroll: true
     code-fold: false
     code-summary: "Show Python code"
-    code-tools: true
+    code-tools: false
     fig-responsive: true
     include-in-header:
       - text: |

@@ -1,7 +1,6 @@
 
 ---
 title: "**Session 2** : Concepts de base de probabilité et de statistique"
-subtitle: "Exemples en R"
 sidebar: cours
 engine: knitr
 knitr:
@@ -23,7 +22,7 @@ format:
     smooth-scroll: true
     code-fold: false
     code-summary: "Afficher le code R"
-    code-tools: true
+    code-tools: false
     fig-responsive: true
     include-in-header:
       - text: |
@@ -72,8 +71,6 @@ execute:
 Toutes les notions de la session sont entièrement présentées dans les vidéos. Les textes qui les accompagnent sont là pour en résumer le contenu et proposer des animations complémentaires. Vous pouvez les lire avant ou après la vidéo, selon vos préférences.
 
 Vous y trouverez également des exemples de code en Python ou R à reprendre et à adapter lors du TP. Les blocs de code sont exécutables dans un carnet Jupyter ou dans R-Studio, mais vous pouvez aussi les lire pour comprendre la logique et les adapter à vos propres données.
-
-Les exemples de cette page sont en **R** et s’exécutent dans l’ordre, avec les fonctions fournies par R, sans package supplémentaire. Le bouton **Python / R** permet de changer de langage tout en conservant la langue du cours.
 
 # Introduction de la session
 

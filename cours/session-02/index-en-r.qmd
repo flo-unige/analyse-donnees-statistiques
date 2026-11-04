@@ -1,7 +1,6 @@
 ---
 title: "**Session 2**: Foundations of probability and statistics"
 lang: en
-subtitle: "R examples"
 sidebar: cours
 engine: knitr
 knitr:
@@ -23,7 +22,7 @@ format:
     smooth-scroll: true
     code-fold: false
     code-summary: "Show R code"
-    code-tools: true
+    code-tools: false
     fig-responsive: true
     include-in-header:
       - text: |
@@ -71,8 +70,6 @@ execute:
 All the concepts in this session are covered in the videos. The accompanying texts summarise the main ideas and offer additional interactive animations. You can read them before or after watching, whichever works best for you. The videos are in French, with English subtitles selected by default on this page.
 
 You will also find Python or R code examples to reuse and adapt in the practical session. You can run the code in a Jupyter notebook or RStudio, as appropriate, or simply read through it to understand the approach and adapt it to your own data.
-
-The examples on this page use **R** and run in order, using functions supplied with R and no additional packages. The **Python / R** selector lets you change programming language while keeping your chosen course language.
 
 # Session introduction
 
