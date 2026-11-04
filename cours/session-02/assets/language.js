@@ -35,6 +35,15 @@
     }
     if (text === 'Site créé avec Quarto') label.textContent = 'Built with Quarto';
   });
+  const sessionTitles = {
+    "1": "Introduction to the course. Programming principles in R or Python",
+    "2": "Foundations of probability and statistics",
+    "3": "Data visualisation",
+    "4": "Inferential analyses: hypotheses and tests",
+    "5": "Analysis of variance and experimental design",
+    "6": "Statistical modelling: simple and multiple regression",
+    "7": "Advanced statistical modelling: GLM, GAM, BRT…"
+};
   document.querySelectorAll('#quarto-sidebar .menu-text, .pagination-link .nav-page-text')
     .forEach(label => {
       const session = label.textContent.match(/Session\s+(\d)/i)?.[1];
@@ -46,7 +55,13 @@
         link?.classList.add('active');
         link?.setAttribute('aria-current', 'page');
       } else {
-        label.textContent = `Session ${session}: Under construction (French)`;
+        label.textContent = `Session ${session} - ${sessionTitles[session]}`;
+        const link = label.closest('a');
+        if (link) {
+          const url = new URL(link.href);
+          url.pathname = url.pathname.replace(/(?:index\.html)?$/, 'index-en.html');
+          link.href = url.href;
+        }
       }
     });
 })();

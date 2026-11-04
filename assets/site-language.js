@@ -20,4 +20,31 @@
     url.pathname = url.pathname.replace(/(?:index\.html)?$/, 'index-en.html');
     link.href = url.href;
   });
+  const sessionTitles = {
+    "1": "Introduction to the course. Programming principles in R or Python",
+    "2": "Foundations of probability and statistics",
+    "3": "Data visualisation",
+    "4": "Inferential analyses: hypotheses and tests",
+    "5": "Analysis of variance and experimental design",
+    "6": "Statistical modelling: simple and multiple regression",
+    "7": "Advanced statistical modelling: GLM, GAM, BRT…"
+};
+  document.querySelectorAll('#quarto-sidebar a, .pagination-link').forEach(link => {
+    const label = link.querySelector('.menu-text, .nav-page-text') || link;
+    const match = label.textContent.match(/Session\s+(\d+)/i);
+    if (match && sessionTitles[match[1]]) {
+      label.textContent = `Session ${match[1]} - ${sessionTitles[match[1]]}`;
+    } else if (label.textContent.trim() === 'Travaux pratiques') {
+      label.textContent = 'Practical work';
+    }
+    if (/\/(?:cours|tp)\//.test(link.pathname)) {
+      const url = new URL(link.href);
+      url.pathname = url.pathname.replace(/(?:index\.html)?$/, 'index-en.html');
+      link.href = url.href;
+      if (link.closest('#quarto-sidebar') && url.pathname === location.pathname) {
+        link.classList.add('active');
+        link.setAttribute('aria-current', 'page');
+      }
+    }
+  });
 })();

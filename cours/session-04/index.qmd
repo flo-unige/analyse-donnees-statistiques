@@ -1,9 +1,25 @@
 ---
-title: "Session 4 : En construction"
+title: "Session 4 - Analyses inférentielles : hypothèses et tests"
+lang: fr
 format-links: false
 toc: false
+sidebar: cours
+format:
+  html:
+    code-tools: false
+    css:
+      - ../../styles.css
+      - ../../cours/session-02/assets/language.css
+      - ../../assets/accueil.css
+    include-after-body:
+      - text: |
+          <script src="../../assets/site-language.js"></script>
 ---
 
-**En construction**
+```{=html}
+<div class="course-choices">
+<nav class="course-language" aria-label="Langue de la page"><span aria-current="page" lang="fr">Français</span><a href="index-en.html" lang="en" hreflang="en">English</a></nav>
+</div>
+```
 
-Le contenu de cette session sera mis à disposition ultérieurement.
+Le contenu de cette session sera bientôt disponible.

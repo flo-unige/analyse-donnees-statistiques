@@ -1,0 +1,27 @@
+---
+title: "Session 3 - Data visualisation"
+lang: en
+format-links: false
+toc: false
+sidebar: tp
+format:
+  html:
+    code-tools: false
+    css:
+      - ../../styles.css
+      - ../../cours/session-02/assets/language.css
+      - ../../assets/accueil.css
+    include-after-body:
+      - text: |
+          <script src="../../assets/site-language.js"></script>
+---
+
+```{=html}
+<div class="course-choices">
+<nav class="course-language" aria-label="Page language"><a href="index.html" lang="fr" hreflang="fr">Français</a><span aria-current="page" lang="en">English</span></nav>
+</div>
+```
+
+The content of this session will be available soon.
+
+[All practical sessions →](../index-en.qmd)

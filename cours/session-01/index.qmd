@@ -1,9 +1,25 @@
 ---
-title: "Session 1 : En construction"
+title: "Session 1 - Introduction au cours. Principes de programmation en R ou Python"
+lang: fr
 format-links: false
 toc: false
+sidebar: cours
+format:
+  html:
+    code-tools: false
+    css:
+      - ../../styles.css
+      - ../../cours/session-02/assets/language.css
+      - ../../assets/accueil.css
+    include-after-body:
+      - text: |
+          <script src="../../assets/site-language.js"></script>
 ---
 
-**En construction**
+```{=html}
+<div class="course-choices">
+<nav class="course-language" aria-label="Langue de la page"><span aria-current="page" lang="fr">Français</span><a href="index-en.html" lang="en" hreflang="en">English</a></nav>
+</div>
+```
 
-Cette séance se déroule en classe. Aucun contenu n’est publié ici pour le moment.
+Le contenu de cette session sera bientôt disponible.

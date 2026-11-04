@@ -1,0 +1,27 @@
+---
+title: "Session 3 - Visualisation des données"
+lang: fr
+format-links: false
+toc: false
+sidebar: tp
+format:
+  html:
+    code-tools: false
+    css:
+      - ../../styles.css
+      - ../../cours/session-02/assets/language.css
+      - ../../assets/accueil.css
+    include-after-body:
+      - text: |
+          <script src="../../assets/site-language.js"></script>
+---
+
+```{=html}
+<div class="course-choices">
+<nav class="course-language" aria-label="Langue de la page"><span aria-current="page" lang="fr">Français</span><a href="index-en.html" lang="en" hreflang="en">English</a></nav>
+</div>
+```
+
+Le contenu de cette session sera bientôt disponible.
+
+[Toutes les séances de travaux pratiques →](../index.qmd)

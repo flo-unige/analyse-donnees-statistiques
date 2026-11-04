@@ -6,6 +6,20 @@ project:
     - index-en.qmd
     - tp/index.qmd
     - tp/index-en.qmd
+    - tp/session-01/index.qmd
+    - tp/session-01/index-en.qmd
+    - tp/session-02/index.qmd
+    - tp/session-02/index-en.qmd
+    - tp/session-03/index.qmd
+    - tp/session-03/index-en.qmd
+    - tp/session-04/index.qmd
+    - tp/session-04/index-en.qmd
+    - tp/session-05/index.qmd
+    - tp/session-05/index-en.qmd
+    - tp/session-06/index.qmd
+    - tp/session-06/index-en.qmd
+    - tp/session-07/index.qmd
+    - tp/session-07/index-en.qmd
     - ressources/index.qmd
     - ressources/index-en.qmd
     - cours/session-01/index.qmd
@@ -17,7 +31,15 @@ project:
     - cours/session-04/index.qmd
     - cours/session-05/index.qmd
     - cours/session-06/index.qmd
+    - cours/session-07/index.qmd
+    - cours/session-01/index-en.qmd
+    - cours/session-03/index-en.qmd
+    - cours/session-04/index-en.qmd
+    - cours/session-05/index-en.qmd
+    - cours/session-06/index-en.qmd
+    - cours/session-07/index-en.qmd
   resources:
+    - tp/session-01/fichiers/**
     - assets/**
     - cours/session-02/assets/language.css
     - cours/session-02/assets/language.js
@@ -54,6 +76,19 @@ website:
         - cours/session-04/index.qmd
         - cours/session-05/index.qmd
         - cours/session-06/index.qmd
+        - cours/session-07/index.qmd
+    - id: tp
+      title: "Travaux pratiques"
+      style: docked
+      contents:
+        - tp/index.qmd
+        - tp/session-01/index.qmd
+        - tp/session-02/index.qmd
+        - tp/session-03/index.qmd
+        - tp/session-04/index.qmd
+        - tp/session-05/index.qmd
+        - tp/session-06/index.qmd
+        - tp/session-07/index.qmd
   page-footer:
     background: "#2c3e50"
     foreground: light

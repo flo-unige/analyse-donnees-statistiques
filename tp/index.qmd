@@ -1,10 +1,9 @@
 ---
 title: "Travaux pratiques"
-subtitle: "Mettre les notions en pratique avec Python ou R"
 lang: fr
 format-links: false
 toc: false
-sidebar: false
+sidebar: tp
 format:
   html:
     code-tools: false
@@ -23,10 +22,12 @@ format:
 </div>
 ```
 
-::: {.coming-soon}
-## Bientôt disponible
+Choisissez une session pour accéder aux consignes et aux fichiers du TP.
 
-Les carnets et les consignes des travaux pratiques seront ajoutés ici au fil du cours.
-:::
-
-[Retour à l’accueil →](../index.qmd)
+- [Session 1 - Introduction au cours. Principes de programmation en R ou Python](session-01/index.qmd)
+- [Session 2 - Concepts de base de probabilité et de statistique](session-02/index.qmd)
+- [Session 3 - Visualisation des données](session-03/index.qmd)
+- [Session 4 - Analyses inférentielles : hypothèses et tests](session-04/index.qmd)
+- [Session 5 - Analyses de variance et plans d’expérience](session-05/index.qmd)
+- [Session 6 - Modélisation statistique : régressions simple et multiples](session-06/index.qmd)
+- [Session 7 - Modélisation statistique avancée : GLM, GAM, BRT…](session-07/index.qmd)
