@@ -511,14 +511,14 @@ Pour finir, retournons à la question de la couverture du bassin, explorée dans
 
 # Vos questions sur la session {#questions-session-02}
 
-Une notion reste floue, un résultat vous surprend ou vous aimeriez approfondir un exemple ? Posez votre question dans l’espace SpeakUp ci-dessous. Prenez aussi le temps de lire les questions des autres étudiant-es et de voter pour celles dont la réponse vous serait utile. Le classement par votes permet de retrouver les questions qui intéressent le plus le groupe.
+Si une notion reste floue, si vous souhaitez approfondir un exemple ou si vous avez toute autre question, vous pouvez poser votre question dans l'espace SpeakUp ci-dessous, de manière anonyme ou non. Prenez aussi le temps de lire les questions des autres étudiant-es et de voter pour celles dont la réponse vous serait utile. Le classement par votes permet de retrouver les questions qui intéressent le plus le groupe. Nous prendrons le temps de répondre à certaines questions directement sur la plateforme et à d'autres lors de la prochaine séance en présentiel.
 
-Cet espace est commun aux versions française et anglaise du cours, ainsi qu’aux exemples en Python et en R. Si votre question porte sur un code, précisez le langage utilisé et l’exemple concerné.
+Cet espace est commun aux versions française et anglaise du cours, ainsi qu'aux exemples en Python et en R. Si votre question porte sur un code, précisez le langage utilisé et l'exemple concerné.
 
 ::: {.content-visible when-format="html"}
 <iframe class="speakup-room" src="https://web.speakup.info/room/join/93131?theme=UniGE&amp;lang=fr" title="SpeakUp : questions et votes de la session 2, salle 93131" loading="lazy" style="display:block;width:100%;height:clamp(480px,80vh,760px);border:1px solid #ccd6dc;border-radius:6px"></iframe>
 
-Si la salle ne s’affiche pas dans cette page, utilisez le lien ci-dessous.
+Si la salle ne s'affiche pas dans cette page, utilisez le lien ci-dessous.
 :::
 
 [Ouvrir la salle SpeakUp de la session 2](https://web.speakup.info/room/join/93131?theme=UniGE&lang=fr){target="_blank" rel="noopener"}. **Code de la salle : 93131.**
