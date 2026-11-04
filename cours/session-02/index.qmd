@@ -9,7 +9,8 @@ format:
     css:
       - ../../styles.css
       - assets/language.css
-      - assets/video/onedrive.css
+      - assets/video/vendor/videojs-8.23.8/video-js.min.css
+      - assets/video/lecteur.css
     toc: true
     toc-depth: 3
     toc-title: "Sur cette page"
@@ -33,6 +34,7 @@ format:
       - text: |
           <script src="../session-02/assets/language.js"></script>
           <script src="../session-02/assets/interactifs/cadrage-complements.js"></script>
+          <script src="../session-02/assets/video/charger-lecteur.js"></script>
   typst:
     toc: true
     papersize: a4
@@ -64,12 +66,6 @@ Toutes les notions de la session sont entièrement présentées dans les vidéos
 
 Vous y trouverez également des exemples de code en Python ou R à reprendre et à adapter lors du TP. Les blocs de code sont exécutables dans un carnet Jupyter ou dans R-Studio, mais vous pouvez aussi les lire pour comprendre la logique et les adapter à vos propres données.
 
-::: {.callout-note title="Accès aux vidéos avec votre compte UNIGE"}
-Avant votre première lecture, [ouvrez le dossier partagé des vidéos](https://unigech-my.sharepoint.com/:f:/g/personal/florian_giraud_unige_ch/IgAY02BZk26FTblcBm7UcaJGAev0_VEWNMojRlnsOiygrgo?e=CIGQFx){target="_blank" rel="noopener"} et connectez-vous avec votre compte UNIGE. Revenez ensuite sur cette page et actualisez-la.
-
-Si un lecteur reste gris ou refuse la connexion, regardez la vidéo directement dans le dossier OneDrive. Les sous-titres se sélectionnent avec le bouton **CC** du lecteur.
-:::
-
 # Introduction de la session
 
 Dans cette session, on pose les bases de l'analyse statistique. Nous allons répondre aux questions suivantes :
@@ -91,15 +87,24 @@ Vous apprendrez à distinguer les types de variables, à lire une distribution e
 ::: {.content-visible when-format="html"}
 ```{=html}
 <div class="cours-video">
-  <iframe src="https://unigech-my.sharepoint.com/personal/florian_giraud_unige_ch/_layouts/15/embed.aspx?UniqueId=aaace03a-2e03-4a39-bc9a-df402300bd98&amp;embed=%7B%22ust%22%3Atrue%2C%22hv%22%3A%22CopyEmbedCode%22%7D&amp;referrer=StreamWebApp&amp;referrerScenario=EmbedDialog.Create"
-          width="640" height="360" loading="lazy"
-          allow="fullscreen" allowfullscreen title="Vidéo 1a : Des populations aux données"></iframe>
+  <video id="video-s2v1-1" class="video-js vjs-big-play-centered" data-cours-video
+         controls preload="metadata" playsinline
+         aria-label="Vidéo 1a : Des populations aux données">
+    <source src="https://mediaserver.unige.ch/proxy/316580/S3aQ58BjetaAVbjx.mp4?from_player=true" type="video/mp4">
+    <track kind="subtitles" src="assets/video/sous-titres/S2V1_1.fr.vtt" srclang="fr" label="Français" default>
+    <track kind="subtitles" src="assets/video/sous-titres/S2V1_1.en.vtt" srclang="en" label="English">
+    <p>Votre navigateur ne peut pas afficher cette vidéo. Utilisez le lien Mediaserver ci-dessous.</p>
+  </video>
+  <div class="cours-video-erreur" role="status" hidden>
+    <p>La vidéo n'a pas pu être chargée. Vous pouvez réessayer ou l'ouvrir sur Mediaserver avec le lien ci-dessous.</p>
+    <button class="cours-video-reessayer" type="button">Réessayer</button>
+  </div>
 </div>
 ```
 
 :::
 
-[Ouvrir la vidéo dans OneDrive](https://unigech-my.sharepoint.com/personal/florian_giraud_unige_ch/_layouts/15/embed.aspx?UniqueId=aaace03a-2e03-4a39-bc9a-df402300bd98&embed=%7B%22ust%22%3Atrue%2C%22hv%22%3A%22CopyEmbedCode%22%7D&referrer=StreamWebApp&referrerScenario=EmbedDialog.Create).
+[Regarder la vidéo sur Mediaserver](https://mediaserver.unige.ch/play/316580).
 
 ```{=typst}
 ]
@@ -187,14 +192,23 @@ Que pouvons-nous maintenant apprendre à partir de ces observations ? La statist
 ::: {.content-visible when-format="html"}
 ```{=html}
 <div class="cours-video">
-  <iframe src="https://unigech-my.sharepoint.com/personal/florian_giraud_unige_ch/_layouts/15/embed.aspx?UniqueId=aa19dd5a-4726-4a48-bac2-e0b8fb7cd3d3&amp;embed=%7B%22ust%22%3Atrue%2C%22hv%22%3A%22CopyEmbedCode%22%7D&amp;referrer=StreamWebApp&amp;referrerScenario=EmbedDialog.Create"
-          width="640" height="360" loading="lazy"
-          allow="fullscreen" allowfullscreen title="Vidéo 1b : Probabilités et statistiques"></iframe>
+  <video id="video-s2v1-2" class="video-js vjs-big-play-centered" data-cours-video
+         controls preload="metadata" playsinline
+         aria-label="Vidéo 1b : Probabilités et statistiques">
+    <source src="https://mediaserver.unige.ch/proxy/316581/OJp6zDeq0ExlMVeG.mp4?from_player=true" type="video/mp4">
+    <track kind="subtitles" src="assets/video/sous-titres/S2V1_2.fr.vtt" srclang="fr" label="Français" default>
+    <track kind="subtitles" src="assets/video/sous-titres/S2V1_2.en.vtt" srclang="en" label="English">
+    <p>Votre navigateur ne peut pas afficher cette vidéo. Utilisez le lien Mediaserver ci-dessous.</p>
+  </video>
+  <div class="cours-video-erreur" role="status" hidden>
+    <p>La vidéo n'a pas pu être chargée. Vous pouvez réessayer ou l'ouvrir sur Mediaserver avec le lien ci-dessous.</p>
+    <button class="cours-video-reessayer" type="button">Réessayer</button>
+  </div>
 </div>
 ```
 :::
 
-[Ouvrir la vidéo dans OneDrive](https://unigech-my.sharepoint.com/personal/florian_giraud_unige_ch/_layouts/15/embed.aspx?UniqueId=aa19dd5a-4726-4a48-bac2-e0b8fb7cd3d3&embed=%7B%22ust%22%3Atrue%2C%22hv%22%3A%22CopyEmbedCode%22%7D&referrer=StreamWebApp&referrerScenario=EmbedDialog.Create).
+[Regarder la vidéo sur Mediaserver](https://mediaserver.unige.ch/play/316581).
 
 ```{=typst}
 ]
@@ -264,14 +278,23 @@ Revenons à notre fichier, dans lequel **cinq sites sur neuf** ont une qualité 
 ::: {.content-visible when-format="html"}
 ```{=html}
 <div class="cours-video">
-  <iframe src="https://unigech-my.sharepoint.com/personal/florian_giraud_unige_ch/_layouts/15/embed.aspx?UniqueId=4c11a7a9-d31b-4f4d-833a-7baed45e2845&amp;embed=%7B%22ust%22%3Atrue%2C%22hv%22%3A%22CopyEmbedCode%22%7D&amp;referrer=StreamWebApp&amp;referrerScenario=EmbedDialog.Create"
-          width="640" height="360" loading="lazy"
-          allow="fullscreen" allowfullscreen title="Vidéo 2 : Lire et résumer une distribution"></iframe>
+  <video id="video-s2v2" class="video-js vjs-big-play-centered" data-cours-video
+         controls preload="metadata" playsinline
+         aria-label="Vidéo 2 : Lire et résumer une distribution">
+    <source src="https://mediaserver.unige.ch/proxy/316582/GFBbXcGU7stVIGob.mp4?from_player=true" type="video/mp4">
+    <track kind="subtitles" src="assets/video/sous-titres/S2V2.fr.vtt" srclang="fr" label="Français" default>
+    <track kind="subtitles" src="assets/video/sous-titres/S2V2.en.vtt" srclang="en" label="English">
+    <p>Votre navigateur ne peut pas afficher cette vidéo. Utilisez le lien Mediaserver ci-dessous.</p>
+  </video>
+  <div class="cours-video-erreur" role="status" hidden>
+    <p>La vidéo n'a pas pu être chargée. Vous pouvez réessayer ou l'ouvrir sur Mediaserver avec le lien ci-dessous.</p>
+    <button class="cours-video-reessayer" type="button">Réessayer</button>
+  </div>
 </div>
 ```
 :::
 
-[Ouvrir la vidéo dans OneDrive](https://unigech-my.sharepoint.com/personal/florian_giraud_unige_ch/_layouts/15/embed.aspx?UniqueId=4c11a7a9-d31b-4f4d-833a-7baed45e2845&embed=%7B%22ust%22%3Atrue%2C%22hv%22%3A%22CopyEmbedCode%22%7D&referrer=StreamWebApp&referrerScenario=EmbedDialog.Create).
+[Regarder la vidéo sur Mediaserver](https://mediaserver.unige.ch/play/316582).
 
 ```{=typst}
 ]
@@ -376,14 +399,23 @@ Cette courbe ne prouve pas que les concentrations du bassin suivent une loi norm
 ::: {.content-visible when-format="html"}
 ```{=html}
 <div class="cours-video">
-  <iframe src="https://unigech-my.sharepoint.com/personal/florian_giraud_unige_ch/_layouts/15/embed.aspx?UniqueId=b487b64a-1f99-4ebd-b261-d130400094f9&amp;embed=%7B%22ust%22%3Atrue%2C%22hv%22%3A%22CopyEmbedCode%22%7D&amp;referrer=StreamWebApp&amp;referrerScenario=EmbedDialog.Create"
-          width="640" height="360" loading="lazy"
-          allow="fullscreen" allowfullscreen title="Vidéo 3 : Mesurer la dispersion et comprendre la stabilité d'une moyenne"></iframe>
+  <video id="video-s2v3" class="video-js vjs-big-play-centered" data-cours-video
+         controls preload="metadata" playsinline
+         aria-label="Vidéo 3 : Mesurer la dispersion et comprendre la stabilité d'une moyenne">
+    <source src="https://mediaserver.unige.ch/proxy/316583/qw0xe5pZiGJiAN1k.mp4?from_player=true" type="video/mp4">
+    <track kind="subtitles" src="assets/video/sous-titres/S2V3.fr.vtt" srclang="fr" label="Français" default>
+    <track kind="subtitles" src="assets/video/sous-titres/S2V3.en.vtt" srclang="en" label="English">
+    <p>Votre navigateur ne peut pas afficher cette vidéo. Utilisez le lien Mediaserver ci-dessous.</p>
+  </video>
+  <div class="cours-video-erreur" role="status" hidden>
+    <p>La vidéo n'a pas pu être chargée. Vous pouvez réessayer ou l'ouvrir sur Mediaserver avec le lien ci-dessous.</p>
+    <button class="cours-video-reessayer" type="button">Réessayer</button>
+  </div>
 </div>
 ```
 :::
 
-[Ouvrir la vidéo dans OneDrive](https://unigech-my.sharepoint.com/personal/florian_giraud_unige_ch/_layouts/15/embed.aspx?UniqueId=b487b64a-1f99-4ebd-b261-d130400094f9&embed=%7B%22ust%22%3Atrue%2C%22hv%22%3A%22CopyEmbedCode%22%7D&referrer=StreamWebApp&referrerScenario=EmbedDialog.Create).
+[Regarder la vidéo sur Mediaserver](https://mediaserver.unige.ch/play/316583).
 
 ```{=typst}
 ]
