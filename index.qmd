@@ -1,22 +1,59 @@
 ---
 title: "Analyse de données statistiques"
-subtitle: "Comprendre et interpréter les données"
+lang: fr
 format-links: false
 toc: false
+sidebar: false
+format:
+  html:
+    code-tools: false
+    css:
+      - styles.css
+      - cours/session-02/assets/language.css
+      - assets/accueil.css
+    include-after-body:
+      - text: |
+          <script src="assets/site-language.js"></script>
 ---
 
+```{=html}
+<div class="course-choices">
+<nav class="course-language" aria-label="Langue de la page"><span aria-current="page" lang="fr">Français</span><a href="index-en.html" lang="en" hreflang="en">English</a></nav>
+</div>
+```
+
+::: {.hero-course}
 ## Bienvenue dans le cours
 
-Ce cours s’adresse aux étudiantes et étudiants qui débutent en analyse de données. Il privilégie des explications intuitives, des exemples concrets et une interprétation rigoureuse des résultats.
+Ce site réunit les contenus théoriques, les exemples et les travaux pratiques du cours **Analyse de données statistiques**.
 
-## La session 2 est disponible
+Le cours s'adresse aux étudiant-es qui débutent en analyse de données ou souhaitent découvrir Python ou R. Il privilégie une progression intuitive et des exemples concrets, avec un accent sur la compréhension des méthodes et l'interprétation des résultats plutôt que sur les démonstrations mathématiques.
+:::
 
-Retrouvez les vidéos, les textes explicatifs, les animations et les exemples de code de la **session 2 : Concepts de base de probabilité et de statistique**. Le support est également disponible au format PDF depuis la page de la session.
+## Organisation
 
-[Étudier la session 2](cours/session-02/index.qmd){.btn .btn-primary}
+::: {.course-grid}
+::: {.course-card}
+### Cours
 
-Commencez par les vidéos, puis utilisez les textes et les animations pour reprendre les notions à votre rythme.
+Vous trouverez le contenu des sept sessions théoriques qui couvrent les notions essentielles. À l'exception de la première session, présentée en salle, les sessions contiennent des vidéos courtes, des textes explicatifs et des exemples. Les blocs de code fournis seront utiles lors des travaux pratiques.
 
-## Les autres sessions
+[Accéder aux sessions →](cours/session-02/index.qmd)
+:::
 
-La session 1 se déroule en classe. Les pages des sessions 1, 3, 4, 5 et 6 sont indiquées **« En construction »** et ne proposent pas encore de contenu.
+::: {.course-card}
+### Travaux pratiques
+
+Des carnets (*notebooks*) en Python ou R pour mettre les notions en pratique lors des séances en salle informatique.
+
+[Accéder aux TP →](tp/index.qmd)
+:::
+
+::: {.course-card}
+### Ressources
+
+Les informations générales et les références utiles.
+
+[Consulter les ressources →](ressources/index.qmd)
+:::
+:::

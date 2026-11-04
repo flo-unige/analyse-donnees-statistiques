@@ -14,7 +14,7 @@ h1, h2, h3 { color: #173f52; }
 .hero-course {
   margin: 1rem 0 2rem;
   padding: 1.5rem 1.7rem;
-  border-left: .45rem solid var(--course-burgundy);
+  border: 2px solid var(--course-burgundy);
   background: linear-gradient(135deg, #f8eef4, #f3f8fa);
 }
 .hero-course h2 { margin-top: 0; }

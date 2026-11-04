@@ -9,8 +9,7 @@ format:
     css:
       - ../../styles.css
       - assets/language.css
-      - assets/video/vendor/videojs-8.23.8/video-js.min.css
-      - assets/video/lecteur.css
+      - assets/video/onedrive.css
     toc: true
     toc-depth: 3
     toc-title: "On this page"
@@ -34,7 +33,6 @@ format:
       - text: |
           <script src="../session-02/assets/language.js"></script>
           <script src="../session-02/assets/interactifs/cadrage-complements.js"></script>
-          <script src="../session-02/assets/video/charger-lecteur.js"></script>
   typst:
     toc: true
     papersize: a4
@@ -61,9 +59,15 @@ execute:
 </div>
 ```
 
-All the concepts in this session are covered in the videos. The accompanying texts summarise the main ideas and offer additional interactive animations. You can read them before or after watching, whichever works best for you. The videos are in French, with English subtitles selected by default on this page.
+All the concepts in this session are covered in the videos. The accompanying texts summarise the main ideas and offer additional interactive animations. You can read them before or after watching, whichever works best for you. The videos are in French. Select English subtitles using the CC button in the OneDrive player. If needed, open the video with the link below the player and sign in with your university account.
 
 You will also find Python or R code examples to reuse and adapt in the practical session. You can run the code in a Jupyter notebook or RStudio, as appropriate, or simply read through it to understand the approach and adapt it to your own data.
+
+::: {.callout-note title="Access the videos with your UNIGE account"}
+Before watching for the first time, [open the shared video folder](https://unigech-my.sharepoint.com/:f:/g/personal/florian_giraud_unige_ch/IgAY02BZk26FTblcBm7UcaJGAev0_VEWNMojRlnsOiygrgo?e=CIGQFx){target="_blank" rel="noopener"} and sign in with your UNIGE account. Then return to this page and refresh it.
+
+If an embedded player remains grey or refuses to connect, watch the video directly in the OneDrive folder. Select subtitles using the player's **CC** button.
+:::
 
 # Session introduction
 
@@ -85,24 +89,15 @@ You will learn to distinguish different types of variables, read a distribution,
 ::: {.content-visible when-format="html"}
 ```{=html}
 <div class="cours-video">
-  <video id="video-s2v1-1" class="video-js vjs-big-play-centered" data-cours-video
-         controls preload="metadata" playsinline
-         aria-label="Video 1a: From populations to data">
-    <source src="https://mediaserver.unige.ch/proxy/315613/DdRhju95m0IB8PiV.mp4?from_player=true" type="video/mp4">
-    <track kind="subtitles" src="assets/video/sous-titres/S2V1_1.fr.vtt" srclang="fr" label="Français">
-    <track kind="subtitles" src="assets/video/sous-titres/S2V1_1.en.vtt" srclang="en" label="English" default>
-    <p>Your browser cannot display this video. Please use the Mediaserver link below.</p>
-  </video>
-  <div class="cours-video-erreur" role="status" hidden>
-    <p>The video could not be loaded. Try again or open it on Mediaserver using the link below.</p>
-    <button class="cours-video-reessayer" type="button">Try again</button>
-  </div>
+  <iframe src="https://unigech-my.sharepoint.com/personal/florian_giraud_unige_ch/_layouts/15/embed.aspx?UniqueId=aaace03a-2e03-4a39-bc9a-df402300bd98&amp;embed=%7B%22ust%22%3Atrue%2C%22hv%22%3A%22CopyEmbedCode%22%7D&amp;referrer=StreamWebApp&amp;referrerScenario=EmbedDialog.Create"
+          width="640" height="360" loading="lazy"
+          allow="fullscreen" allowfullscreen title="Video 1a: From populations to data"></iframe>
 </div>
 ```
 
 :::
 
-[Watch the video on Mediaserver](https://mediaserver.unige.ch/play/315613).
+[Open the video in OneDrive](https://unigech-my.sharepoint.com/personal/florian_giraud_unige_ch/_layouts/15/embed.aspx?UniqueId=aaace03a-2e03-4a39-bc9a-df402300bd98&embed=%7B%22ust%22%3Atrue%2C%22hv%22%3A%22CopyEmbedCode%22%7D&referrer=StreamWebApp&referrerScenario=EmbedDialog.Create).
 
 ```{=typst}
 ]
@@ -192,23 +187,14 @@ What can we learn from these observations? **Descriptive statistics** allow us t
 ::: {.content-visible when-format="html"}
 ```{=html}
 <div class="cours-video">
-  <video id="video-s2v1-2" class="video-js vjs-big-play-centered" data-cours-video
-         controls preload="metadata" playsinline
-         aria-label="Video 1b: Probability and statistics">
-    <source src="https://mediaserver.unige.ch/proxy/315614/WVCwNZvNdGtSIMzl.mp4?from_player=true" type="video/mp4">
-    <track kind="subtitles" src="assets/video/sous-titres/S2V1_2.fr.vtt" srclang="fr" label="Français">
-    <track kind="subtitles" src="assets/video/sous-titres/S2V1_2.en.vtt" srclang="en" label="English" default>
-    <p>Your browser cannot display this video. Please use the Mediaserver link below.</p>
-  </video>
-  <div class="cours-video-erreur" role="status" hidden>
-    <p>The video could not be loaded. Try again or open it on Mediaserver using the link below.</p>
-    <button class="cours-video-reessayer" type="button">Try again</button>
-  </div>
+  <iframe src="https://unigech-my.sharepoint.com/personal/florian_giraud_unige_ch/_layouts/15/embed.aspx?UniqueId=aa19dd5a-4726-4a48-bac2-e0b8fb7cd3d3&amp;embed=%7B%22ust%22%3Atrue%2C%22hv%22%3A%22CopyEmbedCode%22%7D&amp;referrer=StreamWebApp&amp;referrerScenario=EmbedDialog.Create"
+          width="640" height="360" loading="lazy"
+          allow="fullscreen" allowfullscreen title="Video 1b: Probability and statistics"></iframe>
 </div>
 ```
 :::
 
-[Watch the video on Mediaserver](https://mediaserver.unige.ch/play/315614).
+[Open the video in OneDrive](https://unigech-my.sharepoint.com/personal/florian_giraud_unige_ch/_layouts/15/embed.aspx?UniqueId=aa19dd5a-4726-4a48-bac2-e0b8fb7cd3d3&embed=%7B%22ust%22%3Atrue%2C%22hv%22%3A%22CopyEmbedCode%22%7D&referrer=StreamWebApp&referrerScenario=EmbedDialog.Create).
 
 ```{=typst}
 ]
@@ -278,23 +264,14 @@ Returning to our file, **five of the nine sites** have good or very good quality
 ::: {.content-visible when-format="html"}
 ```{=html}
 <div class="cours-video">
-  <video id="video-s2v2" class="video-js vjs-big-play-centered" data-cours-video
-         controls preload="metadata" playsinline
-         aria-label="Video 2: Reading and summarising a distribution">
-    <source src="https://mediaserver.unige.ch/proxy/315615/8yAfr4KVkuZNeBLr.mp4?from_player=true" type="video/mp4">
-    <track kind="subtitles" src="assets/video/sous-titres/S2V2.fr.vtt" srclang="fr" label="Français">
-    <track kind="subtitles" src="assets/video/sous-titres/S2V2.en.vtt" srclang="en" label="English" default>
-    <p>Your browser cannot display this video. Please use the Mediaserver link below.</p>
-  </video>
-  <div class="cours-video-erreur" role="status" hidden>
-    <p>The video could not be loaded. Try again or open it on Mediaserver using the link below.</p>
-    <button class="cours-video-reessayer" type="button">Try again</button>
-  </div>
+  <iframe src="https://unigech-my.sharepoint.com/personal/florian_giraud_unige_ch/_layouts/15/embed.aspx?UniqueId=4c11a7a9-d31b-4f4d-833a-7baed45e2845&amp;embed=%7B%22ust%22%3Atrue%2C%22hv%22%3A%22CopyEmbedCode%22%7D&amp;referrer=StreamWebApp&amp;referrerScenario=EmbedDialog.Create"
+          width="640" height="360" loading="lazy"
+          allow="fullscreen" allowfullscreen title="Video 2: Reading and summarising a distribution"></iframe>
 </div>
 ```
 :::
 
-[Watch the video on Mediaserver](https://mediaserver.unige.ch/play/315615).
+[Open the video in OneDrive](https://unigech-my.sharepoint.com/personal/florian_giraud_unige_ch/_layouts/15/embed.aspx?UniqueId=4c11a7a9-d31b-4f4d-833a-7baed45e2845&embed=%7B%22ust%22%3Atrue%2C%22hv%22%3A%22CopyEmbedCode%22%7D&referrer=StreamWebApp&referrerScenario=EmbedDialog.Create).
 
 ```{=typst}
 ]
@@ -398,23 +375,14 @@ This curve does not establish that concentrations in the basin follow a normal d
 ::: {.content-visible when-format="html"}
 ```{=html}
 <div class="cours-video">
-  <video id="video-s2v3" class="video-js vjs-big-play-centered" data-cours-video
-         controls preload="metadata" playsinline
-         aria-label="Video 3: Measuring variability and understanding the stability of a mean">
-    <source src="https://mediaserver.unige.ch/proxy/315616/teQf3KGSfqdynxC3.mp4?from_player=true" type="video/mp4">
-    <track kind="subtitles" src="assets/video/sous-titres/S2V3.fr.vtt" srclang="fr" label="Français">
-    <track kind="subtitles" src="assets/video/sous-titres/S2V3.en.vtt" srclang="en" label="English" default>
-    <p>Your browser cannot display this video. Please use the Mediaserver link below.</p>
-  </video>
-  <div class="cours-video-erreur" role="status" hidden>
-    <p>The video could not be loaded. Try again or open it on Mediaserver using the link below.</p>
-    <button class="cours-video-reessayer" type="button">Try again</button>
-  </div>
+  <iframe src="https://unigech-my.sharepoint.com/personal/florian_giraud_unige_ch/_layouts/15/embed.aspx?UniqueId=b487b64a-1f99-4ebd-b261-d130400094f9&amp;embed=%7B%22ust%22%3Atrue%2C%22hv%22%3A%22CopyEmbedCode%22%7D&amp;referrer=StreamWebApp&amp;referrerScenario=EmbedDialog.Create"
+          width="640" height="360" loading="lazy"
+          allow="fullscreen" allowfullscreen title="Video 3: Measuring variability and understanding the stability of a mean"></iframe>
 </div>
 ```
 :::
 
-[Watch the video on Mediaserver](https://mediaserver.unige.ch/play/315616).
+[Open the video in OneDrive](https://unigech-my.sharepoint.com/personal/florian_giraud_unige_ch/_layouts/15/embed.aspx?UniqueId=b487b64a-1f99-4ebd-b261-d130400094f9&embed=%7B%22ust%22%3Atrue%2C%22hv%22%3A%22CopyEmbedCode%22%7D&referrer=StreamWebApp&referrerScenario=EmbedDialog.Create).
 
 ```{=typst}
 ]

@@ -1,0 +1,32 @@
+---
+title: "Travaux pratiques"
+subtitle: "Mettre les notions en pratique avec Python ou R"
+lang: fr
+format-links: false
+toc: false
+sidebar: false
+format:
+  html:
+    code-tools: false
+    css:
+      - ../styles.css
+      - ../cours/session-02/assets/language.css
+      - ../assets/accueil.css
+    include-after-body:
+      - text: |
+          <script src="../assets/site-language.js"></script>
+---
+
+```{=html}
+<div class="course-choices">
+<nav class="course-language" aria-label="Langue de la page"><span aria-current="page" lang="fr">Français</span><a href="index-en.html" lang="en" hreflang="en">English</a></nav>
+</div>
+```
+
+::: {.coming-soon}
+## Bientôt disponible
+
+Les carnets et les consignes des travaux pratiques seront ajoutés ici au fil du cours.
+:::
+
+[Retour à l’accueil →](../index.qmd)

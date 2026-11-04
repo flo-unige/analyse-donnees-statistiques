@@ -1,0 +1,4 @@
+.course-card { display: flex; flex-direction: column; }
+.course-card > p:last-child { margin-top: auto; padding-top: .5rem; }
+.course-card > p:last-child a { font-weight: 600; }
+.course-card h3 { font-size: 1.3rem; }

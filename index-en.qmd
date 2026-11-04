@@ -1,0 +1,59 @@
+---
+title: "Statistical Data Analysis"
+lang: en
+format-links: false
+toc: false
+sidebar: false
+format:
+  html:
+    code-tools: false
+    css:
+      - styles.css
+      - cours/session-02/assets/language.css
+      - assets/accueil.css
+    include-after-body:
+      - text: |
+          <script src="assets/site-language.js"></script>
+---
+
+```{=html}
+<div class="course-choices">
+<nav class="course-language" aria-label="Page language"><a href="index.html" lang="fr" hreflang="fr">Français</a><span aria-current="page" lang="en">English</span></nav>
+</div>
+```
+
+::: {.hero-course}
+## Welcome to the course
+
+This website brings together the theory, examples and practical work for the **Statistical Data Analysis** course.
+
+The course is designed for students who are new to data analysis or would like to discover Python or R. It takes an intuitive, step-by-step approach, using concrete examples and focusing on understanding methods and interpreting results rather than on mathematical proofs.
+:::
+
+## Course structure
+
+::: {.course-grid}
+::: {.course-card}
+### Course
+
+Here you will find the materials for the seven theory sessions covering the key concepts. Apart from the first session, taught in class, the sessions include short videos, explanatory texts and examples. The code blocks provided will be useful during the practical sessions.
+
+[Explore the sessions →](cours/session-02/index-en.qmd)
+:::
+
+::: {.course-card}
+### Practical work
+
+Python or R notebooks to put the concepts into practice during computer lab sessions.
+
+[Go to practical work →](tp/index-en.qmd)
+:::
+
+::: {.course-card}
+### Resources
+
+General information and useful references.
+
+[Browse resources →](ressources/index-en.qmd)
+:::
+:::
