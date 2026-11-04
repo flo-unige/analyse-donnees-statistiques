@@ -1,5 +1,5 @@
 ---
-title: "Session 1 - Introduction au cours. Principes de programmation en R ou Python"
+title: "**Session 1** - Introduction au cours. Principes de programmation en R ou Python"
 lang: fr
 format-links: false
 toc: false
@@ -22,19 +22,19 @@ format:
 </div>
 ```
 
-Choisissez les fichiers correspondant au langage utilisé pendant votre séance. Les carnets Python en français et en anglais sont disponibles ci-dessous.
+Choisissez les fichiers correspondant au langage utilisé pendant votre séance.
 
 ## Python
 
 Téléchargez le carnet dans la langue de votre choix, puis ouvrez-le dans Jupyter Notebook.
 
-- [Télécharger le TP Python — Français (.ipynb)](fichiers/Session1_decouverte_Python_FR.ipynb){download="Session1_decouverte_Python_FR.ipynb"}
-- [Télécharger le TP Python — English (.ipynb)](fichiers/Session1_decouverte_Python_EN.ipynb){download="Session1_decouverte_Python_EN.ipynb"}
+- [Télécharger le TP Python - Français (.ipynb)](fichiers/Session1_decouverte_Python_FR.ipynb){download="Session1_decouverte_Python_FR.ipynb"}
+- [Télécharger le TP Python - English (.ipynb)](fichiers/Session1_decouverte_Python_EN.ipynb){download="Session1_decouverte_Python_EN.ipynb"}
 
 ## R
 
 Téléchargez et décompressez l’archive : elle contient les consignes du TP au format Word et les fichiers de données.
 
-- [Télécharger le TP R — Archive (.zip)](fichiers/TP-intro-R.zip){download="TP-intro-R.zip"}
+- [Télécharger le TP R - Archive (.zip)](fichiers/TP-intro-R.zip){download="TP-intro-R.zip"}
 
 [Toutes les séances de travaux pratiques →](../index.qmd)

@@ -24,10 +24,10 @@ format:
 
 Choose a session to access the practical instructions and files.
 
-- [Session 1 - Introduction to the course. Programming principles in R or Python](session-01/index-en.qmd)
-- [Session 2 - Foundations of probability and statistics](session-02/index-en.qmd)
-- [Session 3 - Data visualisation](session-03/index-en.qmd)
-- [Session 4 - Inferential analyses: hypotheses and tests](session-04/index-en.qmd)
-- [Session 5 - Analysis of variance and experimental design](session-05/index-en.qmd)
-- [Session 6 - Statistical modelling: simple and multiple regression](session-06/index-en.qmd)
-- [Session 7 - Advanced statistical modelling: GLM, GAM, BRT…](session-07/index-en.qmd)
+- [**Session 1** - Introduction to the course. Programming principles in R or Python](session-01/index-en.qmd)
+- [**Session 2** - Foundations of probability and statistics](session-02/index-en.qmd)
+- [**Session 3** - Data visualisation](session-03/index-en.qmd)
+- [**Session 4** - Inferential analyses: hypotheses and tests](session-04/index-en.qmd)
+- [**Session 5** - Analysis of variance and experimental design](session-05/index-en.qmd)
+- [**Session 6** - Statistical modelling: simple and multiple regression](session-06/index-en.qmd)
+- [**Session 7** - Advanced statistical modelling: GLM, GAM, BRT…](session-07/index-en.qmd)

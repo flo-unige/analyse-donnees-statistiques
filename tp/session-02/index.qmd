@@ -1,5 +1,5 @@
 ---
-title: "Session 2 - Concepts de base de probabilité et de statistique"
+title: "**Session 2** - Concepts de base de probabilité et de statistique"
 lang: fr
 format-links: false
 toc: false

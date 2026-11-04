@@ -1,5 +1,5 @@
 ---
-title: "Session 7 - Advanced statistical modelling: GLM, GAM, BRT…"
+title: "**Session 7** - Advanced statistical modelling: GLM, GAM, BRT…"
 lang: en
 format-links: false
 toc: false

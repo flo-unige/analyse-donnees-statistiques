@@ -1,5 +1,5 @@
 ---
-title: "Session 3 - Data visualisation"
+title: "**Session 3** - Data visualisation"
 lang: en
 format-links: false
 toc: false

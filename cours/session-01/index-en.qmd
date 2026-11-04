@@ -1,5 +1,5 @@
 ---
-title: "Session 1 - Introduction to the course. Programming principles in R or Python"
+title: "**Session 1** - Introduction to the course. Programming principles in R or Python"
 lang: en
 format-links: false
 toc: false

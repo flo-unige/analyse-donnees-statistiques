@@ -1,5 +1,5 @@
 ---
-title: "Session 6 - Modélisation statistique : régressions simple et multiples"
+title: "**Session 6** - Modélisation statistique : régressions simple et multiples"
 lang: fr
 format-links: false
 toc: false

@@ -1,5 +1,5 @@
 ---
-title: "Session 6 - Statistical modelling: simple and multiple regression"
+title: "**Session 6** - Statistical modelling: simple and multiple regression"
 lang: en
 format-links: false
 toc: false

@@ -1,5 +1,5 @@
 ---
-title: "Session 5 - Analyses de variance et plans d’expérience"
+title: "**Session 5** - Analyses de variance et plans d’expérience"
 lang: fr
 format-links: false
 toc: false

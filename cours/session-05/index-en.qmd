@@ -1,5 +1,5 @@
 ---
-title: "Session 5 - Analysis of variance and experimental design"
+title: "**Session 5** - Analysis of variance and experimental design"
 lang: en
 format-links: false
 toc: false

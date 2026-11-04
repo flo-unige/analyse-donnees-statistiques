@@ -1,5 +1,5 @@
 ---
-title: "Session 4 - Inferential analyses: hypotheses and tests"
+title: "**Session 4** - Inferential analyses: hypotheses and tests"
 lang: en
 format-links: false
 toc: false

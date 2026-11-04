@@ -1,5 +1,5 @@
 ---
-title: "Session 3 - Visualisation des données"
+title: "**Session 3** - Visualisation des données"
 lang: fr
 format-links: false
 toc: false

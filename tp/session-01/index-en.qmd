@@ -1,5 +1,5 @@
 ---
-title: "Session 1 - Introduction to the course. Programming principles in R or Python"
+title: "**Session 1** - Introduction to the course. Programming principles in R or Python"
 lang: en
 format-links: false
 toc: false
@@ -22,19 +22,19 @@ format:
 </div>
 ```
 
-Choose the files for the programming language used in your practical session. Both the French and English Python notebooks are available below.
+Choose the files for the programming language used in your practical session.
 
 ## Python
 
 Download the notebook in your preferred language, then open it in Jupyter Notebook.
 
-- [Download the Python practical — Français (.ipynb)](fichiers/Session1_decouverte_Python_FR.ipynb){download="Session1_decouverte_Python_FR.ipynb"}
-- [Download the Python practical — English (.ipynb)](fichiers/Session1_decouverte_Python_EN.ipynb){download="Session1_decouverte_Python_EN.ipynb"}
+- [Download the Python practical - Français (.ipynb)](fichiers/Session1_decouverte_Python_FR.ipynb){download="Session1_decouverte_Python_FR.ipynb"}
+- [Download the Python practical - English (.ipynb)](fichiers/Session1_decouverte_Python_EN.ipynb){download="Session1_decouverte_Python_EN.ipynb"}
 
 ## R
 
 Download and extract the archive: it contains the practical instructions in Word format and the data files.
 
-- [Download the R practical — Archive (.zip)](fichiers/TP-intro-R.zip){download="TP-intro-R.zip"}
+- [Download the R practical - Archive (.zip)](fichiers/TP-intro-R.zip){download="TP-intro-R.zip"}
 
 [All practical sessions →](../index-en.qmd)

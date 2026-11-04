@@ -35,6 +35,11 @@
     }
     if (text === 'Site créé avec Quarto') label.textContent = 'Built with Quarto';
   });
+  const setSessionTitle = (label, session, title) => {
+    const number = document.createElement('strong');
+    number.textContent = `Session ${session}`;
+    label.replaceChildren(number, document.createTextNode(` - ${title}`));
+  };
   const sessionTitles = {
     "1": "Introduction to the course. Programming principles in R or Python",
     "2": "Foundations of probability and statistics",
@@ -49,13 +54,13 @@
       const session = label.textContent.match(/Session\s+(\d)/i)?.[1];
       if (!session) return;
       if (session === '2') {
-        label.textContent = 'Session 2: Foundations of probability and statistics';
+        setSessionTitle(label, '2', sessionTitles['2']);
         const link = label.closest('a');
         link?.setAttribute('href', currentPage);
         link?.classList.add('active');
         link?.setAttribute('aria-current', 'page');
       } else {
-        label.textContent = `Session ${session} - ${sessionTitles[session]}`;
+        setSessionTitle(label, session, sessionTitles[session]);
         const link = label.closest('a');
         if (link) {
           const url = new URL(link.href);

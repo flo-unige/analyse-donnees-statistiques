@@ -92,7 +92,7 @@ website:
   page-footer:
     background: "#2c3e50"
     foreground: light
-    left: "Analyse de données statistiques — Université de Genève"
+    left: "Analyse de données statistiques - Université de Genève"
     right:
       - text: "Site créé avec Quarto"
         href: https://quarto.org/

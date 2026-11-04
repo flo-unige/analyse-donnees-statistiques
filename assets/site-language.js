@@ -20,6 +20,11 @@
     url.pathname = url.pathname.replace(/(?:index\.html)?$/, 'index-en.html');
     link.href = url.href;
   });
+  const setSessionTitle = (label, session, title) => {
+    const number = document.createElement('strong');
+    number.textContent = `Session ${session}`;
+    label.replaceChildren(number, document.createTextNode(` - ${title}`));
+  };
   const sessionTitles = {
     "1": "Introduction to the course. Programming principles in R or Python",
     "2": "Foundations of probability and statistics",
@@ -33,7 +38,7 @@
     const label = link.querySelector('.menu-text, .nav-page-text') || link;
     const match = label.textContent.match(/Session\s+(\d+)/i);
     if (match && sessionTitles[match[1]]) {
-      label.textContent = `Session ${match[1]} - ${sessionTitles[match[1]]}`;
+      setSessionTitle(label, match[1], sessionTitles[match[1]]);
     } else if (label.textContent.trim() === 'Travaux pratiques') {
       label.textContent = 'Practical work';
     }

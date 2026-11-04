@@ -48,7 +48,7 @@
         const {svg,width:w}=svgFor($('map-'+key),230,`${position} sites sélectionnés ${k?'près de la route':'dans toute la population'}`);
         const gap=(w-36)/10,yy=r=>43+r*26,xx=c=>18+(c+.5)*gap;
         add(svg,'rect',{x:xx(7)-gap*.5,y:23,width:gap*3,height:169,fill:'#fff0df',rx:5});
-        population.forEach(p=>{const x=xx(p.id%10),y=yy(Math.floor(p.id/10)),chosen=selected.has(p.id);const attrs={fill:p.route?orange:blue,opacity:chosen?1:k&&!p.route?.18:.38,stroke:chosen?'#183442':'none','stroke-width':3};const n=p.route?add(svg,'rect',{x:x-5,y:y-5,width:10,height:10,...attrs}):add(svg,'circle',{cx:x,cy:y,r:5,...attrs});n.append(el('title',{},`Site ${p.id+1} — ${p.route?'proche':'éloigné'}${chosen?' — sélectionné':''}`));if(chosen)text(svg,x,y+3,'✓',{'text-anchor':'middle',fill:'#fff',style:'fill:white;font-size:9px;font-weight:bold'});});
+        population.forEach(p=>{const x=xx(p.id%10),y=yy(Math.floor(p.id/10)),chosen=selected.has(p.id);const attrs={fill:p.route?orange:blue,opacity:chosen?1:k&&!p.route?.18:.38,stroke:chosen?'#183442':'none','stroke-width':3};const n=p.route?add(svg,'rect',{x:x-5,y:y-5,width:10,height:10,...attrs}):add(svg,'circle',{cx:x,cy:y,r:5,...attrs});n.append(el('title',{},`Site ${p.id+1} - ${p.route?'proche':'éloigné'}${chosen?' - sélectionné':''}`));if(chosen)text(svg,x,y+3,'✓',{'text-anchor':'middle',fill:'#fff',style:'fill:white;font-size:9px;font-weight:bold'});});
         text(svg,xx(8),213,'ROUTE',{'text-anchor':'middle',class:'small'});
         const near=orders[k].slice(0,position).filter(p=>p.route).length;
         $('count-'+key).textContent=`${position} sélectionnés : ${position-near} éloignés · ${near} proches`;
