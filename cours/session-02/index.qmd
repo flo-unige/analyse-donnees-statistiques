@@ -511,7 +511,7 @@ Pour finir, retournons à la question de la couverture du bassin, explorée dans
 
 # Vos questions sur la session {#questions-session-02}
 
-Si une notion reste floue, si vous souhaitez approfondir un exemple ou si vous avez toute autre question, vous pouvez poser votre question dans l'espace SpeakUp ci-dessous, de manière anonyme ou non. Prenez aussi le temps de lire les questions des autres étudiant-es et de voter pour celles dont la réponse vous serait utile. Le classement par votes permet de retrouver les questions qui intéressent le plus le groupe. Nous prendrons le temps de répondre à certaines questions directement sur la plateforme et à d'autres lors de la prochaine séance en présentiel.
+Si une notion reste floue, si vous souhaitez approfondir un exemple ou si vous avez toute autre question, vous pouvez poser votre question dans l'espace SpeakUp ci-dessous (de manière anonyme ou non). Prenez aussi le temps de lire les questions des autres étudiant-es et de voter pour celles dont la réponse vous serait utile. Le classement par votes permet de retrouver les questions qui intéressent le plus le groupe. Nous prendrons le temps de répondre à certaines questions directement sur la plateforme et à d'autres lors de la prochaine séance en présentiel.
 
 Cet espace est commun aux versions française et anglaise du cours, ainsi qu'aux exemples en Python et en R. Si votre question porte sur un code, précisez le langage utilisé et l'exemple concerné.
 

@@ -561,7 +561,7 @@ Finally, let us return to coverage of the basin, which we explored in the first 
 
 # Questions about this session {#questions-session-02}
 
-If a concept is still unclear, you would like to explore an example further, or you have any other question, feel free to ask it in the SpeakUp space below, anonymously or with your name. Take a moment to read other students’ questions and vote for those you would like answered. Sorting by votes brings the questions of greatest interest to the group to the top. We will answer some questions directly on the platform and discuss others during our next in-person session.
+If a concept is still unclear, you would like to explore an example further, or you have any other question, feel free to ask it in the SpeakUp space below (anonymously or not). Take a moment to read other students' questions and vote for those you would like answered. Sorting by votes brings the questions of greatest interest to the group to the top. We will answer some questions directly on the platform and discuss others during our next in-person session.
 
 This space is shared by the French and English versions of the course and by students using Python or R. If your question is about code, mention the language you are using and the example you are working on.
 

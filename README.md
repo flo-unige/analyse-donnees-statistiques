@@ -1,11 +1,11 @@
 # Analyse de données statistiques
 
-## Préparation locale de la session 2 bilingue
+## Session 2 bilingue, avec exemples Python et R
 
-Cette copie de travail est sur la branche locale `preparation/session-02`.
-Elle ajoute une traduction anglaise et des exemples R au cours français validé.
-Elle est également disponible sur GitHub, sans modification de `main` ni du site
-étudiant publié. Chaque envoi sur cette branche construit un aperçu téléchargeable
+La session 2 est disponible en français et en anglais, avec des exemples Python
+ou R. La version validée est intégrée dans `main` pour publication sur le site
+étudiant. La branche `preparation/session-02` sert aux révisions.
+Chaque envoi sur cette branche construit un aperçu téléchargeable
 dans les artefacts du workflow « Prévisualiser le site Quarto », conservé 30 jours.
 Après extraction du ZIP, lancer `python -m http.server 8772 --bind 127.0.0.1`
 dans le dossier contenant `index.html`, puis ouvrir
@@ -77,7 +77,7 @@ Ne pas les fusionner dans `main` sans validation explicite.
 
 ## Version étudiante publiée
 
-La branche `main` contient uniquement le cours validé de la **session 2**, avec ses quatre vidéos hébergées sur Mediaserver, leurs sous-titres, les animations, les données pédagogiques, les exemples Python et le PDF construit par Quarto.
+La branche `main` contient uniquement le cours validé de la **session 2**, en français et en anglais, avec ses quatre vidéos hébergées sur Mediaserver, leurs sous-titres, les animations, les données pédagogiques, les exemples Python et R, les quatre PDF construits par Quarto et la salle SpeakUp 93131.
 
 Les sessions **1, 3, 4, 5 et 6** affichent « En construction ». La session 1 est assurée en classe. Aucun TP, carnet étudiant, archive de TP ou contenu préparatoire des autres sessions ne doit être ajouté à cette version avant validation.
 
@@ -92,9 +92,9 @@ conda activate analyse-donnees
 quarto render
 ```
 
-Les sorties Python sont conservées dans `_freeze/` et doivent accompagner les modifications validées. `_site/` est généré et ne doit pas être versionné.
+Les sorties Python et R sont conservées dans `_freeze/` et doivent accompagner les modifications validées. `_site/` est généré et ne doit pas être versionné.
 
-Le workflow GitHub Pages publie uniquement les envois sur `main`. Il utilise les résultats déjà calculés, sans réexécuter Python :
+Le workflow GitHub Pages publie uniquement les envois sur `main`. Il utilise les résultats déjà calculés, sans réexécuter Python ou R :
 
 ```powershell
 quarto render --profile ci --use-freezer
