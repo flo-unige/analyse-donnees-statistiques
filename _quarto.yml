@@ -39,6 +39,7 @@ project:
     - cours/session-06/index-en.qmd
     - cours/session-07/index-en.qmd
   resources:
+    - cours/session-01/fichiers/**
     - tp/session-01/fichiers/**
     - assets/**
     - cours/session-02/assets/language.css

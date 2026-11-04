@@ -22,4 +22,9 @@ format:
 </div>
 ```
 
-The content of this session will be available soon.
+This first session introduces the course objectives, its flipped classroom format and the assessment methods. We also discuss choosing between R and Python and using AI critically. The second part introduces programming basics through Python examples: variables, data structures, functions, conditions and loops, followed by first tables with pandas and interpreting error messages.
+
+The slides for the first classroom session are available to download here:
+
+- [Part 1 - Course overview and organisation (.pptx, in French)](fichiers/Session-1-Partie-1.pptx){download="Session 1 - Partie 1.pptx"}
+- [Part 2 - Introduction to programming in Python (.pptx, in French)](fichiers/Session-1-Partie-2.pptx){download="Session 1 - Partie 2.pptx"}
