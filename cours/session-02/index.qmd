@@ -281,7 +281,7 @@ Revenons à notre fichier, dans lequel **cinq sites sur neuf** ont une qualité 
   <video id="video-s2v2" class="video-js vjs-big-play-centered" data-cours-video
          controls preload="metadata" playsinline
          aria-label="Vidéo 2 : Lire et résumer une distribution">
-    <source src="https://mediaserver.unige.ch/proxy/316582/GFBbXcGU7stVIGob.mp4?from_player=true" type="video/mp4">
+    <source src="https://mediaserver.unige.ch/proxy/316703/oW3yUKos7ltmSuD5.mp4?from_player=true" type="video/mp4">
     <track kind="subtitles" src="assets/video/sous-titres/S2V2.fr.vtt" srclang="fr" label="Français" default>
     <track kind="subtitles" src="assets/video/sous-titres/S2V2.en.vtt" srclang="en" label="English">
     <p>Votre navigateur ne peut pas afficher cette vidéo. Utilisez le lien Mediaserver ci-dessous.</p>
@@ -294,7 +294,7 @@ Revenons à notre fichier, dans lequel **cinq sites sur neuf** ont une qualité 
 ```
 :::
 
-[Regarder la vidéo sur Mediaserver](https://mediaserver.unige.ch/play/316582).
+[Regarder la vidéo sur Mediaserver](https://mediaserver.unige.ch/play/316703).
 
 ```{=typst}
 ]

@@ -137,1509 +137,1500 @@ maximum temperature, into intervals from 0 to
 Each interval is 5 degrees wide:
 
 33
-00:01:38.177 --> 00:01:41.436
+00:01:38.177 --> 00:01:41.360
 we have bins from 0 to 5, 5 to 10, and so on.
 
-34
-00:01:41.752 --> 00:01:46.081
-Temperatures run from 0 to 40, and each
-
-35
-00:01:46.161 --> 00:01:50.491
-bin is 5 degrees wide: 0 to 5, 5 to 10, and so
-on.
-
 36
-00:01:50.571 --> 00:01:54.459
+00:01:42.031 --> 00:01:45.919
 If we have a value of 12.4 degrees,
 
 37
-00:01:54.539 --> 00:01:58.648
+00:01:45.999 --> 00:01:50.108
 we put it in the corresponding bin,
 
 38
-00:01:58.728 --> 00:02:02.844
+00:01:50.188 --> 00:01:54.304
 between 10 and 15 degrees. A bin is simply an
 interval.
 
 39
-00:02:02.936 --> 00:02:06.340
+00:01:54.396 --> 00:01:57.800
 We then place each temperature observed at
 
 40
-00:02:06.420 --> 00:02:10.260
+00:01:57.880 --> 00:02:01.720
 Geneva-Cointrin into its corresponding bin.
 
 41
-00:02:10.340 --> 00:02:13.184
+00:02:01.800 --> 00:02:04.644
 For example, this value of 5 degrees
 
 42
-00:02:13.264 --> 00:02:16.357
+00:02:04.724 --> 00:02:07.817
 goes in the bin from 5 to 10 degrees, and so
 on.
 
 43
-00:02:16.437 --> 00:02:19.655
+00:02:07.897 --> 00:02:11.115
 Every time a value falls into a bin,
 
 44
-00:02:19.735 --> 00:02:22.952
+00:02:11.195 --> 00:02:14.412
 we increase that bar's height by one.
 
 45
-00:02:23.032 --> 00:02:25.254
+00:02:14.492 --> 00:02:16.714
 That's how we build
 
 46
-00:02:25.334 --> 00:02:28.909
+00:02:16.794 --> 00:02:20.369
 this histogram. It shows us that we have more
 
 47
-00:02:28.989 --> 00:02:32.237
+00:02:20.449 --> 00:02:23.697
 values between 10 and 15 degrees than, for
 example,
 
 48
-00:02:32.317 --> 00:02:36.414
+00:02:23.777 --> 00:02:27.874
 between 35 and 40 degrees, which are
 relatively rare.
 
 49
-00:02:36.494 --> 00:02:41.700
+00:02:27.954 --> 00:02:33.160
 We've now grouped all 365 observations. Adding
 up
 
 50
-00:02:41.780 --> 00:02:47.132
+00:02:33.240 --> 00:02:38.592
 the heights of the bars must give 365.
 
 51
-00:02:48.408 --> 00:02:52.106
+00:02:39.868 --> 00:02:43.566
 Our histogram lets us see several
 
 52
-00:02:52.186 --> 00:02:56.298
+00:02:43.646 --> 00:02:47.758
 features of the data's distribution.
 
 53
-00:02:56.378 --> 00:02:58.783
+00:02:47.838 --> 00:02:50.243
 First, how often do the values occur?
 
 54
-00:02:58.863 --> 00:03:02.250
+00:02:50.323 --> 00:02:53.710
 Let's look again at the bin from 10 to 15
 degrees.
 
 55
-00:03:02.330 --> 00:03:04.476
+00:02:53.790 --> 00:02:55.936
 We can see that 77 days of the year
 
 56
-00:03:04.556 --> 00:03:05.938
+00:02:56.016 --> 00:02:57.398
 fall into this bin.
 
 57
-00:03:06.018 --> 00:03:08.131
+00:02:57.478 --> 00:02:59.591
 It doesn't tell us exactly how the values
 
 58
-00:03:08.211 --> 00:03:10.898
+00:02:59.671 --> 00:03:02.358
 are distributed within the bin.
 
 59
-00:03:10.978 --> 00:03:13.822
+00:03:02.438 --> 00:03:05.282
 I don't know whether more temperatures are
 close to 10
 
 60
-00:03:13.902 --> 00:03:16.955
+00:03:05.362 --> 00:03:08.415
 or to 15 degrees. But I do know that on 77
 days,
 
 61
-00:03:17.035 --> 00:03:19.983
+00:03:08.495 --> 00:03:11.443
 the maximum temperature was between 10 and 15
 degrees.
 
 62
-00:03:20.063 --> 00:03:22.204
+00:03:11.523 --> 00:03:13.664
 That's what the height of the bar tells us.
 
 63
-00:03:22.776 --> 00:03:26.924
+00:03:14.236 --> 00:03:18.384
 We can also ask about the range of this
 distribution.
 
 64
-00:03:27.004 --> 00:03:30.511
+00:03:18.464 --> 00:03:21.971
 The range is simply the difference between
 
 65
-00:03:30.591 --> 00:03:34.995
+00:03:22.051 --> 00:03:26.455
 the smallest and largest values in the
 dataset.
 
 66
-00:03:35.075 --> 00:03:40.120
+00:03:26.535 --> 00:03:31.580
 Looking at the raw data, the values run from 1
 to 36.4 degrees.
 
 67
-00:03:40.200 --> 00:03:42.810
+00:03:31.660 --> 00:03:34.270
 From the histogram alone, we might
 
 68
-00:03:42.890 --> 00:03:46.285
+00:03:34.350 --> 00:03:37.745
 think the values extend from 0 to 40 degrees.
 
 69
-00:03:46.762 --> 00:03:48.502
+00:03:38.222 --> 00:03:39.962
 We can also ask about the
 
 70
-00:03:48.582 --> 00:03:50.822
+00:03:40.042 --> 00:03:42.282
 overall shape of the distribution.
 
 71
-00:03:50.902 --> 00:03:52.233
+00:03:42.362 --> 00:03:43.693
 Is it symmetrical?
 
 72
-00:03:52.313 --> 00:03:55.054
+00:03:43.773 --> 00:03:46.514
 Are there more observations on one side than
 the other?
 
 73
-00:03:55.134 --> 00:03:57.875
+00:03:46.594 --> 00:03:49.335
 Here, for example, we see more relatively
 
 74
-00:03:57.955 --> 00:04:01.014
+00:03:49.415 --> 00:03:52.474
 low temperatures than relatively high ones.
 
 75
-00:04:01.094 --> 00:04:03.289
+00:03:52.554 --> 00:03:54.749
 The distribution is somewhat asymmetrical.
 
 76
-00:04:03.369 --> 00:04:06.338
+00:03:54.829 --> 00:03:57.798
 We can also ask whether there are one or
 several groups.
 
 77
-00:04:06.418 --> 00:04:09.102
+00:03:57.878 --> 00:04:00.562
 It's hard to tell here, but we can see
 
 78
-00:04:09.194 --> 00:04:12.252
+00:04:00.654 --> 00:04:03.712
 one broad peak. We might ask
 
 79
-00:04:12.332 --> 00:04:15.588
+00:04:03.792 --> 00:04:07.048
 whether there are distinct subpopulations.
 
 80
-00:04:15.668 --> 00:04:18.626
+00:04:07.128 --> 00:04:10.086
 Are there any unusual values?
 
 81
-00:04:18.706 --> 00:04:21.615
+00:04:10.166 --> 00:04:13.075
 Here, for example, we have a very high
 temperature,
 
 82
-00:04:21.695 --> 00:04:24.653
+00:04:13.155 --> 00:04:16.113
 with very few observations in that category.
 
 83
-00:04:24.733 --> 00:04:27.292
+00:04:16.193 --> 00:04:18.752
 It might be a measurement error.
 
 84
-00:04:27.372 --> 00:04:30.958
+00:04:18.832 --> 00:04:22.418
 If so, we should check it and correct it
 before analysing the data.
 
 85
-00:04:31.050 --> 00:04:34.983
+00:04:22.510 --> 00:04:26.443
 But it might also be the most interesting part
 of the dataset:
 
 86
-00:04:35.063 --> 00:04:39.152
+00:04:26.523 --> 00:04:30.612
 a rare event that points us towards something
 worth investigating.
 
 87
-00:04:39.232 --> 00:04:42.853
+00:04:30.692 --> 00:04:34.313
 We shouldn't automatically assume it's an
 error.
 
 88
-00:04:42.933 --> 00:04:47.126
+00:04:34.393 --> 00:04:38.586
 We'll return to this point several times.
 
 89
-00:04:47.206 --> 00:04:49.680
+00:04:38.666 --> 00:04:41.140
 In any case, we should start by identifying
 
 90
-00:04:49.760 --> 00:04:52.366
+00:04:41.220 --> 00:04:43.826
 these surprising values before carrying out
 our analysis.
 
 91
-00:04:53.130 --> 00:04:56.810
+00:04:44.590 --> 00:04:48.270
 We can now read the table's data visually.
 
 92
-00:04:56.890 --> 00:04:58.904
+00:04:48.350 --> 00:04:50.364
 But remember: we lose some precision
 
 93
-00:04:58.984 --> 00:05:01.283
+00:04:50.444 --> 00:04:52.743
 compared with examining every observation
 individually.
 
 94
-00:05:01.363 --> 00:05:03.092
+00:04:52.823 --> 00:04:54.552
 As I mentioned earlier,
 
 95
-00:05:03.172 --> 00:05:06.994
+00:04:54.632 --> 00:04:58.454
 we can't tell whether more values are close to
 10 degrees
 
 96
-00:05:07.074 --> 00:05:09.044
+00:04:58.534 --> 00:05:00.504
 or to 15 degrees. We only know
 
 97
-00:05:09.124 --> 00:05:11.410
+00:05:00.584 --> 00:05:02.870
 that many values lie between 10 and 15.
 
 98
-00:05:11.490 --> 00:05:14.090
+00:05:02.950 --> 00:05:05.550
 The table therefore retains
 
 99
-00:05:14.170 --> 00:05:17.034
+00:05:05.630 --> 00:05:08.494
 the most detailed information.
 
 100
-00:05:17.114 --> 00:05:19.032
+00:05:08.574 --> 00:05:10.492
 The histogram is a way
 
 101
-00:05:19.112 --> 00:05:22.318
+00:05:10.572 --> 00:05:13.778
 to make the data easier to see.
 
 102
-00:05:24.202 --> 00:05:26.338
+00:05:15.662 --> 00:05:17.798
 For a readable histogram,
 
 103
-00:05:26.418 --> 00:05:29.747
+00:05:17.878 --> 00:05:21.207
 we also need to choose the bin width
 carefully.
 
 104
-00:05:29.827 --> 00:05:33.610
+00:05:21.287 --> 00:05:25.070
 Here, bins of 5 degrees provide
 
 105
-00:05:33.690 --> 00:05:37.667
+00:05:25.150 --> 00:05:29.127
 a reasonable balance between detail and
 readability.
 
 106
-00:05:38.147 --> 00:05:41.065
+00:05:29.607 --> 00:05:32.525
 Too few bins
 
 107
-00:05:41.145 --> 00:05:44.420
+00:05:32.605 --> 00:05:35.880
 hide details of the distribution.
 
 108
-00:05:44.500 --> 00:05:47.469
+00:05:35.960 --> 00:05:38.929
 But too many bins can
 
 109
-00:05:47.549 --> 00:05:51.026
+00:05:39.009 --> 00:05:42.486
 make the graph hard to read and obscure the
 pattern.
 
 110
-00:05:51.106 --> 00:05:53.262
+00:05:42.566 --> 00:05:44.722
 A useful histogram makes it much easier
 
 111
-00:05:53.342 --> 00:05:55.956
+00:05:44.802 --> 00:05:47.416
 to see the distribution's overall shape.
 
 112
-00:05:56.036 --> 00:05:59.869
+00:05:47.496 --> 00:05:51.329
 So a histogram of an empirical distribution
 isn't just
 
 113
-00:05:59.949 --> 00:06:04.167
+00:05:51.409 --> 00:05:55.627
 an illustration for a report. It's also an
 important tool
 
 114
-00:06:04.259 --> 00:06:08.142
+00:05:55.719 --> 00:05:59.602
 in exploratory data analysis. It helps us spot
 
 115
-00:06:08.222 --> 00:06:12.215
+00:05:59.682 --> 00:06:03.675
 patterns, asymmetries and unusual values
 
 116
-00:06:12.295 --> 00:06:16.619
+00:06:03.755 --> 00:06:08.079
 that can lead to a better understanding of our
 dataset.
 
 117
-00:06:16.699 --> 00:06:20.417
+00:06:08.159 --> 00:06:11.877
 Now let's focus on summary measures
 
 118
-00:06:20.497 --> 00:06:24.295
+00:06:11.957 --> 00:06:15.755
 that help us describe our data quantitatively.
 
 119
-00:06:24.547 --> 00:06:28.526
+00:06:16.007 --> 00:06:19.986
 The first is one you all know: the mean.
 
 120
-00:06:28.606 --> 00:06:31.611
+00:06:20.066 --> 00:06:23.071
 For example, let's take some journey times.
 
 121
-00:06:31.691 --> 00:06:35.291
+00:06:23.151 --> 00:06:26.751
 Here are seven journeys, with their durations
 in minutes.
 
 122
-00:06:35.371 --> 00:06:37.888
+00:06:26.831 --> 00:06:29.348
 They add up to 280 minutes, and the journey
 times
 
 123
-00:06:37.968 --> 00:06:40.648
+00:06:29.428 --> 00:06:32.108
 vary quite a lot.
 
 124
-00:06:40.728 --> 00:06:42.218
+00:06:32.188 --> 00:06:33.678
 We have values of 34 and 21,
 
 125
-00:06:42.298 --> 00:06:44.382
+00:06:33.758 --> 00:06:35.842
 and at the other end, a value of 110.
 
 126
-00:06:44.462 --> 00:06:46.331
+00:06:35.922 --> 00:06:37.791
 What does the mean do?
 
 127
-00:06:46.411 --> 00:06:49.686
+00:06:37.871 --> 00:06:41.146
 It shares the total equally among all the
 observations.
 
 128
-00:06:49.766 --> 00:06:52.039
+00:06:41.226 --> 00:06:43.499
 If I take the total of 280 minutes
 
 129
-00:06:52.131 --> 00:06:55.193
+00:06:43.591 --> 00:06:46.653
 and divide by seven, I get 40 minutes.
 
 130
-00:06:55.273 --> 00:06:58.762
+00:06:46.733 --> 00:06:50.222
 It's as if each journey were assigned a
 duration of 40 minutes.
 
 131
-00:06:58.842 --> 00:07:00.732
+00:06:50.302 --> 00:06:52.192
 Be careful with the mean, though:
 
 132
-00:07:00.812 --> 00:07:03.289
+00:06:52.272 --> 00:06:54.749
 it's quite sensitive to extreme values.
 
 133
-00:07:03.369 --> 00:07:05.739
+00:06:54.829 --> 00:06:57.199
 Here, for example, the value of
 
 134
-00:07:05.819 --> 00:07:08.615
+00:06:57.279 --> 00:07:00.075
 110 pulls the mean up considerably.
 
 135
-00:07:08.695 --> 00:07:12.222
+00:07:00.155 --> 00:07:03.682
 Without it, the mean would fall to 28.3
 minutes.
 
 136
-00:07:12.302 --> 00:07:15.572
+00:07:03.762 --> 00:07:07.032
 We must be careful about removing an
 observation.
 
 137
-00:07:15.652 --> 00:07:18.664
+00:07:07.112 --> 00:07:10.124
 As I said earlier, it could be an error,
 
 138
-00:07:18.744 --> 00:07:22.426
+00:07:10.204 --> 00:07:13.886
 or it could be interesting information. But
 this shows that the mean
 
 139
-00:07:22.506 --> 00:07:25.959
+00:07:13.966 --> 00:07:17.419
 isn't always the most useful summary.
 
 140
-00:07:26.559 --> 00:07:28.889
+00:07:18.019 --> 00:07:20.349
 Because of that sensitivity, we'll introduce
 
 141
-00:07:28.969 --> 00:07:31.708
+00:07:20.429 --> 00:07:23.168
 a second measure: the median.
 
 142
-00:07:31.788 --> 00:07:34.374
+00:07:23.248 --> 00:07:25.834
 First, we take all the observations
 
 143
-00:07:34.454 --> 00:07:37.655
+00:07:25.914 --> 00:07:29.115
 and arrange them in ascending order.
 
 144
-00:07:37.735 --> 00:07:41.757
+00:07:29.195 --> 00:07:33.217
 We sort them from smallest to largest and find
 the middle value.
 
 145
-00:07:41.837 --> 00:07:44.833
+00:07:33.297 --> 00:07:36.293
 The median splits the ordered data in half:
 
 146
-00:07:44.913 --> 00:07:48.655
+00:07:36.373 --> 00:07:40.115
 one half below it and one half above it.
 
 147
-00:07:48.747 --> 00:07:51.556
+00:07:40.207 --> 00:07:43.016
 With seven values, there are three on each
 side.
 
 148
-00:07:51.636 --> 00:07:54.445
+00:07:43.096 --> 00:07:45.905
 The central value, 27, is the median.
 
 149
-00:07:54.525 --> 00:07:57.850
+00:07:45.985 --> 00:07:49.310
 Finding the middle depends on the number of
 observations.
 
 150
-00:07:57.930 --> 00:08:01.513
+00:07:49.390 --> 00:07:52.973
 Here we had an odd number: three on each side
 and one in the centre.
 
 151
-00:08:01.593 --> 00:08:04.660
+00:07:53.053 --> 00:07:56.120
 With an even number, here six values,
 
 152
-00:08:04.740 --> 00:08:07.910
+00:07:56.200 --> 00:07:59.370
 there are three on either side. We take
 
 153
-00:08:07.990 --> 00:08:11.343
+00:07:59.450 --> 00:08:02.803
 the mean of the two central values.
 
 154
-00:08:11.435 --> 00:08:16.535
+00:08:02.895 --> 00:08:07.995
 That's why the median here is 24 minutes.
 
 155
-00:08:16.615 --> 00:08:20.761
+00:08:08.075 --> 00:08:12.221
 Compare how the two measures respond to the
 change.
 
 156
-00:08:20.841 --> 00:08:24.919
+00:08:12.301 --> 00:08:16.379
 The mean was 40 minutes. Removing the value
 
 157
-00:08:24.999 --> 00:08:29.281
+00:08:16.459 --> 00:08:20.741
 of 110 brought it down to 28.3 minutes.
 
 158
-00:08:29.361 --> 00:08:31.735
+00:08:20.821 --> 00:08:23.195
 By contrast, removing 110
 
 159
-00:08:31.815 --> 00:08:35.087
+00:08:23.275 --> 00:08:26.547
 changed the median from 27 to 24.
 
 160
-00:08:35.179 --> 00:08:42.179
+00:08:26.639 --> 00:08:33.639
 In this sense, the median is less sensitive to
 extreme values.
 
 161
-00:08:43.339 --> 00:08:47.690
+00:08:34.799 --> 00:08:39.150
 There's another measure we can use: the mode.
 
 162
-00:08:47.770 --> 00:08:49.573
+00:08:39.230 --> 00:08:41.033
 What is the mode?
 
 163
-00:08:49.653 --> 00:08:51.591
+00:08:41.113 --> 00:08:43.051
 It's simply
 
 164
-00:08:52.171 --> 00:08:55.022
+00:08:43.631 --> 00:08:46.482
 the most frequent value in the data.
 
 165
-00:08:55.102 --> 00:08:58.570
+00:08:46.562 --> 00:08:50.030
 Looking again at these seven journeys, 21
 minutes
 
 166
-00:08:58.650 --> 00:09:02.221
+00:08:50.110 --> 00:08:53.681
 appears twice, so that's the mode.
 
 167
-00:09:02.301 --> 00:09:05.410
+00:08:53.761 --> 00:08:56.870
 There are more values of 21 than of any other
 value.
 
 168
-00:09:05.490 --> 00:09:08.135
+00:08:56.950 --> 00:08:59.595
 One advantage of the mode is that it isn't
 
 169
-00:09:08.215 --> 00:09:11.580
+00:08:59.675 --> 00:09:03.040
 limited to the numerical values we've used
 
 170
-00:09:11.660 --> 00:09:15.077
+00:09:03.120 --> 00:09:06.537
 for the mean and median: it also works for
 categories.
 
 171
-00:09:15.157 --> 00:09:18.191
+00:09:06.617 --> 00:09:09.651
 For example, here are different forms of
 transport:
 
 172
-00:09:18.283 --> 00:09:20.675
+00:09:09.743 --> 00:09:12.135
 cycling, public transport, walking, and so on.
 
 173
-00:09:20.755 --> 00:09:24.328
+00:09:12.215 --> 00:09:15.788
 Cycling is the mode of this series
 
 174
-00:09:24.408 --> 00:09:28.062
+00:09:15.868 --> 00:09:19.522
 because it appears 18 times, more often than
 any other category.
 
 175
-00:09:28.543 --> 00:09:31.882
+00:09:20.003 --> 00:09:23.342
 That's a useful feature of the mode.
 
 176
-00:09:31.962 --> 00:09:34.969
+00:09:23.422 --> 00:09:26.429
 It works for both categorical and numerical
 variables;
 
 177
-00:09:35.049 --> 00:09:38.340
+00:09:26.509 --> 00:09:29.800
 our mean and median examples used numerical
 variables.
 
 178
-00:09:38.420 --> 00:09:40.144
+00:09:29.880 --> 00:09:31.604
 But the mode also has drawbacks.
 
 179
-00:09:40.224 --> 00:09:42.899
+00:09:31.684 --> 00:09:34.359
 One concerns measurement precision.
 
 180
-00:09:42.979 --> 00:09:45.938
+00:09:34.439 --> 00:09:37.398
 Temperature, for example, is continuous.
 
 181
-00:09:46.018 --> 00:09:48.217
+00:09:37.478 --> 00:09:39.677
 As we saw in the previous video,
 
 182
-00:09:48.297 --> 00:09:50.924
+00:09:39.757 --> 00:09:42.384
 'continuous' means that however much we
 increase
 
 183
-00:09:51.004 --> 00:09:53.868
+00:09:42.464 --> 00:09:45.328
 the precision, there are still possible values
 in between.
 
 184
-00:09:53.948 --> 00:09:56.227
+00:09:45.408 --> 00:09:47.687
 We aren't restricted to separate counting
 steps.
 
 185
-00:09:56.447 --> 00:10:00.975
+00:09:47.907 --> 00:09:52.435
 If temperatures are rounded to whole degrees,
 we might have
 
 186
-00:10:01.055 --> 00:10:05.937
+00:09:52.515 --> 00:09:57.397
 18, 18, 21, 21: here 18 is the mode, appearing
 three times overall.
 
 187
-00:10:06.017 --> 00:10:09.363
+00:09:57.477 --> 00:10:00.823
 But with greater precision, we find
 
 188
-00:10:09.443 --> 00:10:13.203
+00:10:00.903 --> 00:10:04.663
 that those readings of 18 degrees are actually
 all different.
 
 189
-00:10:13.283 --> 00:10:16.512
+00:10:04.743 --> 00:10:07.972
 A different mode appears: 20.5 degrees.
 
 190
-00:10:16.592 --> 00:10:19.583
+00:10:08.052 --> 00:10:11.043
 If we increase the precision again,
 
 191
-00:10:19.663 --> 00:10:23.267
+00:10:11.123 --> 00:10:14.727
 there is no longer a unique mode.
 
 192
-00:10:23.359 --> 00:10:26.888
+00:10:14.819 --> 00:10:18.348
 As precision increases, it eventually becomes
 
 193
-00:10:26.968 --> 00:10:30.794
+00:10:18.428 --> 00:10:22.254
 very unlikely that two measurements will be
 exactly equal.
 
 194
-00:10:30.874 --> 00:10:34.552
+00:10:22.334 --> 00:10:26.012
 So the mode isn't always intuitive
 
 195
-00:10:34.632 --> 00:10:38.587
+00:10:26.092 --> 00:10:30.047
 for continuous variables. Keep that limitation
 in mind.
 
 196
-00:10:39.135 --> 00:10:41.972
+00:10:30.595 --> 00:10:33.432
 How do we choose the right measure in
 practice?
 
 197
-00:10:42.052 --> 00:10:44.112
+00:10:33.512 --> 00:10:35.572
 There's no universal recipe.
 
 198
-00:10:44.192 --> 00:10:47.029
+00:10:35.652 --> 00:10:38.489
 We need to understand what each measure
 describes
 
 199
-00:10:47.109 --> 00:10:50.044
+00:10:38.569 --> 00:10:41.504
 so we can use it in an appropriate setting.
 
 200
-00:10:50.124 --> 00:10:52.426
+00:10:41.584 --> 00:10:43.886
 The mean gives us a sense of the overall
 level,
 
 201
-00:10:52.506 --> 00:10:54.906
+00:10:43.966 --> 00:10:46.366
 sharing the total equally across observations.
 
 202
-00:10:54.986 --> 00:10:56.802
+00:10:46.446 --> 00:10:48.262
 The median identifies the centre
 
 203
-00:10:56.882 --> 00:10:59.459
+00:10:48.342 --> 00:10:50.919
 of an ordered series.
 
 204
-00:10:59.551 --> 00:11:03.235
+00:10:51.011 --> 00:10:54.695
 The mode identifies the most common value.
 Always consider
 
 205
-00:11:03.315 --> 00:11:07.264
+00:10:54.775 --> 00:10:58.724
 your research question when choosing a summary
 measure.
 
 206
-00:11:07.344 --> 00:11:10.074
+00:10:58.804 --> 00:11:01.534
 As we've seen, the median
 
 207
-00:11:10.154 --> 00:11:12.989
+00:11:01.614 --> 00:11:04.449
 is less sensitive to extreme values.
 
 208
-00:11:13.069 --> 00:11:16.488
+00:11:04.529 --> 00:11:07.948
 Our example had unusually high values,
 
 209
-00:11:16.568 --> 00:11:19.881
+00:11:08.028 --> 00:11:11.341
 but unusually low ones can also matter.
 
 210
-00:11:19.961 --> 00:11:23.486
+00:11:11.421 --> 00:11:14.946
 The mean is more sensitive, while the mode
 
 211
-00:11:23.566 --> 00:11:27.171
+00:11:15.026 --> 00:11:18.631
 can depend on measurement precision for a
 continuous variable.
 
 212
-00:11:29.183 --> 00:11:32.204
+00:11:20.643 --> 00:11:23.664
 Let's take a short detour through some
 
 213
-00:11:32.284 --> 00:11:35.503
+00:11:23.744 --> 00:11:26.963
 pitfalls we should avoid.
 
 214
-00:11:35.583 --> 00:11:39.924
+00:11:27.043 --> 00:11:31.384
 Suppose I tell you:
 
 215
-00:11:40.004 --> 00:11:44.491
+00:11:31.464 --> 00:11:35.951
 'My users' average journey time has increased
 by 12%.'
 
 216
-00:11:44.991 --> 00:11:47.647
+00:11:36.451 --> 00:11:39.107
 One question we might ask is:
 
 217
-00:11:47.727 --> 00:11:51.180
+00:11:39.187 --> 00:11:42.640
 have all the journeys become longer?
 
 218
-00:11:51.260 --> 00:11:55.454
+00:11:42.720 --> 00:11:46.914
 Perhaps one or two journeys, or a few more,
 
 219
-00:11:55.534 --> 00:11:59.786
+00:11:46.994 --> 00:11:51.246
 have pulled the mean up enough to produce that
 
 220
-00:11:59.866 --> 00:12:04.117
+00:11:51.326 --> 00:11:55.577
 12% increase, while most journey times haven't
 changed.
 
 221
-00:12:04.197 --> 00:12:07.480
+00:11:55.657 --> 00:11:58.940
 Or perhaps all, or most,
 
 222
-00:12:07.560 --> 00:12:10.979
+00:11:59.020 --> 00:12:02.439
 of the journeys have become about 12% longer.
 
 223
-00:12:11.591 --> 00:12:15.437
+00:12:03.051 --> 00:12:06.897
 So this information is incomplete.
 
 224
-00:12:15.517 --> 00:12:19.854
+00:12:06.977 --> 00:12:11.314
 The figure of 12% doesn't tell us the change
 in absolute terms either.
 
 225
-00:12:19.934 --> 00:12:22.798
+00:12:11.394 --> 00:12:14.258
 If the initial mean was 10 minutes,
 
 226
-00:12:22.878 --> 00:12:26.670
+00:12:14.338 --> 00:12:18.130
 a 12% increase adds just 1.2 minutes.
 
 227
-00:12:26.750 --> 00:12:30.105
+00:12:18.210 --> 00:12:21.565
 But if the initial mean was 50 minutes,
 
 228
-00:12:30.185 --> 00:12:33.675
+00:12:21.645 --> 00:12:25.135
 a 12% increase means an extra six minutes.
 
 229
-00:12:33.767 --> 00:12:37.115
+00:12:25.227 --> 00:12:28.575
 So the same relative change of 12%
 
 230
-00:12:37.195 --> 00:12:40.825
+00:12:28.655 --> 00:12:32.285
 can represent quite different changes in
 actual journey times.
 
 231
-00:12:40.905 --> 00:12:44.197
+00:12:32.365 --> 00:12:35.657
 A headline saying 'Average journey time
 increased by 12%'
 
 232
-00:12:44.277 --> 00:12:46.895
+00:12:35.737 --> 00:12:38.355
 isn't enough to give us the full picture,
 
 233
-00:12:46.975 --> 00:12:51.110
+00:12:38.435 --> 00:12:42.570
 because the starting values are missing.
 
 234
-00:12:51.190 --> 00:12:54.731
+00:12:42.650 --> 00:12:46.191
 Be careful when interpreting figures like
 this.
 
 235
-00:12:55.475 --> 00:12:57.330
+00:12:46.935 --> 00:12:48.790
 Now let's turn to another distinction:
 
 236
-00:12:57.410 --> 00:13:00.232
+00:12:48.870 --> 00:12:51.692
 observations versus a theoretical model.
 
 237
-00:13:00.312 --> 00:13:03.032
+00:12:51.772 --> 00:12:54.492
 Earlier, we used a histogram
 
 238
-00:13:03.112 --> 00:13:05.984
+00:12:54.572 --> 00:12:57.444
 to display the empirical distribution in bins.
 
 239
-00:13:06.064 --> 00:13:07.766
+00:12:57.524 --> 00:12:59.226
 But a distribution isn't necessarily
 
 240
-00:13:07.846 --> 00:13:10.312
+00:12:59.306 --> 00:13:01.772
 empirical: it can also be theoretical.
 
 241
-00:13:10.392 --> 00:13:13.701
+00:13:01.852 --> 00:13:05.161
 We'll encounter a few theoretical
 distributions in this course.
 
 242
-00:13:14.201 --> 00:13:17.508
+00:13:05.661 --> 00:13:08.968
 What does a theoretical distribution
 represent?
 
 243
-00:13:17.588 --> 00:13:20.290
+00:13:09.048 --> 00:13:11.750
 It describes a possible pattern of values
 
 244
-00:13:20.370 --> 00:13:23.132
+00:13:11.830 --> 00:13:14.592
 using a mathematical model.
 
 245
-00:13:23.212 --> 00:13:26.700
+00:13:14.672 --> 00:13:18.160
 Here we'll look at the normal,
 
 246
-00:13:26.780 --> 00:13:31.175
+00:13:18.240 --> 00:13:22.635
 or Gaussian, distribution, one of the most
 widely used.
 
 247
-00:13:31.255 --> 00:13:32.929
+00:13:22.715 --> 00:13:24.389
 What do we have here?
 
 248
-00:13:33.009 --> 00:13:35.005
+00:13:24.469 --> 00:13:26.465
 The horizontal axis
 
 249
-00:13:35.097 --> 00:13:39.214
+00:13:26.557 --> 00:13:30.674
 shows the possible values; the vertical axis
 shows density.
 
 250
-00:13:39.294 --> 00:13:43.902
+00:13:30.754 --> 00:13:35.362
 Density indicates where values are relatively
 more concentrated.
 
 251
-00:13:43.982 --> 00:13:47.173
+00:13:35.442 --> 00:13:38.633
 The Gaussian distribution has a mean,
 
 252
-00:13:47.253 --> 00:13:50.498
+00:13:38.713 --> 00:13:41.958
 which in this case is also the median,
 
 253
-00:13:50.578 --> 00:13:53.987
+00:13:42.038 --> 00:13:45.447
 because a Gaussian, or normal, distribution is
 always
 
 254
-00:13:54.067 --> 00:13:57.501
+00:13:45.527 --> 00:13:48.961
 symmetrical. Half of its probability lies to
 the left
 
 255
-00:13:57.593 --> 00:13:59.986
+00:13:49.053 --> 00:13:51.446
 and half to the right of the mean,
 
 256
-00:14:00.066 --> 00:14:03.541
+00:13:51.526 --> 00:13:55.001
 so the mean and median coincide.
 
 257
-00:14:04.281 --> 00:14:07.855
+00:13:55.741 --> 00:13:59.315
 Here is the formula for the normal density.
 You don't need
 
 258
-00:14:07.935 --> 00:14:11.416
+00:13:59.395 --> 00:14:02.876
 to memorise it, but it's worth looking at its
 structure
 
 259
-00:14:11.496 --> 00:14:15.398
+00:14:02.956 --> 00:14:06.858
 to understand how the distribution works.
 
 260
-00:14:15.478 --> 00:14:18.068
+00:14:06.938 --> 00:14:09.528
 It is characterised by two parameters:
 
 261
-00:14:18.148 --> 00:14:21.722
+00:14:09.608 --> 00:14:13.182
 the mean, represented by
 
 262
-00:14:21.802 --> 00:14:25.597
+00:14:13.262 --> 00:14:17.057
 the Greek letter mu, and the standard
 deviation, sigma.
 
 263
-00:14:25.689 --> 00:14:28.599
+00:14:17.149 --> 00:14:20.059
 The latter describes the spread of the
 distribution
 
 264
-00:14:28.679 --> 00:14:31.929
+00:14:20.139 --> 00:14:23.389
 and helps determine how often distant values
 occur.
 
 265
-00:14:32.397 --> 00:14:36.256
+00:14:23.857 --> 00:14:27.716
 Again, you don't need to memorise this
 formula.
 
 266
-00:14:36.336 --> 00:14:40.397
+00:14:27.796 --> 00:14:31.857
 Let's instead see what happens when we change
 the two parameters.
 
 267
-00:14:40.477 --> 00:14:43.679
+00:14:31.937 --> 00:14:35.139
 Here, the mean is 5 and the standard deviation
 is 1.
 
 268
-00:14:43.759 --> 00:14:46.204
+00:14:35.219 --> 00:14:37.664
 Changing the mean simply
 
 269
-00:14:46.284 --> 00:14:49.032
+00:14:37.744 --> 00:14:40.492
 shifts the curve left or right.
 
 270
-00:14:49.112 --> 00:14:52.849
+00:14:40.572 --> 00:14:44.309
 With a mean of 3, it shifts to the left.
 
 271
-00:14:52.941 --> 00:14:55.895
+00:14:44.401 --> 00:14:47.355
 With a mean of 7, it shifts to the right.
 
 272
-00:14:55.975 --> 00:14:58.143
+00:14:47.435 --> 00:14:49.603
 So the mean determines the curve's position.
 
 273
-00:14:58.223 --> 00:15:01.795
+00:14:49.683 --> 00:14:53.255
 The standard deviation changes its spread.
 
 274
-00:15:01.875 --> 00:15:05.392
+00:14:53.335 --> 00:14:56.852
 If we reduce the standard deviation to 0.6,
 
 275
-00:15:05.472 --> 00:15:09.157
+00:14:56.932 --> 00:15:00.617
 the curve becomes more sharply concentrated
 around the mean.
 
 276
-00:15:09.237 --> 00:15:12.078
+00:15:00.697 --> 00:15:03.538
 If we increase it to 1.5,
 
 277
-00:15:12.158 --> 00:15:15.249
+00:15:03.618 --> 00:15:06.709
 the distribution becomes more spread out.
 
 278
-00:15:15.341 --> 00:15:18.684
+00:15:06.801 --> 00:15:10.144
 These two parameters are enough
 
 279
-00:15:18.764 --> 00:15:21.856
+00:15:10.224 --> 00:15:13.316
 to describe this theoretical distribution
 completely.
 
 280
-00:15:21.936 --> 00:15:25.732
+00:15:13.396 --> 00:15:17.192
 As we'll see, it will be useful in many
 settings.
 
 281
-00:15:25.812 --> 00:15:28.753
+00:15:17.272 --> 00:15:20.213
 Also remember that the total area under the
 curve
 
 282
-00:15:28.833 --> 00:15:31.823
+00:15:20.293 --> 00:15:23.283
 is always 1. As we said when discussing
 probabilities,
 
 283
-00:15:31.903 --> 00:15:35.377
+00:15:23.363 --> 00:15:26.837
 the total probability must equal 1.
 
 284
-00:15:35.949 --> 00:15:37.751
+00:15:27.409 --> 00:15:29.211
 Now we can ask
 
 285
-00:15:37.831 --> 00:15:40.155
+00:15:29.291 --> 00:15:31.615
 how to use this theoretical distribution.
 
 286
-00:15:40.235 --> 00:15:42.978
+00:15:31.695 --> 00:15:34.438
 We might initially think:
 
 287
-00:15:43.058 --> 00:15:46.009
+00:15:34.518 --> 00:15:37.469
 'I'll find the probability that my value is
 exactly 4.'
 
 288
-00:15:46.089 --> 00:15:48.937
+00:15:37.549 --> 00:15:40.397
 But that isn't a useful approach for the
 normal distribution,
 
 289
-00:15:49.017 --> 00:15:52.491
+00:15:40.477 --> 00:15:43.951
 because it's a continuous theoretical
 distribution.
 
 290
-00:15:52.571 --> 00:15:56.017
+00:15:44.031 --> 00:15:47.477
 Exactly 4 doesn't just mean a rounded value of
 4:
 
 291
-00:15:56.097 --> 00:15:59.649
+00:15:47.557 --> 00:15:51.109
 it means 4.0000, with infinitely many zeros.
 
 292
-00:15:59.729 --> 00:16:03.122
+00:15:51.189 --> 00:15:54.582
 A real measurement doesn't have that infinite
 precision.
 
 293
-00:16:03.202 --> 00:16:06.193
+00:15:54.662 --> 00:15:57.653
 Under this continuous model, the probability
 
 294
-00:16:06.285 --> 00:16:08.931
+00:15:57.745 --> 00:16:00.391
 of any one exact value is zero.
 
 295
-00:16:09.011 --> 00:16:12.512
+00:16:00.471 --> 00:16:03.972
 For continuous distributions, we therefore
 
 296
-00:16:12.592 --> 00:16:16.094
+00:16:04.052 --> 00:16:07.554
 look at the probability of falling within an
 interval.
 
 297
-00:16:16.174 --> 00:16:20.477
+00:16:07.634 --> 00:16:11.937
 We can calculate the probability of being
 between 4 and 5.
 
 298
-00:16:20.557 --> 00:16:23.844
+00:16:12.017 --> 00:16:15.304
 Without going into the details, we integrate
 the density
 
 299
-00:16:23.924 --> 00:16:27.345
+00:16:15.384 --> 00:16:18.805
 over that interval. Here, this gives about a
 34% chance
 
 300
-00:16:27.437 --> 00:16:30.821
+00:16:18.897 --> 00:16:22.281
 that x lies between 4 and 5.
 
 301
-00:16:30.901 --> 00:16:33.147
+00:16:22.361 --> 00:16:24.607
 That's how we use these distributions.
 
 302
-00:16:33.227 --> 00:16:36.017
+00:16:24.687 --> 00:16:27.477
 We won't go into the mathematical details
 
 303
-00:16:36.097 --> 00:16:39.233
+00:16:27.557 --> 00:16:30.693
 in this course. Just remember that with a
 
 304
-00:16:39.313 --> 00:16:42.301
+00:16:30.773 --> 00:16:33.761
 continuous theoretical distribution, we
 consider
 
 305
-00:16:42.381 --> 00:16:45.449
+00:16:33.841 --> 00:16:36.909
 intervals of values rather than individual
 exact values.
 
 306
-00:16:45.933 --> 00:16:49.115
+00:16:37.393 --> 00:16:40.575
 Why is the normal distribution so important,
 
 307
-00:16:49.195 --> 00:16:52.434
+00:16:40.655 --> 00:16:43.894
 and why does it appear in so many
 
 308
-00:16:52.514 --> 00:16:56.162
+00:16:43.974 --> 00:16:47.622
 physical and ecological systems?
 
 309
-00:16:56.242 --> 00:17:00.297
+00:16:47.702 --> 00:16:51.757
 It can arise when many
 
 310
-00:17:00.377 --> 00:17:04.898
+00:16:51.837 --> 00:16:56.358
 small effects or errors combine,
 
 311
-00:17:04.978 --> 00:17:09.521
+00:16:56.438 --> 00:17:00.981
 under suitable conditions, to produce an
 approximately normal pattern.
 
 312
-00:17:09.613 --> 00:17:12.962
+00:17:01.073 --> 00:17:04.422
 Suppose we're carrying out a study
 
 313
-00:17:13.042 --> 00:17:17.130
+00:17:04.502 --> 00:17:08.590
 that measures concentrations. A sensor might
 give
 
 314
-00:17:17.210 --> 00:17:21.034
+00:17:08.670 --> 00:17:12.494
 slightly higher readings, while temperature
 might
 
 315
-00:17:21.114 --> 00:17:24.780
+00:17:12.574 --> 00:17:16.240
 shift readings slightly lower than the true
 value.
 
 316
-00:17:24.860 --> 00:17:28.262
+00:17:16.320 --> 00:17:19.722
 Many small factors like these can make
 
 317
-00:17:28.342 --> 00:17:32.721
+00:17:19.802 --> 00:17:24.181
 measured concentrations fluctuate around their
 true values.
 
 318
-00:17:33.379 --> 00:17:36.769
+00:17:24.839 --> 00:17:28.229
 These factors can affect a concentration
 measurement,
 
 319
-00:17:36.849 --> 00:17:40.615
+00:17:28.309 --> 00:17:32.075
 introducing small errors that add together.
 
 320
-00:17:40.695 --> 00:17:44.367
+00:17:32.155 --> 00:17:35.827
 In this illustration, opposing effects can
 partly offset:
 
 321
-00:17:44.447 --> 00:17:48.400
+00:17:35.907 --> 00:17:39.860
 temperature might lower the reading a little,
 
 322
-00:17:48.480 --> 00:17:52.199
+00:17:39.940 --> 00:17:43.659
 while the sensor's calibration might push it
 slightly higher.
 
 323
-00:17:52.279 --> 00:17:55.642
+00:17:43.739 --> 00:17:47.102
 If those effects balance when combined,
 
 324
-00:17:55.722 --> 00:17:59.625
+00:17:47.182 --> 00:17:51.085
 we can obtain a roughly symmetrical pattern.
 
 325
-00:17:59.705 --> 00:18:01.592
+00:17:51.165 --> 00:17:53.052
 There are then as many errors pushing
 
 326
-00:18:01.672 --> 00:18:03.707
+00:17:53.132 --> 00:17:55.167
 upwards as there are pushing downwards.
 
 327
-00:18:03.787 --> 00:18:05.625
+00:17:55.247 --> 00:17:57.085
 This is why the normal distribution
 
 328
-00:18:05.705 --> 00:18:08.084
+00:17:57.165 --> 00:17:59.544
 appears so often in natural systems.
 
 329
-00:18:08.164 --> 00:18:10.279
+00:17:59.624 --> 00:18:01.739
 You'll encounter it in many different
 settings.
 
 330
-00:18:10.371 --> 00:18:12.954
+00:18:01.831 --> 00:18:04.414
 That doesn't mean all distributions are
 normal,
 
 331
-00:18:13.034 --> 00:18:17.055
+00:18:04.494 --> 00:18:08.515
 but it is a common pattern in nature.
 
 332
-00:18:17.571 --> 00:18:20.108
+00:18:09.031 --> 00:18:11.568
 Some events and phenomena,
 
 333
-00:18:20.188 --> 00:18:23.406
+00:18:11.648 --> 00:18:14.866
 however, cannot be described appropriately
 
 334
-00:18:23.486 --> 00:18:26.547
+00:18:14.946 --> 00:18:18.007
 by a normal distribution. Take rainfall.
 
 335
-00:18:26.627 --> 00:18:29.322
+00:18:18.087 --> 00:18:20.782
 Here we have daily rainfall at
 
 336
-00:18:29.402 --> 00:18:32.462
+00:18:20.862 --> 00:18:23.922
 Geneva-Cointrin from 2023 to 2025: 1,096 days.
 
 337
-00:18:32.542 --> 00:18:34.975
+00:18:24.002 --> 00:18:26.435
 Very clearly, many daily totals
 
 338
-00:18:35.055 --> 00:18:38.953
+00:18:26.515 --> 00:18:30.413
 are small, between 0 and 5 mm,
 
 339
-00:18:39.033 --> 00:18:42.279
+00:18:30.493 --> 00:18:33.739
 while very high values are extremely rare.
 
 340
-00:18:43.103 --> 00:18:45.502
+00:18:34.563 --> 00:18:36.962
 In fact, there were 651 days
 
 341
-00:18:45.582 --> 00:18:48.827
+00:18:37.042 --> 00:18:40.287
 with no measured rainfall at all.
 
 342
-00:18:48.907 --> 00:18:52.998
+00:18:40.367 --> 00:18:44.458
 That's why the 0-to-5 mm bin is so tall.
 
 343
-00:18:53.078 --> 00:18:56.202
+00:18:44.538 --> 00:18:47.662
 A normal distribution is clearly
 
 344
-00:18:56.282 --> 00:18:59.587
+00:18:47.742 --> 00:18:51.047
 unsuitable for this kind of data.
 
 345
-00:18:59.667 --> 00:19:03.698
+00:18:51.127 --> 00:18:55.158
 Zooming in reveals high values that were hard
 to see,
 
 346
-00:19:03.778 --> 00:19:08.131
+00:18:55.238 --> 00:18:59.591
 reaching 47.6 mm in a single day.
 
 347
-00:19:08.223 --> 00:19:10.619
+00:18:59.683 --> 00:19:02.079
 With asymmetry like this,
 
 348
-00:19:10.699 --> 00:19:13.094
+00:19:02.159 --> 00:19:04.554
 a normal distribution is not appropriate.
 
 349
-00:19:13.174 --> 00:19:16.010
+00:19:04.634 --> 00:19:07.470
 Another situation where a single normal
 distribution
 
 350
-00:19:16.090 --> 00:19:19.751
+00:19:07.550 --> 00:19:11.211
 can be unsuitable is when distinct subgroups
 are present.
 
 351
-00:19:19.831 --> 00:19:22.172
+00:19:11.291 --> 00:19:13.632
 This histogram shows
 
 352
-00:19:22.252 --> 00:19:24.868
+00:19:13.712 --> 00:19:16.328
 measured survival rates for two species.
 
 353
-00:19:24.948 --> 00:19:28.579
+00:19:16.408 --> 00:19:20.039
 The survival rates range from 20% to 95%.
 
 354
-00:19:28.671 --> 00:19:30.864
+00:19:20.131 --> 00:19:22.324
 Species A and B clearly
 
 355
-00:19:30.944 --> 00:19:33.676
+00:19:22.404 --> 00:19:25.136
 have different distributions.
 
 356
-00:19:33.756 --> 00:19:37.863
+00:19:25.216 --> 00:19:29.323
 For species A, there is a peak around 40%
 survival;
 
 357
-00:19:37.943 --> 00:19:42.469
+00:19:29.403 --> 00:19:33.929
 for species B, another peak appears around
 80%.
 
 358
-00:19:42.549 --> 00:19:46.596
+00:19:34.009 --> 00:19:38.056
 Fitting a single theoretical normal
 distribution here
 
 359
-00:19:46.676 --> 00:19:51.043
+00:19:38.136 --> 00:19:42.503
 would hide those two subgroups.
 
 360
-00:19:51.135 --> 00:19:55.046
+00:19:42.595 --> 00:19:46.506
 We should examine each species separately
 
 361
-00:19:55.126 --> 00:19:59.090
+00:19:46.586 --> 00:19:50.550
 and consider whether a normal model is
 appropriate for each.
 
 362
-00:19:59.170 --> 00:20:03.404
+00:19:50.630 --> 00:19:54.864
 Species A alone looks fairly
 
 363
-00:20:03.484 --> 00:20:07.557
+00:19:54.944 --> 00:19:59.017
 symmetrical and normal, as does species B.
 
 364
-00:20:07.637 --> 00:20:11.843
+00:19:59.097 --> 00:20:03.303
 But a single normal distribution doesn't fit
 the combined data.
 
 365
-00:20:11.935 --> 00:20:15.828
+00:20:03.395 --> 00:20:07.288
 Let's recap. A histogram shows
 
 366
-00:20:15.908 --> 00:20:20.751
+00:20:07.368 --> 00:20:12.211
 how a variable's values are distributed:
 
 367
-00:20:20.831 --> 00:20:25.080
+00:20:12.291 --> 00:20:16.540
 which values occur and how widely they're
 spread.
 
 368
-00:20:25.160 --> 00:20:29.647
+00:20:16.620 --> 00:20:21.107
 We also introduced measures that summarise
 features of the data:
 
 369
-00:20:29.727 --> 00:20:32.099
+00:20:21.187 --> 00:20:23.559
 the median, the mean and the mode.
 
 370
-00:20:32.191 --> 00:20:35.108
+00:20:23.651 --> 00:20:26.568
 Then we looked at the normal distribution,
 
 371
-00:20:35.188 --> 00:20:38.054
+00:20:26.648 --> 00:20:29.514
 a theoretical distribution useful for many
 
 372
-00:20:38.134 --> 00:20:41.401
+00:20:29.594 --> 00:20:32.861
 natural phenomena, whose mean and median
 coincide.
 
 373
-00:20:41.481 --> 00:20:43.348
+00:20:32.941 --> 00:20:34.808
 The other parameter is standard deviation,
 
 374
-00:20:43.428 --> 00:20:46.145
+00:20:34.888 --> 00:20:37.605
 which we'll examine in more detail shortly.
 
 375
-00:20:46.225 --> 00:20:49.791
+00:20:37.685 --> 00:20:41.251
 With these two parameters, the normal
 distribution
 
 376
-00:20:49.871 --> 00:20:53.667
+00:20:41.331 --> 00:20:45.127
 provides a quantitative model for many
 phenomena.
 
 377
-00:20:54.171 --> 00:20:56.476
+00:20:45.631 --> 00:20:47.936
 We still need a clear description of the
 
 378
-00:20:56.556 --> 00:20:59.537
+00:20:48.016 --> 00:20:50.997
 standard deviation. That's the topic of the
 next video.

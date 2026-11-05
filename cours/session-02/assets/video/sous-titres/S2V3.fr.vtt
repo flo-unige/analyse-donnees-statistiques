@@ -239,12 +239,12 @@ Le X_i ici, ça correspond
 
 50
 00:02:41.566 --> 00:02:44.518
-Donc par exemple X_1, c'est
+Donc par exemple x₁, c'est
 la première observation,
 
 51
 00:02:44.598 --> 00:02:47.842
-X_2, c'est la deuxième
+x₂, c'est la deuxième
 observation et i va prendre toutes
 
 52
@@ -290,7 +290,7 @@ Pour l'exploitation B, x₁ et x₂ valent
 61
 00:03:18.046 --> 00:03:22.740
 moyenne de l'ensemble de ces données,
-représentée par la barre.
+représentée par la barre en traitillé.
 
 62
 00:03:23.206 --> 00:03:27.609
@@ -606,7 +606,7 @@ la dernière valeur à 20, vous voyez
 125
 00:06:56.369 --> 00:06:59.707
 que ça a augmenté l'écart-type
-presque d'un facteur 5, alors
+d'un facteur 6, alors
 
 126
 00:06:59.787 --> 00:07:03.433

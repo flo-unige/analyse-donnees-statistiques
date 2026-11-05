@@ -307,7 +307,7 @@ Returning to our file, **five of the nine sites** have good or very good quality
   <video id="video-s2v2" class="video-js vjs-big-play-centered" data-cours-video
          controls preload="metadata" playsinline
          aria-label="Video 2: Reading and summarising a distribution">
-    <source src="https://mediaserver.unige.ch/proxy/316582/GFBbXcGU7stVIGob.mp4?from_player=true" type="video/mp4">
+    <source src="https://mediaserver.unige.ch/proxy/316703/oW3yUKos7ltmSuD5.mp4?from_player=true" type="video/mp4">
     <track kind="subtitles" src="assets/video/sous-titres/S2V2.fr.vtt" srclang="fr" label="Français">
     <track kind="subtitles" src="assets/video/sous-titres/S2V2.en.vtt" srclang="en" label="English" default>
     <p>Your browser cannot display this video. Please use the Mediaserver link below.</p>
@@ -320,7 +320,7 @@ Returning to our file, **five of the nine sites** have good or very good quality
 ```
 :::
 
-[Watch the video on Mediaserver](https://mediaserver.unige.ch/play/316582).
+[Watch the video on Mediaserver](https://mediaserver.unige.ch/play/316703).
 
 ```{=typst}
 ]
