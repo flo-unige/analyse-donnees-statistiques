@@ -1,0 +1,510 @@
+{
+  "variance": {
+    "title": "When does the correction matter?",
+    "control": "Size of each sample",
+    "frames": [
+      {
+        "image": "complements-en/variance-00.png",
+        "label": "2 observations per sample",
+        "description": "The nine concentrations in the file form a fictional population with mean 5 mg/L and variance 13.33 (mg/L)². Samples are drawn independently with replacement. For n = 2, the average variance is 6.93 when dividing by n and 13.86 when dividing by n − 1. The correction works on average, not necessarily for each individual sample."
+      },
+      {
+        "image": "complements-en/variance-01.png",
+        "label": "3 observations per sample",
+        "description": "The nine concentrations in the file form a fictional population with mean 5 mg/L and variance 13.33 (mg/L)². Samples are drawn independently with replacement. For n = 3, the average variance is 9.06 when dividing by n and 13.59 when dividing by n − 1. The correction works on average, not necessarily for each individual sample."
+      },
+      {
+        "image": "complements-en/variance-02.png",
+        "label": "4 observations per sample",
+        "description": "The nine concentrations in the file form a fictional population with mean 5 mg/L and variance 13.33 (mg/L)². Samples are drawn independently with replacement. For n = 4, the average variance is 9.78 when dividing by n and 13.04 when dividing by n − 1. The correction works on average, not necessarily for each individual sample."
+      },
+      {
+        "image": "complements-en/variance-03.png",
+        "label": "5 observations per sample",
+        "description": "The nine concentrations in the file form a fictional population with mean 5 mg/L and variance 13.33 (mg/L)². Samples are drawn independently with replacement. For n = 5, the average variance is 10.58 when dividing by n and 13.22 when dividing by n − 1. The correction works on average, not necessarily for each individual sample."
+      },
+      {
+        "image": "complements-en/variance-04.png",
+        "label": "6 observations per sample",
+        "description": "The nine concentrations in the file form a fictional population with mean 5 mg/L and variance 13.33 (mg/L)². Samples are drawn independently with replacement. For n = 6, the average variance is 11.41 when dividing by n and 13.69 when dividing by n − 1. The correction works on average, not necessarily for each individual sample."
+      },
+      {
+        "image": "complements-en/variance-05.png",
+        "label": "7 observations per sample",
+        "description": "The nine concentrations in the file form a fictional population with mean 5 mg/L and variance 13.33 (mg/L)². Samples are drawn independently with replacement. For n = 7, the average variance is 11.43 when dividing by n and 13.34 when dividing by n − 1. The correction works on average, not necessarily for each individual sample."
+      },
+      {
+        "image": "complements-en/variance-06.png",
+        "label": "8 observations per sample",
+        "description": "The nine concentrations in the file form a fictional population with mean 5 mg/L and variance 13.33 (mg/L)². Samples are drawn independently with replacement. For n = 8, the average variance is 11.64 when dividing by n and 13.30 when dividing by n − 1. The correction works on average, not necessarily for each individual sample."
+      },
+      {
+        "image": "complements-en/variance-07.png",
+        "label": "9 observations per sample",
+        "description": "The nine concentrations in the file form a fictional population with mean 5 mg/L and variance 13.33 (mg/L)². Samples are drawn independently with replacement. For n = 9, the average variance is 11.56 when dividing by n and 13.00 when dividing by n − 1. The correction works on average, not necessarily for each individual sample."
+      },
+      {
+        "image": "complements-en/variance-08.png",
+        "label": "10 observations per sample",
+        "description": "The nine concentrations in the file form a fictional population with mean 5 mg/L and variance 13.33 (mg/L)². Samples are drawn independently with replacement. For n = 10, the average variance is 12.13 when dividing by n and 13.48 when dividing by n − 1. The correction works on average, not necessarily for each individual sample."
+      },
+      {
+        "image": "complements-en/variance-09.png",
+        "label": "11 observations per sample",
+        "description": "The nine concentrations in the file form a fictional population with mean 5 mg/L and variance 13.33 (mg/L)². Samples are drawn independently with replacement. For n = 11, the average variance is 12.03 when dividing by n and 13.24 when dividing by n − 1. The correction works on average, not necessarily for each individual sample."
+      },
+      {
+        "image": "complements-en/variance-10.png",
+        "label": "12 observations per sample",
+        "description": "The nine concentrations in the file form a fictional population with mean 5 mg/L and variance 13.33 (mg/L)². Samples are drawn independently with replacement. For n = 12, the average variance is 12.33 when dividing by n and 13.45 when dividing by n − 1. The correction works on average, not necessarily for each individual sample."
+      },
+      {
+        "image": "complements-en/variance-11.png",
+        "label": "13 observations per sample",
+        "description": "The nine concentrations in the file form a fictional population with mean 5 mg/L and variance 13.33 (mg/L)². Samples are drawn independently with replacement. For n = 13, the average variance is 12.40 when dividing by n and 13.44 when dividing by n − 1. The correction works on average, not necessarily for each individual sample."
+      },
+      {
+        "image": "complements-en/variance-12.png",
+        "label": "14 observations per sample",
+        "description": "The nine concentrations in the file form a fictional population with mean 5 mg/L and variance 13.33 (mg/L)². Samples are drawn independently with replacement. For n = 14, the average variance is 12.50 when dividing by n and 13.46 when dividing by n − 1. The correction works on average, not necessarily for each individual sample."
+      },
+      {
+        "image": "complements-en/variance-13.png",
+        "label": "15 observations per sample",
+        "description": "The nine concentrations in the file form a fictional population with mean 5 mg/L and variance 13.33 (mg/L)². Samples are drawn independently with replacement. For n = 15, the average variance is 12.54 when dividing by n and 13.43 when dividing by n − 1. The correction works on average, not necessarily for each individual sample."
+      },
+      {
+        "image": "complements-en/variance-14.png",
+        "label": "16 observations per sample",
+        "description": "The nine concentrations in the file form a fictional population with mean 5 mg/L and variance 13.33 (mg/L)². Samples are drawn independently with replacement. For n = 16, the average variance is 12.32 when dividing by n and 13.15 when dividing by n − 1. The correction works on average, not necessarily for each individual sample."
+      },
+      {
+        "image": "complements-en/variance-15.png",
+        "label": "17 observations per sample",
+        "description": "The nine concentrations in the file form a fictional population with mean 5 mg/L and variance 13.33 (mg/L)². Samples are drawn independently with replacement. For n = 17, the average variance is 12.61 when dividing by n and 13.39 when dividing by n − 1. The correction works on average, not necessarily for each individual sample."
+      },
+      {
+        "image": "complements-en/variance-16.png",
+        "label": "18 observations per sample",
+        "description": "The nine concentrations in the file form a fictional population with mean 5 mg/L and variance 13.33 (mg/L)². Samples are drawn independently with replacement. For n = 18, the average variance is 12.50 when dividing by n and 13.23 when dividing by n − 1. The correction works on average, not necessarily for each individual sample."
+      },
+      {
+        "image": "complements-en/variance-17.png",
+        "label": "19 observations per sample",
+        "description": "The nine concentrations in the file form a fictional population with mean 5 mg/L and variance 13.33 (mg/L)². Samples are drawn independently with replacement. For n = 19, the average variance is 12.62 when dividing by n and 13.32 when dividing by n − 1. The correction works on average, not necessarily for each individual sample."
+      },
+      {
+        "image": "complements-en/variance-18.png",
+        "label": "20 observations per sample",
+        "description": "The nine concentrations in the file form a fictional population with mean 5 mg/L and variance 13.33 (mg/L)². Samples are drawn independently with replacement. For n = 20, the average variance is 12.68 when dividing by n and 13.35 when dividing by n − 1. The correction works on average, not necessarily for each individual sample."
+      },
+      {
+        "image": "complements-en/variance-19.png",
+        "label": "21 observations per sample",
+        "description": "The nine concentrations in the file form a fictional population with mean 5 mg/L and variance 13.33 (mg/L)². Samples are drawn independently with replacement. For n = 21, the average variance is 12.74 when dividing by n and 13.38 when dividing by n − 1. The correction works on average, not necessarily for each individual sample."
+      },
+      {
+        "image": "complements-en/variance-20.png",
+        "label": "22 observations per sample",
+        "description": "The nine concentrations in the file form a fictional population with mean 5 mg/L and variance 13.33 (mg/L)². Samples are drawn independently with replacement. For n = 22, the average variance is 12.59 when dividing by n and 13.19 when dividing by n − 1. The correction works on average, not necessarily for each individual sample."
+      },
+      {
+        "image": "complements-en/variance-21.png",
+        "label": "23 observations per sample",
+        "description": "The nine concentrations in the file form a fictional population with mean 5 mg/L and variance 13.33 (mg/L)². Samples are drawn independently with replacement. For n = 23, the average variance is 12.71 when dividing by n and 13.29 when dividing by n − 1. The correction works on average, not necessarily for each individual sample."
+      },
+      {
+        "image": "complements-en/variance-22.png",
+        "label": "24 observations per sample",
+        "description": "The nine concentrations in the file form a fictional population with mean 5 mg/L and variance 13.33 (mg/L)². Samples are drawn independently with replacement. For n = 24, the average variance is 12.66 when dividing by n and 13.21 when dividing by n − 1. The correction works on average, not necessarily for each individual sample."
+      },
+      {
+        "image": "complements-en/variance-23.png",
+        "label": "25 observations per sample",
+        "description": "The nine concentrations in the file form a fictional population with mean 5 mg/L and variance 13.33 (mg/L)². Samples are drawn independently with replacement. For n = 25, the average variance is 12.75 when dividing by n and 13.28 when dividing by n − 1. The correction works on average, not necessarily for each individual sample."
+      },
+      {
+        "image": "complements-en/variance-24.png",
+        "label": "26 observations per sample",
+        "description": "The nine concentrations in the file form a fictional population with mean 5 mg/L and variance 13.33 (mg/L)². Samples are drawn independently with replacement. For n = 26, the average variance is 12.76 when dividing by n and 13.27 when dividing by n − 1. The correction works on average, not necessarily for each individual sample."
+      },
+      {
+        "image": "complements-en/variance-25.png",
+        "label": "27 observations per sample",
+        "description": "The nine concentrations in the file form a fictional population with mean 5 mg/L and variance 13.33 (mg/L)². Samples are drawn independently with replacement. For n = 27, the average variance is 12.93 when dividing by n and 13.43 when dividing by n − 1. The correction works on average, not necessarily for each individual sample."
+      },
+      {
+        "image": "complements-en/variance-26.png",
+        "label": "28 observations per sample",
+        "description": "The nine concentrations in the file form a fictional population with mean 5 mg/L and variance 13.33 (mg/L)². Samples are drawn independently with replacement. For n = 28, the average variance is 13.07 when dividing by n and 13.56 when dividing by n − 1. The correction works on average, not necessarily for each individual sample."
+      },
+      {
+        "image": "complements-en/variance-27.png",
+        "label": "29 observations per sample",
+        "description": "The nine concentrations in the file form a fictional population with mean 5 mg/L and variance 13.33 (mg/L)². Samples are drawn independently with replacement. For n = 29, the average variance is 12.65 when dividing by n and 13.11 when dividing by n − 1. The correction works on average, not necessarily for each individual sample."
+      },
+      {
+        "image": "complements-en/variance-28.png",
+        "label": "30 observations per sample",
+        "description": "The nine concentrations in the file form a fictional population with mean 5 mg/L and variance 13.33 (mg/L)². Samples are drawn independently with replacement. For n = 30, the average variance is 12.89 when dividing by n and 13.34 when dividing by n − 1. The correction works on average, not necessarily for each individual sample."
+      },
+      {
+        "image": "complements-en/variance-29.png",
+        "label": "31 observations per sample",
+        "description": "The nine concentrations in the file form a fictional population with mean 5 mg/L and variance 13.33 (mg/L)². Samples are drawn independently with replacement. For n = 31, the average variance is 12.82 when dividing by n and 13.25 when dividing by n − 1. The correction works on average, not necessarily for each individual sample."
+      },
+      {
+        "image": "complements-en/variance-30.png",
+        "label": "32 observations per sample",
+        "description": "The nine concentrations in the file form a fictional population with mean 5 mg/L and variance 13.33 (mg/L)². Samples are drawn independently with replacement. For n = 32, the average variance is 13.02 when dividing by n and 13.44 when dividing by n − 1. The correction works on average, not necessarily for each individual sample."
+      },
+      {
+        "image": "complements-en/variance-31.png",
+        "label": "33 observations per sample",
+        "description": "The nine concentrations in the file form a fictional population with mean 5 mg/L and variance 13.33 (mg/L)². Samples are drawn independently with replacement. For n = 33, the average variance is 12.84 when dividing by n and 13.24 when dividing by n − 1. The correction works on average, not necessarily for each individual sample."
+      },
+      {
+        "image": "complements-en/variance-32.png",
+        "label": "34 observations per sample",
+        "description": "The nine concentrations in the file form a fictional population with mean 5 mg/L and variance 13.33 (mg/L)². Samples are drawn independently with replacement. For n = 34, the average variance is 13.11 when dividing by n and 13.51 when dividing by n − 1. The correction works on average, not necessarily for each individual sample."
+      },
+      {
+        "image": "complements-en/variance-33.png",
+        "label": "35 observations per sample",
+        "description": "The nine concentrations in the file form a fictional population with mean 5 mg/L and variance 13.33 (mg/L)². Samples are drawn independently with replacement. For n = 35, the average variance is 12.96 when dividing by n and 13.34 when dividing by n − 1. The correction works on average, not necessarily for each individual sample."
+      },
+      {
+        "image": "complements-en/variance-34.png",
+        "label": "36 observations per sample",
+        "description": "The nine concentrations in the file form a fictional population with mean 5 mg/L and variance 13.33 (mg/L)². Samples are drawn independently with replacement. For n = 36, the average variance is 12.88 when dividing by n and 13.25 when dividing by n − 1. The correction works on average, not necessarily for each individual sample."
+      },
+      {
+        "image": "complements-en/variance-35.png",
+        "label": "37 observations per sample",
+        "description": "The nine concentrations in the file form a fictional population with mean 5 mg/L and variance 13.33 (mg/L)². Samples are drawn independently with replacement. For n = 37, the average variance is 13.15 when dividing by n and 13.51 when dividing by n − 1. The correction works on average, not necessarily for each individual sample."
+      },
+      {
+        "image": "complements-en/variance-36.png",
+        "label": "38 observations per sample",
+        "description": "The nine concentrations in the file form a fictional population with mean 5 mg/L and variance 13.33 (mg/L)². Samples are drawn independently with replacement. For n = 38, the average variance is 12.80 when dividing by n and 13.15 when dividing by n − 1. The correction works on average, not necessarily for each individual sample."
+      },
+      {
+        "image": "complements-en/variance-37.png",
+        "label": "39 observations per sample",
+        "description": "The nine concentrations in the file form a fictional population with mean 5 mg/L and variance 13.33 (mg/L)². Samples are drawn independently with replacement. For n = 39, the average variance is 12.89 when dividing by n and 13.23 when dividing by n − 1. The correction works on average, not necessarily for each individual sample."
+      },
+      {
+        "image": "complements-en/variance-38.png",
+        "label": "40 observations per sample",
+        "description": "The nine concentrations in the file form a fictional population with mean 5 mg/L and variance 13.33 (mg/L)². Samples are drawn independently with replacement. For n = 40, the average variance is 13.02 when dividing by n and 13.36 when dividing by n − 1. The correction works on average, not necessarily for each individual sample."
+      },
+      {
+        "image": "complements-en/variance-39.png",
+        "label": "41 observations per sample",
+        "description": "The nine concentrations in the file form a fictional population with mean 5 mg/L and variance 13.33 (mg/L)². Samples are drawn independently with replacement. For n = 41, the average variance is 13.15 when dividing by n and 13.48 when dividing by n − 1. The correction works on average, not necessarily for each individual sample."
+      },
+      {
+        "image": "complements-en/variance-40.png",
+        "label": "42 observations per sample",
+        "description": "The nine concentrations in the file form a fictional population with mean 5 mg/L and variance 13.33 (mg/L)². Samples are drawn independently with replacement. For n = 42, the average variance is 13.04 when dividing by n and 13.35 when dividing by n − 1. The correction works on average, not necessarily for each individual sample."
+      },
+      {
+        "image": "complements-en/variance-41.png",
+        "label": "43 observations per sample",
+        "description": "The nine concentrations in the file form a fictional population with mean 5 mg/L and variance 13.33 (mg/L)². Samples are drawn independently with replacement. For n = 43, the average variance is 13.09 when dividing by n and 13.40 when dividing by n − 1. The correction works on average, not necessarily for each individual sample."
+      },
+      {
+        "image": "complements-en/variance-42.png",
+        "label": "44 observations per sample",
+        "description": "The nine concentrations in the file form a fictional population with mean 5 mg/L and variance 13.33 (mg/L)². Samples are drawn independently with replacement. For n = 44, the average variance is 13.19 when dividing by n and 13.50 when dividing by n − 1. The correction works on average, not necessarily for each individual sample."
+      },
+      {
+        "image": "complements-en/variance-43.png",
+        "label": "45 observations per sample",
+        "description": "The nine concentrations in the file form a fictional population with mean 5 mg/L and variance 13.33 (mg/L)². Samples are drawn independently with replacement. For n = 45, the average variance is 13.03 when dividing by n and 13.33 when dividing by n − 1. The correction works on average, not necessarily for each individual sample."
+      },
+      {
+        "image": "complements-en/variance-44.png",
+        "label": "46 observations per sample",
+        "description": "The nine concentrations in the file form a fictional population with mean 5 mg/L and variance 13.33 (mg/L)². Samples are drawn independently with replacement. For n = 46, the average variance is 13.01 when dividing by n and 13.30 when dividing by n − 1. The correction works on average, not necessarily for each individual sample."
+      },
+      {
+        "image": "complements-en/variance-45.png",
+        "label": "47 observations per sample",
+        "description": "The nine concentrations in the file form a fictional population with mean 5 mg/L and variance 13.33 (mg/L)². Samples are drawn independently with replacement. For n = 47, the average variance is 12.91 when dividing by n and 13.19 when dividing by n − 1. The correction works on average, not necessarily for each individual sample."
+      },
+      {
+        "image": "complements-en/variance-46.png",
+        "label": "48 observations per sample",
+        "description": "The nine concentrations in the file form a fictional population with mean 5 mg/L and variance 13.33 (mg/L)². Samples are drawn independently with replacement. For n = 48, the average variance is 13.11 when dividing by n and 13.39 when dividing by n − 1. The correction works on average, not necessarily for each individual sample."
+      },
+      {
+        "image": "complements-en/variance-47.png",
+        "label": "49 observations per sample",
+        "description": "The nine concentrations in the file form a fictional population with mean 5 mg/L and variance 13.33 (mg/L)². Samples are drawn independently with replacement. For n = 49, the average variance is 13.08 when dividing by n and 13.36 when dividing by n − 1. The correction works on average, not necessarily for each individual sample."
+      },
+      {
+        "image": "complements-en/variance-48.png",
+        "label": "50 observations per sample",
+        "description": "The nine concentrations in the file form a fictional population with mean 5 mg/L and variance 13.33 (mg/L)². Samples are drawn independently with replacement. For n = 50, the average variance is 13.09 when dividing by n and 13.35 when dividing by n − 1. The correction works on average, not necessarily for each individual sample."
+      },
+      {
+        "image": "complements-en/variance-49.png",
+        "label": "51 observations per sample",
+        "description": "The nine concentrations in the file form a fictional population with mean 5 mg/L and variance 13.33 (mg/L)². Samples are drawn independently with replacement. For n = 51, the average variance is 13.10 when dividing by n and 13.36 when dividing by n − 1. The correction works on average, not necessarily for each individual sample."
+      },
+      {
+        "image": "complements-en/variance-50.png",
+        "label": "52 observations per sample",
+        "description": "The nine concentrations in the file form a fictional population with mean 5 mg/L and variance 13.33 (mg/L)². Samples are drawn independently with replacement. For n = 52, the average variance is 13.20 when dividing by n and 13.46 when dividing by n − 1. The correction works on average, not necessarily for each individual sample."
+      },
+      {
+        "image": "complements-en/variance-51.png",
+        "label": "53 observations per sample",
+        "description": "The nine concentrations in the file form a fictional population with mean 5 mg/L and variance 13.33 (mg/L)². Samples are drawn independently with replacement. For n = 53, the average variance is 13.05 when dividing by n and 13.30 when dividing by n − 1. The correction works on average, not necessarily for each individual sample."
+      },
+      {
+        "image": "complements-en/variance-52.png",
+        "label": "54 observations per sample",
+        "description": "The nine concentrations in the file form a fictional population with mean 5 mg/L and variance 13.33 (mg/L)². Samples are drawn independently with replacement. For n = 54, the average variance is 13.17 when dividing by n and 13.42 when dividing by n − 1. The correction works on average, not necessarily for each individual sample."
+      },
+      {
+        "image": "complements-en/variance-53.png",
+        "label": "55 observations per sample",
+        "description": "The nine concentrations in the file form a fictional population with mean 5 mg/L and variance 13.33 (mg/L)². Samples are drawn independently with replacement. For n = 55, the average variance is 12.96 when dividing by n and 13.20 when dividing by n − 1. The correction works on average, not necessarily for each individual sample."
+      },
+      {
+        "image": "complements-en/variance-54.png",
+        "label": "56 observations per sample",
+        "description": "The nine concentrations in the file form a fictional population with mean 5 mg/L and variance 13.33 (mg/L)². Samples are drawn independently with replacement. For n = 56, the average variance is 13.18 when dividing by n and 13.42 when dividing by n − 1. The correction works on average, not necessarily for each individual sample."
+      },
+      {
+        "image": "complements-en/variance-55.png",
+        "label": "57 observations per sample",
+        "description": "The nine concentrations in the file form a fictional population with mean 5 mg/L and variance 13.33 (mg/L)². Samples are drawn independently with replacement. For n = 57, the average variance is 13.12 when dividing by n and 13.35 when dividing by n − 1. The correction works on average, not necessarily for each individual sample."
+      },
+      {
+        "image": "complements-en/variance-56.png",
+        "label": "58 observations per sample",
+        "description": "The nine concentrations in the file form a fictional population with mean 5 mg/L and variance 13.33 (mg/L)². Samples are drawn independently with replacement. For n = 58, the average variance is 13.10 when dividing by n and 13.33 when dividing by n − 1. The correction works on average, not necessarily for each individual sample."
+      },
+      {
+        "image": "complements-en/variance-57.png",
+        "label": "59 observations per sample",
+        "description": "The nine concentrations in the file form a fictional population with mean 5 mg/L and variance 13.33 (mg/L)². Samples are drawn independently with replacement. For n = 59, the average variance is 13.17 when dividing by n and 13.39 when dividing by n − 1. The correction works on average, not necessarily for each individual sample."
+      },
+      {
+        "image": "complements-en/variance-58.png",
+        "label": "60 observations per sample",
+        "description": "The nine concentrations in the file form a fictional population with mean 5 mg/L and variance 13.33 (mg/L)². Samples are drawn independently with replacement. For n = 60, the average variance is 13.05 when dividing by n and 13.28 when dividing by n − 1. The correction works on average, not necessarily for each individual sample."
+      },
+      {
+        "image": "complements-en/variance-59.png",
+        "label": "61 observations per sample",
+        "description": "The nine concentrations in the file form a fictional population with mean 5 mg/L and variance 13.33 (mg/L)². Samples are drawn independently with replacement. For n = 61, the average variance is 13.05 when dividing by n and 13.27 when dividing by n − 1. The correction works on average, not necessarily for each individual sample."
+      },
+      {
+        "image": "complements-en/variance-60.png",
+        "label": "62 observations per sample",
+        "description": "The nine concentrations in the file form a fictional population with mean 5 mg/L and variance 13.33 (mg/L)². Samples are drawn independently with replacement. For n = 62, the average variance is 13.07 when dividing by n and 13.29 when dividing by n − 1. The correction works on average, not necessarily for each individual sample."
+      },
+      {
+        "image": "complements-en/variance-61.png",
+        "label": "63 observations per sample",
+        "description": "The nine concentrations in the file form a fictional population with mean 5 mg/L and variance 13.33 (mg/L)². Samples are drawn independently with replacement. For n = 63, the average variance is 13.05 when dividing by n and 13.26 when dividing by n − 1. The correction works on average, not necessarily for each individual sample."
+      },
+      {
+        "image": "complements-en/variance-62.png",
+        "label": "64 observations per sample",
+        "description": "The nine concentrations in the file form a fictional population with mean 5 mg/L and variance 13.33 (mg/L)². Samples are drawn independently with replacement. For n = 64, the average variance is 13.16 when dividing by n and 13.37 when dividing by n − 1. The correction works on average, not necessarily for each individual sample."
+      },
+      {
+        "image": "complements-en/variance-63.png",
+        "label": "65 observations per sample",
+        "description": "The nine concentrations in the file form a fictional population with mean 5 mg/L and variance 13.33 (mg/L)². Samples are drawn independently with replacement. For n = 65, the average variance is 13.05 when dividing by n and 13.25 when dividing by n − 1. The correction works on average, not necessarily for each individual sample."
+      },
+      {
+        "image": "complements-en/variance-64.png",
+        "label": "66 observations per sample",
+        "description": "The nine concentrations in the file form a fictional population with mean 5 mg/L and variance 13.33 (mg/L)². Samples are drawn independently with replacement. For n = 66, the average variance is 13.07 when dividing by n and 13.27 when dividing by n − 1. The correction works on average, not necessarily for each individual sample."
+      },
+      {
+        "image": "complements-en/variance-65.png",
+        "label": "67 observations per sample",
+        "description": "The nine concentrations in the file form a fictional population with mean 5 mg/L and variance 13.33 (mg/L)². Samples are drawn independently with replacement. For n = 67, the average variance is 13.11 when dividing by n and 13.31 when dividing by n − 1. The correction works on average, not necessarily for each individual sample."
+      },
+      {
+        "image": "complements-en/variance-66.png",
+        "label": "68 observations per sample",
+        "description": "The nine concentrations in the file form a fictional population with mean 5 mg/L and variance 13.33 (mg/L)². Samples are drawn independently with replacement. For n = 68, the average variance is 13.16 when dividing by n and 13.36 when dividing by n − 1. The correction works on average, not necessarily for each individual sample."
+      },
+      {
+        "image": "complements-en/variance-67.png",
+        "label": "69 observations per sample",
+        "description": "The nine concentrations in the file form a fictional population with mean 5 mg/L and variance 13.33 (mg/L)². Samples are drawn independently with replacement. For n = 69, the average variance is 13.32 when dividing by n and 13.52 when dividing by n − 1. The correction works on average, not necessarily for each individual sample."
+      },
+      {
+        "image": "complements-en/variance-68.png",
+        "label": "70 observations per sample",
+        "description": "The nine concentrations in the file form a fictional population with mean 5 mg/L and variance 13.33 (mg/L)². Samples are drawn independently with replacement. For n = 70, the average variance is 13.12 when dividing by n and 13.31 when dividing by n − 1. The correction works on average, not necessarily for each individual sample."
+      },
+      {
+        "image": "complements-en/variance-69.png",
+        "label": "71 observations per sample",
+        "description": "The nine concentrations in the file form a fictional population with mean 5 mg/L and variance 13.33 (mg/L)². Samples are drawn independently with replacement. For n = 71, the average variance is 13.21 when dividing by n and 13.40 when dividing by n − 1. The correction works on average, not necessarily for each individual sample."
+      },
+      {
+        "image": "complements-en/variance-70.png",
+        "label": "72 observations per sample",
+        "description": "The nine concentrations in the file form a fictional population with mean 5 mg/L and variance 13.33 (mg/L)². Samples are drawn independently with replacement. For n = 72, the average variance is 13.15 when dividing by n and 13.33 when dividing by n − 1. The correction works on average, not necessarily for each individual sample."
+      },
+      {
+        "image": "complements-en/variance-71.png",
+        "label": "73 observations per sample",
+        "description": "The nine concentrations in the file form a fictional population with mean 5 mg/L and variance 13.33 (mg/L)². Samples are drawn independently with replacement. For n = 73, the average variance is 13.19 when dividing by n and 13.37 when dividing by n − 1. The correction works on average, not necessarily for each individual sample."
+      },
+      {
+        "image": "complements-en/variance-72.png",
+        "label": "74 observations per sample",
+        "description": "The nine concentrations in the file form a fictional population with mean 5 mg/L and variance 13.33 (mg/L)². Samples are drawn independently with replacement. For n = 74, the average variance is 13.21 when dividing by n and 13.39 when dividing by n − 1. The correction works on average, not necessarily for each individual sample."
+      },
+      {
+        "image": "complements-en/variance-73.png",
+        "label": "75 observations per sample",
+        "description": "The nine concentrations in the file form a fictional population with mean 5 mg/L and variance 13.33 (mg/L)². Samples are drawn independently with replacement. For n = 75, the average variance is 13.19 when dividing by n and 13.37 when dividing by n − 1. The correction works on average, not necessarily for each individual sample."
+      },
+      {
+        "image": "complements-en/variance-74.png",
+        "label": "76 observations per sample",
+        "description": "The nine concentrations in the file form a fictional population with mean 5 mg/L and variance 13.33 (mg/L)². Samples are drawn independently with replacement. For n = 76, the average variance is 13.24 when dividing by n and 13.42 when dividing by n − 1. The correction works on average, not necessarily for each individual sample."
+      },
+      {
+        "image": "complements-en/variance-75.png",
+        "label": "77 observations per sample",
+        "description": "The nine concentrations in the file form a fictional population with mean 5 mg/L and variance 13.33 (mg/L)². Samples are drawn independently with replacement. For n = 77, the average variance is 13.05 when dividing by n and 13.22 when dividing by n − 1. The correction works on average, not necessarily for each individual sample."
+      },
+      {
+        "image": "complements-en/variance-76.png",
+        "label": "78 observations per sample",
+        "description": "The nine concentrations in the file form a fictional population with mean 5 mg/L and variance 13.33 (mg/L)². Samples are drawn independently with replacement. For n = 78, the average variance is 13.30 when dividing by n and 13.47 when dividing by n − 1. The correction works on average, not necessarily for each individual sample."
+      },
+      {
+        "image": "complements-en/variance-77.png",
+        "label": "79 observations per sample",
+        "description": "The nine concentrations in the file form a fictional population with mean 5 mg/L and variance 13.33 (mg/L)². Samples are drawn independently with replacement. For n = 79, the average variance is 13.29 when dividing by n and 13.46 when dividing by n − 1. The correction works on average, not necessarily for each individual sample."
+      },
+      {
+        "image": "complements-en/variance-78.png",
+        "label": "80 observations per sample",
+        "description": "The nine concentrations in the file form a fictional population with mean 5 mg/L and variance 13.33 (mg/L)². Samples are drawn independently with replacement. For n = 80, the average variance is 13.16 when dividing by n and 13.33 when dividing by n − 1. The correction works on average, not necessarily for each individual sample."
+      },
+      {
+        "image": "complements-en/variance-79.png",
+        "label": "81 observations per sample",
+        "description": "The nine concentrations in the file form a fictional population with mean 5 mg/L and variance 13.33 (mg/L)². Samples are drawn independently with replacement. For n = 81, the average variance is 13.17 when dividing by n and 13.34 when dividing by n − 1. The correction works on average, not necessarily for each individual sample."
+      },
+      {
+        "image": "complements-en/variance-80.png",
+        "label": "82 observations per sample",
+        "description": "The nine concentrations in the file form a fictional population with mean 5 mg/L and variance 13.33 (mg/L)². Samples are drawn independently with replacement. For n = 82, the average variance is 13.21 when dividing by n and 13.37 when dividing by n − 1. The correction works on average, not necessarily for each individual sample."
+      },
+      {
+        "image": "complements-en/variance-81.png",
+        "label": "83 observations per sample",
+        "description": "The nine concentrations in the file form a fictional population with mean 5 mg/L and variance 13.33 (mg/L)². Samples are drawn independently with replacement. For n = 83, the average variance is 13.16 when dividing by n and 13.32 when dividing by n − 1. The correction works on average, not necessarily for each individual sample."
+      },
+      {
+        "image": "complements-en/variance-82.png",
+        "label": "84 observations per sample",
+        "description": "The nine concentrations in the file form a fictional population with mean 5 mg/L and variance 13.33 (mg/L)². Samples are drawn independently with replacement. For n = 84, the average variance is 13.16 when dividing by n and 13.31 when dividing by n − 1. The correction works on average, not necessarily for each individual sample."
+      },
+      {
+        "image": "complements-en/variance-83.png",
+        "label": "85 observations per sample",
+        "description": "The nine concentrations in the file form a fictional population with mean 5 mg/L and variance 13.33 (mg/L)². Samples are drawn independently with replacement. For n = 85, the average variance is 13.22 when dividing by n and 13.37 when dividing by n − 1. The correction works on average, not necessarily for each individual sample."
+      },
+      {
+        "image": "complements-en/variance-84.png",
+        "label": "86 observations per sample",
+        "description": "The nine concentrations in the file form a fictional population with mean 5 mg/L and variance 13.33 (mg/L)². Samples are drawn independently with replacement. For n = 86, the average variance is 13.23 when dividing by n and 13.38 when dividing by n − 1. The correction works on average, not necessarily for each individual sample."
+      },
+      {
+        "image": "complements-en/variance-85.png",
+        "label": "87 observations per sample",
+        "description": "The nine concentrations in the file form a fictional population with mean 5 mg/L and variance 13.33 (mg/L)². Samples are drawn independently with replacement. For n = 87, the average variance is 13.16 when dividing by n and 13.32 when dividing by n − 1. The correction works on average, not necessarily for each individual sample."
+      },
+      {
+        "image": "complements-en/variance-86.png",
+        "label": "88 observations per sample",
+        "description": "The nine concentrations in the file form a fictional population with mean 5 mg/L and variance 13.33 (mg/L)². Samples are drawn independently with replacement. For n = 88, the average variance is 13.11 when dividing by n and 13.26 when dividing by n − 1. The correction works on average, not necessarily for each individual sample."
+      },
+      {
+        "image": "complements-en/variance-87.png",
+        "label": "89 observations per sample",
+        "description": "The nine concentrations in the file form a fictional population with mean 5 mg/L and variance 13.33 (mg/L)². Samples are drawn independently with replacement. For n = 89, the average variance is 13.15 when dividing by n and 13.30 when dividing by n − 1. The correction works on average, not necessarily for each individual sample."
+      },
+      {
+        "image": "complements-en/variance-88.png",
+        "label": "90 observations per sample",
+        "description": "The nine concentrations in the file form a fictional population with mean 5 mg/L and variance 13.33 (mg/L)². Samples are drawn independently with replacement. For n = 90, the average variance is 13.29 when dividing by n and 13.44 when dividing by n − 1. The correction works on average, not necessarily for each individual sample."
+      },
+      {
+        "image": "complements-en/variance-89.png",
+        "label": "91 observations per sample",
+        "description": "The nine concentrations in the file form a fictional population with mean 5 mg/L and variance 13.33 (mg/L)². Samples are drawn independently with replacement. For n = 91, the average variance is 13.20 when dividing by n and 13.34 when dividing by n − 1. The correction works on average, not necessarily for each individual sample."
+      },
+      {
+        "image": "complements-en/variance-90.png",
+        "label": "92 observations per sample",
+        "description": "The nine concentrations in the file form a fictional population with mean 5 mg/L and variance 13.33 (mg/L)². Samples are drawn independently with replacement. For n = 92, the average variance is 13.14 when dividing by n and 13.29 when dividing by n − 1. The correction works on average, not necessarily for each individual sample."
+      },
+      {
+        "image": "complements-en/variance-91.png",
+        "label": "93 observations per sample",
+        "description": "The nine concentrations in the file form a fictional population with mean 5 mg/L and variance 13.33 (mg/L)². Samples are drawn independently with replacement. For n = 93, the average variance is 13.23 when dividing by n and 13.37 when dividing by n − 1. The correction works on average, not necessarily for each individual sample."
+      },
+      {
+        "image": "complements-en/variance-92.png",
+        "label": "94 observations per sample",
+        "description": "The nine concentrations in the file form a fictional population with mean 5 mg/L and variance 13.33 (mg/L)². Samples are drawn independently with replacement. For n = 94, the average variance is 13.12 when dividing by n and 13.26 when dividing by n − 1. The correction works on average, not necessarily for each individual sample."
+      },
+      {
+        "image": "complements-en/variance-93.png",
+        "label": "95 observations per sample",
+        "description": "The nine concentrations in the file form a fictional population with mean 5 mg/L and variance 13.33 (mg/L)². Samples are drawn independently with replacement. For n = 95, the average variance is 13.31 when dividing by n and 13.45 when dividing by n − 1. The correction works on average, not necessarily for each individual sample."
+      },
+      {
+        "image": "complements-en/variance-94.png",
+        "label": "96 observations per sample",
+        "description": "The nine concentrations in the file form a fictional population with mean 5 mg/L and variance 13.33 (mg/L)². Samples are drawn independently with replacement. For n = 96, the average variance is 13.17 when dividing by n and 13.31 when dividing by n − 1. The correction works on average, not necessarily for each individual sample."
+      },
+      {
+        "image": "complements-en/variance-95.png",
+        "label": "97 observations per sample",
+        "description": "The nine concentrations in the file form a fictional population with mean 5 mg/L and variance 13.33 (mg/L)². Samples are drawn independently with replacement. For n = 97, the average variance is 13.13 when dividing by n and 13.26 when dividing by n − 1. The correction works on average, not necessarily for each individual sample."
+      },
+      {
+        "image": "complements-en/variance-96.png",
+        "label": "98 observations per sample",
+        "description": "The nine concentrations in the file form a fictional population with mean 5 mg/L and variance 13.33 (mg/L)². Samples are drawn independently with replacement. For n = 98, the average variance is 13.10 when dividing by n and 13.24 when dividing by n − 1. The correction works on average, not necessarily for each individual sample."
+      },
+      {
+        "image": "complements-en/variance-97.png",
+        "label": "99 observations per sample",
+        "description": "The nine concentrations in the file form a fictional population with mean 5 mg/L and variance 13.33 (mg/L)². Samples are drawn independently with replacement. For n = 99, the average variance is 13.20 when dividing by n and 13.33 when dividing by n − 1. The correction works on average, not necessarily for each individual sample."
+      },
+      {
+        "image": "complements-en/variance-98.png",
+        "label": "100 observations per sample",
+        "description": "The nine concentrations in the file form a fictional population with mean 5 mg/L and variance 13.33 (mg/L)². Samples are drawn independently with replacement. For n = 100, the average variance is 13.26 when dividing by n and 13.40 when dividing by n − 1. The correction works on average, not necessarily for each individual sample."
+      },
+      {
+        "image": "complements-en/variance-99.png",
+        "label": "101 observations per sample",
+        "description": "The nine concentrations in the file form a fictional population with mean 5 mg/L and variance 13.33 (mg/L)². Samples are drawn independently with replacement. For n = 101, the average variance is 13.16 when dividing by n and 13.29 when dividing by n − 1. The correction works on average, not necessarily for each individual sample."
+      }
+    ],
+    "default": 0,
+    "interval": 400
+  }
+}

@@ -1,0 +1,631 @@
+{
+  "unites": {
+    "title": "Compter des lignes ou des sites ?",
+    "control": "Visites du site S03",
+    "frames": [
+      {
+        "image": "complements/unites-00.png",
+        "label": "1",
+        "description": "Les quatre premiers sites du fichier fictif : seul S03 présente des algues. Scénario de visites répétées, avec présence ou absence inchangée. 4 lignes pour 4 sites. Par ligne : 25.0 % ; par site : 25 %. Les visites répétées ne sont pas de nouveaux sites indépendants."
+      },
+      {
+        "image": "complements/unites-01.png",
+        "label": "2",
+        "description": "Les quatre premiers sites du fichier fictif : seul S03 présente des algues. Scénario de visites répétées, avec présence ou absence inchangée. 5 lignes pour 4 sites. Par ligne : 40.0 % ; par site : 25 %. Les visites répétées ne sont pas de nouveaux sites indépendants."
+      },
+      {
+        "image": "complements/unites-02.png",
+        "label": "3",
+        "description": "Les quatre premiers sites du fichier fictif : seul S03 présente des algues. Scénario de visites répétées, avec présence ou absence inchangée. 6 lignes pour 4 sites. Par ligne : 50.0 % ; par site : 25 %. Les visites répétées ne sont pas de nouveaux sites indépendants."
+      },
+      {
+        "image": "complements/unites-03.png",
+        "label": "4",
+        "description": "Les quatre premiers sites du fichier fictif : seul S03 présente des algues. Scénario de visites répétées, avec présence ou absence inchangée. 7 lignes pour 4 sites. Par ligne : 57.1 % ; par site : 25 %. Les visites répétées ne sont pas de nouveaux sites indépendants."
+      },
+      {
+        "image": "complements/unites-04.png",
+        "label": "5",
+        "description": "Les quatre premiers sites du fichier fictif : seul S03 présente des algues. Scénario de visites répétées, avec présence ou absence inchangée. 8 lignes pour 4 sites. Par ligne : 62.5 % ; par site : 25 %. Les visites répétées ne sont pas de nouveaux sites indépendants."
+      },
+      {
+        "image": "complements/unites-05.png",
+        "label": "6",
+        "description": "Les quatre premiers sites du fichier fictif : seul S03 présente des algues. Scénario de visites répétées, avec présence ou absence inchangée. 9 lignes pour 4 sites. Par ligne : 66.7 % ; par site : 25 %. Les visites répétées ne sont pas de nouveaux sites indépendants."
+      }
+    ],
+    "default": 0
+  },
+  "independance": {
+    "title": "Deux probabilités de 60 % suffisent-elles ?",
+    "control": "Probabilité des deux sites acceptables",
+    "frames": [
+      {
+        "image": "complements/independance-00.png",
+        "label": "0.2",
+        "description": "Modèle fictif. A acceptable : 60 % ; B acceptable : 60 %. Les deux : 20%. Les quatre cas sont incompatibles et totalisent 100 %. L’indépendance correspond à 36 % seulement."
+      },
+      {
+        "image": "complements/independance-01.png",
+        "label": "0.28",
+        "description": "Modèle fictif. A acceptable : 60 % ; B acceptable : 60 %. Les deux : 28%. Les quatre cas sont incompatibles et totalisent 100 %. L’indépendance correspond à 36 % seulement."
+      },
+      {
+        "image": "complements/independance-02.png",
+        "label": "0.36",
+        "description": "Modèle fictif. A acceptable : 60 % ; B acceptable : 60 %. Les deux : 36%. Les quatre cas sont incompatibles et totalisent 100 %. L’indépendance correspond à 36 % seulement."
+      },
+      {
+        "image": "complements/independance-03.png",
+        "label": "0.44",
+        "description": "Modèle fictif. A acceptable : 60 % ; B acceptable : 60 %. Les deux : 44%. Les quatre cas sont incompatibles et totalisent 100 %. L’indépendance correspond à 36 % seulement."
+      },
+      {
+        "image": "complements/independance-04.png",
+        "label": "0.52",
+        "description": "Modèle fictif. A acceptable : 60 % ; B acceptable : 60 %. Les deux : 52%. Les quatre cas sont incompatibles et totalisent 100 %. L’indépendance correspond à 36 % seulement."
+      },
+      {
+        "image": "complements/independance-05.png",
+        "label": "0.6",
+        "description": "Modèle fictif. A acceptable : 60 % ; B acceptable : 60 %. Les deux : 60%. Les quatre cas sont incompatibles et totalisent 100 %. L’indépendance correspond à 36 % seulement."
+      }
+    ],
+    "default": 2
+  },
+  "bornes": {
+    "title": "Et si l’on décalait les bornes ?",
+    "control": "Décalage (mg/L)",
+    "frames": [
+      {
+        "image": "complements/bornes-00.png",
+        "label": "0",
+        "description": "Neuf concentrations fictives, inchangées. Bornes décalées de 0 mg/L, largeur fixe de 2 mg/L. Les traits au pied du graphique indiquent les valeurs brutes ; moyenne = 5 mg/L, médiane = 4 mg/L."
+      },
+      {
+        "image": "complements/bornes-01.png",
+        "label": "0.25",
+        "description": "Neuf concentrations fictives, inchangées. Bornes décalées de 0.25 mg/L, largeur fixe de 2 mg/L. Les traits au pied du graphique indiquent les valeurs brutes ; moyenne = 5 mg/L, médiane = 4 mg/L."
+      },
+      {
+        "image": "complements/bornes-02.png",
+        "label": "0.5",
+        "description": "Neuf concentrations fictives, inchangées. Bornes décalées de 0.5 mg/L, largeur fixe de 2 mg/L. Les traits au pied du graphique indiquent les valeurs brutes ; moyenne = 5 mg/L, médiane = 4 mg/L."
+      },
+      {
+        "image": "complements/bornes-03.png",
+        "label": "0.75",
+        "description": "Neuf concentrations fictives, inchangées. Bornes décalées de 0.75 mg/L, largeur fixe de 2 mg/L. Les traits au pied du graphique indiquent les valeurs brutes ; moyenne = 5 mg/L, médiane = 4 mg/L."
+      },
+      {
+        "image": "complements/bornes-04.png",
+        "label": "1",
+        "description": "Neuf concentrations fictives, inchangées. Bornes décalées de 1 mg/L, largeur fixe de 2 mg/L. Les traits au pied du graphique indiquent les valeurs brutes ; moyenne = 5 mg/L, médiane = 4 mg/L."
+      },
+      {
+        "image": "complements/bornes-05.png",
+        "label": "1.25",
+        "description": "Neuf concentrations fictives, inchangées. Bornes décalées de 1.25 mg/L, largeur fixe de 2 mg/L. Les traits au pied du graphique indiquent les valeurs brutes ; moyenne = 5 mg/L, médiane = 4 mg/L."
+      },
+      {
+        "image": "complements/bornes-06.png",
+        "label": "1.5",
+        "description": "Neuf concentrations fictives, inchangées. Bornes décalées de 1.5 mg/L, largeur fixe de 2 mg/L. Les traits au pied du graphique indiquent les valeurs brutes ; moyenne = 5 mg/L, médiane = 4 mg/L."
+      },
+      {
+        "image": "complements/bornes-07.png",
+        "label": "1.75",
+        "description": "Neuf concentrations fictives, inchangées. Bornes décalées de 1.75 mg/L, largeur fixe de 2 mg/L. Les traits au pied du graphique indiquent les valeurs brutes ; moyenne = 5 mg/L, médiane = 4 mg/L."
+      }
+    ],
+    "default": 0
+  },
+  "variance": {
+    "title": "Quand la correction compte-t-elle ?",
+    "control": "Taille de chaque échantillon",
+    "frames": [
+      {
+        "image": "complements/variance-00.png",
+        "label": "2",
+        "description": "Les neuf concentrations du fichier servent de population fictive : moyenne 5 mg/L, variance 13.33 (mg/L)². Pour n = 2, moyenne des variances avec n : 6.93 ; avec n − 1 : 13.86. La correction agit en moyenne, pas forcément sur chaque tirage."
+      },
+      {
+        "image": "complements/variance-01.png",
+        "label": "3",
+        "description": "Les neuf concentrations du fichier servent de population fictive : moyenne 5 mg/L, variance 13.33 (mg/L)². Pour n = 3, moyenne des variances avec n : 9.06 ; avec n − 1 : 13.59. La correction agit en moyenne, pas forcément sur chaque tirage."
+      },
+      {
+        "image": "complements/variance-02.png",
+        "label": "4",
+        "description": "Les neuf concentrations du fichier servent de population fictive : moyenne 5 mg/L, variance 13.33 (mg/L)². Pour n = 4, moyenne des variances avec n : 9.78 ; avec n − 1 : 13.04. La correction agit en moyenne, pas forcément sur chaque tirage."
+      },
+      {
+        "image": "complements/variance-03.png",
+        "label": "5",
+        "description": "Les neuf concentrations du fichier servent de population fictive : moyenne 5 mg/L, variance 13.33 (mg/L)². Pour n = 5, moyenne des variances avec n : 10.58 ; avec n − 1 : 13.22. La correction agit en moyenne, pas forcément sur chaque tirage."
+      },
+      {
+        "image": "complements/variance-04.png",
+        "label": "6",
+        "description": "Les neuf concentrations du fichier servent de population fictive : moyenne 5 mg/L, variance 13.33 (mg/L)². Pour n = 6, moyenne des variances avec n : 11.41 ; avec n − 1 : 13.69. La correction agit en moyenne, pas forcément sur chaque tirage."
+      },
+      {
+        "image": "complements/variance-05.png",
+        "label": "7",
+        "description": "Les neuf concentrations du fichier servent de population fictive : moyenne 5 mg/L, variance 13.33 (mg/L)². Pour n = 7, moyenne des variances avec n : 11.43 ; avec n − 1 : 13.34. La correction agit en moyenne, pas forcément sur chaque tirage."
+      },
+      {
+        "image": "complements/variance-06.png",
+        "label": "8",
+        "description": "Les neuf concentrations du fichier servent de population fictive : moyenne 5 mg/L, variance 13.33 (mg/L)². Pour n = 8, moyenne des variances avec n : 11.64 ; avec n − 1 : 13.30. La correction agit en moyenne, pas forcément sur chaque tirage."
+      },
+      {
+        "image": "complements/variance-07.png",
+        "label": "9",
+        "description": "Les neuf concentrations du fichier servent de population fictive : moyenne 5 mg/L, variance 13.33 (mg/L)². Pour n = 9, moyenne des variances avec n : 11.56 ; avec n − 1 : 13.00. La correction agit en moyenne, pas forcément sur chaque tirage."
+      },
+      {
+        "image": "complements/variance-08.png",
+        "label": "10",
+        "description": "Les neuf concentrations du fichier servent de population fictive : moyenne 5 mg/L, variance 13.33 (mg/L)². Pour n = 10, moyenne des variances avec n : 12.13 ; avec n − 1 : 13.48. La correction agit en moyenne, pas forcément sur chaque tirage."
+      },
+      {
+        "image": "complements/variance-09.png",
+        "label": "11",
+        "description": "Les neuf concentrations du fichier servent de population fictive : moyenne 5 mg/L, variance 13.33 (mg/L)². Pour n = 11, moyenne des variances avec n : 12.03 ; avec n − 1 : 13.24. La correction agit en moyenne, pas forcément sur chaque tirage."
+      },
+      {
+        "image": "complements/variance-10.png",
+        "label": "12",
+        "description": "Les neuf concentrations du fichier servent de population fictive : moyenne 5 mg/L, variance 13.33 (mg/L)². Pour n = 12, moyenne des variances avec n : 12.33 ; avec n − 1 : 13.45. La correction agit en moyenne, pas forcément sur chaque tirage."
+      },
+      {
+        "image": "complements/variance-11.png",
+        "label": "13",
+        "description": "Les neuf concentrations du fichier servent de population fictive : moyenne 5 mg/L, variance 13.33 (mg/L)². Pour n = 13, moyenne des variances avec n : 12.40 ; avec n − 1 : 13.44. La correction agit en moyenne, pas forcément sur chaque tirage."
+      },
+      {
+        "image": "complements/variance-12.png",
+        "label": "14",
+        "description": "Les neuf concentrations du fichier servent de population fictive : moyenne 5 mg/L, variance 13.33 (mg/L)². Pour n = 14, moyenne des variances avec n : 12.50 ; avec n − 1 : 13.46. La correction agit en moyenne, pas forcément sur chaque tirage."
+      },
+      {
+        "image": "complements/variance-13.png",
+        "label": "15",
+        "description": "Les neuf concentrations du fichier servent de population fictive : moyenne 5 mg/L, variance 13.33 (mg/L)². Pour n = 15, moyenne des variances avec n : 12.54 ; avec n − 1 : 13.43. La correction agit en moyenne, pas forcément sur chaque tirage."
+      },
+      {
+        "image": "complements/variance-14.png",
+        "label": "16",
+        "description": "Les neuf concentrations du fichier servent de population fictive : moyenne 5 mg/L, variance 13.33 (mg/L)². Pour n = 16, moyenne des variances avec n : 12.32 ; avec n − 1 : 13.15. La correction agit en moyenne, pas forcément sur chaque tirage."
+      },
+      {
+        "image": "complements/variance-15.png",
+        "label": "17",
+        "description": "Les neuf concentrations du fichier servent de population fictive : moyenne 5 mg/L, variance 13.33 (mg/L)². Pour n = 17, moyenne des variances avec n : 12.61 ; avec n − 1 : 13.39. La correction agit en moyenne, pas forcément sur chaque tirage."
+      },
+      {
+        "image": "complements/variance-16.png",
+        "label": "18",
+        "description": "Les neuf concentrations du fichier servent de population fictive : moyenne 5 mg/L, variance 13.33 (mg/L)². Pour n = 18, moyenne des variances avec n : 12.50 ; avec n − 1 : 13.23. La correction agit en moyenne, pas forcément sur chaque tirage."
+      },
+      {
+        "image": "complements/variance-17.png",
+        "label": "19",
+        "description": "Les neuf concentrations du fichier servent de population fictive : moyenne 5 mg/L, variance 13.33 (mg/L)². Pour n = 19, moyenne des variances avec n : 12.62 ; avec n − 1 : 13.32. La correction agit en moyenne, pas forcément sur chaque tirage."
+      },
+      {
+        "image": "complements/variance-18.png",
+        "label": "20",
+        "description": "Les neuf concentrations du fichier servent de population fictive : moyenne 5 mg/L, variance 13.33 (mg/L)². Pour n = 20, moyenne des variances avec n : 12.68 ; avec n − 1 : 13.35. La correction agit en moyenne, pas forcément sur chaque tirage."
+      },
+      {
+        "image": "complements/variance-19.png",
+        "label": "21",
+        "description": "Les neuf concentrations du fichier servent de population fictive : moyenne 5 mg/L, variance 13.33 (mg/L)². Pour n = 21, moyenne des variances avec n : 12.74 ; avec n − 1 : 13.38. La correction agit en moyenne, pas forcément sur chaque tirage."
+      },
+      {
+        "image": "complements/variance-20.png",
+        "label": "22",
+        "description": "Les neuf concentrations du fichier servent de population fictive : moyenne 5 mg/L, variance 13.33 (mg/L)². Pour n = 22, moyenne des variances avec n : 12.59 ; avec n − 1 : 13.19. La correction agit en moyenne, pas forcément sur chaque tirage."
+      },
+      {
+        "image": "complements/variance-21.png",
+        "label": "23",
+        "description": "Les neuf concentrations du fichier servent de population fictive : moyenne 5 mg/L, variance 13.33 (mg/L)². Pour n = 23, moyenne des variances avec n : 12.71 ; avec n − 1 : 13.29. La correction agit en moyenne, pas forcément sur chaque tirage."
+      },
+      {
+        "image": "complements/variance-22.png",
+        "label": "24",
+        "description": "Les neuf concentrations du fichier servent de population fictive : moyenne 5 mg/L, variance 13.33 (mg/L)². Pour n = 24, moyenne des variances avec n : 12.66 ; avec n − 1 : 13.21. La correction agit en moyenne, pas forcément sur chaque tirage."
+      },
+      {
+        "image": "complements/variance-23.png",
+        "label": "25",
+        "description": "Les neuf concentrations du fichier servent de population fictive : moyenne 5 mg/L, variance 13.33 (mg/L)². Pour n = 25, moyenne des variances avec n : 12.75 ; avec n − 1 : 13.28. La correction agit en moyenne, pas forcément sur chaque tirage."
+      },
+      {
+        "image": "complements/variance-24.png",
+        "label": "26",
+        "description": "Les neuf concentrations du fichier servent de population fictive : moyenne 5 mg/L, variance 13.33 (mg/L)². Pour n = 26, moyenne des variances avec n : 12.76 ; avec n − 1 : 13.27. La correction agit en moyenne, pas forcément sur chaque tirage."
+      },
+      {
+        "image": "complements/variance-25.png",
+        "label": "27",
+        "description": "Les neuf concentrations du fichier servent de population fictive : moyenne 5 mg/L, variance 13.33 (mg/L)². Pour n = 27, moyenne des variances avec n : 12.93 ; avec n − 1 : 13.43. La correction agit en moyenne, pas forcément sur chaque tirage."
+      },
+      {
+        "image": "complements/variance-26.png",
+        "label": "28",
+        "description": "Les neuf concentrations du fichier servent de population fictive : moyenne 5 mg/L, variance 13.33 (mg/L)². Pour n = 28, moyenne des variances avec n : 13.07 ; avec n − 1 : 13.56. La correction agit en moyenne, pas forcément sur chaque tirage."
+      },
+      {
+        "image": "complements/variance-27.png",
+        "label": "29",
+        "description": "Les neuf concentrations du fichier servent de population fictive : moyenne 5 mg/L, variance 13.33 (mg/L)². Pour n = 29, moyenne des variances avec n : 12.65 ; avec n − 1 : 13.11. La correction agit en moyenne, pas forcément sur chaque tirage."
+      },
+      {
+        "image": "complements/variance-28.png",
+        "label": "30",
+        "description": "Les neuf concentrations du fichier servent de population fictive : moyenne 5 mg/L, variance 13.33 (mg/L)². Pour n = 30, moyenne des variances avec n : 12.89 ; avec n − 1 : 13.34. La correction agit en moyenne, pas forcément sur chaque tirage."
+      },
+      {
+        "image": "complements/variance-29.png",
+        "label": "31",
+        "description": "Les neuf concentrations du fichier servent de population fictive : moyenne 5 mg/L, variance 13.33 (mg/L)². Pour n = 31, moyenne des variances avec n : 12.82 ; avec n − 1 : 13.25. La correction agit en moyenne, pas forcément sur chaque tirage."
+      },
+      {
+        "image": "complements/variance-30.png",
+        "label": "32",
+        "description": "Les neuf concentrations du fichier servent de population fictive : moyenne 5 mg/L, variance 13.33 (mg/L)². Pour n = 32, moyenne des variances avec n : 13.02 ; avec n − 1 : 13.44. La correction agit en moyenne, pas forcément sur chaque tirage."
+      },
+      {
+        "image": "complements/variance-31.png",
+        "label": "33",
+        "description": "Les neuf concentrations du fichier servent de population fictive : moyenne 5 mg/L, variance 13.33 (mg/L)². Pour n = 33, moyenne des variances avec n : 12.84 ; avec n − 1 : 13.24. La correction agit en moyenne, pas forcément sur chaque tirage."
+      },
+      {
+        "image": "complements/variance-32.png",
+        "label": "34",
+        "description": "Les neuf concentrations du fichier servent de population fictive : moyenne 5 mg/L, variance 13.33 (mg/L)². Pour n = 34, moyenne des variances avec n : 13.11 ; avec n − 1 : 13.51. La correction agit en moyenne, pas forcément sur chaque tirage."
+      },
+      {
+        "image": "complements/variance-33.png",
+        "label": "35",
+        "description": "Les neuf concentrations du fichier servent de population fictive : moyenne 5 mg/L, variance 13.33 (mg/L)². Pour n = 35, moyenne des variances avec n : 12.96 ; avec n − 1 : 13.34. La correction agit en moyenne, pas forcément sur chaque tirage."
+      },
+      {
+        "image": "complements/variance-34.png",
+        "label": "36",
+        "description": "Les neuf concentrations du fichier servent de population fictive : moyenne 5 mg/L, variance 13.33 (mg/L)². Pour n = 36, moyenne des variances avec n : 12.88 ; avec n − 1 : 13.25. La correction agit en moyenne, pas forcément sur chaque tirage."
+      },
+      {
+        "image": "complements/variance-35.png",
+        "label": "37",
+        "description": "Les neuf concentrations du fichier servent de population fictive : moyenne 5 mg/L, variance 13.33 (mg/L)². Pour n = 37, moyenne des variances avec n : 13.15 ; avec n − 1 : 13.51. La correction agit en moyenne, pas forcément sur chaque tirage."
+      },
+      {
+        "image": "complements/variance-36.png",
+        "label": "38",
+        "description": "Les neuf concentrations du fichier servent de population fictive : moyenne 5 mg/L, variance 13.33 (mg/L)². Pour n = 38, moyenne des variances avec n : 12.80 ; avec n − 1 : 13.15. La correction agit en moyenne, pas forcément sur chaque tirage."
+      },
+      {
+        "image": "complements/variance-37.png",
+        "label": "39",
+        "description": "Les neuf concentrations du fichier servent de population fictive : moyenne 5 mg/L, variance 13.33 (mg/L)². Pour n = 39, moyenne des variances avec n : 12.89 ; avec n − 1 : 13.23. La correction agit en moyenne, pas forcément sur chaque tirage."
+      },
+      {
+        "image": "complements/variance-38.png",
+        "label": "40",
+        "description": "Les neuf concentrations du fichier servent de population fictive : moyenne 5 mg/L, variance 13.33 (mg/L)². Pour n = 40, moyenne des variances avec n : 13.02 ; avec n − 1 : 13.36. La correction agit en moyenne, pas forcément sur chaque tirage."
+      },
+      {
+        "image": "complements/variance-39.png",
+        "label": "41",
+        "description": "Les neuf concentrations du fichier servent de population fictive : moyenne 5 mg/L, variance 13.33 (mg/L)². Pour n = 41, moyenne des variances avec n : 13.15 ; avec n − 1 : 13.48. La correction agit en moyenne, pas forcément sur chaque tirage."
+      },
+      {
+        "image": "complements/variance-40.png",
+        "label": "42",
+        "description": "Les neuf concentrations du fichier servent de population fictive : moyenne 5 mg/L, variance 13.33 (mg/L)². Pour n = 42, moyenne des variances avec n : 13.04 ; avec n − 1 : 13.35. La correction agit en moyenne, pas forcément sur chaque tirage."
+      },
+      {
+        "image": "complements/variance-41.png",
+        "label": "43",
+        "description": "Les neuf concentrations du fichier servent de population fictive : moyenne 5 mg/L, variance 13.33 (mg/L)². Pour n = 43, moyenne des variances avec n : 13.09 ; avec n − 1 : 13.40. La correction agit en moyenne, pas forcément sur chaque tirage."
+      },
+      {
+        "image": "complements/variance-42.png",
+        "label": "44",
+        "description": "Les neuf concentrations du fichier servent de population fictive : moyenne 5 mg/L, variance 13.33 (mg/L)². Pour n = 44, moyenne des variances avec n : 13.19 ; avec n − 1 : 13.50. La correction agit en moyenne, pas forcément sur chaque tirage."
+      },
+      {
+        "image": "complements/variance-43.png",
+        "label": "45",
+        "description": "Les neuf concentrations du fichier servent de population fictive : moyenne 5 mg/L, variance 13.33 (mg/L)². Pour n = 45, moyenne des variances avec n : 13.03 ; avec n − 1 : 13.33. La correction agit en moyenne, pas forcément sur chaque tirage."
+      },
+      {
+        "image": "complements/variance-44.png",
+        "label": "46",
+        "description": "Les neuf concentrations du fichier servent de population fictive : moyenne 5 mg/L, variance 13.33 (mg/L)². Pour n = 46, moyenne des variances avec n : 13.01 ; avec n − 1 : 13.30. La correction agit en moyenne, pas forcément sur chaque tirage."
+      },
+      {
+        "image": "complements/variance-45.png",
+        "label": "47",
+        "description": "Les neuf concentrations du fichier servent de population fictive : moyenne 5 mg/L, variance 13.33 (mg/L)². Pour n = 47, moyenne des variances avec n : 12.91 ; avec n − 1 : 13.19. La correction agit en moyenne, pas forcément sur chaque tirage."
+      },
+      {
+        "image": "complements/variance-46.png",
+        "label": "48",
+        "description": "Les neuf concentrations du fichier servent de population fictive : moyenne 5 mg/L, variance 13.33 (mg/L)². Pour n = 48, moyenne des variances avec n : 13.11 ; avec n − 1 : 13.39. La correction agit en moyenne, pas forcément sur chaque tirage."
+      },
+      {
+        "image": "complements/variance-47.png",
+        "label": "49",
+        "description": "Les neuf concentrations du fichier servent de population fictive : moyenne 5 mg/L, variance 13.33 (mg/L)². Pour n = 49, moyenne des variances avec n : 13.08 ; avec n − 1 : 13.36. La correction agit en moyenne, pas forcément sur chaque tirage."
+      },
+      {
+        "image": "complements/variance-48.png",
+        "label": "50",
+        "description": "Les neuf concentrations du fichier servent de population fictive : moyenne 5 mg/L, variance 13.33 (mg/L)². Pour n = 50, moyenne des variances avec n : 13.09 ; avec n − 1 : 13.35. La correction agit en moyenne, pas forcément sur chaque tirage."
+      },
+      {
+        "image": "complements/variance-49.png",
+        "label": "51",
+        "description": "Les neuf concentrations du fichier servent de population fictive : moyenne 5 mg/L, variance 13.33 (mg/L)². Pour n = 51, moyenne des variances avec n : 13.10 ; avec n − 1 : 13.36. La correction agit en moyenne, pas forcément sur chaque tirage."
+      },
+      {
+        "image": "complements/variance-50.png",
+        "label": "52",
+        "description": "Les neuf concentrations du fichier servent de population fictive : moyenne 5 mg/L, variance 13.33 (mg/L)². Pour n = 52, moyenne des variances avec n : 13.20 ; avec n − 1 : 13.46. La correction agit en moyenne, pas forcément sur chaque tirage."
+      },
+      {
+        "image": "complements/variance-51.png",
+        "label": "53",
+        "description": "Les neuf concentrations du fichier servent de population fictive : moyenne 5 mg/L, variance 13.33 (mg/L)². Pour n = 53, moyenne des variances avec n : 13.05 ; avec n − 1 : 13.30. La correction agit en moyenne, pas forcément sur chaque tirage."
+      },
+      {
+        "image": "complements/variance-52.png",
+        "label": "54",
+        "description": "Les neuf concentrations du fichier servent de population fictive : moyenne 5 mg/L, variance 13.33 (mg/L)². Pour n = 54, moyenne des variances avec n : 13.17 ; avec n − 1 : 13.42. La correction agit en moyenne, pas forcément sur chaque tirage."
+      },
+      {
+        "image": "complements/variance-53.png",
+        "label": "55",
+        "description": "Les neuf concentrations du fichier servent de population fictive : moyenne 5 mg/L, variance 13.33 (mg/L)². Pour n = 55, moyenne des variances avec n : 12.96 ; avec n − 1 : 13.20. La correction agit en moyenne, pas forcément sur chaque tirage."
+      },
+      {
+        "image": "complements/variance-54.png",
+        "label": "56",
+        "description": "Les neuf concentrations du fichier servent de population fictive : moyenne 5 mg/L, variance 13.33 (mg/L)². Pour n = 56, moyenne des variances avec n : 13.18 ; avec n − 1 : 13.42. La correction agit en moyenne, pas forcément sur chaque tirage."
+      },
+      {
+        "image": "complements/variance-55.png",
+        "label": "57",
+        "description": "Les neuf concentrations du fichier servent de population fictive : moyenne 5 mg/L, variance 13.33 (mg/L)². Pour n = 57, moyenne des variances avec n : 13.12 ; avec n − 1 : 13.35. La correction agit en moyenne, pas forcément sur chaque tirage."
+      },
+      {
+        "image": "complements/variance-56.png",
+        "label": "58",
+        "description": "Les neuf concentrations du fichier servent de population fictive : moyenne 5 mg/L, variance 13.33 (mg/L)². Pour n = 58, moyenne des variances avec n : 13.10 ; avec n − 1 : 13.33. La correction agit en moyenne, pas forcément sur chaque tirage."
+      },
+      {
+        "image": "complements/variance-57.png",
+        "label": "59",
+        "description": "Les neuf concentrations du fichier servent de population fictive : moyenne 5 mg/L, variance 13.33 (mg/L)². Pour n = 59, moyenne des variances avec n : 13.17 ; avec n − 1 : 13.39. La correction agit en moyenne, pas forcément sur chaque tirage."
+      },
+      {
+        "image": "complements/variance-58.png",
+        "label": "60",
+        "description": "Les neuf concentrations du fichier servent de population fictive : moyenne 5 mg/L, variance 13.33 (mg/L)². Pour n = 60, moyenne des variances avec n : 13.05 ; avec n − 1 : 13.28. La correction agit en moyenne, pas forcément sur chaque tirage."
+      },
+      {
+        "image": "complements/variance-59.png",
+        "label": "61",
+        "description": "Les neuf concentrations du fichier servent de population fictive : moyenne 5 mg/L, variance 13.33 (mg/L)². Pour n = 61, moyenne des variances avec n : 13.05 ; avec n − 1 : 13.27. La correction agit en moyenne, pas forcément sur chaque tirage."
+      },
+      {
+        "image": "complements/variance-60.png",
+        "label": "62",
+        "description": "Les neuf concentrations du fichier servent de population fictive : moyenne 5 mg/L, variance 13.33 (mg/L)². Pour n = 62, moyenne des variances avec n : 13.07 ; avec n − 1 : 13.29. La correction agit en moyenne, pas forcément sur chaque tirage."
+      },
+      {
+        "image": "complements/variance-61.png",
+        "label": "63",
+        "description": "Les neuf concentrations du fichier servent de population fictive : moyenne 5 mg/L, variance 13.33 (mg/L)². Pour n = 63, moyenne des variances avec n : 13.05 ; avec n − 1 : 13.26. La correction agit en moyenne, pas forcément sur chaque tirage."
+      },
+      {
+        "image": "complements/variance-62.png",
+        "label": "64",
+        "description": "Les neuf concentrations du fichier servent de population fictive : moyenne 5 mg/L, variance 13.33 (mg/L)². Pour n = 64, moyenne des variances avec n : 13.16 ; avec n − 1 : 13.37. La correction agit en moyenne, pas forcément sur chaque tirage."
+      },
+      {
+        "image": "complements/variance-63.png",
+        "label": "65",
+        "description": "Les neuf concentrations du fichier servent de population fictive : moyenne 5 mg/L, variance 13.33 (mg/L)². Pour n = 65, moyenne des variances avec n : 13.05 ; avec n − 1 : 13.25. La correction agit en moyenne, pas forcément sur chaque tirage."
+      },
+      {
+        "image": "complements/variance-64.png",
+        "label": "66",
+        "description": "Les neuf concentrations du fichier servent de population fictive : moyenne 5 mg/L, variance 13.33 (mg/L)². Pour n = 66, moyenne des variances avec n : 13.07 ; avec n − 1 : 13.27. La correction agit en moyenne, pas forcément sur chaque tirage."
+      },
+      {
+        "image": "complements/variance-65.png",
+        "label": "67",
+        "description": "Les neuf concentrations du fichier servent de population fictive : moyenne 5 mg/L, variance 13.33 (mg/L)². Pour n = 67, moyenne des variances avec n : 13.11 ; avec n − 1 : 13.31. La correction agit en moyenne, pas forcément sur chaque tirage."
+      },
+      {
+        "image": "complements/variance-66.png",
+        "label": "68",
+        "description": "Les neuf concentrations du fichier servent de population fictive : moyenne 5 mg/L, variance 13.33 (mg/L)². Pour n = 68, moyenne des variances avec n : 13.16 ; avec n − 1 : 13.36. La correction agit en moyenne, pas forcément sur chaque tirage."
+      },
+      {
+        "image": "complements/variance-67.png",
+        "label": "69",
+        "description": "Les neuf concentrations du fichier servent de population fictive : moyenne 5 mg/L, variance 13.33 (mg/L)². Pour n = 69, moyenne des variances avec n : 13.32 ; avec n − 1 : 13.52. La correction agit en moyenne, pas forcément sur chaque tirage."
+      },
+      {
+        "image": "complements/variance-68.png",
+        "label": "70",
+        "description": "Les neuf concentrations du fichier servent de population fictive : moyenne 5 mg/L, variance 13.33 (mg/L)². Pour n = 70, moyenne des variances avec n : 13.12 ; avec n − 1 : 13.31. La correction agit en moyenne, pas forcément sur chaque tirage."
+      },
+      {
+        "image": "complements/variance-69.png",
+        "label": "71",
+        "description": "Les neuf concentrations du fichier servent de population fictive : moyenne 5 mg/L, variance 13.33 (mg/L)². Pour n = 71, moyenne des variances avec n : 13.21 ; avec n − 1 : 13.40. La correction agit en moyenne, pas forcément sur chaque tirage."
+      },
+      {
+        "image": "complements/variance-70.png",
+        "label": "72",
+        "description": "Les neuf concentrations du fichier servent de population fictive : moyenne 5 mg/L, variance 13.33 (mg/L)². Pour n = 72, moyenne des variances avec n : 13.15 ; avec n − 1 : 13.33. La correction agit en moyenne, pas forcément sur chaque tirage."
+      },
+      {
+        "image": "complements/variance-71.png",
+        "label": "73",
+        "description": "Les neuf concentrations du fichier servent de population fictive : moyenne 5 mg/L, variance 13.33 (mg/L)². Pour n = 73, moyenne des variances avec n : 13.19 ; avec n − 1 : 13.37. La correction agit en moyenne, pas forcément sur chaque tirage."
+      },
+      {
+        "image": "complements/variance-72.png",
+        "label": "74",
+        "description": "Les neuf concentrations du fichier servent de population fictive : moyenne 5 mg/L, variance 13.33 (mg/L)². Pour n = 74, moyenne des variances avec n : 13.21 ; avec n − 1 : 13.39. La correction agit en moyenne, pas forcément sur chaque tirage."
+      },
+      {
+        "image": "complements/variance-73.png",
+        "label": "75",
+        "description": "Les neuf concentrations du fichier servent de population fictive : moyenne 5 mg/L, variance 13.33 (mg/L)². Pour n = 75, moyenne des variances avec n : 13.19 ; avec n − 1 : 13.37. La correction agit en moyenne, pas forcément sur chaque tirage."
+      },
+      {
+        "image": "complements/variance-74.png",
+        "label": "76",
+        "description": "Les neuf concentrations du fichier servent de population fictive : moyenne 5 mg/L, variance 13.33 (mg/L)². Pour n = 76, moyenne des variances avec n : 13.24 ; avec n − 1 : 13.42. La correction agit en moyenne, pas forcément sur chaque tirage."
+      },
+      {
+        "image": "complements/variance-75.png",
+        "label": "77",
+        "description": "Les neuf concentrations du fichier servent de population fictive : moyenne 5 mg/L, variance 13.33 (mg/L)². Pour n = 77, moyenne des variances avec n : 13.05 ; avec n − 1 : 13.22. La correction agit en moyenne, pas forcément sur chaque tirage."
+      },
+      {
+        "image": "complements/variance-76.png",
+        "label": "78",
+        "description": "Les neuf concentrations du fichier servent de population fictive : moyenne 5 mg/L, variance 13.33 (mg/L)². Pour n = 78, moyenne des variances avec n : 13.30 ; avec n − 1 : 13.47. La correction agit en moyenne, pas forcément sur chaque tirage."
+      },
+      {
+        "image": "complements/variance-77.png",
+        "label": "79",
+        "description": "Les neuf concentrations du fichier servent de population fictive : moyenne 5 mg/L, variance 13.33 (mg/L)². Pour n = 79, moyenne des variances avec n : 13.29 ; avec n − 1 : 13.46. La correction agit en moyenne, pas forcément sur chaque tirage."
+      },
+      {
+        "image": "complements/variance-78.png",
+        "label": "80",
+        "description": "Les neuf concentrations du fichier servent de population fictive : moyenne 5 mg/L, variance 13.33 (mg/L)². Pour n = 80, moyenne des variances avec n : 13.16 ; avec n − 1 : 13.33. La correction agit en moyenne, pas forcément sur chaque tirage."
+      },
+      {
+        "image": "complements/variance-79.png",
+        "label": "81",
+        "description": "Les neuf concentrations du fichier servent de population fictive : moyenne 5 mg/L, variance 13.33 (mg/L)². Pour n = 81, moyenne des variances avec n : 13.17 ; avec n − 1 : 13.34. La correction agit en moyenne, pas forcément sur chaque tirage."
+      },
+      {
+        "image": "complements/variance-80.png",
+        "label": "82",
+        "description": "Les neuf concentrations du fichier servent de population fictive : moyenne 5 mg/L, variance 13.33 (mg/L)². Pour n = 82, moyenne des variances avec n : 13.21 ; avec n − 1 : 13.37. La correction agit en moyenne, pas forcément sur chaque tirage."
+      },
+      {
+        "image": "complements/variance-81.png",
+        "label": "83",
+        "description": "Les neuf concentrations du fichier servent de population fictive : moyenne 5 mg/L, variance 13.33 (mg/L)². Pour n = 83, moyenne des variances avec n : 13.16 ; avec n − 1 : 13.32. La correction agit en moyenne, pas forcément sur chaque tirage."
+      },
+      {
+        "image": "complements/variance-82.png",
+        "label": "84",
+        "description": "Les neuf concentrations du fichier servent de population fictive : moyenne 5 mg/L, variance 13.33 (mg/L)². Pour n = 84, moyenne des variances avec n : 13.16 ; avec n − 1 : 13.31. La correction agit en moyenne, pas forcément sur chaque tirage."
+      },
+      {
+        "image": "complements/variance-83.png",
+        "label": "85",
+        "description": "Les neuf concentrations du fichier servent de population fictive : moyenne 5 mg/L, variance 13.33 (mg/L)². Pour n = 85, moyenne des variances avec n : 13.22 ; avec n − 1 : 13.37. La correction agit en moyenne, pas forcément sur chaque tirage."
+      },
+      {
+        "image": "complements/variance-84.png",
+        "label": "86",
+        "description": "Les neuf concentrations du fichier servent de population fictive : moyenne 5 mg/L, variance 13.33 (mg/L)². Pour n = 86, moyenne des variances avec n : 13.23 ; avec n − 1 : 13.38. La correction agit en moyenne, pas forcément sur chaque tirage."
+      },
+      {
+        "image": "complements/variance-85.png",
+        "label": "87",
+        "description": "Les neuf concentrations du fichier servent de population fictive : moyenne 5 mg/L, variance 13.33 (mg/L)². Pour n = 87, moyenne des variances avec n : 13.16 ; avec n − 1 : 13.32. La correction agit en moyenne, pas forcément sur chaque tirage."
+      },
+      {
+        "image": "complements/variance-86.png",
+        "label": "88",
+        "description": "Les neuf concentrations du fichier servent de population fictive : moyenne 5 mg/L, variance 13.33 (mg/L)². Pour n = 88, moyenne des variances avec n : 13.11 ; avec n − 1 : 13.26. La correction agit en moyenne, pas forcément sur chaque tirage."
+      },
+      {
+        "image": "complements/variance-87.png",
+        "label": "89",
+        "description": "Les neuf concentrations du fichier servent de population fictive : moyenne 5 mg/L, variance 13.33 (mg/L)². Pour n = 89, moyenne des variances avec n : 13.15 ; avec n − 1 : 13.30. La correction agit en moyenne, pas forcément sur chaque tirage."
+      },
+      {
+        "image": "complements/variance-88.png",
+        "label": "90",
+        "description": "Les neuf concentrations du fichier servent de population fictive : moyenne 5 mg/L, variance 13.33 (mg/L)². Pour n = 90, moyenne des variances avec n : 13.29 ; avec n − 1 : 13.44. La correction agit en moyenne, pas forcément sur chaque tirage."
+      },
+      {
+        "image": "complements/variance-89.png",
+        "label": "91",
+        "description": "Les neuf concentrations du fichier servent de population fictive : moyenne 5 mg/L, variance 13.33 (mg/L)². Pour n = 91, moyenne des variances avec n : 13.20 ; avec n − 1 : 13.34. La correction agit en moyenne, pas forcément sur chaque tirage."
+      },
+      {
+        "image": "complements/variance-90.png",
+        "label": "92",
+        "description": "Les neuf concentrations du fichier servent de population fictive : moyenne 5 mg/L, variance 13.33 (mg/L)². Pour n = 92, moyenne des variances avec n : 13.14 ; avec n − 1 : 13.29. La correction agit en moyenne, pas forcément sur chaque tirage."
+      },
+      {
+        "image": "complements/variance-91.png",
+        "label": "93",
+        "description": "Les neuf concentrations du fichier servent de population fictive : moyenne 5 mg/L, variance 13.33 (mg/L)². Pour n = 93, moyenne des variances avec n : 13.23 ; avec n − 1 : 13.37. La correction agit en moyenne, pas forcément sur chaque tirage."
+      },
+      {
+        "image": "complements/variance-92.png",
+        "label": "94",
+        "description": "Les neuf concentrations du fichier servent de population fictive : moyenne 5 mg/L, variance 13.33 (mg/L)². Pour n = 94, moyenne des variances avec n : 13.12 ; avec n − 1 : 13.26. La correction agit en moyenne, pas forcément sur chaque tirage."
+      },
+      {
+        "image": "complements/variance-93.png",
+        "label": "95",
+        "description": "Les neuf concentrations du fichier servent de population fictive : moyenne 5 mg/L, variance 13.33 (mg/L)². Pour n = 95, moyenne des variances avec n : 13.31 ; avec n − 1 : 13.45. La correction agit en moyenne, pas forcément sur chaque tirage."
+      },
+      {
+        "image": "complements/variance-94.png",
+        "label": "96",
+        "description": "Les neuf concentrations du fichier servent de population fictive : moyenne 5 mg/L, variance 13.33 (mg/L)². Pour n = 96, moyenne des variances avec n : 13.17 ; avec n − 1 : 13.31. La correction agit en moyenne, pas forcément sur chaque tirage."
+      },
+      {
+        "image": "complements/variance-95.png",
+        "label": "97",
+        "description": "Les neuf concentrations du fichier servent de population fictive : moyenne 5 mg/L, variance 13.33 (mg/L)². Pour n = 97, moyenne des variances avec n : 13.13 ; avec n − 1 : 13.26. La correction agit en moyenne, pas forcément sur chaque tirage."
+      },
+      {
+        "image": "complements/variance-96.png",
+        "label": "98",
+        "description": "Les neuf concentrations du fichier servent de population fictive : moyenne 5 mg/L, variance 13.33 (mg/L)². Pour n = 98, moyenne des variances avec n : 13.10 ; avec n − 1 : 13.24. La correction agit en moyenne, pas forcément sur chaque tirage."
+      },
+      {
+        "image": "complements/variance-97.png",
+        "label": "99",
+        "description": "Les neuf concentrations du fichier servent de population fictive : moyenne 5 mg/L, variance 13.33 (mg/L)². Pour n = 99, moyenne des variances avec n : 13.20 ; avec n − 1 : 13.33. La correction agit en moyenne, pas forcément sur chaque tirage."
+      },
+      {
+        "image": "complements/variance-98.png",
+        "label": "100",
+        "description": "Les neuf concentrations du fichier servent de population fictive : moyenne 5 mg/L, variance 13.33 (mg/L)². Pour n = 100, moyenne des variances avec n : 13.26 ; avec n − 1 : 13.40. La correction agit en moyenne, pas forcément sur chaque tirage."
+      },
+      {
+        "image": "complements/variance-99.png",
+        "label": "101",
+        "description": "Les neuf concentrations du fichier servent de population fictive : moyenne 5 mg/L, variance 13.33 (mg/L)². Pour n = 101, moyenne des variances avec n : 13.16 ; avec n − 1 : 13.29. La correction agit en moyenne, pas forcément sur chaque tirage."
+      }
+    ],
+    "default": 0,
+    "interval": 400
+  }
+}

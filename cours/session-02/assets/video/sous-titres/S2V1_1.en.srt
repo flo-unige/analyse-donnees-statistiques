@@ -1,0 +1,1148 @@
+1
+00:00:00,490 --> 00:00:03,971
+In this first session, we'll explore
+
+2
+00:00:04,051 --> 00:00:07,441
+what statistical analysis involves. Who
+exactly are we studying?
+
+3
+00:00:07,521 --> 00:00:11,184
+What is the population of interest? And,
+crucially,
+
+4
+00:00:11,264 --> 00:00:14,791
+what data can we access, and what can they
+tell us about the wider population?
+
+5
+00:00:14,871 --> 00:00:16,845
+We always start with a research question.
+
+6
+00:00:16,925 --> 00:00:19,402
+In practice, we observe a small group
+drawn from
+
+7
+00:00:19,482 --> 00:00:22,187
+the wider population we're interested in,
+
+8
+00:00:22,267 --> 00:00:25,006
+and consider what we can infer about that
+population.
+
+9
+00:00:25,098 --> 00:00:28,889
+Let's take an example that we'll return to
+throughout this discussion.
+
+10
+00:00:28,969 --> 00:00:30,562
+Imagine you're a researcher
+
+11
+00:00:30,642 --> 00:00:33,334
+at a university, studying a particular
+forest.
+
+12
+00:00:33,414 --> 00:00:35,245
+You know that some trees
+
+13
+00:00:35,325 --> 00:00:37,826
+have parasites. What proportion is
+affected?
+
+14
+00:00:37,906 --> 00:00:41,649
+In practice, you won't be able to examine
+every tree in the forest.
+
+15
+00:00:41,729 --> 00:00:43,657
+There may be physical constraints,
+
+16
+00:00:43,737 --> 00:00:46,667
+not enough time to survey the whole
+forest,
+
+17
+00:00:46,747 --> 00:00:49,806
+or a lack of funding or staff.
+
+18
+00:00:50,186 --> 00:00:52,268
+The population is
+
+19
+00:00:52,348 --> 00:00:55,728
+the complete set of units our study
+concerns.
+
+20
+00:00:55,808 --> 00:00:57,414
+Here, that's the whole forest.
+
+21
+00:00:57,802 --> 00:01:01,419
+In practice, we'll select a sample.
+
+22
+00:01:01,499 --> 00:01:05,115
+Here, we select just 24 trees from the
+entire forest.
+
+23
+00:01:05,195 --> 00:01:09,406
+These are the trees we can study and
+describe
+
+24
+00:01:09,486 --> 00:01:13,777
+using statistics, before drawing
+conclusions about the whole population.
+
+25
+00:01:14,248 --> 00:01:17,705
+Once we've selected this sample,
+
+26
+00:01:17,785 --> 00:01:21,148
+we'll try to draw conclusions about our
+population of interest.
+
+27
+00:01:21,228 --> 00:01:22,648
+Here, the whole forest.
+
+28
+00:01:24,008 --> 00:01:26,177
+Statistics
+
+29
+00:01:26,257 --> 00:01:28,425
+allow us to describe variability.
+
+30
+00:01:28,505 --> 00:01:29,737
+What does that mean?
+
+31
+00:01:29,817 --> 00:01:31,423
+Within a single forest,
+
+32
+00:01:31,503 --> 00:01:33,672
+the individual trees aren't all the same.
+
+33
+00:01:33,752 --> 00:01:35,640
+They differ in size,
+
+34
+00:01:35,720 --> 00:01:38,029
+shape and species.
+
+35
+00:01:38,109 --> 00:01:41,870
+Statistics allow us to quantify that
+variability.
+
+36
+00:01:41,950 --> 00:01:44,822
+Here, we're interested in the height of
+each tree.
+
+37
+00:01:44,902 --> 00:01:47,244
+We'll record those measurements in this
+table.
+
+38
+00:01:47,624 --> 00:01:51,560
+The first thing statistics helps us do is
+organise our data.
+
+39
+00:01:51,640 --> 00:01:54,057
+How can we take the data
+
+40
+00:01:54,137 --> 00:01:56,604
+and arrange them so that we can study
+them?
+
+41
+00:01:56,684 --> 00:01:59,248
+Next, we can compare
+
+42
+00:01:59,328 --> 00:02:02,677
+the different units in the sample and
+population,
+
+43
+00:02:02,757 --> 00:02:06,056
+and summarise the data using various
+measures.
+
+44
+00:02:06,136 --> 00:02:08,406
+Finally, we may be able
+
+45
+00:02:08,486 --> 00:02:10,953
+to generalise to the whole population.
+
+46
+00:02:11,033 --> 00:02:14,412
+We'll explore that when we study
+statistical inference.
+
+47
+00:02:15,464 --> 00:02:17,358
+So, what is a unit?
+
+48
+00:02:17,438 --> 00:02:21,145
+It's an entity selected for study
+according to the study design.
+
+49
+00:02:21,225 --> 00:02:23,546
+For example, we want to study all
+
+50
+00:02:23,626 --> 00:02:26,159
+the trees belonging to a particular
+population.
+
+51
+00:02:26,239 --> 00:02:28,987
+Here, that means the whole forest.
+
+52
+00:02:29,067 --> 00:02:32,241
+A statistical unit could be a single tree.
+
+53
+00:02:32,321 --> 00:02:36,428
+Each of my observations would then refer
+to one tree.
+
+54
+00:02:36,680 --> 00:02:38,958
+For a different research question,
+
+55
+00:02:39,038 --> 00:02:42,312
+we might instead study a plot of land.
+Why?
+
+56
+00:02:42,392 --> 00:02:45,823
+Because we might be interested in
+
+57
+00:02:45,903 --> 00:02:49,595
+soil fertilisation, soil quality,
+
+58
+00:02:49,675 --> 00:02:53,316
+or the condition of all the trees in a
+small area.
+
+59
+00:02:53,396 --> 00:02:56,408
+The statistical unit depends on the
+research question.
+
+60
+00:02:56,488 --> 00:02:59,499
+It's important to define it carefully
+
+61
+00:02:59,579 --> 00:03:02,828
+at the outset, because it shapes the rest
+of the study.
+
+62
+00:03:03,577 --> 00:03:07,712
+There are several ways to define a
+statistical unit.
+
+63
+00:03:07,792 --> 00:03:09,848
+Sometimes the choice is less intuitive.
+
+64
+00:03:09,928 --> 00:03:12,678
+For example, we might consider
+
+65
+00:03:12,758 --> 00:03:15,623
+a tree observed at different times.
+
+66
+00:03:15,703 --> 00:03:18,163
+In that case, the same tree
+
+67
+00:03:18,243 --> 00:03:21,166
+would contribute several observational
+units.
+
+68
+00:03:21,246 --> 00:03:23,613
+The unit in this example
+
+69
+00:03:23,705 --> 00:03:28,565
+is a tree at a specific point in time.
+
+70
+00:03:30,201 --> 00:03:33,112
+We also need to define precisely which
+population we're studying.
+
+71
+00:03:33,192 --> 00:03:35,226
+Simply saying "the population" is too
+vague.
+
+72
+00:03:35,306 --> 00:03:37,047
+We need to ask:
+
+73
+00:03:37,127 --> 00:03:39,015
+where will the study take place?
+
+74
+00:03:39,095 --> 00:03:42,768
+Here, it's in the forest.
+
+75
+00:03:42,848 --> 00:03:44,788
+When will we carry out the study?
+
+76
+00:03:44,868 --> 00:03:47,187
+We need to specify the survey dates.
+
+77
+00:03:47,267 --> 00:03:49,625
+Again, the date may be a variable,
+
+78
+00:03:49,625 --> 00:03:52,125
+or it may form part of the observational
+unit.
+
+79
+00:03:52,217 --> 00:03:55,788
+We also need to ask: who will we study?
+
+80
+00:03:55,868 --> 00:03:59,332
+Here, that could mean a particular tree
+species,
+
+81
+00:03:59,412 --> 00:04:03,406
+or all tree species in the forest, if
+that's our focus.
+
+82
+00:04:03,486 --> 00:04:04,998
+The research question
+
+83
+00:04:05,078 --> 00:04:09,094
+and study design that define the
+population, not the other way round.
+
+84
+00:04:09,594 --> 00:04:11,271
+I've already mentioned
+
+85
+00:04:11,351 --> 00:04:14,018
+the idea of a sample.
+
+86
+00:04:14,098 --> 00:04:17,942
+Here, it's the set of trees selected from
+the population.
+
+87
+00:04:18,586 --> 00:04:21,325
+The sample size can vary because,
+
+88
+00:04:21,405 --> 00:04:24,094
+in practice, the time available
+
+89
+00:04:24,174 --> 00:04:27,467
+and the resources for the study may
+differ.
+
+90
+00:04:27,547 --> 00:04:30,689
+We might study just 5% of the population,
+
+91
+00:04:30,769 --> 00:04:33,961
+or perhaps 20%.
+
+92
+00:04:34,041 --> 00:04:36,025
+Of course, that depends on
+
+93
+00:04:36,105 --> 00:04:38,622
+how much effort we can devote to the
+study.
+
+94
+00:04:38,874 --> 00:04:40,788
+Now we need to ask:
+
+95
+00:04:40,868 --> 00:04:42,976
+can we actually access all the trees?
+
+96
+00:04:43,056 --> 00:04:45,748
+This brings us to the question of bias.
+
+97
+00:04:45,828 --> 00:04:49,152
+Imagine we want to survey this forest
+
+98
+00:04:49,232 --> 00:04:51,496
+and measure the height of its trees.
+
+99
+00:04:51,976 --> 00:04:52,896
+Trees vary in height.
+
+100
+00:04:52,976 --> 00:04:56,352
+The population we can actually study
+
+101
+00:04:56,432 --> 00:05:00,285
+may therefore differ from the one we
+originally intended to study.
+
+102
+00:05:00,365 --> 00:05:03,205
+Here, for example, only a subset
+
+103
+00:05:03,285 --> 00:05:06,244
+is accessible: the shorter trees.
+
+104
+00:05:06,324 --> 00:05:10,078
+Perhaps, when collecting our data,
+
+105
+00:05:10,170 --> 00:05:13,799
+we left some trees unmeasured because they
+were too tall.
+
+106
+00:05:13,879 --> 00:05:16,159
+There's a gap between the population
+
+107
+00:05:16,239 --> 00:05:18,856
+we want to study and the one we can
+actually access.
+
+108
+00:05:18,936 --> 00:05:20,782
+We need to be careful
+
+109
+00:05:20,862 --> 00:05:23,126
+that this doesn't introduce bias into the
+study.
+
+110
+00:05:24,206 --> 00:05:27,726
+Here, the accessible population consists
+of trees
+
+111
+00:05:27,806 --> 00:05:32,212
+short enough for us to measure their full
+height. Be aware
+
+112
+00:05:32,292 --> 00:05:36,386
+of the difference between the accessible
+population and the target population.
+
+113
+00:05:36,466 --> 00:05:38,003
+Let's take another example.
+
+114
+00:05:38,083 --> 00:05:40,924
+Suppose you're conducting a university
+travel survey.
+
+115
+00:05:41,004 --> 00:05:43,533
+You want to know which mode of transport
+
+116
+00:05:43,613 --> 00:05:46,482
+each student uses to get to university.
+
+117
+00:05:46,574 --> 00:05:50,805
+Initially, the target is all students. But
+the accessible group
+
+118
+00:05:50,885 --> 00:05:55,647
+consists of those who were sent the
+survey.
+
+119
+00:05:55,727 --> 00:05:59,604
+Some students may be out of reach:
+
+120
+00:05:59,684 --> 00:06:03,678
+perhaps we didn't send the survey to the
+right campus,
+
+121
+00:06:03,758 --> 00:06:07,694
+or they weren't available when we sent it.
+
+122
+00:06:07,774 --> 00:06:10,772
+There's a gap between the students
+
+123
+00:06:10,852 --> 00:06:14,660
+we can reach and those we originally
+wanted to study.
+
+124
+00:06:14,740 --> 00:06:17,052
+Our sample is drawn from that accessible
+group.
+
+125
+00:06:17,132 --> 00:06:20,022
+It consists of the responses we actually
+received,
+
+126
+00:06:20,102 --> 00:06:23,062
+because even among the students
+
+127
+00:06:23,142 --> 00:06:25,174
+we reached, not everyone was able to
+respond.
+
+128
+00:06:25,254 --> 00:06:27,586
+Those respondents form our final sample.
+
+129
+00:06:27,666 --> 00:06:29,781
+So there's an initial coverage gap
+
+130
+00:06:29,861 --> 00:06:33,208
+between the target population and the
+population we can reach.
+
+131
+00:06:33,288 --> 00:06:37,465
+A second gap arises through participation:
+
+132
+00:06:37,545 --> 00:06:42,022
+not all the students we reached were able
+to respond.
+
+133
+00:06:42,496 --> 00:06:45,011
+There are various ways to tackle these
+biases.
+
+134
+00:06:45,091 --> 00:06:47,508
+The most obvious approach
+
+135
+00:06:47,588 --> 00:06:50,005
+might be to increase the sample size.
+
+136
+00:06:50,085 --> 00:06:52,649
+Here, we have a sample on the left and one
+on the right.
+
+137
+00:06:52,729 --> 00:06:54,705
+The sample on the left
+
+138
+00:06:54,785 --> 00:06:57,300
+covers the population more broadly.
+
+139
+00:06:57,380 --> 00:06:59,405
+The one on the right, however,
+
+140
+00:06:59,485 --> 00:07:01,853
+is clustered in one corner.
+
+141
+00:07:01,933 --> 00:07:04,203
+That's a problem with the study design.
+
+142
+00:07:04,283 --> 00:07:07,172
+It creates selection bias that we'd like
+to address.
+
+143
+00:07:07,264 --> 00:07:10,541
+Increasing the sample size
+
+144
+00:07:10,621 --> 00:07:14,622
+may not be enough to remove this bias:
+
+145
+00:07:14,702 --> 00:07:18,393
+the right-hand part of the population is
+still not covered.
+
+146
+00:07:18,473 --> 00:07:20,821
+So, increasing the sample size
+
+147
+00:07:20,901 --> 00:07:23,816
+can help, but it isn't always enough.
+
+148
+00:07:23,896 --> 00:07:25,469
+We need to pay close attention
+
+149
+00:07:25,549 --> 00:07:28,132
+to the procedures we use to collect our
+data.
+
+150
+00:07:28,822 --> 00:07:31,994
+Once we've selected our samples, we need
+to decide
+
+151
+00:07:32,074 --> 00:07:35,507
+what to study about each statistical unit.
+
+152
+00:07:35,587 --> 00:07:38,654
+Take a plot of land, for example.
+
+153
+00:07:38,734 --> 00:07:42,010
+That's my unit. What do we want to know
+about it?
+
+154
+00:07:42,090 --> 00:07:45,052
+We could record the type of grassland,
+
+155
+00:07:45,132 --> 00:07:48,566
+its ecological condition, whether invasive
+species are present, and so on.
+
+156
+00:07:48,646 --> 00:07:51,345
+Each of these characteristics is a
+variable:
+
+157
+00:07:51,425 --> 00:07:54,177
+something we study for each statistical
+unit.
+
+158
+00:07:54,257 --> 00:07:56,250
+Keep this idea of a variable in mind.
+
+159
+00:07:56,342 --> 00:08:00,239
+There are different types of variables,
+generally grouped
+
+160
+00:08:00,319 --> 00:08:04,420
+into two families: categorical and
+numerical variables.
+
+161
+00:08:04,894 --> 00:08:06,932
+The simplest type of categorical variable
+
+162
+00:08:07,012 --> 00:08:09,680
+is a nominal variable.
+
+163
+00:08:09,760 --> 00:08:13,974
+It assigns observations to descriptive
+categories.
+
+164
+00:08:14,054 --> 00:08:17,122
+For example, grassland might be dry,
+
+165
+00:08:17,202 --> 00:08:20,500
+wet or flower-rich. But these labels
+
+166
+00:08:20,580 --> 00:08:23,763
+don't tell us that one type is better than
+another.
+
+167
+00:08:23,843 --> 00:08:27,106
+There is no natural ordering of the
+categories.
+
+168
+00:08:27,198 --> 00:08:30,000
+Other categorical variables
+
+169
+00:08:30,080 --> 00:08:33,551
+do have an order: for example,
+"excellent", "poor", "good",
+
+170
+00:08:33,631 --> 00:08:36,793
+or "disastrous". These can be placed in a
+logical order.
+
+171
+00:08:36,873 --> 00:08:40,035
+We call this an ordinal categorical
+variable.
+
+172
+00:08:40,115 --> 00:08:42,145
+We can rank the categories
+
+173
+00:08:42,225 --> 00:08:44,358
+without assigning them numerical values.
+
+174
+00:08:44,438 --> 00:08:47,938
+There is an order among these
+descriptions.
+
+175
+00:08:48,030 --> 00:08:51,900
+The last category is binary categorical
+variables.
+
+176
+00:08:51,980 --> 00:08:56,069
+These have two possible values: true or
+false, 0 or 1,
+
+177
+00:08:56,149 --> 00:09:00,184
+yes or no. That's what "binary" means.
+
+178
+00:09:00,264 --> 00:09:02,783
+You may already know the term from
+computing.
+
+179
+00:09:02,863 --> 00:09:05,200
+The other family we'll be studying
+
+180
+00:09:05,280 --> 00:09:08,101
+is numerical variables.
+
+181
+00:09:08,181 --> 00:09:10,821
+Quite simply, these are numbers.
+
+182
+00:09:10,901 --> 00:09:13,359
+For example, a count of beetles
+
+183
+00:09:13,439 --> 00:09:16,098
+could be 1, 2, 3, and so on.
+
+184
+00:09:16,318 --> 00:09:19,802
+This kind of numerical variable
+
+185
+00:09:19,882 --> 00:09:22,825
+doesn't allow arbitrarily many decimal
+places.
+
+186
+00:09:22,905 --> 00:09:24,259
+Here's another example.
+
+187
+00:09:24,339 --> 00:09:27,000
+At the supermarket, your bill might be
+
+188
+00:09:27,080 --> 00:09:30,705
+237.18 francs.
+
+189
+00:09:30,785 --> 00:09:34,057
+But you wouldn't pay 237.18214 francs.
+
+190
+00:09:34,137 --> 00:09:38,820
+This is a numerical variable with gaps
+between its possible values.
+
+191
+00:09:38,900 --> 00:09:42,370
+You move from one value to the next in
+fixed increments.
+
+192
+00:09:42,686 --> 00:09:45,775
+We call this a discrete numerical
+variable.
+
+193
+00:09:45,855 --> 00:09:49,462
+Other numerical variables, by contrast,
+are continuous.
+
+194
+00:09:49,542 --> 00:09:53,034
+If you take a numerical scale,
+
+195
+00:09:53,114 --> 00:09:56,951
+you can locate the value you're interested
+in,
+
+196
+00:09:57,031 --> 00:10:01,445
+but there's no fixed gap between possible
+values.
+
+197
+00:10:01,525 --> 00:10:04,290
+You can keep zooming in indefinitely
+
+198
+00:10:04,382 --> 00:10:07,182
+and still find values in between.
+
+199
+00:10:07,262 --> 00:10:10,638
+Here, for example, the value appears
+
+200
+00:10:10,718 --> 00:10:14,210
+to be 18.45 degrees. But if I zoom in
+further,
+
+201
+00:10:14,290 --> 00:10:17,608
+I find more values between 18 and 19.
+
+202
+00:10:17,688 --> 00:10:21,353
+I can keep zooming in and there will
+always be more values.
+
+203
+00:10:21,433 --> 00:10:22,700
+That's a continuous variable.
+
+204
+00:10:22,852 --> 00:10:27,090
+The fact that our measurement precision is
+limited
+
+205
+00:10:27,170 --> 00:10:31,660
+doesn't change the continuous nature of
+temperature.
+
+206
+00:10:32,148 --> 00:10:35,297
+Once you've selected the variables of
+interest
+
+207
+00:10:35,377 --> 00:10:39,705
+and collected your data, you need to
+organise them.
+
+208
+00:10:39,785 --> 00:10:41,909
+How might we do that?
+
+209
+00:10:41,989 --> 00:10:45,907
+Take an observed unit: plot P1. We record
+
+210
+00:10:45,987 --> 00:10:50,292
+that it's dry, in good condition, and has
+no invasive species, and so on.
+
+212
+00:10:50,292 --> 00:10:53,471
+We have data on many different units,
+
+213
+00:10:53,551 --> 00:10:56,984
+so we arrange each of those units,
+
+214
+00:10:57,064 --> 00:11:00,854
+each member of the sample, on a separate
+row.
+
+215
+00:11:00,934 --> 00:11:03,247
+The result is a table,
+
+216
+00:11:03,327 --> 00:11:06,099
+the simplest way to organise these data.
+
+217
+00:11:06,179 --> 00:11:09,336
+Each column in the table corresponds
+
+218
+00:11:09,428 --> 00:11:12,475
+to a variable, while each row is an
+observation.
+
+219
+00:11:12,555 --> 00:11:15,328
+If we look at a particular cell,
+
+220
+00:11:15,408 --> 00:11:17,962
+where a row and column intersect,
+
+221
+00:11:18,042 --> 00:11:21,748
+we can see the soil temperature observed
+for plot 2.
+
+222
+00:11:21,828 --> 00:11:24,601
+Its temperature is 16.8 degrees.
+
+223
+00:11:24,681 --> 00:11:27,838
+This is the simplest way to organise data.
+
+224
+00:11:27,918 --> 00:11:30,197
+The next step is to describe
+
+225
+00:11:30,277 --> 00:11:32,856
+the units we've observed.
+
+226
+00:11:33,204 --> 00:11:36,584
+Let's return to our earlier example,
+
+227
+00:11:36,664 --> 00:11:40,654
+the travel survey, and describe the people
+we observed.
+
+228
+00:11:40,734 --> 00:11:45,063
+Here, 18 of the 60 respondents are
+cyclists.
+
+229
+00:11:45,143 --> 00:11:49,812
+That means 30% of respondents
+
+230
+00:11:49,892 --> 00:11:54,776
+mainly travel by bicycle. We also found
+that, on average, they travel 4.1 km
+
+231
+00:11:54,868 --> 00:11:57,147
+to study, work, and so on.
+
+232
+00:11:57,227 --> 00:12:00,713
+This is descriptive statistics: using
+measures
+
+233
+00:12:00,793 --> 00:12:04,750
+to describe and summarise the data we've
+observed.
+
+234
+00:12:04,830 --> 00:12:07,529
+We'll see that there are several
+
+235
+00:12:07,609 --> 00:12:10,440
+approaches to statistics that matter for
+this course.
+
+236
+00:12:10,940 --> 00:12:12,966
+After all, our original aim
+
+237
+00:12:13,046 --> 00:12:15,627
+isn't necessarily just to describe the
+data.
+
+238
+00:12:15,707 --> 00:12:18,952
+We'd also like to generalise to the whole
+population.
+
+239
+00:12:19,032 --> 00:12:22,056
+For example, if 30% of respondents
+
+240
+00:12:22,136 --> 00:12:26,102
+travel by bicycle, what does that tell us
+about the population?
+
+241
+00:12:26,182 --> 00:12:30,426
+Does 30% of the entire population really
+cycle?
+
+242
+00:12:30,506 --> 00:12:33,031
+Generalising isn't that straightforward.
+
+243
+00:12:33,111 --> 00:12:35,328
+We always need to
+
+244
+00:12:35,420 --> 00:12:39,307
+examine the study design and quantify
+
+245
+00:12:39,387 --> 00:12:44,224
+the uncertainty associated with a sample
+that may not represent the population.
+
+246
+00:12:44,304 --> 00:12:48,359
+We'll cover several ways to do this later
+in the course.
+
+247
+00:12:48,439 --> 00:12:52,493
+To sum up, always start with these
+questions.
+
+248
+00:12:52,573 --> 00:12:55,790
+First, who do we want to draw conclusions
+about?
+
+249
+00:12:55,870 --> 00:12:58,496
+That defines our population.
+
+250
+00:12:58,588 --> 00:13:01,707
+Next, check whether the target population
+
+251
+00:13:01,787 --> 00:13:04,907
+matches the population we can actually
+access.
+
+252
+00:13:04,987 --> 00:13:08,011
+They don't always match, so we try to
+limit bias,
+
+253
+00:13:08,091 --> 00:13:11,353
+although some bias will usually remain in
+practice.
+
+254
+00:13:11,433 --> 00:13:13,407
+Then ask who
+
+255
+00:13:13,487 --> 00:13:15,937
+we actually observed: that's our sample.
+
+256
+00:13:16,017 --> 00:13:19,360
+We then organise all those data in a
+table.
+
+257
+00:13:19,452 --> 00:13:22,962
+To quantify the uncertainty we've been
+discussing,
+
+258
+00:13:23,042 --> 00:13:26,812
+we need a different language, which we'll
+introduce in the next video:
+
+259
+00:13:26,892 --> 00:13:27,892
+probability.

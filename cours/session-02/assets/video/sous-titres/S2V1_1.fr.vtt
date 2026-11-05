@@ -1,0 +1,1244 @@
+WEBVTT
+
+1
+00:00:00.490 --> 00:00:03.971
+Dans cette première session du cours,
+on va s'intéresser à ce que signifie
+
+2
+00:00:04.051 --> 00:00:07.441
+faire une analyse statistique :
+qui étudie-t-on réellement ? Quelle
+
+3
+00:00:07.521 --> 00:00:11.184
+est la population étudiée ?
+Mais surtout, à quelles données
+
+4
+00:00:11.264 --> 00:00:14.791
+a-t-on accès et que peut-on conclure
+sur la population plus générale ?
+
+5
+00:00:14.871 --> 00:00:16.845
+On part toujours d'une
+question de recherche.
+
+6
+00:00:16.925 --> 00:00:19.402
+En pratique, on observe
+un petit groupe d'une population
+
+7
+00:00:19.482 --> 00:00:22.187
+plus générale qui nous
+intéresse et on va regarder
+
+8
+00:00:22.267 --> 00:00:25.006
+ce qu'on va pouvoir déduire
+de cette population.
+
+9
+00:00:25.098 --> 00:00:28.889
+Prenons l'exemple suivant qui va nous
+suivre tout au long de la discussion.
+
+10
+00:00:28.969 --> 00:00:30.562
+Vous êtes chercheur ou chercheuse à
+
+11
+00:00:30.642 --> 00:00:33.334
+l'université et vous souhaitez
+étudier une certaine forêt.
+
+12
+00:00:33.414 --> 00:00:35.245
+Vous savez qu'il y a des arbres qui sont
+
+13
+00:00:35.325 --> 00:00:37.826
+parasités, mais vous voulez
+en connaître la proportion.
+
+14
+00:00:37.906 --> 00:00:41.649
+Alors en pratique, vous n'allez pas pouvoir
+examiner tous les arbres de la forêt.
+
+15
+00:00:41.729 --> 00:00:43.657
+Parfois, il y a des contraintes physiques,
+
+16
+00:00:43.737 --> 00:00:46.667
+on n'a pas le temps
+d'étudier toute la forêt
+
+17
+00:00:46.747 --> 00:00:49.806
+et on n'a pas les moyens
+financiers ou humains disponibles.
+
+18
+00:00:50.186 --> 00:00:52.268
+La population, c'est
+
+19
+00:00:52.348 --> 00:00:55.728
+l'ensemble des unités
+concernées par notre étude.
+
+20
+00:00:55.808 --> 00:00:57.414
+Ici, c'est toute la forêt.
+
+21
+00:00:57.802 --> 00:01:01.419
+Alors en pratique, on va
+prendre un certain échantillon.
+
+22
+00:01:01.499 --> 00:01:05.115
+Ici, on ne va sélectionner que
+24 arbres de toute la forêt.
+
+23
+00:01:05.195 --> 00:01:09.406
+Ce sont eux qu'on va pouvoir
+étudier et décrire à l'aide des
+
+24
+00:01:09.486 --> 00:01:13.777
+statistiques, pour ensuite tirer des
+conclusions sur l'ensemble de la population.
+
+25
+00:01:14.248 --> 00:01:17.705
+Une fois cet échantillon
+sélectionné, comme je viens de
+
+26
+00:01:17.785 --> 00:01:21.148
+le dire, on va essayer de conclure sur
+l'ensemble de la population
+
+27
+00:01:21.228 --> 00:01:22.648
+qui nous intéresse.
+Ici, c'est toute la forêt.
+
+28
+00:01:24.008 --> 00:01:26.177
+Les statistiques,
+
+29
+00:01:26.257 --> 00:01:28.425
+nous permettent de décrire la variabilité.
+
+30
+00:01:28.505 --> 00:01:29.737
+Qu'est-ce que ça veut dire ?
+
+31
+00:01:29.817 --> 00:01:31.423
+C'est qu'en pratique, dans une seule
+
+32
+00:01:31.503 --> 00:01:33.672
+forêt, tous les individus
+ne sont pas les mêmes.
+
+33
+00:01:33.752 --> 00:01:35.640
+Il y a des tailles différentes, il y a des
+
+34
+00:01:35.720 --> 00:01:38.029
+formes différentes, il y
+a des espèces différentes.
+
+35
+00:01:38.109 --> 00:01:41.870
+Les statistiques nous permettent
+précisément de quantifier cette variabilité.
+
+36
+00:01:41.950 --> 00:01:44.822
+Donc ici pour chaque arbre, ce qui
+nous intéresse, c'est sa taille.
+
+37
+00:01:44.902 --> 00:01:47.244
+Donc on va résumer les données
+dans ce tableau-là,
+
+38
+00:01:47.624 --> 00:01:51.560
+et les statistiques nous permettent dans
+un premier temps d'organiser les données.
+
+39
+00:01:51.640 --> 00:01:54.057
+Comment va-t-on faire,
+à partir des données, pour
+
+40
+00:01:54.137 --> 00:01:56.604
+les ranger correctement
+et pouvoir les étudier ?
+
+41
+00:01:56.684 --> 00:01:59.248
+Dans un deuxième temps, ça
+nous permet de comparer les
+
+42
+00:01:59.328 --> 00:02:02.677
+différentes unités de l'échantillon
+et de la population, et ensuite de
+
+43
+00:02:02.757 --> 00:02:06.056
+résumer les données à l'aide
+de différents indicateurs.
+
+44
+00:02:06.136 --> 00:02:08.406
+Et dans un dernier temps, on va pouvoir
+
+45
+00:02:08.486 --> 00:02:10.953
+potentiellement généraliser
+à toute la population.
+
+46
+00:02:11.033 --> 00:02:14.412
+Et ça, c'est ce qu'on verra quand
+on fera de l'inférence statistique.
+
+47
+00:02:15.464 --> 00:02:17.358
+Alors, qu'est-ce qu'une unité ?
+
+48
+00:02:17.438 --> 00:02:21.145
+C'est une entité étudiée qui est
+sélectionnée en fonction du protocole.
+
+49
+00:02:21.225 --> 00:02:23.546
+Par exemple, ici on
+souhaite étudier tous les
+
+50
+00:02:23.626 --> 00:02:26.159
+arbres qui font partie
+d'une certaine population.
+
+51
+00:02:26.239 --> 00:02:28.987
+Donc là, c'est l'ensemble de la forêt.
+
+52
+00:02:29.067 --> 00:02:32.241
+Et une unité statistique, par
+exemple, ça peut être un arbre.
+
+53
+00:02:32.321 --> 00:02:36.428
+Ça veut dire que chacune de mes données
+va se rapporter à un seul arbre.
+
+54
+00:02:36.680 --> 00:02:38.958
+Mais dans d'autres
+questions de recherche, on
+
+55
+00:02:39.038 --> 00:02:42.312
+aurait très bien pu étudier, par
+exemple, une parcelle. Pourquoi ?
+
+56
+00:02:42.392 --> 00:02:45.823
+Parce qu'ici, ce qu'on veut
+étudier, c'est par exemple le
+
+57
+00:02:45.903 --> 00:02:49.595
+niveau de fertilisation du sol, quelle
+est la qualité du sol, quelle est
+
+58
+00:02:49.675 --> 00:02:53.316
+la qualité de l'ensemble des arbres
+qu'on regarde dans une petite zone.
+
+59
+00:02:53.396 --> 00:02:56.408
+L'unité statistique dépend de la question
+
+60
+00:02:56.488 --> 00:02:59.499
+de recherche, et il faut faire très
+attention à bien la sélectionner
+
+61
+00:02:59.579 --> 00:03:02.828
+au départ, parce que ça va modifier
+toute l'étude par la suite.
+
+62
+00:03:03.577 --> 00:03:07.712
+Donc on a différentes manières
+de définir cette unité statistique.
+
+63
+00:03:07.792 --> 00:03:09.848
+Parfois, ça peut être moins intuitif.
+
+64
+00:03:09.928 --> 00:03:12.678
+Par exemple, on aurait
+très bien pu considérer un
+
+65
+00:03:12.758 --> 00:03:15.623
+arbre, mais l'étudier
+à différents instants.
+
+66
+00:03:15.703 --> 00:03:18.163
+Et donc là, en l'occurrence,
+un seul et même
+
+67
+00:03:18.243 --> 00:03:21.166
+arbre va constituer différentes
+unités statistiques.
+
+68
+00:03:21.246 --> 00:03:23.613
+Donc là, une unité statistique
+
+69
+00:03:23.705 --> 00:03:28.565
+pour cet exemple-là, c'est
+un arbre à un temps bien précis.
+
+70
+00:03:30.201 --> 00:03:33.112
+Ensuite, il faut délimiter précisément
+quelle est la population qu'on étudie.
+
+71
+00:03:33.192 --> 00:03:35.226
+Parce que dire « la population », 
+c'est extrêmement large.
+
+72
+00:03:35.306 --> 00:03:37.047
+Mais les questions qu'il
+faut se poser sont :
+
+73
+00:03:37.127 --> 00:03:39.015
+« Où va-t-on faire cette étude ? »
+
+74
+00:03:39.095 --> 00:03:42.768
+Là, en l'occurrence, c'est la forêt.
+
+75
+00:03:42.848 --> 00:03:44.788
+« Quand va-t-on faire cette étude ? »
+
+76
+00:03:44.868 --> 00:03:47.187
+Il faut donc bien préciser
+les dates du relevé.
+
+77
+00:03:47.267 --> 00:03:49.625
+Encore une fois, la date peut être
+ce qu'on appellera une « variable »,
+
+78
+00:03:49.625 --> 00:03:52.125
+mais elle peut aussi faire
+partie de l'unité statistique.
+
+79
+00:03:52.217 --> 00:03:55.788
+On doit aussi se poser la question :
+« Qui va-t-on étudier ? »
+
+80
+00:03:55.868 --> 00:03:59.332
+Là en l'occurrence, ça va être
+une certaine espèce d'arbre ou
+
+81
+00:03:59.412 --> 00:04:03.406
+alors toutes les espèces d'arbres
+de la forêt si c'est ça qui nous intéresse.
+
+82
+00:04:03.486 --> 00:04:04.998
+Et donc de manière générale,
+c'est la question de recherche
+
+83
+00:04:05.078 --> 00:04:09.094
+et le protocole qui vont fixer
+notre population, et pas l'inverse.
+
+84
+00:04:09.594 --> 00:04:11.271
+Un élément que j'ai déjà
+
+85
+00:04:11.351 --> 00:04:14.018
+mentionné avant, c'est
+cette notion d'échantillon.
+
+86
+00:04:14.098 --> 00:04:17.942
+Ici, c'est la quantité d'arbres qu'on a
+sélectionnés parmi toute la population.
+
+87
+00:04:18.586 --> 00:04:21.325
+Cet échantillon peut être
+de taille variable, parce qu'en
+
+88
+00:04:21.405 --> 00:04:24.094
+pratique, on n'a peut-être
+pas le même temps
+
+89
+00:04:24.174 --> 00:04:27.467
+et les mêmes moyens pour faire l'étude.
+
+90
+00:04:27.547 --> 00:04:30.689
+On peut n'avoir étudié, par
+exemple, que 5 % de la population,
+
+91
+00:04:30.769 --> 00:04:33.961
+ou même 20 % de la population.
+
+92
+00:04:34.041 --> 00:04:36.025
+Évidemment, ça va dépendre de la quantité
+
+93
+00:04:36.105 --> 00:04:38.622
+d'effort que vous voulez
+fournir pour votre étude.
+
+94
+00:04:38.874 --> 00:04:40.788
+Maintenant, la question à se poser, c'est 
+
+95
+00:04:40.868 --> 00:04:42.976
+« Est-ce que tous les arbres
+sont accessibles ? »
+
+96
+00:04:43.056 --> 00:04:45.748
+Et là, on va commencer à parler
+de la question des biais.
+
+97
+00:04:45.828 --> 00:04:49.152
+Si vous prenez cette forêt,
+imaginons qu'en pratique
+
+98
+00:04:49.232 --> 00:04:51.496
+vous vouliez mesurer la taille de l'arbre.
+
+99
+00:04:51.976 --> 00:04:52.896
+Tous les arbres ne font
+pas la même taille,
+
+100
+00:04:52.976 --> 00:04:56.352
+donc la population que vous
+allez vraiment étudier, ce
+
+101
+00:04:56.432 --> 00:05:00.285
+n'est pas la même que celle que
+vous souhaitiez étudier à la base.
+
+102
+00:05:00.365 --> 00:05:03.205
+Là, par exemple, on a
+une sous-population qui est
+
+103
+00:05:03.285 --> 00:05:06.244
+accessible : ce sont les arbres
+de plus petite taille,
+
+104
+00:05:06.324 --> 00:05:10.078
+peut-être parce que quand on va
+faire notre récolte de données,
+
+105
+00:05:10.170 --> 00:05:13.799
+il y a certains arbres qu'on n'a pas
+mesurés parce qu'ils étaient trop hauts.
+
+106
+00:05:13.879 --> 00:05:16.159
+Il y a un décalage entre
+la population qu'on veut
+
+107
+00:05:16.239 --> 00:05:18.856
+vraiment étudier et celle qui
+est réellement accessible.
+
+108
+00:05:18.936 --> 00:05:20.782
+Il faut faire très attention à ce que ça
+
+109
+00:05:20.862 --> 00:05:23.126
+n'introduise pas certains
+biais dans notre étude.
+
+110
+00:05:24.206 --> 00:05:27.726
+En l'occurrence, la population
+accessible, ce sont les arbres de taille
+
+111
+00:05:27.806 --> 00:05:32.212
+suffisamment petite pour qu'on puisse
+les mesurer jusqu'en haut. Attention à la
+
+112
+00:05:32.292 --> 00:05:36.386
+différence entre la population accessible
+et la population qu'on vise à la base.
+
+113
+00:05:36.466 --> 00:05:38.003
+On va prendre un autre exemple.
+
+114
+00:05:38.083 --> 00:05:40.924
+Supposons que vous fassiez une enquête
+de mobilité à l'université.
+
+115
+00:05:41.004 --> 00:05:43.533
+Vous voulez savoir quel
+est le moyen de locomotion
+
+116
+00:05:43.613 --> 00:05:46.482
+que chaque étudiant-e
+va utiliser pour venir.
+
+117
+00:05:46.574 --> 00:05:50.805
+La cible, au départ, ce sont tous les
+étudiant-es, mais les personnes accessibles,
+
+118
+00:05:50.885 --> 00:05:55.647
+dans un premier temps, sont celles
+à qui on a envoyé l'enquête.
+
+119
+00:05:55.727 --> 00:05:59.604
+Certains étudiant-es
+ne seront peut-être pas
+
+120
+00:05:59.684 --> 00:06:03.678
+joignables : on n'a pas envoyé
+l'enquête sur le bon campus,
+
+121
+00:06:03.758 --> 00:06:07.694
+ils et elles n'étaient pas disponibles
+au moment où on a envoyé l'enquête.
+
+122
+00:06:07.774 --> 00:06:10.772
+Il y a un décalage entre les étudiant-es
+
+123
+00:06:10.852 --> 00:06:14.660
+qu'on peut toucher et ceux et celles
+qu'on souhaitait étudier au départ.
+
+124
+00:06:14.740 --> 00:06:17.052
+À l'intérieur de ce groupe
+se trouve notre échantillon.
+
+125
+00:06:17.132 --> 00:06:20.022
+Ce sont les réponses qu'on a
+vraiment obtenues à la fin,
+
+126
+00:06:20.102 --> 00:06:23.062
+car même parmi les étudiant-es qu'on a
+
+127
+00:06:23.142 --> 00:06:25.174
+réussi à toucher, tout
+le monde n'a pas pu répondre.
+
+128
+00:06:25.254 --> 00:06:27.586
+Donc ça constitue notre échantillon final.
+
+129
+00:06:27.666 --> 00:06:29.781
+Ici, il y a un premier
+écart de couverture, très
+
+130
+00:06:29.861 --> 00:06:33.208
+clair, entre la population visée
+et celle qu'on peut atteindre.
+
+131
+00:06:33.288 --> 00:06:37.465
+Et il y a un deuxième écart qui se crée
+à cause de la participation parce que
+
+132
+00:06:37.545 --> 00:06:42.022
+parmi les étudiant-es qu'on a réussi
+à toucher, tout le monde n'a pas pu répondre.
+
+133
+00:06:42.496 --> 00:06:45.011
+Alors il y a plusieurs
+manières de contrer ces biais.
+
+134
+00:06:45.091 --> 00:06:47.508
+L'exemple le plus simple
+auquel on pourrait penser,
+
+135
+00:06:47.588 --> 00:06:50.005
+c'est simplement d'augmenter
+la taille des échantillons.
+
+136
+00:06:50.085 --> 00:06:52.649
+Donc là on a un échantillon
+à gauche et puis à droite.
+
+137
+00:06:52.729 --> 00:06:54.705
+On voit que l'échantillon de gauche
+
+138
+00:06:54.785 --> 00:06:57.300
+arrive à couvrir de manière
+plus large la population.
+
+139
+00:06:57.380 --> 00:06:59.405
+Tandis que, pour
+l'échantillon de droite, on
+
+140
+00:06:59.485 --> 00:07:01.853
+voit qu'il est un peu
+regroupé dans un coin.
+
+141
+00:07:01.933 --> 00:07:04.203
+Et ça typiquement, c'est
+un défaut du protocole.
+
+142
+00:07:04.283 --> 00:07:07.172
+Donc on a un biais de sélection
+ici qu'on aimerait contrer.
+
+143
+00:07:07.264 --> 00:07:10.541
+Si on augmente la taille
+de l'échantillon, ça ne va pas forcément
+
+144
+00:07:10.621 --> 00:07:14.622
+suffire à contrer ce biais :
+la partie située à droite
+
+145
+00:07:14.702 --> 00:07:18.393
+de l'ensemble de la population
+n'est toujours pas couverte.
+
+146
+00:07:18.473 --> 00:07:20.821
+Donc oui, augmenter
+la taille de l'échantillon,
+
+147
+00:07:20.901 --> 00:07:23.816
+c'est bien, mais parfois,
+en fait, ce n'est pas suffisant.
+
+148
+00:07:23.896 --> 00:07:25.469
+Il faut faire très attention aux
+
+149
+00:07:25.549 --> 00:07:28.132
+protocoles qu'on utilise
+pour couvrir ces données.
+
+150
+00:07:28.822 --> 00:07:31.994
+Une fois qu'on a nos échantillons,
+on va se demander ce
+
+151
+00:07:32.074 --> 00:07:35.507
+qu'on souhaite étudier sur
+notre unité statistique.
+
+152
+00:07:35.587 --> 00:07:38.654
+On va prendre par exemple
+une parcelle de terrain, c'est mon
+
+153
+00:07:38.734 --> 00:07:42.010
+unité. Qu'est-ce qui nous
+intéresse sur cette parcelle ?
+
+154
+00:07:42.090 --> 00:07:45.052
+On peut regarder quel est
+le type de prairie, quel est son
+
+155
+00:07:45.132 --> 00:07:48.566
+état écologique, s'il y a 
+des espèces invasives dessus, etc.
+
+156
+00:07:48.646 --> 00:07:51.345
+Chacun de ces critères
+constitue une variable, et
+
+157
+00:07:51.425 --> 00:07:54.177
+c'est ça qu'on va étudier
+sur notre unité statistique.
+
+158
+00:07:54.257 --> 00:07:56.250
+Il faut bien retenir
+cette notion de variable.
+
+159
+00:07:56.342 --> 00:08:00.239
+Il y a différents types de variables,
+on les regroupe de manière
+
+160
+00:08:00.319 --> 00:08:04.420
+générale en deux familles : les variables
+catégorielles et les variables numériques.
+
+161
+00:08:04.894 --> 00:08:06.932
+Donc la variable catégorielle la plus
+
+162
+00:08:07.012 --> 00:08:09.680
+simple, c'est la variable
+catégorielle nominale.
+
+163
+00:08:09.760 --> 00:08:13.974
+Ça veut simplement dire que je peux
+associer des qualités à cette variable.
+
+164
+00:08:14.054 --> 00:08:17.122
+Par exemple, la prairie peut
+être sèche, elle peut être
+
+165
+00:08:17.202 --> 00:08:20.500
+humide, elle peut être fleurie,
+mais je n'ai pas de manière
+
+166
+00:08:20.580 --> 00:08:23.763
+de qualifier qu'un type de prairie
+soit meilleur qu'un autre.
+
+167
+00:08:23.843 --> 00:08:27.106
+Il n'y a pas vraiment d'ordre
+naturel dans ces variables.
+
+168
+00:08:27.198 --> 00:08:30.000
+Par contre, une variable
+catégorielle à laquelle je peux
+
+169
+00:08:30.080 --> 00:08:33.551
+associer un ordre : par exemple, ici,
+« excellent », « mauvais », « bon »,
+
+170
+00:08:33.631 --> 00:08:36.793
+« désastreux ». On peut les ordonner
+de manière logique, et c'est
+
+171
+00:08:36.873 --> 00:08:40.035
+ce qu'on appelle
+une variable catégorielle ordinale.
+
+172
+00:08:40.115 --> 00:08:42.145
+On peut donc les ordonner sans
+
+173
+00:08:42.225 --> 00:08:44.358
+forcément qu'il y ait
+une notion numérique.
+
+174
+00:08:44.438 --> 00:08:47.938
+Il existe un ordre entre
+ces différentes qualifications.
+
+175
+00:08:48.030 --> 00:08:51.900
+La dernière catégorie est celle
+des variables catégorielles binaires,
+
+176
+00:08:51.980 --> 00:08:56.069
+il y a deux choix possibles :
+vrai ou faux, 0 ou 1,
+
+177
+00:08:56.149 --> 00:09:00.184
+oui ou non. C'est ce qu'on
+appelle « binaire ». Vous avez
+
+178
+00:09:00.264 --> 00:09:02.783
+peut-être déjà entendu
+ce terme en informatique.
+
+179
+00:09:02.863 --> 00:09:05.200
+Ensuite, l'autre type de variable qui va
+
+180
+00:09:05.280 --> 00:09:08.101
+nous intéresser, ce sont
+les variables numériques.
+
+181
+00:09:08.181 --> 00:09:10.821
+Là, tout simplement, ce sont des nombres.
+
+182
+00:09:10.901 --> 00:09:13.359
+Vous avez, par exemple,
+un nombre de coléoptères,
+
+183
+00:09:13.439 --> 00:09:16.098
+qui peut être 1, 2, 3, etc.
+
+184
+00:09:16.318 --> 00:09:19.802
+Mais cette variable
+numérique par exemple, elle
+
+185
+00:09:19.882 --> 00:09:22.825
+n'a pas une infinité
+de chiffres après la virgule.
+
+186
+00:09:22.905 --> 00:09:24.259
+Ça, c'est l'exemple que je prends ici.
+
+187
+00:09:24.339 --> 00:09:27.000
+Au supermarché, vous pouvez payer,
+
+188
+00:09:27.080 --> 00:09:30.705
+par exemple, 237,18 francs. 
+
+189
+00:09:30.785 --> 00:09:34.057
+En revanche, payer 237,18214
+francs, ça n'existe pas.
+
+190
+00:09:34.137 --> 00:09:38.820
+Donc, typiquement, c'est une variable
+numérique pour laquelle il y a des espaces.
+
+191
+00:09:38.900 --> 00:09:42.370
+On peut compter d'une certaine
+unité en une certaine unité.
+
+192
+00:09:42.686 --> 00:09:45.775
+C'est ce qu'on appelle
+une variable numérique discrète.
+
+193
+00:09:45.855 --> 00:09:49.462
+À l'inverse, certaines variables
+numériques sont dites « continues ».
+
+194
+00:09:49.542 --> 00:09:53.034
+Ici, ça veut simplement dire que
+quand vous prenez une échelle
+
+195
+00:09:53.114 --> 00:09:56.951
+numérique, vous pouvez mettre
+la valeur qui vous intéresse sur cette
+
+196
+00:09:57.031 --> 00:10:01.445
+échelle, mais il n'y a pas d'espace
+délimité entre deux différentes quantités.
+
+197
+00:10:01.525 --> 00:10:04.290
+Donc vous pouvez continuer
+de zoomer à l'infini,
+
+198
+00:10:04.382 --> 00:10:07.182
+et vous trouverez
+toujours d'autres valeurs.
+
+199
+00:10:07.262 --> 00:10:10.638
+Ici, par exemple, on a
+l'impression que la valeur est de
+
+200
+00:10:10.718 --> 00:10:14.210
+18,45 degrés, mais si je zoome
+encore, je me rends compte qu'il y
+
+201
+00:10:14.290 --> 00:10:17.608
+a d'autres valeurs entre 18 et 19. Je peux
+
+202
+00:10:17.688 --> 00:10:21.353
+continuer de zoomer à l'infini
+et il y aura toujours des valeurs.
+
+203
+00:10:21.433 --> 00:10:22.700
+C'est une variable continue.
+
+204
+00:10:22.852 --> 00:10:27.090
+Et donc le fait que notre précision,
+elle soit limitée, ça ne change pas le
+
+205
+00:10:27.170 --> 00:10:31.660
+fait que cette quantité, en l'occurrence
+la température, est continue.
+
+206
+00:10:32.148 --> 00:10:35.297
+Alors une fois que vous avez
+sélectionné les variables qui vous
+
+207
+00:10:35.377 --> 00:10:39.705
+intéressent et que vous avez récolté vos
+données, il va falloir organiser ces données.
+
+208
+00:10:39.785 --> 00:10:41.909
+Alors comment est-ce
+qu'on pourrait faire ?
+
+209
+00:10:41.989 --> 00:10:45.907
+Ici, on va prendre une unité qu'on a
+observée, donc la parcelle P1, et puis on
+
+210
+00:10:45.987 --> 00:10:50.292
+indique qu'elle est sèche, que son état est
+bon, qu'il n'y a pas d'espèces invasives, etc.
+
+212
+00:10:50.292 --> 00:10:53.471
+Puisqu'on a plein de données
+différentes, plein d'unités
+
+213
+00:10:53.551 --> 00:10:56.984
+statistiques qu'on a étudiées, on
+va regrouper chacune de ces unités,
+
+214
+00:10:57.064 --> 00:11:00.854
+chacun de ces éléments de l'échantillon,
+en fait, dans une ligne différente.
+
+215
+00:11:00.934 --> 00:11:03.247
+Et puis à la fin, ça nous
+fait un tableau, donc
+
+216
+00:11:03.327 --> 00:11:06.099
+c'est la manière la plus
+simple d'organiser ces données.
+
+217
+00:11:06.179 --> 00:11:09.336
+Ici, on voit que chaque
+colonne du tableau correspond à
+
+218
+00:11:09.428 --> 00:11:12.475
+une variable, tandis qu'une
+ligne, c'est une observation.
+
+219
+00:11:12.555 --> 00:11:15.328
+Et si je regarde une cellule
+en particulier, donc le
+
+220
+00:11:15.408 --> 00:11:17.962
+croisement entre une ligne
+et une colonne, c'est
+
+221
+00:11:18.042 --> 00:11:21.748
+l'observation ici de la température
+du sol pour la parcelle numéro 2.
+
+222
+00:11:21.828 --> 00:11:24.601
+Et on voit qu'elle a
+une température de 16,8 degrés.
+
+223
+00:11:24.681 --> 00:11:27.838
+C'est la manière la plus simple
+pour organiser des données.
+
+224
+00:11:27.918 --> 00:11:30.197
+Et donc ensuite, ce qu'on
+veut faire, c'est
+
+225
+00:11:30.277 --> 00:11:32.856
+décrire les unités qu'on
+a observées justement.
+
+226
+00:11:33.204 --> 00:11:36.584
+Donc là, on va reprendre
+notre étude de base sur la
+
+227
+00:11:36.664 --> 00:11:40.654
+mobilité et on veut décrire
+les personnes qu'on a observées.
+
+228
+00:11:40.734 --> 00:11:45.063
+Donc ici, par exemple, on a 18
+cyclistes parmi les 60 répondant-es.
+
+229
+00:11:45.143 --> 00:11:49.812
+Cela signifie que 30 % des répondant-es
+utilisent principalement
+
+230
+00:11:49.892 --> 00:11:54.776
+le vélo. On a aussi relevé qu'en
+moyenne, ils parcourent 4,1 km
+
+231
+00:11:54.868 --> 00:11:57.147
+pour aller étudier, travailler, etc.
+
+232
+00:11:57.227 --> 00:12:00.713
+Ça, c'est de la statistique descriptive,
+c'est-à-dire qu'on utilise des
+
+233
+00:12:00.793 --> 00:12:04.750
+indicateurs simplement pour décrire
+et résumer les données qu'on a observées.
+
+234
+00:12:04.830 --> 00:12:07.529
+Et on va voir qu'il y a
+différentes manières de faire
+
+235
+00:12:07.609 --> 00:12:10.440
+la statistique qui vont nous
+intéresser dans ce cours.
+
+236
+00:12:10.940 --> 00:12:12.966
+Parce que ce qu'on voudrait faire à la
+
+237
+00:12:13.046 --> 00:12:15.627
+base, ce n'est pas forcément
+uniquement décrire.
+
+238
+00:12:15.707 --> 00:12:18.952
+On aimerait aussi généraliser
+à l'ensemble de la population.
+
+239
+00:12:19.032 --> 00:12:22.056
+Par exemple, si j'ai remarqué
+que 30 % des répondant-es en
+
+240
+00:12:22.136 --> 00:12:26.102
+pratique prennent le vélo, qu'est-ce
+que je peux dire sur ma population ?
+
+241
+00:12:26.182 --> 00:12:30.426
+Est-ce qu'il y a bien 30 % de l'entièreté
+de la population qui prend le vélo ?
+
+242
+00:12:30.506 --> 00:12:33.031
+En fait, ce n'est pas si
+facile de généraliser.
+
+243
+00:12:33.111 --> 00:12:35.328
+De manière générale, il faut toujours
+
+244
+00:12:35.420 --> 00:12:39.307
+examiner le protocole de base.
+Il faut aussi quantifier les
+
+245
+00:12:39.387 --> 00:12:44.224
+incertitudes sur cet échantillon qui n'est
+pas forcément représentatif de la population.
+
+246
+00:12:44.304 --> 00:12:48.359
+Et on va voir différentes techniques
+dans la suite du cours pour faire ça.
+
+247
+00:12:48.439 --> 00:12:52.493
+Pour résumer, il faut toujours
+commencer par les questions suivantes.
+
+248
+00:12:52.573 --> 00:12:55.790
+Dans un premier temps, sur qui
+est-ce qu'on veut conclure ?
+
+249
+00:12:55.870 --> 00:12:58.496
+Et ça, ça nous permet
+de définir la population.
+
+250
+00:12:58.588 --> 00:13:01.707
+Ensuite, il faut bien faire attention
+à ce que la population visée,
+
+251
+00:13:01.787 --> 00:13:04.907
+ce soit la même que la population
+qui est réellement accessible, ce
+
+252
+00:13:04.987 --> 00:13:08.011
+n'est pas toujours le cas et donc
+on essaie de limiter les biais,
+
+253
+00:13:08.091 --> 00:13:11.353
+même si en pratique il y aura toujours
+certains biais qui vont rester.
+
+254
+00:13:11.433 --> 00:13:13.407
+Ensuite, il faut se demander qui
+
+255
+00:13:13.487 --> 00:13:15.937
+on a vraiment observé :
+c'est notre échantillon.
+
+256
+00:13:16.017 --> 00:13:19.360
+Et ensuite, on va organiser l'ensemble
+de ces données dans un tableau.
+
+257
+00:13:19.452 --> 00:13:22.962
+Pour quantifier les incertitudes dont
+on vient de discuter, il nous faut
+
+258
+00:13:23.042 --> 00:13:26.812
+un autre type de langage qu'on va voir
+maintenant dans la prochaine vidéo :
+
+259
+00:13:26.892 --> 00:13:27.892
+le langage des probabilités.

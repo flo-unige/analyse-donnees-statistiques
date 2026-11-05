@@ -1,0 +1,967 @@
+1
+00:00:00,493 --> 00:00:03,539
+Before we introduce statistical measures,
+
+2
+00:00:03,619 --> 00:00:06,885
+we need a short detour. We've seen that a
+sample
+
+3
+00:00:06,965 --> 00:00:10,559
+may not accurately represent the target
+population.
+
+4
+00:00:10,639 --> 00:00:13,795
+That's why we need to study uncertainty.
+
+5
+00:00:13,875 --> 00:00:17,689
+And the language we use for that is
+probability.
+
+6
+00:00:17,769 --> 00:00:20,785
+For example, when I roll a die, I know
+
+7
+00:00:20,877 --> 00:00:24,340
+that each number from 1 to 6 has the same
+chance.
+
+8
+00:00:24,420 --> 00:00:26,626
+But I can't predict
+
+9
+00:00:26,706 --> 00:00:29,655
+exactly which number will come up next.
+
+10
+00:00:29,735 --> 00:00:33,999
+In theory, if I knew with infinite precision
+the die's speed
+
+11
+00:00:34,079 --> 00:00:38,000
+as I threw it, its rotation, the wind speed
+and every
+
+12
+00:00:38,080 --> 00:00:42,115
+other variable affecting it, I could
+
+13
+00:00:42,195 --> 00:00:47,281
+reconstruct its path and predict the next roll
+with certainty.
+
+14
+00:00:47,373 --> 00:00:49,900
+In practice, though, that's impossible:
+
+15
+00:00:49,980 --> 00:00:52,900
+there is too much uncertainty in what I know.
+
+16
+00:00:52,980 --> 00:00:55,833
+So we treat the outcome as random and use
+probability.
+
+17
+00:00:56,333 --> 00:00:58,950
+Let's define a few terms. An 'outcome'
+
+18
+00:00:59,030 --> 00:01:02,033
+is what we get from a single trial.
+
+19
+00:01:02,113 --> 00:01:05,225
+If I roll the die once, the outcome
+
+20
+00:01:05,305 --> 00:01:08,693
+can be any number from 1 to 6.
+
+21
+00:01:08,773 --> 00:01:12,931
+Depending on that outcome, certain conditions
+may or may not hold.
+
+22
+00:01:13,011 --> 00:01:16,369
+For example, consider 'rolling an even
+number'.
+
+23
+00:01:16,525 --> 00:01:20,691
+That condition is met if I roll 2, 4 or 6.
+
+24
+00:01:20,771 --> 00:01:22,516
+This is what we call an event.
+
+25
+00:01:22,596 --> 00:01:24,098
+An event can also be very simple:
+
+26
+00:01:24,178 --> 00:01:26,531
+'I roll a 1', for instance.
+
+27
+00:01:26,611 --> 00:01:29,225
+We could define many different events
+
+28
+00:01:29,305 --> 00:01:32,166
+in this setting. The set of all possible
+outcomes
+
+29
+00:01:32,246 --> 00:01:35,593
+is called the sample space, sometimes written
+as omega.
+
+30
+00:01:36,013 --> 00:01:39,824
+To understand probability,
+
+31
+00:01:39,904 --> 00:01:44,075
+let's roll this die over and over again.
+
+32
+00:01:44,155 --> 00:01:48,206
+Here, each time I roll it,
+
+33
+00:01:48,286 --> 00:01:53,235
+I add a dot above the corresponding number.
+
+34
+00:01:53,315 --> 00:01:57,745
+For example, I roll a 4 and put a dot in
+column 4.
+
+35
+00:01:57,837 --> 00:02:01,803
+I roll a 6 and put a dot in column 6, and so
+on.
+
+36
+00:02:02,286 --> 00:02:06,144
+With only a few rolls, randomness means
+
+37
+00:02:06,224 --> 00:02:10,304
+there is no reason for every number to appear
+equally often.
+
+38
+00:02:10,384 --> 00:02:13,022
+Here, for example, I've rolled
+
+39
+00:02:13,102 --> 00:02:17,706
+more sixes and fewer threes.
+
+40
+00:02:17,786 --> 00:02:19,900
+If I'd been playing Monopoly, I'd have been
+lucky!
+
+41
+00:02:19,980 --> 00:02:23,474
+But that won't necessarily happen every time.
+
+42
+00:02:23,566 --> 00:02:27,005
+For example, let's try another series,
+
+43
+00:02:27,085 --> 00:02:30,697
+another 18 rolls. This time,
+
+44
+00:02:30,777 --> 00:02:34,735
+I've rolled seven fours, so I've been a little
+less lucky.
+
+45
+00:02:34,815 --> 00:02:37,966
+We can run these simulations again and again.
+
+46
+00:02:38,046 --> 00:02:42,465
+As we roll the die more and more times,
+
+47
+00:02:42,545 --> 00:02:47,218
+the proportions tend towards the theoretical
+probabilities.
+
+48
+00:02:48,528 --> 00:02:52,515
+After these 30 rolls, I got a 3 on 23% of
+rolls,
+
+49
+00:02:52,595 --> 00:02:58,583
+but a 6 on only 6.7% of rolls.
+
+50
+00:02:58,663 --> 00:03:00,399
+So I wasn't particularly lucky this time.
+
+51
+00:03:00,479 --> 00:03:03,153
+If I now start rolling
+
+52
+00:03:03,233 --> 00:03:07,220
+a very large number of times, we gradually
+approach a situation
+
+53
+00:03:07,300 --> 00:03:10,804
+with roughly equal proportions of ones, twos
+and every other number.
+
+54
+00:03:11,280 --> 00:03:14,681
+Random fluctuations
+
+55
+00:03:14,761 --> 00:03:19,195
+have a large relative effect when there are
+few rolls,
+
+56
+00:03:19,275 --> 00:03:23,219
+but that effect decreases as the number of
+trials grows.
+
+57
+00:03:23,299 --> 00:03:26,374
+In the limit, as the number of trials tends to
+infinity,
+
+58
+00:03:26,454 --> 00:03:30,181
+each number has the same limiting proportion.
+
+59
+00:03:30,261 --> 00:03:32,980
+That gives us an intuitive way to understand
+probability.
+
+60
+00:03:33,072 --> 00:03:36,637
+So there is a difference between the observed
+frequency,
+
+61
+00:03:36,717 --> 00:03:40,566
+which comes from our trials, and probability:
+
+62
+00:03:40,646 --> 00:03:44,633
+the theoretical chance of each value under the
+model.
+
+63
+00:03:45,120 --> 00:03:48,156
+A few basic rules apply
+
+64
+00:03:48,236 --> 00:03:51,273
+to probabilities. Let's look at them now.
+
+65
+00:03:51,353 --> 00:03:54,735
+First, a probability is always between 0 and
+1.
+
+66
+00:03:54,815 --> 00:03:59,236
+Suppose I have a 70% chance of getting a
+particular value.
+
+67
+00:03:59,316 --> 00:04:03,391
+That corresponds to 0.7. A probability cannot
+be below
+
+68
+00:04:03,471 --> 00:04:07,684
+0 or above 1; a certain event has probability
+1.
+
+69
+00:04:09,312 --> 00:04:12,992
+Next, let's look at the sum of probabilities.
+
+70
+00:04:13,072 --> 00:04:17,105
+Here we'll use an unfair die:
+
+71
+00:04:17,185 --> 00:04:21,395
+its faces don't all have the same chance of
+coming up.
+
+72
+00:04:21,475 --> 00:04:23,627
+For example, I have a one-in-twelve chance
+
+73
+00:04:23,707 --> 00:04:26,976
+of rolling a 1, but a one-in-six chance of
+rolling a 3.
+
+74
+00:04:27,056 --> 00:04:29,348
+So this isn't a fair die.
+
+75
+00:04:30,016 --> 00:04:33,990
+Still, these probabilities must add up to
+
+76
+00:04:34,070 --> 00:04:37,530
+1, or 100%, because together
+
+77
+00:04:37,610 --> 00:04:42,212
+all the possible outcomes cover every
+possibility.
+
+78
+00:04:42,292 --> 00:04:45,352
+Each probability lies between 0 and 1,
+
+79
+00:04:45,432 --> 00:04:48,572
+and the probabilities of all these outcomes
+must sum to 1.
+
+80
+00:04:49,024 --> 00:04:51,615
+Now let's look at the complementary event.
+
+81
+00:04:51,695 --> 00:04:54,351
+What does that mean?
+
+83
+00:04:54,431 --> 00:05:00,311
+Here, event A is 'rolling a 4', with a
+one-in-six chance.
+
+84
+00:05:00,391 --> 00:05:02,755
+How can I calculate
+
+85
+00:05:02,835 --> 00:05:05,597
+the probability of its complement?
+
+86
+00:05:05,677 --> 00:05:08,325
+In other words, the probability of not rolling
+a 4.
+
+87
+00:05:08,405 --> 00:05:10,940
+In this simple example, I could
+
+88
+00:05:11,020 --> 00:05:15,396
+add the other outcomes' probabilities: 1/12 +
+1/4, and so on.
+
+89
+00:05:15,776 --> 00:05:18,674
+But there's an easier way.
+
+90
+00:05:18,754 --> 00:05:22,200
+'Rolling a 4' and its complement,
+
+91
+00:05:22,280 --> 00:05:25,604
+'not rolling a 4', cover all the
+possibilities.
+
+92
+00:05:25,684 --> 00:05:29,068
+Since the total probability must be
+
+93
+00:05:29,148 --> 00:05:32,594
+1, the probability of not rolling a 4
+
+94
+00:05:32,674 --> 00:05:36,260
+is 1 minus the probability of rolling a 4.
+
+95
+00:05:36,352 --> 00:05:39,388
+Here, the probability
+
+96
+00:05:39,468 --> 00:05:44,663
+of event A, rolling a 4, is 1/6.
+
+97
+00:05:44,743 --> 00:05:47,919
+So 1 minus 1/6 gives 5/6.
+
+98
+00:05:47,999 --> 00:05:51,114
+The probability of not rolling a 4
+
+99
+00:05:51,194 --> 00:05:54,949
+is therefore simply 5/6, exactly the same
+value
+
+100
+00:05:55,029 --> 00:05:58,404
+we'd get by adding all the other
+probabilities.
+
+101
+00:05:58,484 --> 00:06:01,460
+This is called the complement rule.
+
+102
+00:06:01,891 --> 00:06:03,872
+Now we'll look at two more rules together,
+
+103
+00:06:03,952 --> 00:06:07,023
+because comparing them helps answer this
+question:
+
+104
+00:06:07,103 --> 00:06:09,093
+when do we add probabilities,
+
+105
+00:06:09,173 --> 00:06:11,344
+and when do we multiply them?
+
+106
+00:06:11,424 --> 00:06:14,045
+This is a very common source of confusion.
+
+107
+00:06:14,125 --> 00:06:17,105
+Imagine we're studying water quality.
+
+108
+00:06:17,185 --> 00:06:20,486
+We classify it as very poor,
+
+109
+00:06:20,566 --> 00:06:23,487
+poor, good or very good.
+
+110
+00:06:23,899 --> 00:06:28,523
+This is an ordinal categorical variable,
+
+111
+00:06:28,603 --> 00:06:33,656
+because the categories have a natural order.
+
+112
+00:06:33,736 --> 00:06:38,146
+We'll call a site acceptable if its water
+quality is
+
+113
+00:06:38,226 --> 00:06:43,136
+good or very good. Here, there's a 25% chance
+
+114
+00:06:43,216 --> 00:06:48,063
+of good quality and a 35% chance of very good
+quality.
+
+115
+00:06:49,115 --> 00:06:50,954
+So, by our definition, a site is
+
+116
+00:06:51,034 --> 00:06:53,776
+acceptable if its water quality is either good
+or very good.
+
+117
+00:06:53,856 --> 00:06:57,445
+Here we add the probabilities, because a
+selected
+
+118
+00:06:57,525 --> 00:07:01,283
+site can't belong to both categories at once:
+
+119
+00:07:01,363 --> 00:07:05,122
+its quality is either good or very good.
+
+120
+00:07:05,202 --> 00:07:08,847
+The probability of one or the other is their
+sum.
+
+121
+00:07:08,927 --> 00:07:12,991
+That gives 0.60: a 60% chance of being
+acceptable.
+
+122
+00:07:13,819 --> 00:07:17,436
+Now imagine we look at two different sites.
+
+123
+00:07:17,516 --> 00:07:19,642
+For the first site,
+
+124
+00:07:19,722 --> 00:07:23,063
+there is still a 60% chance of being
+acceptable.
+
+125
+00:07:23,143 --> 00:07:26,800
+Now take a second site, B. Suppose knowing
+whether A
+
+126
+00:07:26,880 --> 00:07:31,930
+is acceptable doesn't change the chances for
+B.
+
+127
+00:07:32,010 --> 00:07:34,531
+B could be acceptable or unacceptable,
+
+128
+00:07:34,611 --> 00:07:37,311
+independently of what happened at A.
+
+129
+00:07:37,723 --> 00:07:41,193
+That's what this diagram shows:
+
+130
+00:07:41,273 --> 00:07:44,796
+a 60% chance for site A and a 60% chance for
+site B.
+
+131
+00:07:44,876 --> 00:07:47,616
+Now we ask: 'What is the probability
+
+132
+00:07:47,696 --> 00:07:50,800
+that both sites are acceptable?'
+
+133
+00:07:50,880 --> 00:07:53,150
+Because the events are independent,
+
+134
+00:07:53,230 --> 00:07:56,022
+meaning that knowing one outcome doesn't
+change
+
+135
+00:07:56,102 --> 00:07:59,391
+the probability of the other, we multiply the
+probabilities.
+
+136
+00:07:59,483 --> 00:08:03,758
+So 0.60 × 0.60 gives a 36% chance
+
+137
+00:08:03,838 --> 00:08:08,727
+that both A and B are acceptable.
+
+138
+00:08:09,595 --> 00:08:13,809
+Let's recap: when do we add, and when do we
+multiply?
+
+139
+00:08:13,889 --> 00:08:16,884
+If we ask about one event or the other,
+
+140
+00:08:16,964 --> 00:08:20,330
+and the events are mutually exclusive, meaning
+they cannot
+
+141
+00:08:20,410 --> 00:08:23,616
+happen at the same time, we add their
+probabilities.
+
+142
+00:08:23,696 --> 00:08:26,373
+A site's quality can't be both good and very
+good.
+
+143
+00:08:26,453 --> 00:08:30,111
+So the probability of good or very good is the
+sum.
+
+144
+00:08:30,459 --> 00:08:33,244
+For independent events, on the other hand,
+
+145
+00:08:33,324 --> 00:08:36,767
+knowing about one doesn't change the
+probability of the other.
+
+146
+00:08:36,847 --> 00:08:39,914
+For instance, knowing A is acceptable tells us
+nothing about B.
+
+147
+00:08:39,994 --> 00:08:43,202
+To find the probability of both, we multiply.
+
+148
+00:08:43,282 --> 00:08:45,973
+Be careful with this common source of
+confusion.
+
+149
+00:08:46,053 --> 00:08:47,523
+Always check whether the events are
+
+150
+00:08:47,603 --> 00:08:50,233
+mutually exclusive or independent.
+
+151
+00:08:50,727 --> 00:08:54,294
+There are some common mistakes to avoid.
+
+152
+00:08:54,374 --> 00:08:58,321
+For example, we can't simply add the
+probability
+
+153
+00:08:58,401 --> 00:09:02,403
+that a site is acceptable to the probability
+that it is very good.
+
+154
+00:09:02,483 --> 00:09:05,016
+That's because the acceptable
+
+155
+00:09:05,096 --> 00:09:07,683
+category, which includes good and very good,
+
+156
+00:09:07,763 --> 00:09:11,274
+already includes the very good category.
+
+157
+00:09:11,354 --> 00:09:14,191
+So here, we cannot add
+
+158
+00:09:14,271 --> 00:09:18,118
+the 0.6 probability of an acceptable site to
+the probability
+
+159
+00:09:18,198 --> 00:09:21,821
+of a very good site: the latter is already
+included.
+
+160
+00:09:21,901 --> 00:09:25,099
+Watch out for double counting.
+
+161
+00:09:25,415 --> 00:09:28,043
+Also watch out for a common cause.
+
+162
+00:09:28,123 --> 00:09:31,987
+We said that for sites A and B we could
+
+163
+00:09:32,067 --> 00:09:36,107
+multiply the probabilities if the two events
+were independent.
+
+164
+00:09:36,187 --> 00:09:38,050
+But if we're looking at
+
+165
+00:09:38,130 --> 00:09:40,993
+water contamination at A and B,
+
+166
+00:09:41,073 --> 00:09:44,541
+the same source might have polluted both
+sites.
+
+167
+00:09:44,621 --> 00:09:46,937
+In that case, the events are not
+
+168
+00:09:47,017 --> 00:09:49,465
+independent, so we can't simply multiply their
+probabilities.
+
+169
+00:09:49,545 --> 00:09:52,703
+Always check the assumptions before adding or
+multiplying
+
+170
+00:09:52,783 --> 00:09:56,331
+probabilities, to avoid these common mistakes.
+
+171
+00:09:59,015 --> 00:10:02,515
+Now let's consider another situation.
+
+172
+00:10:02,595 --> 00:10:06,355
+Suppose we're working with mangroves
+
+173
+00:10:06,435 --> 00:10:10,326
+and have planted 100 young seedlings.
+
+174
+00:10:10,406 --> 00:10:14,687
+Our model gives a 70% chance, or probability
+0.7,
+
+175
+00:10:14,767 --> 00:10:17,669
+that a seedling survives its first year.
+
+176
+00:10:17,749 --> 00:10:22,272
+That's the theoretical value in our model.
+
+177
+00:10:22,352 --> 00:10:27,019
+It isn't necessarily exactly what we'll
+observe
+
+178
+00:10:27,111 --> 00:10:30,981
+every time we carry out the experiment,
+because
+
+179
+00:10:31,061 --> 00:10:35,709
+there are random fluctuations, just as with
+the die.
+
+180
+00:10:35,789 --> 00:10:40,270
+Among these 100 seedlings, we might get 68
+survivors or 72.
+
+181
+00:10:40,350 --> 00:10:44,442
+Those fluctuations still occur,
+
+182
+00:10:44,522 --> 00:10:49,195
+and 0.7 is simply the probability specified by
+our model.
+
+183
+00:10:50,471 --> 00:10:53,178
+Let's take one example.
+
+184
+00:10:53,258 --> 00:10:56,777
+After a year, 64 of our 100 seedlings
+
+185
+00:10:56,857 --> 00:11:00,493
+have survived: a survival rate of 64%.
+
+186
+00:11:00,573 --> 00:11:02,932
+The question is:
+
+187
+00:11:03,012 --> 00:11:05,370
+what does this tell us about the model?
+
+188
+00:11:05,450 --> 00:11:08,796
+Suppose we didn't know the probability
+
+189
+00:11:08,876 --> 00:11:12,047
+of 0.7 to begin with. Or perhaps we did,
+
+190
+00:11:12,127 --> 00:11:16,075
+but wanted to check whether our model was
+valid.
+
+191
+00:11:16,167 --> 00:11:18,430
+We've observed
+
+192
+00:11:18,510 --> 00:11:21,017
+64%, not 70%. What does that mean?
+
+193
+00:11:21,097 --> 00:11:22,677
+Is our model wrong?
+
+194
+00:11:22,757 --> 00:11:24,141
+Should we change it?
+
+195
+00:11:24,221 --> 00:11:27,460
+Or could this simply be due to random
+fluctuations?
+
+196
+00:11:27,540 --> 00:11:29,461
+This brings us to the fundamental difference
+
+197
+00:11:29,541 --> 00:11:32,195
+between probability and statistics.
+
+198
+00:11:32,275 --> 00:11:35,368
+When we start with a known model and use it
+
+199
+00:11:35,448 --> 00:11:39,499
+to explore possible outcomes, we're working
+with probability.
+
+200
+00:11:39,591 --> 00:11:42,869
+When we start with data and try to
+
+201
+00:11:42,949 --> 00:11:46,411
+build a model or estimate the true
+
+202
+00:11:46,491 --> 00:11:50,093
+probability of an event, we're doing
+statistics.
+
+203
+00:11:50,589 --> 00:11:53,420
+Of course, the two fields overlap enormously:
+
+204
+00:11:53,500 --> 00:11:56,636
+probability and statistics are closely
+connected.
+
+205
+00:11:56,716 --> 00:11:59,852
+That's why we've taken this detour before
+introducing statistical measures.
+
+206
+00:11:59,932 --> 00:12:02,329
+But keep this key distinction in mind:
+
+207
+00:12:02,409 --> 00:12:04,979
+do we start with a model to explore what's
+possible,
+
+208
+00:12:05,059 --> 00:12:07,623
+or with data to build a model?
+
+209
+00:12:08,097 --> 00:12:10,612
+Now, given a set of values,
+
+210
+00:12:10,692 --> 00:12:13,789
+our next question is: how are they
+distributed?
+
+211
+00:12:13,869 --> 00:12:16,563
+Here we have some concentration measurements.
+
+212
+00:12:16,643 --> 00:12:19,427
+Each dot represents one measured
+concentration.
+
+213
+00:12:19,507 --> 00:12:21,888
+If we display them in order,
+
+214
+00:12:21,968 --> 00:12:24,035
+from smallest to largest, we get
+
+215
+00:12:24,115 --> 00:12:26,809
+something like this, which will lead us to
+histograms.
+
+216
+00:12:26,889 --> 00:12:30,469
+The horizontal axis shows concentration,
+increasing from left to right.
+
+217
+00:12:30,753 --> 00:12:34,453
+Some values are close together, there is some
+
+218
+00:12:34,533 --> 00:12:38,339
+spread, and one value, 14, looks rather large.
+
+219
+00:12:38,419 --> 00:12:41,161
+So the next question is:
+
+220
+00:12:41,241 --> 00:12:44,142
+how can we examine the distribution
+
+221
+00:12:44,222 --> 00:12:47,203
+of these data? We'll develop that idea
+together.
