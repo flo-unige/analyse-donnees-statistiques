@@ -18,5 +18,6 @@ Thumbs.db
 **/.vdoc.*
 **/*_files/
 tp/**/*_rapport.pdf
+/tp/session-02/OLD/
 
 /.quarto/

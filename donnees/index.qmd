@@ -1,0 +1,50 @@
+---
+title: "Données"
+lang: fr
+format-links: false
+toc: false
+sidebar: false
+format:
+  html:
+    code-tools: false
+    css:
+      - ../styles.css
+      - ../cours/session-02/assets/language.css
+      - ../assets/accueil.css
+    include-after-body:
+      - text: |
+          <script src="../assets/site-language.js"></script>
+---
+
+```{=html}
+<div class="course-choices">
+<nav class="course-language" aria-label="Langue de la page"><span aria-current="page" lang="fr">Français</span><a href="index-en.html" lang="en" hreflang="en">English</a></nav>
+</div>
+```
+
+Choisissez le jeu correspondant à votre spécialisation. Les fichiers sont identiques pour **Python et R**, ainsi que pour les versions française et anglaise des TP. Vous n'avez besoin de les télécharger qu'une seule fois, puis de les conserver pour les séances suivantes.
+
+## Télécharger un jeu de données
+
+- **Transition écologique et sociale (2021)** : [télécharger le CSV](fichiers/transition_ecologique_sociale_2021.csv){download="transition_ecologique_sociale_2021.csv"}.
+- **Énergie (2021)** : [télécharger le CSV](fichiers/energie_2021.csv){download="energie_2021.csv"}.
+- **Impact climatique (2021)** : [télécharger le CSV](fichiers/impact_climatique_2021.csv){download="impact_climatique_2021.csv"}.
+- **Eau (2022)** : [télécharger le CSV](fichiers/eau_2022.csv){download="eau_2022.csv"}.
+- **Biodiversité (2022)** : [télécharger le CSV](fichiers/biodiversite_2022.csv){download="biodiversite_2022.csv"}.
+
+## Où enregistrer les fichiers ?
+
+Placez le CSV choisi dans un dossier nommé **`data`**, situé à côté de votre carnet `.ipynb` ou de votre document `.Rmd`. Conservez les noms des fichiers pour que les chemins indiqués dans le TP fonctionnent.
+
+Par exemple :
+
+```text
+Votre dossier de travail/
+├── votre carnet .ipynb ou document .Rmd
+└── data/
+    └── energie_2021.csv
+```
+
+Si vous avez déjà téléchargé les données, réutilisez votre dossier `data`.
+
+[Revenir au TP 2 →](../tp/session-02/index.qmd)

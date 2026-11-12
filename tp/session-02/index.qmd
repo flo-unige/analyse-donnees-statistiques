@@ -22,6 +22,31 @@ format:
 </div>
 ```
 
-Le contenu de cette session sera bientôt disponible.
+Choisissez les fichiers correspondant au langage utilisé pendant votre séance.
+
+## Données du TP
+
+[Accéder à la page de téléchargement des données](../../donnees/index.qmd) pour récupérer le jeu correspondant à votre spécialisation. Les mêmes fichiers sont utilisés en Python et en R. Conservez le dossier `data` à côté de votre carnet ou document de TP, comme indiqué dans les consignes.
+
+## Python
+
+Téléchargez le carnet dans la langue de votre choix, puis ouvrez-le dans Jupyter Notebook.
+
+- [Télécharger le TP Python - Français (.ipynb)](fichiers/Session2_TP_Python_FR.ipynb){download="Session2_TP_Python_FR.ipynb"}
+- [Télécharger le TP Python - English (.ipynb)](fichiers/Session2_TP_Python_EN.ipynb){download="Session2_TP_Python_EN.ipynb"}
+
+## R
+
+Téléchargez le document R Markdown dans la langue de votre choix, puis ouvrez-le dans RStudio.
+
+- [Télécharger le TP R - Français (.Rmd)](fichiers/Session2_TP_R_FR.Rmd){download="Session2_TP_R_FR.Rmd"}
+- [Télécharger le TP R - English (.Rmd)](fichiers/Session2_TP_R_EN.Rmd){download="Session2_TP_R_EN.Rmd"}
+
+## Remise sur Moodle
+
+Ce TP est **à rendre sur [Moodle](https://moodle.unige.ch/course/view.php?id=21845)**, dans l’espace de dépôt prévu pour la session 2, au plus tard le **mercredi 18 novembre 2026 (inclus)**.
+
+- Pour Python, déposez votre carnet **`.ipynb` complété, avec vos réponses et les sorties des cellules enregistrées**.
+- Pour R, déposez votre document **`.Rmd` complété, avec vos réponses et votre code**.
 
 [Toutes les séances de travaux pratiques →](../index.qmd)

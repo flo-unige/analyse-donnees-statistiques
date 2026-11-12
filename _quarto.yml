@@ -22,6 +22,8 @@ project:
     - tp/session-07/index-en.qmd
     - ressources/index.qmd
     - ressources/index-en.qmd
+    - donnees/index.qmd
+    - donnees/index-en.qmd
     - cours/session-01/index.qmd
     - cours/session-02/index.qmd
     - cours/session-02/index-en.qmd
@@ -41,6 +43,9 @@ project:
   resources:
     - cours/session-01/fichiers/**
     - tp/session-01/fichiers/**
+    - tp/session-02/fichiers/**
+    - donnees/fichiers/**
+    - "!tp/session-02/OLD/**"
     - assets/**
     - cours/session-02/assets/language.css
     - cours/session-02/assets/language.js
@@ -67,6 +72,8 @@ website:
         href: tp/index.qmd
       - text: "Ressources"
         href: ressources/index.qmd
+      - text: "Données"
+        href: donnees/index.qmd
   sidebar:
     - id: cours
       title: "Cours"

@@ -22,6 +22,31 @@ format:
 </div>
 ```
 
-The content of this session will be available soon.
+Choose the files for the programming language used in your practical session.
+
+## Data for the practical
+
+[Go to the data download page](../../donnees/index-en.qmd) to download the dataset for your specialisation. Python and R use the same files. Keep the `data` folder alongside your notebook or practical document, as explained in the instructions.
+
+## Python
+
+Download the notebook in your preferred language, then open it in Jupyter Notebook.
+
+- [Download the Python practical - Français (.ipynb)](fichiers/Session2_TP_Python_FR.ipynb){download="Session2_TP_Python_FR.ipynb"}
+- [Download the Python practical - English (.ipynb)](fichiers/Session2_TP_Python_EN.ipynb){download="Session2_TP_Python_EN.ipynb"}
+
+## R
+
+Download the R Markdown document in your preferred language, then open it in RStudio.
+
+- [Download the R practical - Français (.Rmd)](fichiers/Session2_TP_R_FR.Rmd){download="Session2_TP_R_FR.Rmd"}
+- [Download the R practical - English (.Rmd)](fichiers/Session2_TP_R_EN.Rmd){download="Session2_TP_R_EN.Rmd"}
+
+## Submission on Moodle
+
+**Submit this practical on [Moodle](https://moodle.unige.ch/course/view.php?id=21845)**, using the submission area for Session 2, no later than **Wednesday 18 November 2026 (inclusive)**.
+
+- For Python, upload your **completed `.ipynb` notebook, including your answers and saved cell outputs**.
+- For R, upload your **completed `.Rmd` document, including your answers and code**.
 
 [All practical sessions →](../index-en.qmd)
