@@ -1,3 +1,3 @@
-Publié : la session 2 en français et en anglais, avec les exemples Python et R, les vidéos sous-titrées, les animations, les données et les PDF.
+Publié : la session 2 du cours en français et en anglais, avec les exemples Python et R et le reste du contenu. La session 2 du TP également.
 
-Pas encore publié : les sessions 1, 3, 4, 5 et 6 et les TP. Le site affiche « En construction » pour ces sessions. La session 1 est assurée en classe.
+Pas encore publié : les sessions 3 à 6 et les TP correspondants.
