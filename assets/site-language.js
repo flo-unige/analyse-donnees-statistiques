@@ -13,7 +13,7 @@
       label.textContent = 'Built with Quarto';
       return;
     }
-    const labels = { 'Accueil': 'Home', 'Cours': 'Course', 'Travaux pratiques': 'Practical work', 'Ressources': 'Resources' };
+    const labels = { 'Accueil': 'Home', 'Cours': 'Course', 'Travaux pratiques': 'Practical work', 'Ressources': 'Resources', 'Données': 'Data' };
     if (!labels[text] && !link.classList.contains('navbar-brand')) return;
     if (labels[text]) label.textContent = labels[text];
     const url = new URL(link.href);

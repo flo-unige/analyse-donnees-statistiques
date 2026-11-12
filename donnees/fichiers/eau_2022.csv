@@ -1,0 +1,196 @@
+country_code,country_name,world_region,income_group,is_landlocked,population,gdp_per_capita_ppp_2021_intl_dollar,gini_coefficient,poverty_below_3_65_day_percent,freshwater_withdrawals_percent_internal_resources,renewable_internal_freshwater_m3_per_capita,basic_drinking_water_access_percent
+afg,Afghanistan,asia,low_income,TRUE,40578842,1981.71017,39.53,90.34,43.01591,1161.93557,76.93921
+alb,Albania,europe,upper_middle_income,FALSE,2827608,17111.95393,35.03,10.3,2.96283,10972.26505,95.09457
+dza,Algeria,africa,upper_middle_income,FALSE,45477389,14782.2003,29.18,32.32,91.50885,247.30971,92.32367
+and,Andorra,europe,high_income,TRUE,79705,63913.38351,35.04,,,3959.60103,100
+ago,Angola,africa,lower_middle_income,FALSE,35635029,7397.48643,53.75,80.77,0.47682,4153.21677,66.47633
+atg,Antigua and Barbuda,americas,high_income,FALSE,92840,27941.78515,37.01,11.61,8.46154,560.1034,98.92271
+arg,Argentina,americas,upper_middle_income,FALSE,45407904,27627.96348,45.28,11.91,12.90753,6430.59851,
+arm,Armenia,europe,upper_middle_income,TRUE,2880874,17886.17839,31.74,50.57,44.78787,2310.04985,99.91285
+aus,Australia,asia,high_income,FALSE,26200984,59883.64704,34.4,1.06,2.36179,18909.46138,99.96973
+aut,Austria,europe,high_income,TRUE,9064677,65661.45219,32.71,1.01,5.70909,6082.8253,100
+aze,Azerbaijan,europe,upper_middle_income,TRUE,10295304,21051.24424,28.83,1.59,160.52988,800.15729,96.00357
+bhs,Bahamas,americas,high_income,FALSE,397538,34342.79041,44,8.29,,1760.83796,
+bhr,Bahrain,asia,high_income,FALSE,1533459,57572.99798,36.85,2.57,3877.5,2.62348,99.9199
+bgd,Bangladesh,asia,lower_middle_income,FALSE,169384897,7888.16389,34.46,73.72,34.1619,619.88998,98.5793
+brb,Barbados,americas,high_income,FALSE,282318,18469.57659,43.94,33.23,87.5,283.3684,99.11507
+blr,Belarus,europe,upper_middle_income,TRUE,9173237,26537.50831,27.14,1.36,4.15882,3684.41032,99.85841
+bel,Belgium,europe,high_income,FALSE,11641820,62744.203,29.17,0.23,35.83346,1027.37879,100
+blz,Belize,americas,upper_middle_income,FALSE,402733,12569.81794,52.96,63.12,0.66186,37891.109,94.72204
+ben,Benin,africa,low_income,FALSE,13759501,3588.3252,50.23,80.41,1.26214,748.57366,68.95898
+btn,Bhutan,asia,lower_middle_income,TRUE,780914,14061.31203,37.34,8.92,0.43321,99882.95766,99.31081
+bol,Bolivia,americas,lower_middle_income,TRUE,12077154,9681.70743,43.51,15.13,0.11864,25130.09274,92.53752
+bih,Bosnia and Herzegovina,europe,upper_middle_income,FALSE,3204802,19297.07149,34.41,3.45,0.87897,11077.12739,96.10862
+bwa,Botswana,africa,upper_middle_income,TRUE,2439892,18647.37346,54.59,60.54,8.88566,983.6501,91.6703
+bra,Brazil,americas,upper_middle_income,FALSE,210306415,18554.04618,57.15,23.47,1.20014,26917.86649,99.61494
+brn,Brunei,asia,high_income,FALSE,455370,76357.8291,34.96,0.5,1.08235,18666.13962,100
+bgr,Bulgaria,europe,upper_middle_income,FALSE,6825864,32433.14955,43.35,4.83,25.92111,3248.21113,99.21874
+bfa,Burkina Faso,africa,low_income,TRUE,22509038,2466.05331,37.27,86.98,6.544,555.33248,49.76626
+bdi,Burundi,africa,low_income,TRUE,13321097,829.38716,42.74,96.45,2.78429,755.19306,65.69756
+khm,Cambodia,asia,lower_middle_income,FALSE,17201724,6458.36815,41.43,74.77,1.81095,7010.92518,80.85995
+cmr,Cameroon,africa,lower_middle_income,FALSE,27632771,4843.65038,48.91,75.46,0.39868,9879.57379,70.26006
+can,Canada,americas,high_income,FALSE,38821259,58321.06118,35.48,0.78,1.26765,73197.16537,98.35893
+cpv,Cape Verde,africa,lower_middle_income,FALSE,519741,8850.10669,42.38,46.26,59.68371,577.21057,90.00893
+caf,Central African Republic,africa,low_income,TRUE,5098039,1136.80171,60.46,95.72,0.05142,27657.69348,36.29504
+tcd,Chad,africa,low_income,TRUE,18455316,2655.71004,45.59,88.3,5.864,812.77395,51.99515
+chl,Chile,americas,high_income,FALSE,19553036,29569.47755,46.61,5.19,3.99638,45261.51335,98.88393
+chn,China,asia,upper_middle_income,FALSE,1425179569,21499.38228,39.08,17.12,20.20975,1991.89194,95.43858
+col,Colombia,americas,upper_middle_income,FALSE,51737944,18458.72095,53.72,34.67,1.13117,41458.93389,96.73804
+com,Comoros,africa,lower_middle_income,FALSE,834188,3478.17347,45.13,67.94,0.83333,1438.52465,85.26234
+cod,"Congo, Dem. Rep.",africa,low_income,TRUE,102396968,1385.46473,45.82,97.19,0.07596,8789.32275,35.12735
+cog,"Congo, Rep.",africa,lower_middle_income,FALSE,6035104,6205.10504,51.42,89.32,0.02072,36784.78449,
+cri,Costa Rica,americas,upper_middle_income,FALSE,5081765,24831.71935,50.05,14.72,3.05029,22236.36866,99.81312
+civ,Cote d'Ivoire,africa,lower_middle_income,FALSE,30395002,6272.26396,43.64,75.89,1.51223,2528.04721,76.65663
+hrv,Croatia,europe,high_income,FALSE,3907027,39861.78946,31.59,1.49,1.80106,9777.88129,99.90256
+cub,Cuba,americas,upper_middle_income,FALSE,11059820,15557.80294,44.66,48.94,18.25289,3446.71071,94.90022
+cyp,Cyprus,europe,high_income,FALSE,1331370,51588.44531,32.74,0.09,28.58974,585.86268,99.72922
+cze,Czech Republic,europe,high_income,TRUE,10673213,48390.66168,27.16,0.31,10.98859,1232.18278,98.7331
+dnk,Denmark,europe,high_income,FALSE,5902904,70233.64023,30.03,0.27,15.5725,1016.42595,100
+dji,Djibouti,africa,lower_middle_income,FALSE,1137096,6180.67999,41.59,73.05,6.33333,263.82997,79.19589
+dma,Dominica,americas,upper_middle_income,FALSE,66826,17550.80099,38.21,30.39,10,2992.8471,96.7869
+dom,Dominican Republic,americas,upper_middle_income,FALSE,11230734,22986.95808,43.78,22.5,30.37021,2092.47232,97.36033
+ecu,Ecuador,americas,upper_middle_income,FALSE,17823897,14186.63885,47.88,28.75,2.24137,24820.61022,91.72648
+egy,Egypt,africa,lower_middle_income,FALSE,112618250,16360.39078,33.39,63.71,7750,8.87956,97.43289
+slv,El Salvador,americas,lower_middle_income,FALSE,6280319,11085.61781,40.64,27.78,12.40258,2488.72709,90.79484
+gnq,Equatorial Guinea,africa,upper_middle_income,FALSE,1803545,16932.77068,37.34,25.43,0.07615,14416.05283,
+eri,Eritrea,africa,low_income,FALSE,3409447,2108.78552,44.67,91.02,20.78571,821.24755,
+est,Estonia,europe,high_income,FALSE,1350091,43690.41423,31.58,0.82,9.48447,9422.91154,100
+swz,Eswatini,africa,lower_middle_income,TRUE,1218917,9955.70905,56.75,75.88,40.45455,2165.85707,77.94058
+eth,Ethiopia,africa,low_income,FALSE,125384287,2655.59277,37.49,86.01,8.64598,973.00868,52.64493
+fji,Fiji,asia,upper_middle_income,FALSE,919422,12762.34664,36.3,53.69,0.29737,31052.11753,95.48863
+fin,Finland,europe,high_income,FALSE,5569299,57068.30565,27.33,0.14,2.80374,19258.09191,100
+fra,France,europe,high_income,FALSE,66277409,53691.61749,34.86,0.53,12.21383,2933.21981,100
+gab,Gabon,africa,upper_middle_income,FALSE,2430747,18662.0498,37.92,37.37,0.08482,67468.97147,88.24194
+gmb,Gambia,africa,low_income,FALSE,2636470,2863.1805,35.04,79.52,3.38667,1137.88513,86.32124
+geo,Georgia,europe,upper_middle_income,FALSE,3794784,20966.52804,37.81,48.28,2.22498,15657.90402,97.01646
+deu,Germany,europe,high_income,FALSE,84086227,62931.96841,34.25,0.49,24.1052,1286.40074,100
+gha,Ghana,africa,lower_middle_income,FALSE,33149152,6728.45414,43.52,74.29,4.78086,914.05053,87.87755
+grc,Greece,europe,high_income,FALSE,10412480,35906.61277,34.75,2.64,17.32241,5557.21527,100
+grd,Grenada,americas,upper_middle_income,FALSE,116913,16386.46234,37.5,13.99,7.05,1710.67375,
+gtm,Guatemala,americas,upper_middle_income,FALSE,17847877,12147.9306,49.94,47.8,3.04405,6118.37475,92.7535
+gin,Guinea,africa,low_income,FALSE,14055137,3792.01069,35.6,83.64,0.39381,16079.53021,72.05328
+gnb,Guinea-Bissau,africa,low_income,FALSE,2105529,2564.42407,53.54,88.21,1.09375,7599.04043,61.63635
+guy,Guyana,americas,upper_middle_income,FALSE,821637,37068.19938,45.2,5.12,0.59946,293316.87838,95.64494
+hti,Haiti,americas,low_income,FALSE,11503606,3047.65179,62.72,86.93,11.14784,1130.68893,71.93723
+hos,Holy See,europe,,TRUE,,,40,,,,
+hnd,Honduras,americas,lower_middle_income,FALSE,10463872,6352.5871,50.03,49.09,1.77256,8664.09681,95.0904
+hun,Hungary,europe,high_income,TRUE,9684306,40656.96868,31.68,2.26,78.247,624.66984,100
+isl,Iceland,europe,high_income,FALSE,380356,65475.41129,26.13,0.05,0.17059,445022.68307,100
+ind,India,asia,lower_middle_income,FALSE,1425423212,8594.39191,39.43,79.36,44.7787,1014.43556,94.41913
+idn,Indonesia,asia,lower_middle_income,FALSE,278830529,13334.26539,41.38,62.41,11.02863,7239.88154,89.71135
+irn,Iran,asia,upper_middle_income,FALSE,89524246,15331.33294,44.48,23.1,72.33463,1435.36534,97.63014
+irq,Iraq,asia,upper_middle_income,FALSE,44070551,13433.39772,31.5,24.91,120.52187,798.71931,98.38285
+irl,Ireland,europe,high_income,FALSE,5110016,124489.3785,33.22,0.21,3.41429,9399.8737,97.06457
+isr,Israel,asia,high_income,FALSE,9103151,48098.18724,40.31,3.31,,,100
+ita,Italy,europe,high_income,FALSE,59619115,52333.32743,38.41,1.16,18.51123,3092.50398,99.91703
+jam,Jamaica,americas,upper_middle_income,FALSE,2839144,10072.04853,46.52,13.38,12.38282,3812.06448,88.23149
+jpn,Japan,asia,high_income,FALSE,124997578,44972.34384,34.92,1.52,18.53488,3436.56374,99.14824
+jor,Jordan,asia,upper_middle_income,FALSE,11256263,9266.57538,35.92,15.27,139.27713,60.58849,99.22914
+kaz,Kazakhstan,asia,upper_middle_income,TRUE,20034609,33506.26149,29.86,11.86,38.7972,3211.9419,97.53134
+ken,Kenya,africa,lower_middle_income,FALSE,54252461,5491.69378,42.65,90.29,19.47826,381.54951,63.96426
+kir,Kiribati,asia,lower_middle_income,FALSE,130469,3107.77605,36.97,65.68,,,78.70165
+kwt,Kuwait,asia,high_income,FALSE,4589511,51379.88333,36.65,0.12,,0,100
+kgz,Kyrgyz Republic,asia,lower_middle_income,TRUE,6955788,6139.77789,31.56,59.86,15.75107,7014.83251,93.77708
+lao,Lao,asia,lower_middle_income,TRUE,7559007,8183.03287,38.8,68.99,3.86029,25188.49367,89.14502
+lva,Latvia,europe,high_income,FALSE,1881063,37681.04524,36.36,2.02,1.01732,9013.59648,98.70194
+lbn,Lebanon,asia,upper_middle_income,FALSE,5744489,11474.75058,33.69,2.77,37.75,835.58346,92.6
+lso,Lesotho,africa,lower_middle_income,TRUE,2286110,2577.54544,47.05,83.31,0.83748,2287.72894,76.88866
+lbr,Liberia,africa,low_income,FALSE,5373294,1578.99837,37.44,88.91,0.07295,37221.11613,77.52491
+lby,Libya,africa,upper_middle_income,FALSE,7223805,11456.07681,39.59,16.01,817.14286,96.90184,95.80866
+lie,Liechtenstein,europe,high_income,TRUE,39317,,40,,,,100
+ltu,Lithuania,europe,high_income,FALSE,2816919,46651.21458,37.57,1.32,1.94282,5459.73551,99.58022
+lux,Luxembourg,europe,high_income,TRUE,653313,132573.9944,35.37,0.41,4.774,1531.15205,100
+mdg,Madagascar,africa,low_income,FALSE,30437261,1602.71368,46.47,97.91,3.99332,11071.95552,53.73867
+mwi,Malawi,africa,low_income,TRUE,20568728,1659.95934,47.17,97.16,8.40644,784.68635,71.40138
+mys,Malaysia,asia,upper_middle_income,FALSE,34695493,32079.15152,42.44,2.29,1.15638,16716.86867,97.83975
+mdv,Maldives,asia,upper_middle_income,FALSE,524106,21357.81125,31.29,1.43,15.66667,57.24033,99.70251
+mli,Mali,africa,low_income,TRUE,23072640,2808.52247,34.33,84.55,8.64333,2600.48265,83.68012
+mlt,Malta,europe,high_income,FALSE,528192,57781.49999,28.67,0.81,72.60001,95.08334,100
+mhl,Marshall Islands,asia,upper_middle_income,FALSE,40077,6844.33468,40.3,34.01,,,87.52553
+mrt,Mauritania,africa,lower_middle_income,FALSE,4875637,6053.26179,32.52,67.32,337.05,82.04056,74.8619
+mus,Mauritius,africa,upper_middle_income,FALSE,1276130,24788.7665,36.76,14.84,22.97346,2178.9702,99.87807
+mex,Mexico,americas,upper_middle_income,FALSE,128613117,21392.11146,49.1,22.04,21.95697,3180.07999,99.2738
+fsm,"Micronesia, Fed. Sts.",asia,lower_middle_income,FALSE,112114,3813.33831,40.62,75.02,,,
+mda,Moldova,europe,lower_middle_income,TRUE,3039985,15358.01536,27.52,15.72,52.22222,640.65705,91.84156
+mco,Monaco,europe,high_income,FALSE,38931,440710.22,34.76,,,,100
+mng,Mongolia,asia,lower_middle_income,TRUE,3386015,15310.43495,34,22.66,1.32874,10134.69829,84.53443
+mne,Montenegro,europe,upper_middle_income,FALSE,614648,25429.02514,38.3,10.48,,,99.28206
+mar,Morocco,africa,lower_middle_income,FALSE,37329064,8666.0791,41.31,37.88,36.45862,776.87456,90.14621
+moz,Mozambique,africa,low_income,FALSE,32656246,1476.6656,57.29,95.79,1.46859,3071.38794,62.42375
+mmr,Myanmar,asia,lower_middle_income,FALSE,53756787,5350.47667,32.77,73.04,3.31382,18654.3887,85.58038
+nam,Namibia,africa,upper_middle_income,FALSE,2889662,9953.09752,60.13,54.54,1.67142,2131.73721,85.762
+nru,Nauru,asia,upper_middle_income,FALSE,11801,12458.74051,34.12,56.28,,847.38581,97.90131
+npl,Nepal,asia,low_income,TRUE,29715436,4763.38751,33.73,44.71,4.79168,6669.9341,92.58703
+nld,Netherlands,europe,high_income,FALSE,17904421,71324.03603,30.08,0.29,74.85727,621.43445,100
+nzl,New Zealand,asia,high_income,FALSE,5131734,49618.52533,35.2,0.09,3.01988,64348.54478,100
+nic,Nicaragua,americas,lower_middle_income,FALSE,6730654,7277.82265,46.26,38.28,0.81494,23208.74019,
+ner,Niger,africa,low_income,TRUE,25311973,1717.51892,36.65,95.79,73.80879,138.27448,52.08068
+nga,Nigeria,africa,lower_middle_income,FALSE,223150896,5552.83765,37.3,90.74,5.64344,990.36125,79.45795
+prk,North Korea,asia,low_income,FALSE,26328845,1373.44,41.95,90.83,12.92209,2544.73753,93.8875
+mkd,North Macedonia,europe,upper_middle_income,TRUE,1840233,22820.9765,34.82,16.49,40.21296,2948.0617,98.15896
+nor,Norway,europe,high_income,FALSE,5456801,91051.0832,27.56,0.48,0.70363,70000.2034,100
+omn,Oman,asia,high_income,FALSE,4730226,39780.21228,38.44,3.68,116.71429,295.96895,92.43997
+pak,Pakistan,asia,lower_middle_income,FALSE,243700667,5526.27928,33.77,81.71,326,225.6867,90.67046
+plw,Palau,asia,high_income,FALSE,17759,15477.55264,37.44,24.68,,,99.52758
+pse,Palestine,asia,lower_middle_income,FALSE,5305270,5753.08396,35.45,17.63,,,98.78094
+pan,Panama,americas,high_income,FALSE,4400773,33833.02651,51.7,12.81,0.88682,31040.00138,94.85343
+png,Papua New Guinea,asia,lower_middle_income,FALSE,10203169,4125.49303,43.53,86.36,0.04895,78505.02133,51.35313
+pry,Paraguay,americas,upper_middle_income,TRUE,6760464,15259.14563,47.72,20.23,2.06239,17306.50441,99.518
+per,Peru,americas,upper_middle_income,FALSE,33475438,15559.82164,44.83,32.89,1.57946,49021.01654,94.5023
+phl,Philippines,asia,lower_middle_income,FALSE,113964338,9457.10395,44.34,66.26,19.00561,4203.06921,95.07041
+pol,Poland,europe,high_income,FALSE,38385739,43405.02158,32.41,0.77,17.50933,1455.66144,91.17763
+prt,Portugal,europe,high_income,FALSE,10417073,41070.86131,35.56,1.33,16.13034,3641.82393,99.26041
+qat,Qatar,asia,high_income,FALSE,2892455,114740.1236,34.23,0,446.42857,21.07376,99.98897
+rou,Romania,europe,upper_middle_income,FALSE,19166772,39377.97174,37.93,7.37,19.23313,2224.84687,100
+rus,Russia,europe,upper_middle_income,FALSE,145579899,38214.49609,40.79,2.25,1.50325,29895.25575,96.83509
+rwa,Rwanda,africa,low_income,TRUE,13651030,2892.45965,45.88,89.99,6.42105,695.91818,60.23022
+wsm,Samoa,asia,upper_middle_income,FALSE,215261,5843.77179,38.73,47.16,,,98.18471
+smr,San Marino,europe,high_income,TRUE,34090,70887.5739,35,,,,100
+stp,Sao Tome and Principe,africa,lower_middle_income,FALSE,226305,5632.13891,32.99,78.55,1.87615,9633.01739,77.55741
+sau,Saudi Arabia,asia,high_income,FALSE,32175352,67178.59023,37.37,0.86,974.16667,74.59156,99.04394
+sen,Senegal,africa,lower_middle_income,FALSE,17651103,4228.73383,42.56,74.21,11.86667,1461.66503,85.77963
+srb,Serbia,europe,upper_middle_income,TRUE,6791213,24633.06978,32.21,7.33,60.55668,1261.46963,95.41636
+syc,Seychelles,africa,high_income,FALSE,125522,27978.17706,32.13,8.4,,,97.38059
+sle,Sierra Leone,africa,low_income,FALSE,8276807,2937.37347,37.86,89.29,0.13262,19331.12612,65.74765
+sgp,Singapore,asia,high_income,FALSE,5649885,133571.9624,40.9,0.01,33.25522,106.43918,100
+svk,Slovak Republic,europe,high_income,TRUE,5473197,38623.67106,27.04,2.49,4.4732,2319.69354,99.78711
+svn,Slovenia,europe,high_income,FALSE,2115228,47064.15179,26.49,0.13,4.42957,8839.64403,99.57958
+slb,Solomon Islands,asia,lower_middle_income,FALSE,781066,2517.92542,38.63,90.06,,57229.47869,71.36738
+som,Somalia,africa,low_income,FALSE,17801897,1387.81374,39.3,94.76,54.96667,337.04273,70.37633
+zaf,South Africa,africa,upper_middle_income,FALSE,62378410,13777.19275,65.66,61,47.12054,718.19721,90.68254
+kor,South Korea,asia,high_income,FALSE,51782512,49777.9293,32.66,0.41,45.02236,1255.01792,99.90854
+ssd,South Sudan,africa,low_income,TRUE,11021177,1009.485,47.86,97.47,2.53077,2359.09468,39.50923
+esp,Spain,europe,high_income,FALSE,47828382,46649.56354,36.99,1.63,26.09712,2327.03643,99.92515
+lka,Sri Lanka,asia,upper_middle_income,FALSE,22834965,13249.06506,40.82,54.21,24.51894,2380.41567,89.8964
+kna,St. Kitts and Nevis,americas,high_income,FALSE,46709,29712.68558,36.64,2.64,50.83333,513.81961,
+lca,St. Lucia,americas,upper_middle_income,FALSE,178781,22962.28181,51.23,7.32,14.3,1678.03066,97.87395
+vct,St. Vincent and the Grenadines,americas,upper_middle_income,FALSE,102046,16835.02351,38.12,21.55,7.9,979.95022,
+sdn,Sudan,africa,lower_middle_income,FALSE,49383346,3132.07715,36.1,91.38,673.375,80.99897,63.03247
+sur,Suriname,americas,upper_middle_income,FALSE,623164,18742.58738,60.95,18.02,0.62212,158866.68678,97.99301
+swe,Sweden,europe,high_income,FALSE,10487338,63215.4363,31.83,1.03,1.45205,16305.99428,99.74991
+che,Switzerland,europe,high_income,TRUE,8792182,82777.29358,35,0.11,4.21782,4602.89335,100
+syr,Syria,asia,low_income,FALSE,22462173,4454.85373,39.47,94.62,195.79921,317.51158,94.07794
+tjk,Tajikistan,asia,low_income,TRUE,10182222,4213.75618,34.1,51.15,16.70659,6232.43139,89.14724
+tza,Tanzania,africa,low_income,FALSE,64711821,3546.98096,42.66,91.5,6.17143,1298.06268,61.5231
+tha,Thailand,asia,upper_middle_income,FALSE,71735329,20762.79526,36.33,11.21,25.52537,3129.69918,100
+tls,Timor-Leste,asia,lower_middle_income,FALSE,1369295,5347.00759,30.92,89.98,14.26659,5999.43767,84.41125
+tgo,Togo,africa,low_income,FALSE,9089738,2662.25917,45.13,86.63,1.93913,1265.16298,62.76561
+ton,Tonga,asia,upper_middle_income,FALSE,105042,6901.73837,37.59,21.01,,,98.81148
+tto,Trinidad and Tobago,americas,high_income,FALSE,1495921,30793.39983,42.33,7.76,8.75521,2811.52873,98.99061
+tun,Tunisia,africa,lower_middle_income,FALSE,12119334,12702.45358,34.89,16.12,92.10965,346.14113,95.93726
+tur,Turkey,europe,upper_middle_income,FALSE,87058473,32748.3189,44.08,5.5,28.40072,2671.21949,95.97003
+tkm,Turkmenistan,asia,upper_middle_income,TRUE,7230193,17119.57449,44.67,54.74,1867.97153,194.324,99.82057
+tuv,Tuvalu,asia,upper_middle_income,FALSE,9992,5498.18455,39.14,40.89,,,98.78003
+are,UAE,asia,high_income,FALSE,10242086,68867.82593,27.23,0.34,1509.93333,14.88837,100
+gbr,UK,europe,high_income,FALSE,68179315,52982.17492,38.43,0.8,5.80621,2144.8435,100
+usa,USA,americas,high_income,FALSE,341534046,72679.25754,45.13,1.39,15.76615,8436.68823,99.96411
+uga,Uganda,africa,low_income,TRUE,47312719,2724.9061,45.22,90.32,1.63333,824.30266,59.62437
+ukr,Ukraine,europe,lower_middle_income,FALSE,41048766,13787.12109,28.79,11.06,8.82196,1342.30588,93.52089
+ury,Uruguay,americas,high_income,FALSE,3390913,30804.70328,40.94,7.09,4.88878,27190.31718,99.60166
+uzb,Uzbekistan,asia,lower_middle_income,TRUE,34938955,9607.56167,34.96,17.71,262.5459,467.67283,96.62281
+vut,Vanuatu,asia,lower_middle_income,FALSE,313046,3222.83596,37.63,78.02,,31944.18712,86.98952
+ven,Venezuela,americas,upper_middle_income,FALSE,28213017,7266.547,45.6,85,2.81007,28532.92861,93.33161
+vnm,Vietnam,asia,lower_middle_income,FALSE,99680655,12979.7639,37.19,20.53,22.77614,3605.71467,97.54928
+yem,Yemen,asia,low_income,FALSE,38222876,1767.315,39.19,94.91,169.7619,54.94092,71.62435
+zmb,Zambia,africa,lower_middle_income,TRUE,20152938,3585.12379,59.62,92.69,1.9601,3979.56864,71.29589
+zwe,Zimbabwe,africa,lower_middle_income,TRUE,16069056,3323.11832,52.43,84.78,40.04632,762.95708,67.16891

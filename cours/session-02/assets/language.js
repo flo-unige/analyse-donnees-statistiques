@@ -23,8 +23,8 @@
   document.querySelectorAll('.navbar-nav a, .nav-footer a').forEach(link => {
     const label = link.querySelector('.menu-text') || link;
     const text = label.textContent.trim();
-    if (['Accueil', 'Travaux pratiques', 'Ressources'].includes(text)) {
-      label.textContent = { 'Accueil': 'Home', 'Travaux pratiques': 'Practical work', 'Ressources': 'Resources' }[text];
+    if (['Accueil', 'Travaux pratiques', 'Ressources', 'Données'].includes(text)) {
+      label.textContent = { 'Accueil': 'Home', 'Travaux pratiques': 'Practical work', 'Ressources': 'Resources', 'Données': 'Data' }[text];
       const url = new URL(link.href);
       url.pathname = url.pathname.replace(/(?:index\.html)?$/, 'index-en.html');
       link.href = url.href;

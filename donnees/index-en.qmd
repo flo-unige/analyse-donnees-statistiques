@@ -1,0 +1,50 @@
+---
+title: "Data"
+lang: en
+format-links: false
+toc: false
+sidebar: false
+format:
+  html:
+    code-tools: false
+    css:
+      - ../styles.css
+      - ../cours/session-02/assets/language.css
+      - ../assets/accueil.css
+    include-after-body:
+      - text: |
+          <script src="../assets/site-language.js"></script>
+---
+
+```{=html}
+<div class="course-choices">
+<nav class="course-language" aria-label="Page language"><a href="index.html" lang="fr" hreflang="fr">Français</a><span aria-current="page" lang="en">English</span></nav>
+</div>
+```
+
+Choose the dataset for your specialisation. The same files work with **Python and R** and with both the French and English practicals. You only need to download them once, then keep them for later sessions.
+
+## Download an individual dataset
+
+- **Ecological and social transition (2021)**: [download the CSV](fichiers/transition_ecologique_sociale_2021.csv){download="transition_ecologique_sociale_2021.csv"}.
+- **Energy (2021)**: [download the CSV](fichiers/energie_2021.csv){download="energie_2021.csv"}.
+- **Climate impact (2021)**: [download the CSV](fichiers/impact_climatique_2021.csv){download="impact_climatique_2021.csv"}.
+- **Water (2022)**: [download the CSV](fichiers/eau_2022.csv){download="eau_2022.csv"}.
+- **Biodiversity (2022)**: [download the CSV](fichiers/biodiversite_2022.csv){download="biodiversite_2022.csv"}.
+
+## Where should you save the files?
+
+Save your chosen CSV in a folder named **`data`**, alongside your `.ipynb` notebook or `.Rmd` document. Keep the original filenames so that the paths given in the practical work correctly.
+
+For example:
+
+```text
+Your working folder/
+├── your .ipynb notebook or .Rmd document
+└── data/
+    └── energie_2021.csv
+```
+
+If you have already downloaded the data, reuse your existing `data` folder.
+
+[Back to Practical 2 →](../tp/session-02/index-en.qmd)
