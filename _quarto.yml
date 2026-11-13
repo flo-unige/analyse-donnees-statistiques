@@ -123,6 +123,8 @@ format:
     code-tools: true
     fig-responsive: true
     link-external-newwindow: true
+    include-after-body:
+      - assets/session03-navigation.html
 
 execute:
   freeze: auto
