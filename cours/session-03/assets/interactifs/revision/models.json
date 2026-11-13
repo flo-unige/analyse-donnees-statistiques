@@ -1,0 +1,162 @@
+{
+  "fr": {
+    "absences": {
+      "title": "Que change une absence sélective ?",
+      "frames": [
+        {
+          "image": "revision/absences-fr-0.png",
+          "label": "0",
+          "description": "0 valeurs hautes masquées. Médiane : 3,00 mg/L. Les croix indiquent les mesures devenues indisponibles."
+        },
+        {
+          "image": "revision/absences-fr-1.png",
+          "label": "1",
+          "description": "1 valeurs hautes masquées. Médiane : 2,95 mg/L. Les croix indiquent les mesures devenues indisponibles."
+        },
+        {
+          "image": "revision/absences-fr-2.png",
+          "label": "2",
+          "description": "2 valeurs hautes masquées. Médiane : 2,90 mg/L. Les croix indiquent les mesures devenues indisponibles."
+        },
+        {
+          "image": "revision/absences-fr-3.png",
+          "label": "3",
+          "description": "3 valeurs hautes masquées. Médiane : 2,80 mg/L. Les croix indiquent les mesures devenues indisponibles."
+        },
+        {
+          "image": "revision/absences-fr-4.png",
+          "label": "4",
+          "description": "4 valeurs hautes masquées. Médiane : 2,70 mg/L. Les croix indiquent les mesures devenues indisponibles."
+        }
+      ],
+      "control": "Nombre de fortes valeurs masquées"
+    },
+    "temps": {
+      "title": "Que cache une moyenne temporelle ?",
+      "frames": [
+        {
+          "image": "revision/temps-fr-0.png",
+          "label": "1",
+          "description": "12 mesures conservées, 12 moyennes sur des périodes de 1 mois. Ici, les segments montrent des moyennes. Pic mensuel : 8,70 mg/L. Plus forte moyenne : 8,70 mg/L."
+        },
+        {
+          "image": "revision/temps-fr-1.png",
+          "label": "2",
+          "description": "12 mesures conservées, 6 moyennes sur des périodes de 2 mois. Ici, les segments montrent des moyennes. Pic mensuel : 8,70 mg/L. Plus forte moyenne : 6,95 mg/L."
+        },
+        {
+          "image": "revision/temps-fr-2.png",
+          "label": "3",
+          "description": "12 mesures conservées, 4 moyennes sur des périodes de 3 mois. Ici, les segments montrent des moyennes. Pic mensuel : 8,70 mg/L. Plus forte moyenne : 6,23 mg/L."
+        },
+        {
+          "image": "revision/temps-fr-3.png",
+          "label": "6",
+          "description": "12 mesures conservées, 2 moyennes sur des périodes de 6 mois. Ici, les segments montrent des moyennes. Pic mensuel : 8,70 mg/L. Plus forte moyenne : 5,08 mg/L."
+        },
+        {
+          "image": "revision/temps-fr-4.png",
+          "label": "12",
+          "description": "12 mesures conservées, 1 moyenne sur des périodes de 12 mois. Ici, les segments montrent des moyennes. Pic mensuel : 8,70 mg/L. Plus forte moyenne : 4,62 mg/L."
+        }
+      ],
+      "control": "Nombre de mois par période"
+    },
+    "echelles": {
+      "title": "Changer d’échelle, garder les mêmes données",
+      "frames": [
+        {
+          "image": "revision/echelles-fr-0.png",
+          "label": "Linéaire",
+          "description": "Série illustrative de la vidéo : 1, 3, 9, 30, 100 et 300 individus. Les six valeurs restent identiques. Sur l’échelle logarithmique, des rapports égaux occupent des distances égales."
+        },
+        {
+          "image": "revision/echelles-fr-1.png",
+          "label": "Logarithmique",
+          "description": "Série illustrative de la vidéo : 1, 3, 9, 30, 100 et 300 individus. Les six valeurs restent identiques. Sur l’échelle logarithmique, des rapports égaux occupent des distances égales."
+        }
+      ],
+      "control": "Échelle verticale"
+    }
+  },
+  "en": {
+    "absences": {
+      "title": "What does selective missingness change?",
+      "frames": [
+        {
+          "image": "revision/absences-en-0.png",
+          "label": "0",
+          "description": "0 high values hidden. Median: 3.00 mg/L. Crosses show measurements that have become unavailable."
+        },
+        {
+          "image": "revision/absences-en-1.png",
+          "label": "1",
+          "description": "1 high values hidden. Median: 2.95 mg/L. Crosses show measurements that have become unavailable."
+        },
+        {
+          "image": "revision/absences-en-2.png",
+          "label": "2",
+          "description": "2 high values hidden. Median: 2.90 mg/L. Crosses show measurements that have become unavailable."
+        },
+        {
+          "image": "revision/absences-en-3.png",
+          "label": "3",
+          "description": "3 high values hidden. Median: 2.80 mg/L. Crosses show measurements that have become unavailable."
+        },
+        {
+          "image": "revision/absences-en-4.png",
+          "label": "4",
+          "description": "4 high values hidden. Median: 2.70 mg/L. Crosses show measurements that have become unavailable."
+        }
+      ],
+      "control": "Number of high values hidden"
+    },
+    "temps": {
+      "title": "What can averaging over time hide?",
+      "frames": [
+        {
+          "image": "revision/temps-en-0.png",
+          "label": "1",
+          "description": "12 measurements retained, 12 period averages over 1 months. Segments show averages. Monthly peak: 8.70 mg/L. Highest average: 8.70 mg/L."
+        },
+        {
+          "image": "revision/temps-en-1.png",
+          "label": "2",
+          "description": "12 measurements retained, 6 period averages over 2 months. Segments show averages. Monthly peak: 8.70 mg/L. Highest average: 6.95 mg/L."
+        },
+        {
+          "image": "revision/temps-en-2.png",
+          "label": "3",
+          "description": "12 measurements retained, 4 period averages over 3 months. Segments show averages. Monthly peak: 8.70 mg/L. Highest average: 6.23 mg/L."
+        },
+        {
+          "image": "revision/temps-en-3.png",
+          "label": "6",
+          "description": "12 measurements retained, 2 period averages over 6 months. Segments show averages. Monthly peak: 8.70 mg/L. Highest average: 5.08 mg/L."
+        },
+        {
+          "image": "revision/temps-en-4.png",
+          "label": "12",
+          "description": "12 measurements retained, 1 period averages over 12 months. Segments show averages. Monthly peak: 8.70 mg/L. Highest average: 4.62 mg/L."
+        }
+      ],
+      "control": "Months per period"
+    },
+    "echelles": {
+      "title": "Change the scale, keep the data",
+      "frames": [
+        {
+          "image": "revision/echelles-en-0.png",
+          "label": "Linear",
+          "description": "Illustrative series from the video: 1, 3, 9, 30, 100 and 300 individuals. All six values stay the same. On the logarithmic scale, equal ratios occupy equal distances."
+        },
+        {
+          "image": "revision/echelles-en-1.png",
+          "label": "Logarithmic",
+          "description": "Illustrative series from the video: 1, 3, 9, 30, 100 and 300 individuals. All six values stay the same. On the logarithmic scale, equal ratios occupy equal distances."
+        }
+      ],
+      "control": "Vertical scale"
+    }
+  }
+}

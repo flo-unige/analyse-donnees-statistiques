@@ -1,0 +1,1254 @@
+WEBVTT
+
+1
+00:00:00.500 --> 00:00:03.241
+In the previous session,
+we learned how to organise
+
+2
+00:00:03.321 --> 00:00:06.192
+our data and summarise
+them with a few indicators.
+
+3
+00:00:06.964 --> 00:00:09.387
+But when a table has hundreds of rows,
+
+4
+00:00:09.467 --> 00:00:11.890
+it can be hard to understand
+what is happening.
+
+5
+00:00:11.970 --> 00:00:16.080
+So we need other ways to look at
+
+6
+00:00:16.160 --> 00:00:18.314
+these data, particularly through graphs.
+
+7
+00:00:18.394 --> 00:00:20.345
+We might ask: are there several groups?
+
+8
+00:00:20.425 --> 00:00:23.510
+Is there a change over time?
+A relationship between two variables?
+
+9
+00:00:23.590 --> 00:00:26.057
+This is where graphs become useful.
+
+10
+00:00:26.137 --> 00:00:29.007
+Yet the same data can
+produce very different
+
+11
+00:00:29.087 --> 00:00:31.957
+graphs,
+which do not all show the same thing.
+
+12
+00:00:32.037 --> 00:00:34.584
+In this session, we will learn
+
+13
+00:00:34.676 --> 00:00:39.026
+to choose a representation that
+suits our question, read it,
+
+14
+00:00:39.106 --> 00:00:43.856
+and avoid choices that could mislead us.
+
+15
+00:00:44.308 --> 00:00:47.628
+Imagine that each row
+of this table represents
+
+16
+00:00:47.708 --> 00:00:51.709
+an observation made in a catchment
+on a particular date.
+
+17
+00:00:51.789 --> 00:00:53.854
+We have a quality category:
+
+18
+00:00:53.934 --> 00:00:56.417
+good, very good, moderate, and so on.
+
+19
+00:00:56.497 --> 00:00:59.242
+We also have a nitrate
+concentration in milligrams
+
+20
+00:00:59.322 --> 00:01:02.538
+per litre, a temperature
+and a dissolved oxygen concentration.
+
+21
+00:01:02.618 --> 00:01:04.344
+Now suppose someone asks:
+
+22
+00:01:04.436 --> 00:01:07.792
+“What graph should we
+make with these data?”
+
+23
+00:01:08.084 --> 00:01:11.488
+It sounds simple, but first we need
+
+24
+00:01:11.568 --> 00:01:15.516
+to ask: “What is the graph for?”
+
+25
+00:01:15.684 --> 00:01:17.836
+We could ask several questions.
+
+26
+00:01:17.916 --> 00:01:21.505
+For example,
+which quality category is most common?
+
+27
+00:01:21.585 --> 00:01:25.423
+How are nitrate concentrations
+distributed spatially?
+
+28
+00:01:25.503 --> 00:01:28.894
+Do concentrations differ
+between catchments?
+
+29
+00:01:28.974 --> 00:01:32.564
+We could also ask whether
+temperature and oxygen are related.
+
+30
+00:01:32.644 --> 00:01:34.696
+Finally, how does nitrate
+
+31
+00:01:34.776 --> 00:01:37.256
+concentration change over the months?
+
+32
+00:01:37.348 --> 00:01:40.049
+That is already five questions
+about the same table.
+
+33
+00:01:40.129 --> 00:01:43.028
+Yet we will not look at the same variables
+
+34
+00:01:43.108 --> 00:01:46.008
+or use the same kind of visualisation.
+
+35
+00:01:46.088 --> 00:01:49.931
+The visualisation therefore
+depends on our research question.
+
+36
+00:01:50.011 --> 00:01:52.066
+Let us see how to choose
+
+37
+00:01:52.146 --> 00:01:54.450
+between these different visualisations.
+
+38
+00:01:54.530 --> 00:01:56.536
+We will follow this sequence.
+
+39
+00:01:56.616 --> 00:01:59.168
+First, we formulate our research question
+
+40
+00:01:59.248 --> 00:02:02.376
+and identify the variables
+needed to answer it.
+
+41
+00:02:02.948 --> 00:02:07.405
+Then we decide what visual task is
+needed to represent the variable.
+
+42
+00:02:07.485 --> 00:02:12.252
+This guides us towards
+a suitable type of graph.
+
+43
+00:02:12.752 --> 00:02:15.791
+Let us return to our initial question:
+
+44
+00:02:15.871 --> 00:02:19.411
+“Which quality category is most common?”
+
+45
+00:02:19.491 --> 00:02:22.530
+Here, the variable is
+categorical and ordinal.
+
+46
+00:02:22.610 --> 00:02:25.760
+This means that the quality
+categories have an order:
+
+47
+00:02:25.840 --> 00:02:29.715
+we can rank them from
+“very good” to “poor”.
+
+48
+00:02:29.795 --> 00:02:33.972
+Our aim is to compare
+the different counts.
+
+49
+00:02:34.064 --> 00:02:37.178
+To do this, we will use a bar chart.
+
+50
+00:02:37.258 --> 00:02:40.023
+We will explore several
+types of graphs throughout
+
+51
+00:02:40.103 --> 00:02:42.867
+the session so that you can
+
+52
+00:02:42.947 --> 00:02:46.191
+choose for yourselves.
+Here, we use this chart.
+
+53
+00:02:46.669 --> 00:02:49.542
+We simply want to count
+
+54
+00:02:49.622 --> 00:02:52.706
+the observations in each category.
+
+55
+00:02:52.786 --> 00:02:56.397
+We put the counts in this table and check
+
+56
+00:02:56.477 --> 00:03:00.141
+that they add up to 48,
+the original number of observations.
+
+57
+00:03:00.221 --> 00:03:02.777
+The frequency table already
+gives us the answer.
+
+58
+00:03:02.857 --> 00:03:06.865
+But to compare these numbers more quickly,
+we represent them
+
+59
+00:03:06.957 --> 00:03:10.931
+as lengths. This gives us a bar chart.
+
+60
+00:03:11.011 --> 00:03:14.665
+Position identifies the category,
+and the length
+
+61
+00:03:14.745 --> 00:03:19.039
+of the bar shows the count,
+or absolute frequency.
+
+62
+00:03:19.119 --> 00:03:22.240
+Since the categories are distinct,
+we leave a small
+
+63
+00:03:22.320 --> 00:03:25.547
+gap between the bars to make
+the chart easier to read.
+
+64
+00:03:25.627 --> 00:03:28.136
+But a categorical variable does not
+
+65
+00:03:28.216 --> 00:03:31.181
+automatically require this type of chart.
+
+66
+00:03:31.261 --> 00:03:34.887
+With just three categories,
+if we mainly want
+
+67
+00:03:34.967 --> 00:03:38.643
+the exact values,
+a small table will be more effective.
+
+68
+00:03:38.723 --> 00:03:41.028
+A graph becomes useful when
+
+69
+00:03:41.108 --> 00:03:43.697
+we want to see a ranking quickly,
+
+70
+00:03:43.789 --> 00:03:46.997
+so that it stands out at a glance.
+
+71
+00:03:47.077 --> 00:03:49.282
+The idea is to choose a visualisation
+
+72
+00:03:49.362 --> 00:03:51.982
+that makes the data easier to read.
+
+73
+00:03:52.457 --> 00:03:55.786
+Here, there are so few
+values that we can even
+
+74
+00:03:55.866 --> 00:03:59.410
+add the counts to the graph
+to complete the information.
+
+75
+00:03:59.891 --> 00:04:02.826
+Now for the second question: how are
+
+76
+00:04:02.906 --> 00:04:06.320
+nitrate concentrations distributed?
+
+77
+00:04:06.400 --> 00:04:09.143
+This time, the variable is
+numerical and continuous.
+
+78
+00:04:09.223 --> 00:04:12.685
+We will not use a bar chart.
+Instead, we will
+
+79
+00:04:12.765 --> 00:04:16.322
+look at its empirical distribution,
+introduced in the last video.
+
+80
+00:04:16.402 --> 00:04:19.991
+We already have a tool for this:
+the histogram.
+
+81
+00:04:20.083 --> 00:04:22.792
+As a reminder,
+we divide the range of values
+
+82
+00:04:22.872 --> 00:04:26.065
+into intervals, also called bins.
+
+83
+00:04:26.145 --> 00:04:28.747
+We count the observations in each
+
+84
+00:04:28.827 --> 00:04:33.011
+interval to determine
+the height of the bar.
+
+85
+00:04:33.498 --> 00:04:36.962
+Visually, this resembles a bar chart.
+
+86
+00:04:37.042 --> 00:04:40.307
+But here, the rectangles touch because
+
+87
+00:04:40.387 --> 00:04:44.300
+the intervals cover a continuous scale.
+Bar width
+
+88
+00:04:44.380 --> 00:04:48.044
+has a meaning:
+it represents the width of the interval.
+
+89
+00:04:48.124 --> 00:04:52.137
+For example, from 2 to 3 mg/L of nitrates,
+then from 3 to 4.
+
+90
+00:04:52.217 --> 00:04:54.733
+In a bar chart, we need
+
+91
+00:04:54.813 --> 00:04:57.758
+to preserve the order
+of the categories if the variable
+
+92
+00:04:57.850 --> 00:05:00.415
+is ordinal. However,
+
+93
+00:05:00.495 --> 00:05:03.172
+the bars do not need to touch.
+
+94
+00:05:03.252 --> 00:05:06.886
+Although the two graphs look similar,
+this is what distinguishes them.
+
+95
+00:05:06.966 --> 00:05:10.262
+With bars, we count observations
+
+96
+00:05:10.342 --> 00:05:13.189
+by category. With a histogram, we examine
+
+97
+00:05:13.269 --> 00:05:17.095
+how numerical values are distributed
+along a continuous scale.
+
+98
+00:05:17.577 --> 00:05:20.903
+As we explained in session
+
+99
+00:05:20.983 --> 00:05:24.643
+2, the number of histogram bins
+
+100
+00:05:24.723 --> 00:05:28.328
+affects the visualisation without
+changing the data themselves.
+
+101
+00:05:28.408 --> 00:05:31.677
+For example,
+too few bins hide some details,
+
+102
+00:05:31.757 --> 00:05:35.697
+while too many can make
+the graph harder to read.
+
+103
+00:05:35.777 --> 00:05:38.742
+Here, it is still readable.
+Refer back to video
+
+104
+00:05:38.822 --> 00:05:41.970
+2 of session 2
+
+105
+00:05:42.050 --> 00:05:45.106
+to review histograms
+and the choice of bins.
+
+106
+00:05:45.186 --> 00:05:48.424
+So the visualisation
+needs careful thought.
+
+107
+00:05:48.504 --> 00:05:51.606
+A histogram should give us a simple view
+
+108
+00:05:51.686 --> 00:05:55.277
+of our data without having
+to read the entire table.
+
+109
+00:05:56.681 --> 00:06:00.100
+Third question:
+how does nitrate concentration
+
+110
+00:06:00.180 --> 00:06:03.713
+vary from one catchment to another?
+
+111
+00:06:03.793 --> 00:06:07.438
+To explore this, we will focus on four
+
+112
+00:06:07.518 --> 00:06:11.107
+catchments: North, East, South and West.
+
+113
+00:06:11.187 --> 00:06:14.719
+We plot nitrate concentration
+in milligrams per litre.
+
+114
+00:06:14.799 --> 00:06:16.921
+Make sure you use the same
+
+115
+00:06:17.001 --> 00:06:19.597
+scale so that the groups are comparable.
+
+116
+00:06:20.259 --> 00:06:23.515
+Here, we combine a numerical variable,
+
+117
+00:06:23.595 --> 00:06:27.981
+concentration,
+with a categorical variable, catchment.
+
+118
+00:06:28.061 --> 00:06:31.425
+We could draw one histogram per catchment.
+
+119
+00:06:31.505 --> 00:06:34.761
+But comparing several shapes at once
+
+120
+00:06:34.841 --> 00:06:38.689
+is difficult and can reduce readability.
+
+121
+00:06:38.769 --> 00:06:41.164
+If we overlay all the histograms, they
+
+122
+00:06:41.244 --> 00:06:43.719
+may obscure one another.
+
+123
+00:06:43.811 --> 00:06:46.986
+Instead, we can use dot plots
+
+124
+00:06:47.066 --> 00:06:50.794
+to show all the observations,
+separated by catchment.
+
+125
+00:06:50.874 --> 00:06:54.172
+We use the same x-axis for all
+
+126
+00:06:54.252 --> 00:06:57.875
+groups and place the sets
+of points at different heights.
+
+127
+00:06:58.375 --> 00:07:01.113
+We can see the distribution of the data,
+
+128
+00:07:01.193 --> 00:07:04.260
+but we would like a more compact summary
+
+129
+00:07:04.340 --> 00:07:07.359
+of each distribution on the same scale.
+
+130
+00:07:07.439 --> 00:07:10.130
+That is why, in the next video,
+we will look at
+
+131
+00:07:10.210 --> 00:07:12.901
+box-and-whisker plots, or boxplots.
+
+132
+00:07:12.981 --> 00:07:16.073
+They provide a more
+compact representation.
+
+133
+00:07:16.153 --> 00:07:18.187
+For now,
+remember that showing only the mean
+
+134
+00:07:18.267 --> 00:07:20.503
+on a graph would not be enough.
+
+135
+00:07:20.583 --> 00:07:24.027
+Boxplots show more information,
+including the median
+
+136
+00:07:24.107 --> 00:07:28.587
+and interquartile range,
+which we will discuss later.
+
+137
+00:07:29.247 --> 00:07:32.348
+Fourth question: do temperature
+
+138
+00:07:32.428 --> 00:07:36.086
+and dissolved oxygen appear to be related?
+
+139
+00:07:36.166 --> 00:07:39.434
+This time, both variables
+are numerical and continuous.
+
+140
+00:07:39.514 --> 00:07:42.113
+We can place temperature on the horizontal
+
+141
+00:07:42.193 --> 00:07:45.070
+axis and oxygen on the vertical axis.
+
+142
+00:07:45.150 --> 00:07:49.646
+Each pair of values becomes
+a point on the graph.
+
+143
+00:07:49.726 --> 00:07:52.739
+This is how we build a scatterplot.
+
+144
+00:07:52.831 --> 00:07:56.818
+Here, the temperature is
+5 °C and the dissolved
+
+145
+00:07:56.898 --> 00:08:00.957
+oxygen concentration is 11.6 mg/L.
+We place the point
+
+146
+00:08:01.037 --> 00:08:05.314
+at 5 °C on the x-axis
+and 11.6 mg/L on the y-axis.
+
+147
+00:08:05.394 --> 00:08:09.526
+We repeat this for each pair of values
+
+148
+00:08:09.606 --> 00:08:14.181
+to build the scatterplot.
+
+149
+00:08:14.673 --> 00:08:18.184
+We then examine the direction,
+
+150
+00:08:18.264 --> 00:08:21.775
+shape and strength of the association,
+
+151
+00:08:21.855 --> 00:08:25.697
+as well as groups
+and unusual observations.
+
+152
+00:08:25.777 --> 00:08:27.796
+Be careful: seeing a slope
+
+153
+00:08:27.876 --> 00:08:30.227
+on the graph is not enough to establish
+
+154
+00:08:30.307 --> 00:08:32.549
+causality between the two variables.
+
+155
+00:08:32.629 --> 00:08:36.264
+The relationship may depend on other
+variables or a shared mechanism.
+
+156
+00:08:36.344 --> 00:08:39.979
+We will discuss this in session six.
+
+157
+00:08:40.059 --> 00:08:43.281
+For now, the graph helps us identify
+
+158
+00:08:43.361 --> 00:08:47.541
+an overall pattern between
+temperature and oxygen.
+
+159
+00:08:47.633 --> 00:08:51.517
+Last question:
+how does nitrate concentration
+
+160
+00:08:51.597 --> 00:08:55.602
+change over time?
+
+161
+00:08:55.682 --> 00:09:00.347
+We have a continuous variable
+measured over time. We place
+
+162
+00:09:00.427 --> 00:09:04.791
+time on the x-axis
+and nitrate concentration
+
+163
+00:09:04.871 --> 00:09:10.037
+on the y-axis,
+with one point per observation.
+
+164
+00:09:10.785 --> 00:09:14.483
+We then join the points
+to make a line chart.
+
+165
+00:09:14.563 --> 00:09:18.704
+The line is a visual guide, but it helps
+
+166
+00:09:18.784 --> 00:09:23.093
+us assess how much the values
+change between points.
+
+167
+00:09:23.173 --> 00:09:26.204
+For example,
+the change from February to March
+
+168
+00:09:26.284 --> 00:09:29.704
+is greater than from January to February,
+because
+
+169
+00:09:29.784 --> 00:09:33.426
+the segment from February
+to March has a steeper
+
+170
+00:09:33.506 --> 00:09:37.061
+slope than the one from
+January to February.
+
+171
+00:09:37.153 --> 00:09:39.632
+This is purely visual, but the slope
+
+172
+00:09:39.712 --> 00:09:42.653
+helps us notice these differences.
+
+173
+00:09:43.585 --> 00:09:47.210
+Now that we have seen
+several types of graphs,
+
+174
+00:09:47.290 --> 00:09:51.107
+you can use this table
+whenever you are unsure.
+
+175
+00:09:51.187 --> 00:09:53.417
+It summarises the different situations.
+
+176
+00:09:53.497 --> 00:09:55.245
+The research question
+
+177
+00:09:55.325 --> 00:09:57.844
+guides the choice of graph,
+not the other way round.
+
+178
+00:09:57.924 --> 00:10:01.404
+Graphs help us understand data
+
+179
+00:10:01.484 --> 00:10:05.189
+through positions, lengths and colours.
+
+180
+00:10:05.281 --> 00:10:07.519
+We can also use sizes and shapes.
+
+181
+00:10:07.599 --> 00:10:10.368
+Let us see how these features
+
+182
+00:10:10.448 --> 00:10:14.021
+can make our graphs easier to read.
+
+183
+00:10:14.507 --> 00:10:17.858
+Position on a common scale allows us,
+
+184
+00:10:17.938 --> 00:10:21.493
+for example, to compare values precisely.
+
+185
+00:10:21.573 --> 00:10:25.026
+Length works well
+for representing quantities.
+
+186
+00:10:25.106 --> 00:10:28.611
+Bars can sometimes make
+quantities easier to judge
+
+187
+00:10:28.691 --> 00:10:32.451
+than simple points on a line.
+
+188
+00:10:32.531 --> 00:10:36.017
+Colour helps distinguish groups
+
+189
+00:10:36.109 --> 00:10:38.688
+and represent ordered values.
+
+190
+00:10:38.768 --> 00:10:41.735
+For nitrate concentration,
+for example, we can
+
+191
+00:10:41.815 --> 00:10:44.726
+define classes ranging from low
+
+192
+00:10:44.806 --> 00:10:47.994
+to high values, and use colour
+to distinguish their intensity.
+
+193
+00:10:48.074 --> 00:10:52.038
+Colours can also make
+a graph easier to read.
+
+194
+00:10:52.118 --> 00:10:55.473
+With a set of points,
+I cannot tell whether
+
+195
+00:10:55.553 --> 00:10:59.184
+an observation comes from North,
+East or another catchment.
+
+196
+00:10:59.264 --> 00:11:02.865
+By adding colours and a legend,
+
+197
+00:11:02.957 --> 00:11:07.976
+I can immediately identify
+where each point comes from.
+
+198
+00:11:08.056 --> 00:11:10.641
+The information becomes
+much easier to see.
+
+199
+00:11:10.721 --> 00:11:15.869
+However, do not rely on colour alone.
+
+200
+00:11:15.949 --> 00:11:18.955
+Add shapes too, because colour perception
+
+201
+00:11:19.035 --> 00:11:21.760
+varies between people. A graph
+
+202
+00:11:21.840 --> 00:11:24.785
+that is readable for you
+may not be for others.
+
+203
+00:11:24.877 --> 00:11:26.796
+For example, we can use
+
+204
+00:11:26.876 --> 00:11:28.844
+triangles, squares and other shapes.
+
+205
+00:11:28.924 --> 00:11:30.599
+Although colour is useful,
+
+206
+00:11:30.679 --> 00:11:33.378
+do not rely on it alone.
+
+207
+00:11:33.458 --> 00:11:36.449
+Next, we can vary size.
+
+208
+00:11:36.529 --> 00:11:40.057
+For 10 or 20 observations,
+for example, we can use
+
+209
+00:11:40.137 --> 00:11:43.397
+a circle whose size is
+proportional to the count.
+
+210
+00:11:43.477 --> 00:11:47.127
+This is useful, but precise comparisons
+
+211
+00:11:47.207 --> 00:11:50.745
+are harder. Judging the length of a bar
+
+212
+00:11:50.825 --> 00:11:54.920
+is easier than judging
+the size of a circle:
+
+213
+00:11:55.000 --> 00:11:58.897
+our perception of areas can be misleading.
+
+214
+00:11:58.989 --> 00:12:01.806
+This gives us a sense of the quantities,
+
+215
+00:12:01.886 --> 00:12:05.009
+but not a very precise comparison.
+
+216
+00:12:05.089 --> 00:12:08.312
+Finally, we can use facets.
+
+217
+00:12:08.392 --> 00:12:09.888
+What are facets?
+
+218
+00:12:09.968 --> 00:12:12.989
+The same type of graph
+is repeated for several
+
+219
+00:12:13.069 --> 00:12:16.271
+categories: here, North,
+East, South and West.
+
+220
+00:12:16.761 --> 00:12:20.528
+Facets avoid putting all the points
+
+221
+00:12:20.608 --> 00:12:24.526
+on one graph,
+so each panel is less crowded.
+
+222
+00:12:24.606 --> 00:12:28.723
+But with many categories,
+they become harder to read.
+
+223
+00:12:28.803 --> 00:12:32.720
+Here, four catchments give us
+four easily comparable graphs.
+
+224
+00:12:32.800 --> 00:12:36.797
+With many more graphs,
+it would be more complicated.
+
+225
+00:12:37.017 --> 00:12:40.868
+With facets, it is best to keep
+
+226
+00:12:40.948 --> 00:12:44.798
+the same x- and y-axes.
+
+227
+00:12:44.878 --> 00:12:49.071
+Otherwise, differences in scale
+make comparisons difficult.
+
+228
+00:12:49.545 --> 00:12:52.144
+Let us finish with some good practices
+
+229
+00:12:52.224 --> 00:12:55.181
+for making a graph readable.
+
+230
+00:12:55.261 --> 00:12:59.170
+At a minimum, we need a title, named axes,
+
+231
+00:12:59.250 --> 00:13:03.219
+units where appropriate and tick marks.
+
+232
+00:13:03.299 --> 00:13:06.194
+If colours, shapes
+
+233
+00:13:06.274 --> 00:13:09.714
+or sizes carry information, add a legend.
+
+234
+00:13:09.794 --> 00:13:13.086
+This takes us from the original
+unlabelled graph to this one.
+
+235
+00:13:13.166 --> 00:13:16.557
+These details are essential
+for communicating information,
+
+236
+00:13:16.637 --> 00:13:20.653
+particularly in a report or presentation.
+
+237
+00:13:20.745 --> 00:13:22.881
+Without them, the reader cannot
+
+238
+00:13:22.961 --> 00:13:25.251
+check what we are showing.
+
+239
+00:13:25.331 --> 00:13:27.569
+So remember all these elements
+
+240
+00:13:27.649 --> 00:13:30.094
+when building a graph.
+
+241
+00:13:30.174 --> 00:13:33.494
+Graphs are not just for presentations.
+
+242
+00:13:33.574 --> 00:13:37.101
+They are also useful
+for exploratory analysis.
+
+243
+00:13:37.181 --> 00:13:38.492
+What does that mean?
+
+244
+00:13:38.572 --> 00:13:41.996
+This is an essential stage of the work.
+You receive
+
+245
+00:13:42.076 --> 00:13:45.837
+your raw data, then ask:
+
+246
+00:13:45.929 --> 00:13:48.246
+“What can I study with these data?”
+
+247
+00:13:48.326 --> 00:13:51.818
+Sometimes, we start with a good
+research question, then
+
+248
+00:13:51.898 --> 00:13:55.390
+realise that the data cannot answer it.
+
+249
+00:13:55.470 --> 00:13:58.303
+Conversely,
+after collecting the data, we may
+
+250
+00:13:58.383 --> 00:14:01.358
+discover something particularly
+interesting to investigate.
+
+251
+00:14:01.438 --> 00:14:04.037
+We then adjust the research question
+
+252
+00:14:04.117 --> 00:14:07.501
+to improve the study.
+
+253
+00:14:07.593 --> 00:14:11.106
+This exploratory stage matters, and graphs
+
+254
+00:14:11.186 --> 00:14:14.651
+can be very helpful. For example,
+
+255
+00:14:14.731 --> 00:14:18.433
+the dataset may contain one
+or two unusual observations.
+
+256
+00:14:18.513 --> 00:14:21.127
+Reading the entire table
+would take a long time.
+
+257
+00:14:21.207 --> 00:14:24.767
+In a scatterplot or histogram,
+
+258
+00:14:24.847 --> 00:14:28.407
+these observations stand out immediately.
+We can then refine
+
+259
+00:14:28.487 --> 00:14:32.269
+our research question to explore
+what looks interesting.
+
+260
+00:14:32.879 --> 00:14:35.641
+This kind of graph
+raises several questions:
+
+261
+00:14:35.721 --> 00:14:38.831
+“Are there groups or subgroups?
+
+262
+00:14:38.911 --> 00:14:42.072
+Does the pattern follow
+a straight line or a curve?
+
+263
+00:14:42.152 --> 00:14:45.262
+Are there isolated values?”
+
+264
+00:14:45.342 --> 00:14:49.231
+This helps us refine
+our research question.
+
+265
+00:14:49.709 --> 00:14:52.355
+To sum up, when choosing graphs,
+
+266
+00:14:52.435 --> 00:14:55.572
+we always follow the same sequence.
+
+267
+00:14:55.652 --> 00:14:58.789
+First,
+we formulate the question and identify
+
+268
+00:14:58.869 --> 00:15:02.933
+the variables needed to answer it.
+
+269
+00:15:03.013 --> 00:15:06.121
+Then we choose the visual
+task and type of graph,
+
+270
+00:15:06.601 --> 00:15:10.351
+and check what could be misinterpreted.
+
+271
+00:15:10.803 --> 00:15:14.207
+In the next video,
+we will return to the question
+
+272
+00:15:14.287 --> 00:15:17.831
+we set aside when I mentioned boxplots.
+
+273
+00:15:17.911 --> 00:15:20.562
+How can we summarise
+a distribution and compare
+
+274
+00:15:20.642 --> 00:15:23.528
+groups without reducing them to their mean
+
+275
+00:15:23.608 --> 00:15:26.446
+or median?
+
+276
+00:15:26.526 --> 00:15:29.318
+As we have seen, these two indicators
+
+277
+00:15:29.398 --> 00:15:32.378
+have limitations: they do not
+describe the whole distribution.
+
+278
+00:15:32.458 --> 00:15:34.543
+For the normal distribution,
+
+279
+00:15:34.623 --> 00:15:37.495
+for example,
+we also needed the standard deviation.
+
+280
+00:15:37.587 --> 00:15:40.145
+So in the next video, we will learn how to
+
+281
+00:15:40.225 --> 00:15:43.111
+build boxplots to summarise
+our distributions.

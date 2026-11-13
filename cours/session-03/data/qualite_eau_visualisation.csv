@@ -1,0 +1,49 @@
+date,site,bassin,type_milieu,classe_qualite,nitrates_mg_l,temperature_c,oxygene_mg_l
+15.01.2025,N1,Bassin Nord,ruisseau,très bonne,2.1,5,11.6
+15.02.2025,N1,Bassin Nord,ruisseau,très bonne,2.3,6,11.3
+15.03.2025,N1,Bassin Nord,ruisseau,bonne,2.6,9,10.7
+15.04.2025,N1,Bassin Nord,ruisseau,bonne,2.8,13,9.9
+15.05.2025,N1,Bassin Nord,ruisseau,bonne,3,17,8.8
+15.06.2025,N1,Bassin Nord,ruisseau,moyenne,3.1,20,8
+15.07.2025,N1,Bassin Nord,ruisseau,moyenne,3.2,22,7.3
+15.08.2025,N1,Bassin Nord,ruisseau,moyenne,3.4,21,7.6
+15.09.2025,N1,Bassin Nord,ruisseau,bonne,3,17,8.5
+15.10.2025,N1,Bassin Nord,ruisseau,bonne,2.7,13,9.4
+15.11.2025,N1,Bassin Nord,ruisseau,très bonne,2.4,9,10.3
+15.12.2025,N1,Bassin Nord,ruisseau,très bonne,2.2,6,11.1
+15.01.2025,E1,Bassin Est,rivière,bonne,3,6,11
+15.02.2025,E1,Bassin Est,rivière,bonne,3.2,7,10.8
+15.03.2025,E1,Bassin Est,rivière,bonne,3.4,10,10.2
+15.04.2025,E1,Bassin Est,rivière,moyenne,3.8,14,9.4
+15.05.2025,E1,Bassin Est,rivière,moyenne,4,18,8.3
+15.06.2025,E1,Bassin Est,rivière,moyenne,4.2,21,7.5
+15.07.2025,E1,Bassin Est,rivière,mauvaise,4.6,23,6.9
+15.08.2025,E1,Bassin Est,rivière,mauvaise,4.4,22,7.1
+15.09.2025,E1,Bassin Est,rivière,moyenne,4.1,18,8
+15.10.2025,E1,Bassin Est,rivière,moyenne,3.7,14,8.9
+15.11.2025,E1,Bassin Est,rivière,bonne,3.3,10,9.8
+15.12.2025,E1,Bassin Est,rivière,bonne,3.1,7,10.6
+15.01.2025,S1,Bassin Sud,canal,moyenne,3.5,7,10.5
+15.02.2025,S1,Bassin Sud,canal,moyenne,3.7,8,10.2
+15.03.2025,S1,Bassin Sud,canal,moyenne,3.9,11,9.7
+15.04.2025,S1,Bassin Sud,canal,moyenne,4.2,15,8.9
+15.05.2025,S1,Bassin Sud,canal,mauvaise,4.6,19,7.8
+15.06.2025,S1,Bassin Sud,canal,mauvaise,5,22,7
+15.07.2025,S1,Bassin Sud,canal,mauvaise,8.7,24,6.4
+15.08.2025,S1,Bassin Sud,canal,mauvaise,5.2,23,6.7
+15.09.2025,S1,Bassin Sud,canal,mauvaise,4.8,19,7.5
+15.10.2025,S1,Bassin Sud,canal,moyenne,4.3,15,8.4
+15.11.2025,S1,Bassin Sud,canal,moyenne,3.9,11,9.3
+15.12.2025,S1,Bassin Sud,canal,moyenne,3.6,8,10.1
+15.01.2025,O1,Bassin Ouest,rivière,bonne,2.6,4,12
+15.02.2025,O1,Bassin Ouest,rivière,bonne,2.8,5,11.7
+15.03.2025,O1,Bassin Ouest,rivière,bonne,3,8,11.1
+15.04.2025,O1,Bassin Ouest,rivière,bonne,3.2,12,10.3
+15.05.2025,O1,Bassin Ouest,rivière,moyenne,3.5,16,9.2
+15.06.2025,O1,Bassin Ouest,rivière,moyenne,3.7,19,8.4
+15.07.2025,O1,Bassin Ouest,rivière,moyenne,3.9,21,7.8
+15.08.2025,O1,Bassin Ouest,rivière,moyenne,3.8,20,8
+15.09.2025,O1,Bassin Ouest,rivière,moyenne,,16,
+15.10.2025,O1,Bassin Ouest,rivière,bonne,3.3,12,9.8
+15.11.2025,O1,Bassin Ouest,rivière,bonne,3,8,10.7
+15.12.2025,O1,Bassin Ouest,rivière,bonne,2.7,5,11.5

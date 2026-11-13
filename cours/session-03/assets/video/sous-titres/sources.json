@@ -1,0 +1,38 @@
+[
+  {
+    "file": "S3V1.fr.vtt",
+    "source": "S3V1_FR_revise.srt",
+    "source_sha256": "6a53300518f09c606135beb5cb1bf59f43c22f896e545b5085dae35a1cd7284b",
+    "cues": 281
+  },
+  {
+    "file": "S3V1.en.vtt",
+    "source": "S3V1_EN_revise.srt",
+    "source_sha256": "364b16d986c3667af2c042bb8e9b70fa70cad401d991974e8c83b19521862543",
+    "cues": 281
+  },
+  {
+    "file": "S3V2.fr.vtt",
+    "source": "S3V2_FR_revise.srt",
+    "source_sha256": "427c40444fa5a9ec756362458ce3773cede39e8787d5f3fb08a795026889b2c8",
+    "cues": 249
+  },
+  {
+    "file": "S3V2.en.vtt",
+    "source": "S3V2_EN_revise.srt",
+    "source_sha256": "644372a10bcfcd8f4c3b43656f03b91173fa87225e4e6fffc08c882ab0a23fe1",
+    "cues": 249
+  },
+  {
+    "file": "S3V3.fr.vtt",
+    "source": "S3V3_FR_revise.srt",
+    "source_sha256": "20cc3ee14ac3dd7529c977899153d017d9f8a0a8d1220d1793959b12b630031c",
+    "cues": 381
+  },
+  {
+    "file": "S3V3.en.vtt",
+    "source": "S3V3_EN_revise.srt",
+    "source_sha256": "07398e9ceef3ff4c0446ec4c2f1004b61ae96d0b77f42f569a164a3ff1163f85",
+    "cues": 381
+  }
+]

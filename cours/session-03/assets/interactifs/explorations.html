@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="fr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Exploration</title><style>
+*{box-sizing:border-box}body{font:16px/1.5 system-ui,sans-serif;color:#263843;margin:0;padding:12px}h1{font-size:1.15rem;margin:0 0 16px}img{display:block;width:100%;height:auto}label{display:block}select{font:inherit;padding:6px;margin:5px 10px 10px 0;max-width:100%}button{font:inherit;padding:6px 10px;background:white;border:1px solid #8b99a1;border-radius:4px}p{margin:8px 0}input{width:min(100%,360px);display:block;margin:12px 0}button:focus-visible,select:focus-visible,input:focus-visible{outline:3px solid #8b1e5a}output{margin-left:8px}
+</style></head><body>
+<h1></h1><label for="state"></label><div id="controls"></div><button id="reset" type="button">Revenir au début</button>
+<img alt=""><p id="explanation" aria-live="polite"></p>
+<script>
+(async()=>{
+ const params=new URLSearchParams(location.search),lang=params.get('lang')==='en'?'en':'fr';document.documentElement.lang=lang;
+ const resize=()=>parent.postMessage({type:'complement-height',height:Math.ceil(document.body.getBoundingClientRect().height)+24},location.origin);
+ try{
+ const response=await fetch('revision/models.json');if(!response.ok)throw Error(response.status);
+ const model=(await response.json())[lang][params.get('animation')];
+ document.title=document.querySelector('h1').textContent=model.title;document.querySelector('label').textContent=model.control;
+ const key=params.get('animation');
+ const control=document.createElement(key==='absences'?'input':key==='echelles'?'button':'select');control.id='state';
+ if(control.tagName==='INPUT'){control.type='range';control.min=0;control.max=model.frames.length-1;control.step=1;control.value=0;}
+ else if(key==='echelles'){control.type='button';control.value='0';control.onclick=()=>{control.value=control.value==='0'?'1':'0';show()};}
+ else model.frames.forEach((frame,i)=>{const option=document.createElement('option');option.value=i;option.textContent=frame.label;control.append(option)});
+ document.getElementById('controls').append(control);const output=document.createElement('output');output.htmlFor='state';document.getElementById('controls').append(output);
+ const show=()=>{const f=model.frames[Number(control.value)];document.querySelector('img').src=f.image;document.querySelector('img').alt=f.description;document.getElementById('explanation').textContent=f.description;output.textContent=control.tagName==='INPUT'?f.label:'';control.setAttribute('aria-valuetext',f.label);if(key==='echelles'){control.textContent=lang==='en'?(control.value==='0'?'Switch to logarithmic scale':'Switch to linear scale'):(control.value==='0'?'Passer à l’échelle logarithmique':'Passer à l’échelle linéaire');control.setAttribute('aria-pressed',control.value==='1'?'true':'false')}resize()};
+ control.addEventListener('input',show);control.addEventListener('change',show);
+ document.getElementById('reset').textContent=lang==='en'?'Reset':'Revenir au début';document.getElementById('reset').onclick=()=>{control.value=0;show()};
+ if(key==='absences'||key==='echelles')document.getElementById('reset').remove();
+ document.querySelector('img').onload=resize;new ResizeObserver(resize).observe(document.body);window.addEventListener('message',e=>{if(e.origin===location.origin&&e.data?.type==='complement-measure')resize()});show();
+ }catch(e){document.getElementById('explanation').textContent=lang==='en'?'See the static comparison in the PDF.':'Consultez la comparaison statique du PDF.';console.error(e)}
+})();
+</script></body></html>

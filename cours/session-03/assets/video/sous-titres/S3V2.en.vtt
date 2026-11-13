@@ -1,0 +1,1086 @@
+WEBVTT
+
+1
+00:00:00.481 --> 00:00:02.914
+In the previous video, we asked how to
+
+2
+00:00:02.994 --> 00:00:06.081
+compare nitrate concentrations
+across several catchments.
+
+3
+00:00:06.161 --> 00:00:08.544
+We want to visualise a distribution.
+
+4
+00:00:08.624 --> 00:00:11.711
+We could calculate a mean
+for each catchment,
+
+5
+00:00:11.791 --> 00:00:15.431
+then show those means in a bar chart.
+
+6
+00:00:15.511 --> 00:00:17.894
+But two groups can have
+
+7
+00:00:17.974 --> 00:00:20.508
+the same mean and still be very different.
+
+8
+00:00:20.588 --> 00:00:23.323
+That is the case here with groups A and B.
+
+9
+00:00:23.403 --> 00:00:25.535
+Both have a mean of 3,
+
+10
+00:00:25.615 --> 00:00:27.877
+but their spread is very different.
+
+11
+00:00:27.969 --> 00:00:30.969
+An unusual value can also
+shift the mean considerably,
+
+12
+00:00:31.049 --> 00:00:34.247
+even if all the other
+observations are identical.
+
+13
+00:00:34.327 --> 00:00:38.122
+Here, the means differ greatly.
+Yet only one point
+
+14
+00:00:38.202 --> 00:00:42.046
+in group B lies further
+out than in group A.
+
+15
+00:00:42.126 --> 00:00:44.480
+So we will build
+
+16
+00:00:44.560 --> 00:00:47.014
+a visual summary of each distribution.
+
+17
+00:00:47.094 --> 00:00:49.925
+Let us start with the values
+from one catchment
+
+18
+00:00:50.017 --> 00:00:52.063
+and put them in order.
+
+19
+00:00:52.559 --> 00:00:56.583
+Remember the median from session 2.
+
+20
+00:00:56.663 --> 00:01:01.070
+It divides the ordered
+series into two equal halves.
+
+21
+00:01:01.150 --> 00:01:05.448
+Here, we have an odd number
+of measurements. We leave seven values
+
+22
+00:01:05.528 --> 00:01:09.935
+on each side.
+The central value is our median.
+
+23
+00:01:10.015 --> 00:01:13.159
+But the median does not tell us
+
+24
+00:01:13.239 --> 00:01:16.647
+whether the values are close
+together or spread out.
+
+25
+00:01:16.727 --> 00:01:19.806
+To find out, let us look at the interval
+
+26
+00:01:19.886 --> 00:01:23.571
+spanned by the central 50% of values.
+
+27
+00:01:23.663 --> 00:01:27.955
+We want a value that roughly separates
+
+28
+00:01:28.035 --> 00:01:32.686
+the first quarter of observations
+from the remaining three quarters.
+
+29
+00:01:32.766 --> 00:01:36.998
+Take the values to the left
+of the overall median
+
+30
+00:01:37.078 --> 00:01:41.370
+and calculate their own median.
+
+31
+00:01:41.450 --> 00:01:45.523
+There are seven values on the left.
+
+32
+00:01:45.615 --> 00:01:48.761
+We set aside the first three and the last
+
+33
+00:01:48.841 --> 00:01:52.574
+three. The central value,
+
+34
+00:01:52.654 --> 00:01:56.329
+2.4 here, is the first quartile,
+denoted Q1.
+
+35
+00:01:56.409 --> 00:02:00.787
+We do the same on the right:
+with three values
+
+36
+00:02:00.867 --> 00:02:05.560
+on either side, the central
+value is the third quartile, Q3.
+
+37
+00:02:06.060 --> 00:02:09.237
+One clarification:
+depending on the calculation
+
+38
+00:02:09.317 --> 00:02:12.344
+method and the sample size,
+
+39
+00:02:12.424 --> 00:02:15.901
+two software packages may give
+slightly different quartiles.
+
+40
+00:02:15.981 --> 00:02:19.459
+This is not necessarily an error, but it
+
+41
+00:02:19.539 --> 00:02:23.016
+needs to be considered.
+The key is to use a consistent method,
+
+42
+00:02:23.096 --> 00:02:26.704
+the same one throughout the analysis.
+
+43
+00:02:26.796 --> 00:02:28.306
+So do not change methods
+
+44
+00:02:28.386 --> 00:02:30.014
+halfway through a study.
+
+45
+00:02:30.476 --> 00:02:34.008
+Between Q1 and Q3 lies the central half
+
+46
+00:02:34.088 --> 00:02:37.730
+of the observations: the middle 50%.
+
+47
+00:02:37.810 --> 00:02:40.686
+This is what the small box represents.
+
+48
+00:02:40.766 --> 00:02:43.478
+The line in the middle marks the median.
+
+49
+00:02:43.558 --> 00:02:47.692
+The two edges of the box
+correspond to Q1 and Q3.
+
+50
+00:02:47.772 --> 00:02:50.867
+We have just built the core
+
+51
+00:02:50.947 --> 00:02:55.216
+of the box-and-whisker plot,
+
+52
+00:02:55.308 --> 00:02:58.664
+or boxplot,
+mentioned in the previous video.
+
+53
+00:02:58.956 --> 00:03:03.491
+The distance between Q1 and Q3
+is the interquartile range,
+
+54
+00:03:03.571 --> 00:03:08.461
+usually abbreviated to IQR.
+
+55
+00:03:08.541 --> 00:03:12.579
+We calculate it by subtracting Q1
+
+56
+00:03:12.659 --> 00:03:16.910
+from Q3. Here, we get 1.1 mg/L: Q1 is 2.4
+
+57
+00:03:16.990 --> 00:03:21.392
+and Q3 is 3.5,
+giving a difference of 1.1 mg/L.
+
+58
+00:03:23.084 --> 00:03:26.319
+This small box now represents our data.
+
+59
+00:03:26.399 --> 00:03:29.288
+But if we look at the entire series,
+
+60
+00:03:29.368 --> 00:03:32.257
+some values lie outside the box.
+
+61
+00:03:32.337 --> 00:03:35.077
+How can we represent these values,
+
+62
+00:03:35.157 --> 00:03:37.848
+which are not part
+
+63
+00:03:37.928 --> 00:03:40.817
+of the central 50%?
+
+64
+00:03:40.897 --> 00:03:42.994
+We can see two situations here.
+
+65
+00:03:43.074 --> 00:03:45.962
+Some points are fairly close to the box.
+
+66
+00:03:46.042 --> 00:03:48.368
+There are three on the left
+and two on the right.
+
+67
+00:03:48.460 --> 00:03:51.359
+Another point is much further away.
+
+68
+00:03:51.833 --> 00:03:55.320
+One advantage of Q1,
+
+69
+00:03:55.400 --> 00:03:59.306
+Q3, the median and the interquartile
+
+70
+00:03:59.386 --> 00:04:03.712
+range is that they are relatively
+insensitive to a very distant value.
+
+71
+00:04:03.792 --> 00:04:06.544
+This summary depends
+on how many values lie
+
+72
+00:04:06.624 --> 00:04:09.429
+outside the box,
+but little on how far away they are.
+
+73
+00:04:09.509 --> 00:04:13.181
+For example, the value just above 7
+
+74
+00:04:13.273 --> 00:04:16.130
+could have been 7, 6 or 5
+
+75
+00:04:16.210 --> 00:04:19.209
+without changing the shape of the box.
+
+76
+00:04:19.673 --> 00:04:22.338
+To represent values
+
+77
+00:04:22.418 --> 00:04:25.877
+further out, we use whiskers.
+
+78
+00:04:25.957 --> 00:04:29.903
+A common convention is to apply the rule
+
+79
+00:04:29.983 --> 00:04:34.234
+of 1.5 times the interquartile range,
+or 1.5 IQR.
+
+80
+00:04:34.314 --> 00:04:36.736
+In our case,
+
+81
+00:04:36.816 --> 00:04:39.805
+the interquartile range is 1.1 mg/L.
+
+82
+00:04:40.057 --> 00:04:43.898
+Multiplying it by 1.5 gives 1.65.
+
+83
+00:04:43.978 --> 00:04:48.682
+First,
+we calculate the lower and upper fences.
+
+84
+00:04:48.762 --> 00:04:53.466
+For the lower fence,
+we subtract 1.65 from Q1.
+
+85
+00:04:53.546 --> 00:04:58.249
+For the upper fence, we add 1.65 to Q3.
+
+86
+00:04:58.329 --> 00:05:01.543
+This gives us fences of
+
+87
+00:05:01.623 --> 00:05:05.309
+0.75 and 5.15 in this example.
+
+88
+00:05:06.553 --> 00:05:08.517
+Be careful: the whiskers
+
+89
+00:05:08.597 --> 00:05:11.168
+do not necessarily extend
+all the way to these fences.
+
+90
+00:05:11.248 --> 00:05:13.985
+They stop at the most extreme observations
+
+91
+00:05:14.065 --> 00:05:17.967
+that still fall within the fences.
+
+92
+00:05:18.047 --> 00:05:22.005
+Here, the highest value lies
+
+93
+00:05:22.085 --> 00:05:24.375
+outside the fences, so we do not
+
+94
+00:05:24.455 --> 00:05:26.744
+use it to position the whiskers.
+
+95
+00:05:26.824 --> 00:05:29.917
+Instead, among the observations
+
+96
+00:05:30.009 --> 00:05:33.953
+between 0.75 and 5.15,
+
+97
+00:05:34.033 --> 00:05:38.350
+we use the two most extreme
+ones to position the whiskers.
+
+98
+00:05:38.430 --> 00:05:43.716
+Values outside the fences
+therefore do not determine
+
+99
+00:05:43.796 --> 00:05:49.981
+the whisker ends,
+which are 1.8 and 4 here.
+
+100
+00:05:50.105 --> 00:05:54.563
+Our boxplot is now complete.
+
+101
+00:05:54.643 --> 00:05:58.922
+We can easily see the median
+
+102
+00:05:59.002 --> 00:06:03.580
+and where the central
+half of the data lies.
+
+103
+00:06:03.660 --> 00:06:08.238
+We can also quickly spot
+observations worth checking.
+
+104
+00:06:08.318 --> 00:06:11.005
+Here, the value 7.1 stands out.
+
+105
+00:06:11.097 --> 00:06:14.478
+Is it an error
+
+106
+00:06:14.558 --> 00:06:17.994
+or an interesting observation?
+
+107
+00:06:18.074 --> 00:06:21.887
+We need to revisit the protocol
+and the data before
+
+108
+00:06:21.967 --> 00:06:25.645
+deciding whether to remove
+or keep this value.
+
+109
+00:06:26.145 --> 00:06:29.851
+Remember: the boxplot's central summary is
+
+110
+00:06:29.931 --> 00:06:33.911
+relatively insensitive
+to how high the value 7.1 is.
+
+111
+00:06:33.991 --> 00:06:37.996
+The same would not be true
+of the mean or standard deviation.
+
+112
+00:06:38.473 --> 00:06:41.091
+This slide summarises those questions.
+
+113
+00:06:41.171 --> 00:06:43.289
+Only one value appears unusual.
+
+114
+00:06:43.369 --> 00:06:47.136
+Is it a recording error
+or a faulty instrument?
+
+115
+00:06:47.216 --> 00:06:50.084
+Or could it be the most
+interesting event of all?
+
+116
+00:06:50.164 --> 00:06:52.782
+We need to revisit
+the protocol to find out.
+
+117
+00:06:52.862 --> 00:06:54.331
+Also consider the sample size.
+
+118
+00:06:54.411 --> 00:06:58.568
+Here,
+the dataset contains few observations.
+
+119
+00:06:58.648 --> 00:07:00.070
+There are only fifteen: n = 15.
+
+120
+00:07:00.150 --> 00:07:04.039
+Removing this value can therefore
+shift the mean considerably.
+
+121
+00:07:04.119 --> 00:07:07.900
+We need to examine
+the consequences of removing it,
+
+122
+00:07:07.980 --> 00:07:11.949
+including changes
+in the statistical results.
+
+123
+00:07:13.353 --> 00:07:16.464
+The graph alone cannot
+settle the question.
+
+124
+00:07:16.544 --> 00:07:20.197
+We need to revisit the data's origin,
+the table and the protocol.
+
+125
+00:07:20.841 --> 00:07:23.950
+We can now draw a boxplot
+for each catchment,
+
+126
+00:07:24.030 --> 00:07:27.829
+keeping the same scale for comparison.
+
+127
+00:07:27.909 --> 00:07:33.071
+We can compare the medians,
+Q1 and Q3 directly.
+
+128
+00:07:33.151 --> 00:07:36.313
+The South catchment has a higher median
+
+129
+00:07:36.393 --> 00:07:38.896
+than the others and a box
+
+130
+00:07:38.976 --> 00:07:40.877
+spanning a slightly wider interval.
+
+131
+00:07:41.097 --> 00:07:44.267
+The whiskers also show
+how far the values extend
+
+132
+00:07:44.347 --> 00:07:47.915
+and help us spot possible asymmetry.
+
+133
+00:07:47.995 --> 00:07:52.248
+At South, the box extends
+a little further towards
+
+134
+00:07:52.328 --> 00:07:56.638
+higher values:
+the distance from Q1 to the median
+
+135
+00:07:56.718 --> 00:08:01.165
+is smaller than the distance
+from the median to Q3.
+
+136
+00:08:01.257 --> 00:08:04.892
+Putting the boxes on the same axis
+
+137
+00:08:04.972 --> 00:08:08.911
+makes the comparison clearer
+here than using points alone.
+
+138
+00:08:08.991 --> 00:08:12.931
+We can add the points to show
+
+139
+00:08:13.011 --> 00:08:16.950
+everything explicitly, but be careful:
+
+140
+00:08:17.030 --> 00:08:21.293
+too many elements can
+make the graph unreadable.
+
+141
+00:08:22.953 --> 00:08:26.611
+A boxplot is not a magic solution.
+
+142
+00:08:26.691 --> 00:08:29.807
+It combines several pieces of information,
+
+143
+00:08:29.887 --> 00:08:34.140
+but it can also hide some of them.
+
+144
+00:08:34.220 --> 00:08:37.011
+Consider these two
+apparently identical boxes
+
+145
+00:08:37.091 --> 00:08:40.207
+for series A and B.
+
+146
+00:08:40.287 --> 00:08:44.645
+The problem is that the sample
+size for each series
+
+147
+00:08:44.725 --> 00:08:46.029
+is not shown by the boxplot.
+
+148
+00:08:46.593 --> 00:08:50.704
+We therefore need to display
+the sample size, n,
+
+149
+00:08:50.784 --> 00:08:55.245
+or show the points when necessary.
+
+150
+00:08:55.325 --> 00:08:57.631
+This allows us to compare the two series.
+
+151
+00:08:57.711 --> 00:09:02.056
+Here, the medians, Q1, Q3, interquartile
+
+152
+00:09:02.136 --> 00:09:07.721
+ranges and whiskers are identical.
+Yet series A
+
+153
+00:09:07.801 --> 00:09:11.333
+contains five values and series
+B contains a hundred.
+
+154
+00:09:11.809 --> 00:09:14.038
+That is one limitation of this summary.
+
+155
+00:09:14.118 --> 00:09:16.295
+Two distributions can have
+
+156
+00:09:16.375 --> 00:09:18.866
+different shapes but similar quartiles.
+
+157
+00:09:18.946 --> 00:09:21.228
+If we are interested in the full shape,
+
+158
+00:09:21.308 --> 00:09:24.642
+we can complement
+the box with a histogram.
+
+159
+00:09:24.722 --> 00:09:27.319
+For example, in this case,
+
+160
+00:09:27.399 --> 00:09:29.260
+the patterns are very different.
+
+161
+00:09:29.340 --> 00:09:32.616
+Series A is very uniform, whereas
+
+162
+00:09:32.696 --> 00:09:35.135
+series B contains subgroups,
+
+163
+00:09:35.215 --> 00:09:38.469
+with clusters of values near Q1 and Q3.
+
+164
+00:09:38.561 --> 00:09:40.953
+Yet the boxplots are identical.
+
+165
+00:09:41.033 --> 00:09:44.837
+So we can complement
+the box with a histogram.
+
+166
+00:09:44.917 --> 00:09:48.721
+Another useful representation is a violin
+
+167
+00:09:48.801 --> 00:09:52.837
+plot,
+which shows the density of the points.
+
+168
+00:09:53.305 --> 00:09:57.705
+The wider regions correspond
+to the most common values.
+
+169
+00:09:57.785 --> 00:10:01.164
+This can reveal several peaks
+
+170
+00:10:01.244 --> 00:10:04.987
+that the boxplot did not necessarily show.
+
+171
+00:10:05.467 --> 00:10:07.565
+Be careful: as with a histogram, the shape
+
+172
+00:10:07.645 --> 00:10:10.613
+of a violin depends on a visualisation
+choice, here smoothing.
+
+173
+00:10:10.693 --> 00:10:13.444
+It can suggest values in places
+
+174
+00:10:13.524 --> 00:10:16.438
+where no observations were recorded,
+
+175
+00:10:16.518 --> 00:10:18.344
+especially with a small sample.
+
+176
+00:10:18.424 --> 00:10:21.392
+Here, the bandwidth gradually increases
+
+177
+00:10:21.472 --> 00:10:24.713
+and the violin becomes smoother.
+
+178
+00:10:24.793 --> 00:10:26.618
+So, just as with a histogram,
+
+179
+00:10:26.698 --> 00:10:29.232
+we need to choose the bandwidth carefully.
+
+180
+00:10:29.312 --> 00:10:32.959
+Too much detail makes
+the graph harder to read.
+
+181
+00:10:33.051 --> 00:10:35.510
+Conversely, excessive smoothing,
+
+182
+00:10:35.590 --> 00:10:38.405
+as shown here, removes details and makes
+
+183
+00:10:38.485 --> 00:10:41.147
+the violin less useful.
+
+184
+00:10:41.227 --> 00:10:43.991
+The outline affects how we read the plot,
+
+185
+00:10:44.071 --> 00:10:47.647
+so we should always bear this in mind.
+
+186
+00:10:47.727 --> 00:10:51.050
+Let us now compare
+the violin and the boxplot.
+
+187
+00:10:51.130 --> 00:10:53.792
+The boxplot provides
+
+188
+00:10:53.872 --> 00:10:56.535
+more precise numerical reference points.
+
+189
+00:10:56.615 --> 00:10:59.103
+We can see the median, Q1 and Q3.
+
+190
+00:10:59.227 --> 00:11:03.048
+The violin shows the overall
+density of the data.
+
+191
+00:11:03.128 --> 00:11:06.461
+They complement each other:
+we do not necessarily have to choose.
+
+192
+00:11:06.541 --> 00:11:08.460
+We can even combine them
+
+193
+00:11:08.540 --> 00:11:10.557
+in a single graph, as shown here.
+
+194
+00:11:10.637 --> 00:11:13.629
+I have added the boxplot,
+the violin and the points.
+
+195
+00:11:13.709 --> 00:11:16.896
+You can see that the graph
+is becoming crowded.
+
+196
+00:11:16.976 --> 00:11:19.431
+This can be
+
+197
+00:11:19.511 --> 00:11:22.047
+useful during exploratory analysis.
+
+198
+00:11:22.139 --> 00:11:25.286
+But in a report
+
+199
+00:11:25.366 --> 00:11:28.967
+or presentation, an overloaded graph
+
+200
+00:11:29.047 --> 00:11:32.727
+may become hard to read.
+
+201
+00:11:33.275 --> 00:11:36.950
+The box describes the observations well.
+
+202
+00:11:37.030 --> 00:11:40.335
+However,
+it does not give a margin of error,
+
+203
+00:11:40.415 --> 00:11:43.985
+a confidence interval
+or the uncertainty in the mean.
+
+204
+00:11:44.065 --> 00:11:46.947
+I want to stress this point:
+
+205
+00:11:47.027 --> 00:11:50.667
+the whiskers do not represent
+these uncertainties.
+
+206
+00:11:50.747 --> 00:11:52.612
+Confusion is common because they
+
+207
+00:11:52.692 --> 00:11:55.587
+resemble error bars in other graphs.
+
+208
+00:11:55.667 --> 00:12:00.359
+Here, the whiskers represent
+the spread of the data.
+
+209
+00:12:01.153 --> 00:12:05.277
+Now for a few points about readability.
+
+210
+00:12:05.357 --> 00:12:09.033
+Here, we compare the North
+and South catchments.
+
+211
+00:12:09.113 --> 00:12:12.508
+North appears much more spread out.
+
+212
+00:12:12.588 --> 00:12:16.768
+But look at the x-axis:
+on the left, it runs
+
+213
+00:12:16.848 --> 00:12:21.445
+from 2 to 3.5 mg/L,
+while on the right it runs from 3 to 9.
+
+214
+00:12:21.537 --> 00:12:23.784
+The axes are different,
+
+215
+00:12:23.864 --> 00:12:26.990
+making comparison difficult.
+
+216
+00:12:27.070 --> 00:12:29.782
+We therefore need a common scale
+
+217
+00:12:29.862 --> 00:12:32.574
+to compare the catchments.
+
+218
+00:12:32.654 --> 00:12:34.695
+Also add the sample size
+
+219
+00:12:34.775 --> 00:12:36.866
+so that the graph can
+be interpreted properly.
+
+220
+00:12:36.946 --> 00:12:39.038
+Remember: the boxplot
+
+221
+00:12:39.118 --> 00:12:41.445
+alone does not provide this information.
+
+222
+00:12:43.681 --> 00:12:47.811
+For a study over time, the box has
+
+223
+00:12:47.891 --> 00:12:52.135
+another limitation: it does not tell us
+
+224
+00:12:52.215 --> 00:12:56.515
+when each measurement was taken.
+
+225
+00:12:56.595 --> 00:13:00.384
+We can instead plot a time series. Here,
+
+226
+00:13:00.464 --> 00:13:04.389
+North has twelve measurements,
+one per month.
+
+227
+00:13:04.481 --> 00:13:06.862
+We connect them with lines.
+
+228
+00:13:06.942 --> 00:13:10.435
+Boxplots and violins
+share this limitation:
+
+229
+00:13:10.515 --> 00:13:15.261
+they do not show the time order.
+
+230
+00:13:15.905 --> 00:13:20.761
+To sum up, a boxplot highlights extreme
+
+231
+00:13:20.841 --> 00:13:23.353
+values,
+especially those beyond the whiskers.
+
+232
+00:13:23.433 --> 00:13:25.388
+The median is marked within the box.
+
+233
+00:13:25.468 --> 00:13:31.676
+The interval from Q1 to Q3 contains
+the central half of the data,
+
+234
+00:13:31.756 --> 00:13:35.125
+and the whiskers help us
+
+235
+00:13:35.205 --> 00:13:38.289
+identify observations that
+deserve closer examination.
+
+236
+00:13:38.369 --> 00:13:41.754
+To visualise observations, we use
+
+237
+00:13:41.834 --> 00:13:45.218
+points, shapes and sometimes
+
+238
+00:13:45.298 --> 00:13:48.834
+different colours. A boxplot helps
+
+239
+00:13:48.914 --> 00:13:52.449
+us spot unusual values.
+
+240
+00:13:52.529 --> 00:13:55.931
+Together with a violin, it also
+gives a quick distribution summary.
+
+241
+00:13:56.011 --> 00:13:59.873
+Always check sample sizes, missing data,
+
+242
+00:13:59.953 --> 00:14:04.970
+units and common scales.
+
+243
+00:14:05.050 --> 00:14:07.888
+Different axes can also
+
+244
+00:14:07.968 --> 00:14:09.989
+make comparisons misleading.
+
+245
+00:14:10.433 --> 00:14:14.138
+In the next video, we will explore
+
+246
+00:14:14.218 --> 00:14:18.760
+other graphs for examining
+relationships between
+
+247
+00:14:18.840 --> 00:14:22.869
+variables and communicating results.
+Boxplots
+
+248
+00:14:22.949 --> 00:14:26.600
+and violins are powerful tools,
+
+249
+00:14:26.680 --> 00:14:29.627
+but they are not enough on their own.

@@ -1,0 +1,1311 @@
+WEBVTT
+
+1
+00:00:00.500 --> 00:00:03.241
+Dans la session précédente,
+on a vu comment organiser
+
+2
+00:00:03.321 --> 00:00:06.192
+nos données et les résumer
+avec quelques indicateurs.
+
+3
+00:00:06.964 --> 00:00:09.387
+Mais avec un tableau
+de centaines de lignes,
+
+4
+00:00:09.467 --> 00:00:11.890
+il est compliqué
+de comprendre ce qui se passe.
+
+5
+00:00:11.970 --> 00:00:16.080
+On a donc besoin d'autres manières de voir
+
+6
+00:00:16.160 --> 00:00:18.314
+ces données, notamment
+avec des graphiques.
+
+7
+00:00:18.394 --> 00:00:20.345
+On peut se demander :
+y a-t-il plusieurs groupes ?
+
+8
+00:00:20.425 --> 00:00:23.510
+Une évolution dans le temps ?
+Une relation entre deux variables ?
+
+9
+00:00:23.590 --> 00:00:26.057
+C'est là que les graphiques
+deviennent utiles.
+
+10
+00:00:26.137 --> 00:00:29.007
+Mais avec les mêmes données,
+on peut créer des graphiques
+
+11
+00:00:29.087 --> 00:00:31.957
+très différents, qui ne
+montrent pas tous la même chose.
+
+12
+00:00:32.037 --> 00:00:34.584
+Dans cette session, on va apprendre
+
+13
+00:00:34.676 --> 00:00:39.026
+à choisir une représentation
+adaptée à notre question, à la lire
+
+14
+00:00:39.106 --> 00:00:43.856
+et à éviter les choix qui pourraient
+nous induire en erreur.
+
+15
+00:00:44.308 --> 00:00:47.628
+Imaginons que chaque ligne
+de ce tableau corresponde
+
+16
+00:00:47.708 --> 00:00:51.709
+à une observation faite dans un bassin,
+à une date donnée.
+
+17
+00:00:51.789 --> 00:00:53.854
+On a une classe de qualité :
+
+18
+00:00:53.934 --> 00:00:56.417
+bonne, très bonne, moyenne, etc.
+
+19
+00:00:56.497 --> 00:00:59.242
+On a aussi une concentration
+en nitrates, en milligrammes
+
+20
+00:00:59.322 --> 00:01:02.538
+par litre, une température
+et une concentration en oxygène dissous.
+
+21
+00:01:02.618 --> 00:01:04.344
+Maintenant, on nous demande :
+
+22
+00:01:04.436 --> 00:01:07.792
+« Quel graphique faut-il
+faire avec ces données ? »
+
+23
+00:01:08.084 --> 00:01:11.488
+La question paraît simple,
+mais il faut d'abord se
+
+24
+00:01:11.568 --> 00:01:15.516
+demander :
+« Faire un graphique pour quoi ? »
+
+25
+00:01:15.684 --> 00:01:17.836
+On peut se poser plusieurs questions.
+
+26
+00:01:17.916 --> 00:01:21.505
+Par exemple, quelle classe
+de qualité est la plus fréquente ?
+
+27
+00:01:21.585 --> 00:01:25.423
+Comment les concentrations en nitrates
+se répartissent-elles spatialement ?
+
+28
+00:01:25.503 --> 00:01:28.894
+Les concentrations diffèrent-elles
+d'un bassin à l'autre ?
+
+29
+00:01:28.974 --> 00:01:32.564
+On peut aussi se demander si
+la température et l'oxygène sont liés.
+
+30
+00:01:32.644 --> 00:01:34.696
+Enfin, comment la concentration
+
+31
+00:01:34.776 --> 00:01:37.256
+en nitrates évolue-t-elle
+au fil des mois ?
+
+32
+00:01:37.348 --> 00:01:40.049
+Nous avons déjà cinq
+questions sur le même tableau.
+
+33
+00:01:40.129 --> 00:01:43.028
+Pourtant, nous n'allons pas
+regarder les mêmes variables,
+
+34
+00:01:43.108 --> 00:01:46.008
+ni utiliser le même type de visualisation.
+
+35
+00:01:46.088 --> 00:01:49.931
+La visualisation dépend donc
+de notre question de recherche.
+
+36
+00:01:50.011 --> 00:01:52.066
+Voyons comment choisir
+
+37
+00:01:52.146 --> 00:01:54.450
+ces différentes visualisations.
+
+38
+00:01:54.530 --> 00:01:56.536
+Nous allons procéder dans cet ordre.
+
+39
+00:01:56.616 --> 00:01:59.168
+D'abord, on formule
+notre question de recherche
+
+40
+00:01:59.248 --> 00:02:02.376
+et on identifie les variables
+utiles pour y répondre.
+
+41
+00:02:02.948 --> 00:02:07.405
+Ensuite, on détermine la tâche visuelle
+nécessaire pour représenter la variable.
+
+42
+00:02:07.485 --> 00:02:12.252
+Cela nous guide vers
+le type de graphique adapté.
+
+43
+00:02:12.752 --> 00:02:15.791
+Reprenons notre question de départ :
+
+44
+00:02:15.871 --> 00:02:19.411
+« Quelle classe de qualité
+est la plus fréquente ? »
+
+45
+00:02:19.491 --> 00:02:22.530
+Ici, la variable est
+catégorielle et ordinale.
+
+46
+00:02:22.610 --> 00:02:25.760
+Cela signifie que les classes
+de qualité ont un ordre :
+
+47
+00:02:25.840 --> 00:02:29.715
+on peut les classer de «
+très bonne » à « mauvaise ».
+
+48
+00:02:29.795 --> 00:02:33.972
+Notre objectif est de comparer
+les différents effectifs.
+
+49
+00:02:34.064 --> 00:02:37.178
+Pour cela, nous allons utiliser
+un diagramme en barres.
+
+50
+00:02:37.258 --> 00:02:40.023
+Nous verrons plusieurs
+types de graphiques au fil
+
+51
+00:02:40.103 --> 00:02:42.867
+de la session, pour que vous puissiez
+
+52
+00:02:42.947 --> 00:02:46.191
+ensuite choisir vous-mêmes.
+Ici, nous utilisons ce diagramme.
+
+53
+00:02:46.669 --> 00:02:49.542
+Nous souhaitons simplement compter
+
+54
+00:02:49.622 --> 00:02:52.706
+les observations de chaque catégorie.
+
+55
+00:02:52.786 --> 00:02:56.397
+On réunit les effectifs
+dans ce tableau, puis on vérifie
+
+56
+00:02:56.477 --> 00:03:00.141
+que le total est égal à 48,
+le nombre initial d'observations.
+
+57
+00:03:00.221 --> 00:03:02.777
+Le tableau d'effectifs
+nous donne déjà la réponse.
+
+58
+00:03:02.857 --> 00:03:06.865
+Mais pour comparer ces nombres
+plus rapidement, on les représente
+
+59
+00:03:06.957 --> 00:03:10.931
+par des longueurs.
+On obtient ce diagramme en barres.
+
+60
+00:03:11.011 --> 00:03:14.665
+La position indique
+la catégorie et la longueur
+
+61
+00:03:14.745 --> 00:03:19.039
+de la barre donne l'effectif,
+aussi appelé fréquence.
+
+62
+00:03:19.119 --> 00:03:22.240
+Les catégories étant distinctes,
+on laisse un petit
+
+63
+00:03:22.320 --> 00:03:25.547
+espace entre les barres
+pour faciliter la lecture.
+
+64
+00:03:25.627 --> 00:03:28.136
+Attention : une variable catégorielle
+
+65
+00:03:28.216 --> 00:03:31.181
+n'impose pas automatiquement
+ce type de graphique.
+
+66
+00:03:31.261 --> 00:03:34.887
+Avec seulement trois catégories,
+si l'on cherche surtout
+
+67
+00:03:34.967 --> 00:03:38.643
+les valeurs exactes, un petit
+tableau sera plus efficace.
+
+68
+00:03:38.723 --> 00:03:41.028
+Le graphique devient intéressant quand
+
+69
+00:03:41.108 --> 00:03:43.697
+on veut voir rapidement un classement,
+
+70
+00:03:43.789 --> 00:03:46.997
+pour qu'il saute plus facilement aux yeux.
+
+71
+00:03:47.077 --> 00:03:49.282
+Il s'agit de choisir une visualisation
+
+72
+00:03:49.362 --> 00:03:51.982
+qui facilite la lecture des données.
+
+73
+00:03:52.457 --> 00:03:55.786
+Ici, les données sont peu
+nombreuses. On peut même
+
+74
+00:03:55.866 --> 00:03:59.410
+ajouter les effectifs sur le graphique
+pour compléter l'information.
+
+75
+00:03:59.891 --> 00:04:02.826
+Passons à la deuxième
+question : comment se
+
+76
+00:04:02.906 --> 00:04:06.320
+répartissent les concentrations
+en nitrates ?
+
+77
+00:04:06.400 --> 00:04:09.143
+Cette fois, la variable
+est numérique et continue.
+
+78
+00:04:09.223 --> 00:04:12.685
+Nous n'utiliserons pas
+un diagramme en barres. Nous allons
+
+79
+00:04:12.765 --> 00:04:16.322
+examiner sa distribution empirique,
+introduite dans la dernière vidéo.
+
+80
+00:04:16.402 --> 00:04:19.991
+Pour cela, nous avons déjà
+un outil : l'histogramme.
+
+81
+00:04:20.083 --> 00:04:22.792
+Pour rappel, on découpe
+l'étendue des valeurs
+
+82
+00:04:22.872 --> 00:04:26.065
+en intervalles, appelés classes,
+ou « bins » en anglais.
+
+83
+00:04:26.145 --> 00:04:28.747
+On compte les observations de chaque
+
+84
+00:04:28.827 --> 00:04:33.011
+intervalle pour déterminer
+la hauteur de la barre.
+
+85
+00:04:33.498 --> 00:04:36.962
+Visuellement, cela ressemble
+à un diagramme en barres.
+
+86
+00:04:37.042 --> 00:04:40.307
+Mais ici, les rectangles se touchent car
+
+87
+00:04:40.387 --> 00:04:44.300
+les intervalles couvrent une échelle
+continue. La largeur des barres
+
+88
+00:04:44.380 --> 00:04:48.044
+a un sens : elle représente
+la largeur de l'intervalle.
+
+89
+00:04:48.124 --> 00:04:52.137
+On passe par exemple de 2 à 3 mg/L
+de nitrates, puis de 3 à 4, etc.
+
+90
+00:04:52.217 --> 00:04:54.733
+Dans un diagramme en barres, il faut
+
+91
+00:04:54.813 --> 00:04:57.758
+respecter l'ordre
+des catégories si la variable
+
+92
+00:04:57.850 --> 00:05:00.415
+est ordinale. En revanche,
+
+93
+00:05:00.495 --> 00:05:03.172
+les barres n'ont pas besoin de se toucher.
+
+94
+00:05:03.252 --> 00:05:06.886
+Même si les deux graphiques se
+ressemblent, c'est ce qui les distingue.
+
+95
+00:05:06.966 --> 00:05:10.262
+Avec les barres,
+on compte les observations
+
+96
+00:05:10.342 --> 00:05:13.189
+par catégorie.
+Avec l'histogramme, on regarde
+
+97
+00:05:13.269 --> 00:05:17.095
+comment les valeurs numériques se
+répartissent sur une échelle continue.
+
+98
+00:05:17.577 --> 00:05:20.903
+Comme on l'a expliqué dans la session
+
+99
+00:05:20.983 --> 00:05:24.643
+2, le nombre d'intervalles
+de l'histogramme
+
+100
+00:05:24.723 --> 00:05:28.328
+influence la visualisation,
+sans changer les données elles-mêmes.
+
+101
+00:05:28.408 --> 00:05:31.677
+Par exemple, trop peu de classes
+masquent certains détails
+
+102
+00:05:31.757 --> 00:05:35.697
+alors que trop de classes peuvent
+nuire à la lisibilité.
+
+103
+00:05:35.777 --> 00:05:38.742
+Ici, le graphique reste lisible.
+Je vous renvoie à la vidéo
+
+104
+00:05:38.822 --> 00:05:41.970
+2 de la session 2
+
+105
+00:05:42.050 --> 00:05:45.106
+pour revoir les histogrammes
+et le choix des classes.
+
+106
+00:05:45.186 --> 00:05:48.424
+Il faut donc soigner la visualisation.
+
+107
+00:05:48.504 --> 00:05:51.606
+Le but d'un histogramme
+est de voir simplement
+
+108
+00:05:51.686 --> 00:05:55.277
+nos données, sans devoir
+parcourir tout le tableau.
+
+109
+00:05:56.681 --> 00:06:00.100
+Troisième question :
+comment la concentration
+
+110
+00:06:00.180 --> 00:06:03.713
+en nitrates change-t-elle
+d'un bassin à l'autre ?
+
+111
+00:06:03.793 --> 00:06:07.438
+Pour le voir, nous allons
+nous concentrer sur quatre
+
+112
+00:06:07.518 --> 00:06:11.107
+bassins : Nord, Est, Sud et Ouest.
+
+113
+00:06:11.187 --> 00:06:14.719
+On représente la concentration
+en nitrates en milligrammes par litre.
+
+114
+00:06:14.799 --> 00:06:16.921
+Veillez à utiliser la même
+
+115
+00:06:17.001 --> 00:06:19.597
+échelle pour rendre
+les groupes comparables.
+
+116
+00:06:20.259 --> 00:06:23.515
+Ici, on combine une variable numérique,
+
+117
+00:06:23.595 --> 00:06:27.981
+la concentration, avec une variable
+catégorielle, le bassin.
+
+118
+00:06:28.061 --> 00:06:31.425
+On pourrait faire
+un histogramme par bassin.
+
+119
+00:06:31.505 --> 00:06:34.761
+Mais comparer plusieurs formes à la fois
+
+120
+00:06:34.841 --> 00:06:38.689
+devient difficile et peut
+nuire à la lisibilité.
+
+121
+00:06:38.769 --> 00:06:41.164
+Si on superpose tous les histogrammes, ils
+
+122
+00:06:41.244 --> 00:06:43.719
+risquent de se masquer les uns les autres.
+
+123
+00:06:43.811 --> 00:06:46.986
+On peut donc utiliser des nuages de points
+
+124
+00:06:47.066 --> 00:06:50.794
+pour montrer toutes les données
+en distinguant les bassins.
+
+125
+00:06:50.874 --> 00:06:54.172
+On conserve le même axe des x pour tous
+
+126
+00:06:54.252 --> 00:06:57.875
+les groupes et on place les nuages
+à des hauteurs différentes.
+
+127
+00:06:58.375 --> 00:07:01.113
+On voit bien la distribution des données,
+
+128
+00:07:01.193 --> 00:07:04.260
+mais on aimerait un résumé plus compact
+
+129
+00:07:04.340 --> 00:07:07.359
+de chaque distribution,
+sur une même échelle.
+
+130
+00:07:07.439 --> 00:07:10.130
+C'est pourquoi nous verrons,
+dans la prochaine vidéo,
+
+131
+00:07:10.210 --> 00:07:12.901
+les boîtes à moustaches, ou « boxplots »
+
+132
+00:07:12.981 --> 00:07:16.073
+en anglais. Elles permettent
+une représentation plus compacte.
+
+133
+00:07:16.153 --> 00:07:18.187
+Retenez simplement qu'afficher la moyenne
+
+134
+00:07:18.267 --> 00:07:20.503
+sur un graphique ne suffirait pas.
+
+135
+00:07:20.583 --> 00:07:24.027
+Les boxplots montrent davantage
+d'éléments, dont la médiane
+
+136
+00:07:24.107 --> 00:07:28.587
+et l'intervalle interquartile,
+que nous verrons plus tard.
+
+137
+00:07:29.247 --> 00:07:32.348
+Quatrième question : la température
+
+138
+00:07:32.428 --> 00:07:36.086
+et l'oxygène dissous semblent-ils liés ?
+
+139
+00:07:36.166 --> 00:07:39.434
+Cette fois, nos deux variables
+sont numériques et continues.
+
+140
+00:07:39.514 --> 00:07:42.113
+On peut placer la température sur l'axe
+
+141
+00:07:42.193 --> 00:07:45.070
+horizontal et l'oxygène
+sur l'axe vertical.
+
+142
+00:07:45.150 --> 00:07:49.646
+Chaque paire de valeurs devient
+un point sur le graphique.
+
+143
+00:07:49.726 --> 00:07:52.739
+C'est ainsi qu'on construit
+un nuage de points.
+
+144
+00:07:52.831 --> 00:07:56.818
+Ici, la température est
+de 5 °C et la concentration
+
+145
+00:07:56.898 --> 00:08:00.957
+en oxygène dissous de 11,6 mg/L.
+On place donc le point
+
+146
+00:08:01.037 --> 00:08:05.314
+à 5 °C sur l'axe des x
+et à 11,6 mg/L sur l'axe des y.
+
+147
+00:08:05.394 --> 00:08:09.526
+On répète l'opération
+pour chaque paire de valeurs
+
+148
+00:08:09.606 --> 00:08:14.181
+afin de construire le nuage de points.
+
+149
+00:08:14.673 --> 00:08:18.184
+On examine ensuite la direction,
+
+150
+00:08:18.264 --> 00:08:21.775
+la forme et l'intensité de l'association,
+
+151
+00:08:21.855 --> 00:08:25.697
+ainsi que les groupes
+et les observations inhabituelles.
+
+152
+00:08:25.777 --> 00:08:27.796
+Attention : voir une pente
+
+153
+00:08:27.876 --> 00:08:30.227
+sur le graphique ne suffit pas à conclure
+
+154
+00:08:30.307 --> 00:08:32.549
+à une causalité entre les deux variables.
+
+155
+00:08:32.629 --> 00:08:36.264
+La relation peut dépendre d'autres
+variables ou d'un mécanisme commun.
+
+156
+00:08:36.344 --> 00:08:39.979
+Nous le verrons dans la sixième session.
+
+157
+00:08:40.059 --> 00:08:43.281
+Pour l'instant,
+le graphique permet de repérer
+
+158
+00:08:43.361 --> 00:08:47.541
+une tendance générale entre
+la température et l'oxygène.
+
+159
+00:08:47.633 --> 00:08:51.517
+Dernière question :
+comment la concentration
+
+160
+00:08:51.597 --> 00:08:55.602
+en nitrates évolue-t-elle
+au fil du temps ?
+
+161
+00:08:55.682 --> 00:09:00.347
+Nous avons une variable continue
+suivie dans le temps. On place
+
+162
+00:09:00.427 --> 00:09:04.791
+donc le temps sur l'axe
+des x et la concentration
+
+163
+00:09:04.871 --> 00:09:10.037
+en nitrates sur l'axe des y,
+avec un point par observation.
+
+164
+00:09:10.785 --> 00:09:14.483
+On relie ensuite les points
+pour obtenir un graphique en lignes.
+
+165
+00:09:14.563 --> 00:09:18.704
+Cette ligne est purement
+visuelle, mais elle aide
+
+166
+00:09:18.784 --> 00:09:23.093
+à apprécier l'intensité
+du changement d'un point à l'autre.
+
+167
+00:09:23.173 --> 00:09:26.204
+Par exemple, l'évolution
+entre février et mars
+
+168
+00:09:26.284 --> 00:09:29.704
+est plus importante qu'entre
+janvier et février, car
+
+169
+00:09:29.784 --> 00:09:33.426
+le segment de février à mars a une pente
+
+170
+00:09:33.506 --> 00:09:37.061
+plus forte que celui de janvier à février.
+
+171
+00:09:37.153 --> 00:09:39.632
+C'est purement visuel, mais on peut
+
+172
+00:09:39.712 --> 00:09:42.653
+percevoir ces détails grâce à 
+cette pente.
+
+173
+00:09:43.585 --> 00:09:47.210
+Maintenant que nous avons vu
+plusieurs types de graphiques,
+
+174
+00:09:47.290 --> 00:09:51.107
+vous pouvez vous référer
+à ce tableau en cas de doute.
+
+175
+00:09:51.187 --> 00:09:53.417
+Il résume les différentes situations.
+
+176
+00:09:53.497 --> 00:09:55.245
+La question de recherche
+
+177
+00:09:55.325 --> 00:09:57.844
+guide le choix du graphique,
+et non l'inverse.
+
+178
+00:09:57.924 --> 00:10:01.404
+Les graphiques nous aident
+à comprendre les données
+
+179
+00:10:01.484 --> 00:10:05.189
+grâce aux positions,
+aux longueurs et aux couleurs.
+
+180
+00:10:05.281 --> 00:10:07.519
+On peut aussi jouer
+sur la taille et les formes.
+
+181
+00:10:07.599 --> 00:10:10.368
+Voyons comment utiliser ces éléments
+
+182
+00:10:10.448 --> 00:10:14.021
+pour rendre nos graphiques plus lisibles.
+
+183
+00:10:14.507 --> 00:10:17.858
+La position sur une même échelle permet,
+
+184
+00:10:17.938 --> 00:10:21.493
+par exemple, de comparer
+les valeurs avec précision.
+
+185
+00:10:21.573 --> 00:10:25.026
+La longueur convient bien
+pour représenter des quantités.
+
+186
+00:10:25.106 --> 00:10:28.611
+Des barres permettent parfois
+de mieux apprécier les quantités
+
+187
+00:10:28.691 --> 00:10:32.451
+que de simples points sur une ligne.
+
+188
+00:10:32.531 --> 00:10:36.017
+La couleur aide à distinguer les groupes
+
+189
+00:10:36.109 --> 00:10:38.688
+et à représenter des valeurs ordonnées.
+
+190
+00:10:38.768 --> 00:10:41.735
+Pour une concentration en nitrates,
+par exemple, on peut
+
+191
+00:10:41.815 --> 00:10:44.726
+définir des classes
+allant des valeurs faibles
+
+192
+00:10:44.806 --> 00:10:47.994
+aux valeurs fortes, et la couleur
+aide à distinguer ces intensités.
+
+193
+00:10:48.074 --> 00:10:52.038
+Les couleurs peuvent aussi améliorer
+la lisibilité d'un graphique.
+
+194
+00:10:52.118 --> 00:10:55.473
+Avec différents points,
+je ne peux pas savoir si
+
+195
+00:10:55.553 --> 00:10:59.184
+une donnée vient du bassin Nord,
+Est ou d'un autre bassin.
+
+196
+00:10:59.264 --> 00:11:02.865
+En ajoutant des couleurs et une légende,
+
+197
+00:11:02.957 --> 00:11:07.976
+je peux lire directement
+l'origine de chaque point.
+
+198
+00:11:08.056 --> 00:11:10.641
+L'information devient
+beaucoup plus visible.
+
+199
+00:11:10.721 --> 00:11:15.869
+Veillez toutefois à ne pas compter
+uniquement sur les couleurs.
+
+200
+00:11:15.949 --> 00:11:18.955
+Ajoutez aussi des formes,
+car la perception
+
+201
+00:11:19.035 --> 00:11:21.760
+des couleurs varie selon
+les personnes. Un graphique
+
+202
+00:11:21.840 --> 00:11:24.785
+lisible pour vous ne l'est
+pas forcément pour les autres.
+
+203
+00:11:24.877 --> 00:11:26.796
+On peut par exemple utiliser
+
+204
+00:11:26.876 --> 00:11:28.844
+des triangles, des carrés, etc.
+
+205
+00:11:28.924 --> 00:11:30.599
+Même si la couleur est utile,
+
+206
+00:11:30.679 --> 00:11:33.378
+ne comptez pas uniquement sur elle.
+
+207
+00:11:33.458 --> 00:11:36.449
+On peut ensuite jouer sur la taille.
+
+208
+00:11:36.529 --> 00:11:40.057
+Pour 10 ou 20 observations,
+par exemple, on peut utiliser
+
+209
+00:11:40.137 --> 00:11:43.397
+un cercle dont la taille est
+proportionnelle à l'effectif.
+
+210
+00:11:43.477 --> 00:11:47.127
+Cette représentation est utile,
+mais les comparaisons précises
+
+211
+00:11:47.207 --> 00:11:50.745
+sont plus difficiles.
+Juger la longueur d'une barre
+
+212
+00:11:50.825 --> 00:11:54.920
+est plus facile que juger
+la taille d'un cercle :
+
+213
+00:11:55.000 --> 00:11:58.897
+notre perception des surfaces
+peut être trompeuse.
+
+214
+00:11:58.989 --> 00:12:01.806
+Cela donne donc une idée des quantités,
+
+215
+00:12:01.886 --> 00:12:05.009
+sans permettre une lecture très précise.
+
+216
+00:12:05.089 --> 00:12:08.312
+Enfin, on peut utiliser des facettes.
+
+217
+00:12:08.392 --> 00:12:09.888
+Que sont les facettes ?
+
+218
+00:12:09.968 --> 00:12:12.989
+C'est le même type de graphique,
+répété pour plusieurs
+
+219
+00:12:13.069 --> 00:12:16.271
+catégories : ici, les bassins
+Nord, Est, Sud et Ouest.
+
+220
+00:12:16.761 --> 00:12:20.528
+Les facettes évitent
+de réunir tous les points
+
+221
+00:12:20.608 --> 00:12:24.526
+sur un seul graphique.
+Chaque panneau est donc moins chargé.
+
+222
+00:12:24.606 --> 00:12:28.723
+Mais avec beaucoup de catégories,
+la lecture devient difficile.
+
+223
+00:12:28.803 --> 00:12:32.720
+Ici, quatre bassins donnent quatre
+graphiques faciles à comparer.
+
+224
+00:12:32.800 --> 00:12:36.797
+Avec beaucoup plus de graphiques,
+ce serait plus compliqué.
+
+225
+00:12:37.017 --> 00:12:40.868
+Avec des facettes,
+il est préférable de conserver
+
+226
+00:12:40.948 --> 00:12:44.798
+les mêmes axes des x et des y.
+
+227
+00:12:44.878 --> 00:12:49.071
+Sinon, les différences d'échelle
+compliquent la comparaison des graphiques.
+
+228
+00:12:49.545 --> 00:12:52.144
+Terminons par quelques bonnes pratiques
+
+229
+00:12:52.224 --> 00:12:55.181
+pour rendre un graphique lisible.
+
+230
+00:12:55.261 --> 00:12:59.170
+Il faut au minimum un titre,
+des axes nommés,
+
+231
+00:12:59.250 --> 00:13:03.219
+des unités si nécessaire
+et des graduations.
+
+232
+00:13:03.299 --> 00:13:06.194
+Si les couleurs, les formes
+
+233
+00:13:06.274 --> 00:13:09.714
+ou les tailles portent une information,
+ajoutez une légende.
+
+234
+00:13:09.794 --> 00:13:13.086
+On passe ainsi du graphique initial,
+sans repères, à celui-ci.
+
+235
+00:13:13.166 --> 00:13:16.557
+C'est essentiel pour transmettre
+une information,
+
+236
+00:13:16.637 --> 00:13:20.653
+notamment dans un rapport
+ou une présentation.
+
+237
+00:13:20.745 --> 00:13:22.881
+Sans ces repères, la personne qui regarde
+
+238
+00:13:22.961 --> 00:13:25.251
+ne peut pas vérifier ce qu'on lui montre.
+
+239
+00:13:25.331 --> 00:13:27.569
+Pensez donc à tous ces éléments
+
+240
+00:13:27.649 --> 00:13:30.094
+lorsque vous construisez un graphique.
+
+241
+00:13:30.174 --> 00:13:33.494
+Un graphique ne sert pas
+seulement aux présentations.
+
+242
+00:13:33.574 --> 00:13:37.101
+Il sert aussi à l'analyse exploratoire.
+
+243
+00:13:37.181 --> 00:13:38.492
+De quoi s'agit-il ?
+
+244
+00:13:38.572 --> 00:13:41.996
+C'est une phase essentielle
+du travail. Vous recevez
+
+245
+00:13:42.076 --> 00:13:45.837
+vos données brutes,
+puis vous vous demandez :
+
+246
+00:13:45.929 --> 00:13:48.246
+« Que me permettent-elles d'étudier ? »
+
+247
+00:13:48.326 --> 00:13:51.818
+Parfois, on part d'une bonne
+question de recherche, puis
+
+248
+00:13:51.898 --> 00:13:55.390
+on réalise que les données ne
+permettent pas d'y répondre.
+
+249
+00:13:55.470 --> 00:13:58.303
+À l'inverse, après la récolte, on peut
+
+250
+00:13:58.383 --> 00:14:01.358
+découvrir un élément particulièrement
+intéressant à étudier.
+
+251
+00:14:01.438 --> 00:14:04.037
+On adapte alors la question de recherche
+
+252
+00:14:04.117 --> 00:14:07.501
+pour améliorer le travail.
+
+253
+00:14:07.593 --> 00:14:11.106
+Cette phase exploratoire est
+importante, et les graphiques
+
+254
+00:14:11.186 --> 00:14:14.651
+peuvent beaucoup nous aider. Par exemple,
+
+255
+00:14:14.731 --> 00:14:18.433
+le jeu de données peut contenir
+une ou deux observations particulières.
+
+256
+00:14:18.513 --> 00:14:21.127
+Parcourir tout le tableau
+prendrait beaucoup de temps.
+
+257
+00:14:21.207 --> 00:14:24.767
+Avec un nuage de points ou un histogramme,
+
+258
+00:14:24.847 --> 00:14:28.407
+ces observations apparaissent directement.
+On peut alors reformuler
+
+259
+00:14:28.487 --> 00:14:32.269
+la question de recherche pour approfondir
+ce qui semble intéressant.
+
+260
+00:14:32.879 --> 00:14:35.641
+Ce type de graphique soulève
+plusieurs questions :
+
+261
+00:14:35.721 --> 00:14:38.831
+« Y a-t-il des groupes
+ou des sous-groupes ?
+
+262
+00:14:38.911 --> 00:14:42.072
+La forme est-elle plutôt
+une droite ou une courbe ?
+
+263
+00:14:42.152 --> 00:14:45.262
+Y a-t-il des valeurs isolées ? »
+
+264
+00:14:45.342 --> 00:14:49.231
+Cela nous permet d'affiner
+notre question de recherche.
+
+265
+00:14:49.709 --> 00:14:52.355
+Pour résumer, pour choisir nos graphiques,
+
+266
+00:14:52.435 --> 00:14:55.572
+nous suivons toujours
+le même enchaînement.
+
+267
+00:14:55.652 --> 00:14:58.789
+On formule d'abord la question,
+puis on identifie
+
+268
+00:14:58.869 --> 00:15:02.933
+les variables utiles pour y répondre.
+
+269
+00:15:03.013 --> 00:15:06.121
+On choisit ensuite la tâche
+visuelle et le type de graphique,
+
+270
+00:15:06.601 --> 00:15:10.351
+puis on vérifie ce qui pourrait
+être mal interprété.
+
+271
+00:15:10.803 --> 00:15:14.207
+Dans la prochaine vidéo,
+nous reprendrons la question laissée
+
+272
+00:15:14.287 --> 00:15:17.831
+de côté lorsque j'ai
+mentionné les boxplots.
+
+273
+00:15:17.911 --> 00:15:20.562
+Comment résumer
+une distribution et comparer
+
+274
+00:15:20.642 --> 00:15:23.528
+plusieurs groupes sans
+les réduire à leur moyenne
+
+275
+00:15:23.608 --> 00:15:26.446
+ou à leur médiane ?
+
+276
+00:15:26.526 --> 00:15:29.318
+Comme on l'a vu, ces deux indicateurs ont
+
+277
+00:15:29.398 --> 00:15:32.378
+des limites : ils ne décrivent
+pas toute la distribution.
+
+278
+00:15:32.458 --> 00:15:34.543
+Pour la distribution normale,
+
+279
+00:15:34.623 --> 00:15:37.495
+par exemple, il fallait aussi
+mentionner l'écart-type.
+
+280
+00:15:37.587 --> 00:15:40.145
+Nous verrons donc,
+dans la prochaine vidéo, comment
+
+281
+00:15:40.225 --> 00:15:43.111
+construire des boxplots
+pour résumer nos distributions.

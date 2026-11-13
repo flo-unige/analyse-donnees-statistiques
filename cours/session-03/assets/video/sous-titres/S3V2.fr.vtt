@@ -1,0 +1,1122 @@
+WEBVTT
+
+1
+00:00:00.481 --> 00:00:02.914
+Dans la vidéo précédente,
+on s'est demandé comment
+
+2
+00:00:02.994 --> 00:00:06.081
+comparer les concentrations
+en nitrates entre plusieurs bassins.
+
+3
+00:00:06.161 --> 00:00:08.544
+Nous voulons visualiser une distribution.
+
+4
+00:00:08.624 --> 00:00:11.711
+On pourrait calculer
+une moyenne par bassin,
+
+5
+00:00:11.791 --> 00:00:15.431
+puis représenter ces moyennes
+dans un diagramme en barres.
+
+6
+00:00:15.511 --> 00:00:17.894
+Mais deux groupes peuvent avoir
+
+7
+00:00:17.974 --> 00:00:20.508
+la même moyenne tout
+en étant très différents.
+
+8
+00:00:20.588 --> 00:00:23.323
+C'est le cas ici avec les groupes A et B.
+
+9
+00:00:23.403 --> 00:00:25.535
+Leur moyenne est égale à 3,
+
+10
+00:00:25.615 --> 00:00:27.877
+mais leur dispersion est très différente.
+
+11
+00:00:27.969 --> 00:00:30.969
+Une valeur inhabituelle peut
+aussi déplacer fortement
+
+12
+00:00:31.049 --> 00:00:34.247
+la moyenne, même si toutes
+les autres données sont identiques.
+
+13
+00:00:34.327 --> 00:00:38.122
+Ici, les moyennes sont très différentes.
+Pourtant, seul un point
+
+14
+00:00:38.202 --> 00:00:42.046
+du groupe B est plus éloigné
+que dans le groupe A.
+
+15
+00:00:42.126 --> 00:00:44.480
+Nous allons donc construire
+
+16
+00:00:44.560 --> 00:00:47.014
+un résumé visuel de chaque distribution.
+
+17
+00:00:47.094 --> 00:00:49.925
+Commençons par prendre
+les valeurs d'un bassin
+
+18
+00:00:50.017 --> 00:00:52.063
+et par les ranger dans l'ordre.
+
+19
+00:00:52.559 --> 00:00:56.583
+Souvenez-vous de la médiane,
+vue à la session 2.
+
+20
+00:00:56.663 --> 00:01:01.070
+Elle partage la série ordonnée
+en deux moitiés égales.
+
+21
+00:01:01.150 --> 00:01:05.448
+Ici, le nombre de mesures est
+impair. On garde sept valeurs
+
+22
+00:01:05.528 --> 00:01:09.935
+à gauche et sept à droite.
+La valeur centrale est notre médiane.
+
+23
+00:01:10.015 --> 00:01:13.159
+Mais la médiane ne nous dit pas
+
+24
+00:01:13.239 --> 00:01:16.647
+si les valeurs sont
+rapprochées ou dispersées.
+
+25
+00:01:16.727 --> 00:01:19.806
+Pour le savoir, regardons sur quel
+
+26
+00:01:19.886 --> 00:01:23.571
+intervalle s'étendent les 50
+% de valeurs centrales.
+
+27
+00:01:23.663 --> 00:01:27.955
+Nous cherchons une valeur
+qui sépare approximativement
+
+28
+00:01:28.035 --> 00:01:32.686
+le premier quart des observations
+des trois quarts restants.
+
+29
+00:01:32.766 --> 00:01:36.998
+Prenons les valeurs à gauche de la médiane
+
+30
+00:01:37.078 --> 00:01:41.370
+principale et calculons
+leur propre médiane.
+
+31
+00:01:41.450 --> 00:01:45.523
+À gauche, on compte sept valeurs.
+
+32
+00:01:45.615 --> 00:01:48.761
+On laisse les trois premières et les trois
+
+33
+00:01:48.841 --> 00:01:52.574
+dernières de côté. La valeur centrale,
+
+34
+00:01:52.654 --> 00:01:56.329
+ici 2,4, est le premier quartile, noté Q1.
+
+35
+00:01:56.409 --> 00:02:00.787
+On fait la même chose
+à droite : trois valeurs
+
+36
+00:02:00.867 --> 00:02:05.560
+de chaque côté donnent une valeur
+centrale, le troisième quartile, noté Q3.
+
+37
+00:02:06.060 --> 00:02:09.237
+Une précision : selon la convention
+
+38
+00:02:09.317 --> 00:02:12.344
+de calcul et la taille de l'échantillon,
+
+39
+00:02:12.424 --> 00:02:15.901
+deux logiciels peuvent donner
+des quartiles légèrement différents.
+
+40
+00:02:15.981 --> 00:02:19.459
+Ce n'est pas forcément
+une erreur, mais il faut
+
+41
+00:02:19.539 --> 00:02:23.016
+en tenir compte. L'essentiel est
+d'utiliser une convention cohérente,
+
+42
+00:02:23.096 --> 00:02:26.704
+la même tout au long de l'analyse.
+
+43
+00:02:26.796 --> 00:02:28.306
+Ne changez donc pas de convention
+
+44
+00:02:28.386 --> 00:02:30.014
+au milieu d'une même étude.
+
+45
+00:02:30.476 --> 00:02:34.008
+Entre Q1 et Q3 se trouve
+la moitié centrale
+
+46
+00:02:34.088 --> 00:02:37.730
+des observations,
+soit les 50 % situés au milieu.
+
+47
+00:02:37.810 --> 00:02:40.686
+C'est ce que représente la petite boîte.
+
+48
+00:02:40.766 --> 00:02:43.478
+Le trait au milieu indique la médiane.
+
+49
+00:02:43.558 --> 00:02:47.692
+Les deux limites de la boîte
+correspondent à Q1 et Q3.
+
+50
+00:02:47.772 --> 00:02:50.867
+Nous venons de construire le cœur
+
+51
+00:02:50.947 --> 00:02:55.216
+de la boîte à moustaches,
+
+52
+00:02:55.308 --> 00:02:58.664
+ou « boxplot », évoquée
+dans la vidéo précédente.
+
+53
+00:02:58.956 --> 00:03:03.491
+La largeur entre Q1 et Q3
+est l'écart interquartile,
+
+54
+00:03:03.571 --> 00:03:08.461
+abrégé IQR, pour « interquartile
+range » en anglais.
+
+55
+00:03:08.541 --> 00:03:12.579
+On le calcule en faisant Q3
+
+56
+00:03:12.659 --> 00:03:16.910
+moins Q1. Ici, on obtient 
+1,1 mg/L, car Q1 vaut 2,4
+
+57
+00:03:16.990 --> 00:03:21.392
+et Q3 vaut 3,5, donc une
+différence de 1,1 mg/L.
+
+58
+00:03:23.084 --> 00:03:26.319
+Cette petite boîte représente
+désormais nos données.
+
+59
+00:03:26.399 --> 00:03:29.288
+Mais si l'on regarde
+l'ensemble de la série,
+
+60
+00:03:29.368 --> 00:03:32.257
+certaines valeurs se trouvent
+en dehors de la boîte.
+
+61
+00:03:32.337 --> 00:03:35.077
+Comment représenter ces valeurs,
+
+62
+00:03:35.157 --> 00:03:37.848
+qui ne font pas partie
+
+63
+00:03:37.928 --> 00:03:40.817
+des 50 % centraux ?
+
+64
+00:03:40.897 --> 00:03:42.994
+On distingue ici deux situations.
+
+65
+00:03:43.074 --> 00:03:45.962
+Certains points sont
+assez proches de la boîte.
+
+66
+00:03:46.042 --> 00:03:48.368
+Il y en a trois à gauche et deux à droite.
+
+67
+00:03:48.460 --> 00:03:51.359
+Un autre point est beaucoup plus éloigné.
+
+68
+00:03:51.833 --> 00:03:55.320
+L'un des avantages de Q1,
+
+69
+00:03:55.400 --> 00:03:59.306
+de Q3, de la médiane et de l'écart
+
+70
+00:03:59.386 --> 00:04:03.712
+interquartile est leur faible
+sensibilité à une valeur très éloignée.
+
+71
+00:04:03.792 --> 00:04:06.544
+Ce résumé dépend du nombre de valeurs
+
+72
+00:04:06.624 --> 00:04:09.429
+hors de la boîte,
+mais peu de leur éloignement.
+
+73
+00:04:09.509 --> 00:04:13.181
+Par exemple, la valeur
+un peu au-dessus de 7
+
+74
+00:04:13.273 --> 00:04:16.130
+aurait pu être égale à 7, à 6 ou à 5
+
+75
+00:04:16.210 --> 00:04:19.209
+sans changer la forme de la boîte.
+
+76
+00:04:19.673 --> 00:04:22.338
+Pour représenter les valeurs
+
+77
+00:04:22.418 --> 00:04:25.877
+plus éloignées, on utilise des moustaches.
+
+78
+00:04:25.957 --> 00:04:29.903
+Une convention fréquente
+consiste à appliquer la règle
+
+79
+00:04:29.983 --> 00:04:34.234
+de 1,5 fois l'écart
+interquartile, soit 1,5 IQR.
+
+80
+00:04:34.314 --> 00:04:36.736
+Dans notre cas,
+
+81
+00:04:36.816 --> 00:04:39.805
+l'écart interquartile vaut 1,1 mg/L.
+
+82
+00:04:40.057 --> 00:04:43.898
+En le multipliant par 1,5,
+on obtient 1,65.
+
+83
+00:04:43.978 --> 00:04:48.682
+On calcule d'abord
+les limites basse et haute.
+
+84
+00:04:48.762 --> 00:04:53.466
+Pour la limite basse,
+on soustrait 1,65 à Q1.
+
+85
+00:04:53.546 --> 00:04:58.249
+Pour la limite haute, on ajoute 1,65 à Q3.
+
+86
+00:04:58.329 --> 00:05:01.543
+On obtient ainsi les limites
+
+87
+00:05:01.623 --> 00:05:05.309
+0,75 et 5,15 dans cet exemple.
+
+88
+00:05:06.553 --> 00:05:08.517
+Attention : les moustaches
+
+89
+00:05:08.597 --> 00:05:11.168
+ne vont pas forcément jusqu'à ces limites.
+
+90
+00:05:11.248 --> 00:05:13.985
+Elles s'arrêtent aux observations les plus
+
+91
+00:05:14.065 --> 00:05:17.967
+extrêmes encore comprises
+entre les limites.
+
+92
+00:05:18.047 --> 00:05:22.005
+Ici, la valeur la plus élevée se
+
+93
+00:05:22.085 --> 00:05:24.375
+trouve en dehors des limites. On ne
+
+94
+00:05:24.455 --> 00:05:26.744
+la retient donc pas
+pour placer les moustaches.
+
+95
+00:05:26.824 --> 00:05:29.917
+Mais parmi les observations comprises
+
+96
+00:05:30.009 --> 00:05:33.953
+entre 0,75 et 5,15,
+
+97
+00:05:34.033 --> 00:05:38.350
+on prend les deux plus extrêmes
+pour placer les moustaches.
+
+98
+00:05:38.430 --> 00:05:43.716
+Les valeurs hors des limites
+ne servent donc pas à placer
+
+99
+00:05:43.796 --> 00:05:49.981
+les moustaches,
+qui s'arrêtent ici à 1,8 et à 4.
+
+100
+00:05:50.105 --> 00:05:54.563
+Notre boxplot est maintenant complet.
+
+101
+00:05:54.643 --> 00:05:58.922
+On voit facilement la médiane
+
+102
+00:05:59.002 --> 00:06:03.580
+et l'emplacement de la moitié
+centrale des données.
+
+103
+00:06:03.660 --> 00:06:08.238
+On repère aussi rapidement
+les observations à examiner.
+
+104
+00:06:08.318 --> 00:06:11.005
+Ici, la valeur 7,1 attire l'attention.
+
+105
+00:06:11.097 --> 00:06:14.478
+S'agit-il d'une erreur
+
+106
+00:06:14.558 --> 00:06:17.994
+ou d'une observation intéressante ?
+
+107
+00:06:18.074 --> 00:06:21.887
+Il faut revenir au protocole
+et aux données avant
+
+108
+00:06:21.967 --> 00:06:25.645
+de décider de supprimer
+ou de conserver cette valeur.
+
+109
+00:06:26.145 --> 00:06:29.851
+Je le rappelle :
+le résumé central du boxplot est
+
+110
+00:06:29.931 --> 00:06:33.911
+peu sensible au fait que la valeur
+7,1 soit très élevée.
+
+111
+00:06:33.991 --> 00:06:37.996
+Ce ne serait pas le cas
+de la moyenne ou de l'écart-type.
+
+112
+00:06:38.473 --> 00:06:41.091
+Cette diapositive résume ces questions.
+
+113
+00:06:41.171 --> 00:06:43.289
+Une seule valeur semble atypique.
+
+114
+00:06:43.369 --> 00:06:47.136
+Est-ce une erreur de saisie
+ou un appareil défectueux ?
+
+115
+00:06:47.216 --> 00:06:50.084
+Ou est-ce justement l'événement
+le plus intéressant ?
+
+116
+00:06:50.164 --> 00:06:52.782
+Il faut revenir
+au protocole pour le savoir.
+
+117
+00:06:52.862 --> 00:06:54.331
+Attention aussi à l'effectif.
+
+118
+00:06:54.411 --> 00:06:58.568
+Ici, le jeu de données
+contient peu d'observations.
+
+119
+00:06:58.648 --> 00:07:00.070
+On n'en a que quinze : n = 15.
+
+120
+00:07:00.150 --> 00:07:04.039
+Retirer cette valeur peut donc
+modifier fortement la moyenne.
+
+121
+00:07:04.119 --> 00:07:07.900
+Il faut examiner
+les conséquences de ce retrait,
+
+122
+00:07:07.980 --> 00:07:11.949
+notamment les variations
+des résultats statistiques.
+
+123
+00:07:13.353 --> 00:07:16.464
+Le graphique seul ne
+permet pas de trancher.
+
+124
+00:07:16.544 --> 00:07:20.197
+Il faut revenir à l'origine des données,
+au tableau et au protocole.
+
+125
+00:07:20.841 --> 00:07:23.950
+On peut maintenant tracer
+un boxplot par bassin,
+
+126
+00:07:24.030 --> 00:07:27.829
+en conservant la même
+échelle pour les comparer.
+
+127
+00:07:27.909 --> 00:07:33.071
+On compare directement
+les médianes, Q1 et Q3.
+
+128
+00:07:33.151 --> 00:07:36.313
+Le bassin Sud présente une médiane plus
+
+129
+00:07:36.393 --> 00:07:38.896
+élevée que les autres et une boîte
+
+130
+00:07:38.976 --> 00:07:40.877
+couvrant un intervalle un peu plus grand.
+
+131
+00:07:41.097 --> 00:07:44.267
+Les moustaches renseignent
+aussi sur l'étendue des valeurs
+
+132
+00:07:44.347 --> 00:07:47.915
+et permettent de repérer
+une éventuelle asymétrie.
+
+133
+00:07:47.995 --> 00:07:52.248
+Au Sud, la boîte est
+légèrement plus étendue vers
+
+134
+00:07:52.328 --> 00:07:56.638
+les valeurs hautes :
+la distance entre Q1 et la médiane
+
+135
+00:07:56.718 --> 00:08:01.165
+est plus petite que celle
+entre la médiane et Q3.
+
+136
+00:08:01.257 --> 00:08:04.892
+Placer les boîtes sur le même axe
+
+137
+00:08:04.972 --> 00:08:08.911
+rend ici la comparaison plus
+lisible qu'avec les points seuls.
+
+138
+00:08:08.991 --> 00:08:12.931
+On peut ajouter les points pour être
+
+139
+00:08:13.011 --> 00:08:16.950
+totalement explicite, mais attention :
+
+140
+00:08:17.030 --> 00:08:21.293
+trop d'éléments finissent par
+rendre le graphique illisible.
+
+141
+00:08:22.953 --> 00:08:26.611
+Le boxplot n'est pas une solution magique.
+
+142
+00:08:26.691 --> 00:08:29.807
+Il réunit plusieurs informations,
+
+143
+00:08:29.887 --> 00:08:34.140
+mais il peut aussi en masquer certaines.
+
+144
+00:08:34.220 --> 00:08:37.011
+Prenons ces deux boîtes,
+apparemment identiques,
+
+145
+00:08:37.091 --> 00:08:40.207
+pour les séries A et B.
+
+146
+00:08:40.287 --> 00:08:44.645
+Le problème est que le nombre
+d'observations pour chaque série
+
+147
+00:08:44.725 --> 00:08:46.029
+n'est pas représentée par
+le boxplot.
+
+148
+00:08:46.593 --> 00:08:50.704
+Il faut donc afficher l'effectif n,
+
+149
+00:08:50.784 --> 00:08:55.245
+ou rendre les points visibles
+lorsque c'est nécessaire.
+
+150
+00:08:55.325 --> 00:08:57.631
+On peut ainsi comparer les deux séries.
+
+151
+00:08:57.711 --> 00:09:02.056
+Ici, les médianes, Q1, Q3, les écarts
+
+152
+00:09:02.136 --> 00:09:07.721
+interquartiles et les moustaches
+sont identiques. Pourtant, la série A
+
+153
+00:09:07.801 --> 00:09:11.333
+contient cinq valeurs
+et la série B en contient cent.
+
+154
+00:09:11.809 --> 00:09:14.038
+C'est une limite de ce résumé.
+
+155
+00:09:14.118 --> 00:09:16.295
+Deux distributions peuvent avoir
+
+156
+00:09:16.375 --> 00:09:18.866
+des formes différentes
+et des quartiles similaires.
+
+157
+00:09:18.946 --> 00:09:21.228
+Si la forme complète nous intéresse,
+
+158
+00:09:21.308 --> 00:09:24.642
+on peut compléter la boîte
+par un histogramme.
+
+159
+00:09:24.722 --> 00:09:27.319
+Par exemple dans ce cas,
+
+160
+00:09:27.399 --> 00:09:29.260
+la répartition est très différente.
+
+161
+00:09:29.340 --> 00:09:32.616
+La série A est très homogène,
+tandis que
+
+162
+00:09:32.696 --> 00:09:35.135
+dans la série B,
+on distingue des sous-groupes,
+
+163
+00:09:35.215 --> 00:09:38.469
+avec des concentrations
+de valeurs près de Q1 et Q3.
+
+164
+00:09:38.561 --> 00:09:40.953
+Pourtant, les boxplots sont identiques.
+
+165
+00:09:41.033 --> 00:09:44.837
+On peut donc compléter
+la boîte par un histogramme.
+
+166
+00:09:44.917 --> 00:09:48.721
+Une autre représentation adaptée
+est le violon, ou « violin
+
+167
+00:09:48.801 --> 00:09:52.837
+plot », qui montre la densité des points.
+
+168
+00:09:53.305 --> 00:09:57.705
+Les zones larges correspondent
+aux valeurs les plus fréquentes.
+
+169
+00:09:57.785 --> 00:10:01.164
+On peut ainsi voir plusieurs bosses
+
+170
+00:10:01.244 --> 00:10:04.987
+que la boîte à moustaches
+ne révélait pas forcément.
+
+171
+00:10:05.467 --> 00:10:07.565
+Attention :
+comme pour l'histogramme, la forme
+
+172
+00:10:07.645 --> 00:10:10.613
+du violon dépend d'un choix
+de représentation, ici le lissage.
+
+173
+00:10:10.693 --> 00:10:13.444
+Il peut suggérer des valeurs là
+
+174
+00:10:13.524 --> 00:10:16.438
+où aucune observation n'a été mesurée,
+
+175
+00:10:16.518 --> 00:10:18.344
+surtout avec un petit échantillon.
+
+176
+00:10:18.424 --> 00:10:21.392
+Ici, la largeur de bande augmente
+
+177
+00:10:21.472 --> 00:10:24.713
+progressivement et le violon
+devient plus lisse.
+
+178
+00:10:24.793 --> 00:10:26.618
+Il faut donc, comme pour 
+un histogramme,
+
+179
+00:10:26.698 --> 00:10:29.232
+choisir avec soin 
+la largeur de bande.
+
+180
+00:10:29.312 --> 00:10:32.959
+Trop de détails nuisent à la lisibilité.
+
+181
+00:10:33.051 --> 00:10:35.510
+À l'inverse, un lissage excessif,
+
+182
+00:10:35.590 --> 00:10:38.405
+comme ici, efface les détails et rend
+
+183
+00:10:38.485 --> 00:10:41.147
+le violon moins utile.
+
+184
+00:10:41.227 --> 00:10:43.991
+Donc le contour influence
+la lecture du diagramme,
+
+185
+00:10:44.071 --> 00:10:47.647
+il faut toujours le garder en tête.
+
+186
+00:10:47.727 --> 00:10:51.050
+On compare maintenant
+le violon et le boxplot.
+
+187
+00:10:51.130 --> 00:10:53.792
+La boîte à moustaches donne
+
+188
+00:10:53.872 --> 00:10:56.535
+des repères quantitatifs plus précis.
+
+189
+00:10:56.615 --> 00:10:59.103
+On voit la médiane, Q1 et Q3.
+
+190
+00:10:59.227 --> 00:11:03.048
+Le violon montre plutôt
+la densité générale des données.
+
+191
+00:11:03.128 --> 00:11:06.461
+Les deux sont complémentaires :
+on n'a pas forcément à choisir.
+
+192
+00:11:06.541 --> 00:11:08.460
+On peut même les réunir
+
+193
+00:11:08.540 --> 00:11:10.557
+sur un seul graphique, comme ici.
+
+194
+00:11:10.637 --> 00:11:13.629
+J'ai ajouté le boxplot,
+le violon et les points.
+
+195
+00:11:13.709 --> 00:11:16.896
+Vous voyez que le graphique
+commence à être chargé.
+
+196
+00:11:16.976 --> 00:11:19.431
+Cela peut être
+
+197
+00:11:19.511 --> 00:11:22.047
+utile pendant l'analyse exploratoire.
+
+198
+00:11:22.139 --> 00:11:25.286
+Mais dans un rapport
+
+199
+00:11:25.366 --> 00:11:28.967
+ou une présentation,
+un graphique trop chargé
+
+200
+00:11:29.047 --> 00:11:32.727
+risque de devenir difficile à lire.
+
+201
+00:11:33.275 --> 00:11:36.950
+La boîte décrit bien les observations.
+
+202
+00:11:37.030 --> 00:11:40.335
+En revanche, elle ne
+donne ni marge d'erreur,
+
+203
+00:11:40.415 --> 00:11:43.985
+ni intervalle de confiance,
+ni incertitude sur la moyenne.
+
+204
+00:11:44.065 --> 00:11:46.947
+J'insiste sur ce point :
+
+205
+00:11:47.027 --> 00:11:50.667
+les moustaches ne représentent
+pas ces incertitudes.
+
+206
+00:11:50.747 --> 00:11:52.612
+La confusion est fréquente, car elles
+
+207
+00:11:52.692 --> 00:11:55.587
+ressemblent aux barres
+d'erreur d'autres graphiques.
+
+208
+00:11:55.667 --> 00:12:00.359
+Ici, les moustaches servent
+à représenter la dispersion des données.
+
+209
+00:12:01.153 --> 00:12:05.277
+Passons à quelques points de lisibilité.
+
+210
+00:12:05.357 --> 00:12:09.033
+Ici, on compare les bassins Nord et Sud.
+
+211
+00:12:09.113 --> 00:12:12.508
+Le bassin Nord semble
+beaucoup plus étendu.
+
+212
+00:12:12.588 --> 00:12:16.768
+Mais regardez l'axe des x :
+à gauche, il va
+
+213
+00:12:16.848 --> 00:12:21.445
+de 2 à 3,5 mg/L, tandis
+qu'à droite, il va de 3 à 9.
+
+214
+00:12:21.537 --> 00:12:23.784
+Les axes sont différents,
+
+215
+00:12:23.864 --> 00:12:26.990
+ce qui rend la comparaison difficile.
+
+216
+00:12:27.070 --> 00:12:29.782
+Il faut donc utiliser 
+une échelle
+
+217
+00:12:29.862 --> 00:12:32.574
+commune pour comparer les bassins.
+
+218
+00:12:32.654 --> 00:12:34.695
+Ajoutez aussi l'effectif
+
+219
+00:12:34.775 --> 00:12:36.866
+pour permettre une lecture correcte.
+
+220
+00:12:36.946 --> 00:12:39.038
+Je le rappelle : le boxplot
+
+221
+00:12:39.118 --> 00:12:41.445
+seul ne donne pas cette information.
+
+222
+00:12:43.681 --> 00:12:47.811
+Pour une étude temporelle, la boîte a
+
+223
+00:12:47.891 --> 00:12:52.135
+une autre limite : elle ne permet pas
+
+224
+00:12:52.215 --> 00:12:56.515
+de retrouver la date de chaque mesure.
+
+225
+00:12:56.595 --> 00:13:00.384
+On peut alors tracer
+une série temporelle. Ici,
+
+226
+00:13:00.464 --> 00:13:04.389
+le bassin Nord fournit
+douze mesures, une par mois.
+
+227
+00:13:04.481 --> 00:13:06.862
+On les relie par des lignes.
+
+228
+00:13:06.942 --> 00:13:10.435
+C'est une limite commune
+aux boxplots et aux violons :
+
+229
+00:13:10.515 --> 00:13:15.261
+ils ne montrent pas cet ordre temporel.
+
+230
+00:13:15.905 --> 00:13:20.761
+En résumé, la boîte à moustaches
+fait apparaître les valeurs
+
+231
+00:13:20.841 --> 00:13:23.353
+extrêmes, notamment celles
+qui dépassent les moustaches.
+
+232
+00:13:23.433 --> 00:13:25.388
+Au milieu, on trouve
+la médiane.
+
+233
+00:13:25.468 --> 00:13:31.676
+L'intervalle entre Q1 et Q3 contient
+la moitié centrale des données,
+
+234
+00:13:31.756 --> 00:13:35.125
+et les moustaches aident,
+encore une fois,
+
+235
+00:13:35.205 --> 00:13:38.289
+à repérer les observations 
+qui méritent d'être examinées.
+
+236
+00:13:38.369 --> 00:13:41.754
+Pour visualiser les observations,
+on utilise
+
+237
+00:13:41.834 --> 00:13:45.218
+des points, des formes et parfois
+
+238
+00:13:45.298 --> 00:13:48.834
+des couleurs différentes. Le boxplot aide
+
+239
+00:13:48.914 --> 00:13:52.449
+à repérer les valeurs inhabituelles.
+
+240
+00:13:52.529 --> 00:13:55.931
+Avec le violon, il permet aussi
+de résumer rapidement la distribution.
+
+241
+00:13:56.011 --> 00:13:59.873
+Vérifiez toujours les effectifs,
+les données manquantes,
+
+242
+00:13:59.953 --> 00:14:04.970
+les unités et les échelles communes.
+
+243
+00:14:05.050 --> 00:14:07.888
+Aussi des axes différents peuvent
+
+244
+00:14:07.968 --> 00:14:09.989
+rendre les comparaisons trompeuses.
+
+245
+00:14:10.433 --> 00:14:14.138
+Dans la prochaine vidéo, nous verrons
+
+246
+00:14:14.218 --> 00:14:18.760
+d'autres graphiques
+pour examiner les relations entre
+
+247
+00:14:18.840 --> 00:14:22.869
+variables et communiquer
+les résultats. Les boxplots
+
+248
+00:14:22.949 --> 00:14:26.600
+et les violons sont des outils puissants,
+
+249
+00:14:26.680 --> 00:14:29.627
+mais ils ne suffisent pas.
