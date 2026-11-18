@@ -1,0 +1,329 @@
+---
+title: "TP 3 VF"
+output: html_document
+lang: fr
+---
+
+# Session 3 - TP VF : explorer les données par les graphiques
+
+
+Reprenez le jeu de votre spécialisation utilisé au TP 2. Le but de cette session est de faire une **analyse exploratoire** : nous cherchons une différence entre groupes, une association particulière, une valeur inhabituelle ou une absence de tendance qui mérite d'être approfondie. Il n'y a donc pas de résultat attendu spécifique à faire apparaître, tout dépend de vos choix.
+
+Vous pouvez rendre ce travail individuellement ou en binôme, nous vous encourageons fortement à travailler à plusieurs pour discuter de vos choix et de vos erreurs !
+
+Ce TP comporte six étapes en tout, et certains codes sont déjà fournis dans les cellules exécutables. Les graphiques à emprunter au cours sont désignés par leur **numéro et leur titre**. Copiez le contenu du bloc dans votre environnement, gardez son commentaire de titre, puis adaptez-le. Exécutez bien les cellules dans l'ordre, pour ne pas risquer de mauvaises redéfinitions de variables.
+
+
+## A. Retrouver ses repères
+
+
+Enregistrez ce fichier à côté du dossier `data` du TP 2 et renommez-le `Session3_VF_NOM_Prenom` en conservant son extension. Pour un binôme, indiquez les deux noms. Les [cinq CSV du TP](https://flo-unige.github.io/analyse-donnees-statistiques/donnees/) sont les mêmes que ceux utilisés lors de la session précédente. Chaque fichier décrit 195 pays, avec une ligne par pays, pour 2021 ou 2022.
+
+
+| Jeu | Fichier dans `data/` |
+|---|---|
+| Transition écologique et sociale | `transition_ecologique_sociale_2021.csv` |
+| Énergie | `energie_2021.csv` |
+| Impact climatique | `impact_climatique_2021.csv` |
+| Eau | `eau_2022.csv` |
+| Biodiversité | `biodiversite_2022.csv` |
+
+
+Ouvrez le document dans RStudio et choisissez **Session > Set Working Directory > To Source File Location** pour travailler dans le dossier du TP. Vous pouvez exécuter les blocs avec les triangles verts et écrire vos réponses dans les espaces prévus en dehors du code. Le package ggplot2 est nécessaire pour les boîtes et violons, et s'il n'est pas installé, exécutez une fois `install.packages("ggplot2")` dans la console.
+
+
+Le bloc de chargement des données est fourni ci-dessous, vous devez uniquement adapter le chemin du CSV. Gardez cette lecture unique : les blocs 1, 4 et 8 du cours contiennent aussi une lecture du fichier de l'eau, qu'il ne faut pas recopier dans la suite du TP.
+
+
+```{r charger}
+library(ggplot2)
+donnees <- read.csv("...", fileEncoding = "UTF-8")
+head(donnees)
+names(donnees)
+cat("n =", nrow(donnees), "\n")
+length(unique(donnees$country_code))
+```
+
+## B. Choisir une piste de départ
+
+
+Choisissez une mesure numérique **Y** et une catégorie **G**. Pour **G**, vous pouvez utiliser `world_region`, `income_group` ou `is_landlocked` en fonction de la pertinence pour votre question. Définissez Y et son unité à partir du TP 2 et si une définition reste ambiguë, demandez une précision.
+
+Quelques mesures possibles : consommation électrique par habitant, émissions de GES par habitant, empreinte matérielle par habitant, accès à l'eau potable, etc. Retrouvez le nom exact dans les colonnes affichées en A, et formulez une question sur les différences entre les groupes.
+
+
+```{r choix}
+colonne_y <- "NOM_EXACT_Y"
+groupe <- "world_region"
+etiquette_y <- "Y (unité)"
+etiquette_groupe <- "Région mondiale"
+```
+
+**Questions :** Quelle est votre question provisoire ? Précisez la définition de Y, son unité et ce que représente G.
+
+
+
+**Votre réponse :** ...
+
+
+## C. Examiner le jeu de données
+
+
+Le code suivant permet d'établir les catégories. Ici, les catégories de revenu sont ordonnées et les autres triées pour faciliter la lecture.
+
+
+```{r ordre}
+ordre <- sort(unique(na.omit(donnees[[groupe]])))
+if (groupe == "income_group") {
+  ordre <- c("low_income", "lower_middle_income",
+             "upper_middle_income", "high_income")
+}
+```
+
+Dans le bloc 1, copiez seulement à partir de `effectifs`, en conservant les affichages. Remplacez chaque `donnees$classe_qualite` par `donnees[[groupe]]`, puis gardez `ordre` préparé ci-dessus.
+
+
+Copiez le **bloc 1 « Effectifs »** du cours dans la cellule suivante, puis appliquez les adaptations ci-dessus.
+
+
+```{r effectifs}
+# Bloc 1 : Effectifs
+# Coller et adapter ici.
+```
+
+Adaptez le titre et les axes : il s'agit de nombres de pays et non pas de visites comme dans l'exemple du cours. Il faut conserver l'origine des axes à zéro et si les noms se chevauchent, agrandissez la figure ou tournez les étiquettes.
+
+Copiez le **bloc 2 « Diagramme en barres »** du cours dans la cellule suivante, puis appliquez les adaptations ci-dessus.
+
+**Tips :** Vous avez déjà défini le nom des étiquettes des axes dans la partie B de ce fichier. Essayez de réutiliser ces variables dans le code ci-dessous, pour ne pas avoir à les réécrire !
+
+```{r barres}
+# Bloc 2 : Diagramme en barres
+# Coller et adapter ici.
+```
+
+**Questions :** 
+
+- Quels groupes sont les plus et les moins représentés ? Indiquez les effectifs et les catégories manquantes.
+- Pourquoi ces barres ne décrivent-elles pas la répartition de la population mondiale ? Le bloc de code 3 « Pourcentages » (dans le cours) est un appui facultatif que vous pouvez utiliser.
+
+
+**Votre réponse :** ...
+
+
+## D. Comparer les distributions
+
+
+**Questions :** Avant de tracer, quelle différence ou ressemblance entre groupes vous paraît plausible ?
+
+
+
+**Votre réponse :** ...
+
+
+Le bloc de code ci-dessous conserve uniquement les lignes où G et Y sont disponibles. Dans cette copie du tableau, les colonnes prennent les noms courts `G` et `Y`, qui désignent vos choix de B. Le tableau d'effectifs vous permet de comparer les disponibilités entre groupes.
+
+
+```{r preparer_groupes}
+comparaison <- donnees[complete.cases(donnees[c(groupe, colonne_y)]), c(groupe, colonne_y)]
+names(comparaison) <- c("G", "Y")
+comparaison$G <- factor(comparaison$G, levels = ordre)
+total <- table(factor(donnees[[groupe]], levels = ordre))
+disponibles <- table(comparaison$G)
+print(data.frame(G = ordre, total = as.integer(total),
+                 disponibles = as.integer(disponibles),
+                 manquantes = as.integer(total - disponibles)))
+limites_y <- range(comparaison$Y)
+marge <- max(diff(limites_y) * 0.05, 0.01)
+limites_y <- limites_y + c(-marge, marge)
+```
+
+Ici, le tableau `comparaison` que l'on vient de créer contient, pour chaque pays de votre jeu de données avec des valeurs exploitables (c'est-à-dire en omettant les valeurs absentes), la valeur de votre variable `Y` et de la catégorie `G` que vous avez choisie.
+
+```{r f1aaa1f5}
+comparaison
+```
+
+Si aucune valeur n'est disponible, revenez à B pour choisir une autre variable. Lorsqu'un groupe ne contient qu'une seule valeur, on ne peut pas en décrire la dispersion, il faut donc le signaler dans votre interprétation. Si trop peu de valeurs sont disponibles pour comparer les groupes, choisissez une autre variable en expliquant pourquoi. Gardez les mêmes limites verticales pour les deux figures, cela vous aidera à les comparer.
+
+
+Pour les blocs 6 et 7, vous allez devoir remplacer `donnees`, `site` et `nitrates_mg_l` par d'autres entrées, en fonction de ce que l'on a déjà défini dans ce document. Prenez un moment pour réfléchir à ce par quoi vous devez les remplacer, y compris dans `aes()` et dans la formule utilisée pour calculer les médianes.
+
+Dans le bloc 6, remplacez la liste qui définit les quatre sites par `ordre`, puisque les catégories sont déjà préparées. Gardez le nom `mesures`, car le bloc 7 en aura besoin.
+
+Pour les axes, utilisez `etiquette_groupe` et `etiquette_y` dans `labs()`, puis choisissez un titre qui correspond à ce que vous représentez. Ajoutez aussi `+ coord_cartesian(ylim = limites_y)` après `labs(...)` dans les deux blocs, cela permet de garder la même échelle verticale pour les boîtes et les violons.
+
+Copiez le **bloc 6 « Comparer les sites »** du cours dans la cellule suivante, puis appliquez les adaptations ci-dessus.
+
+
+```{r boites}
+# Bloc 6 : Comparer les sites
+# Coller et adapter ici.
+```
+
+Copiez le **bloc 7 « Violon et observations »** du cours dans la cellule suivante, puis appliquez les adaptations ci-dessus.
+
+
+```{r violon}
+# Bloc 7 : Violon et observations
+# Coller et adapter ici.
+```
+
+Comme nous l'avons vu dans le cours, la largeur du violon nous aide à voir où les valeurs se concentrent, mais elle ne représente pas directement le nombre de pays. Son contour dépend du lissage utilisé, alors que les points correspondent aux valeurs présentes dans le fichier. Plusieurs pays peuvent avoir la même valeur et se retrouver au même endroit sur le graphique, il faut donc garder les effectifs à côté pour ne pas les oublier. Si un groupe contient peu de valeurs, regardez surtout les points avant d'interpréter la forme du violon.
+
+
+**Questions :** 
+
+- Que voyez-vous en comparant les médianes, la dispersion et le chevauchement des groupes ? Donnez au moins un chiffre avec son unité pour appuyer votre réponse.
+- Est-ce que les violons et les points vous montrent quelque chose qui était moins visible avec les boîtes ?
+- Les valeurs manquantes concernent-elles tous les groupes de la même façon ?
+
+Si un pays vous paraît très éloigné des autres, essayez de comprendre ce qui le distingue, sans le supprimer simplement parce que sa valeur est inhabituelle.
+
+
+
+**Votre réponse :** ...
+
+
+## E. Explorer des relations
+
+
+Nous allons maintenant regarder si Y semble liée à une autre variable numérique, que nous appellerons **X1**. Choisissez une variable différente de Y, puis indiquez pourquoi cette relation vous intéresse et renseignez son nom exact et son unité dans le code ci-dessous.
+
+
+```{r premiere_piste}
+colonne_x1 <- "NOM_EXACT_X1"
+etiquette_x1 <- "X1 (unité)"
+paires <- donnees[complete.cases(donnees[c(colonne_x1, colonne_y, groupe)]),
+                   c(colonne_x1, colonne_y, groupe)]
+names(paires) <- c("X1", "Y", "G")
+cat("n =", nrow(paires), "; exclus =", nrow(donnees)-nrow(paires), "\n")
+```
+
+On garde aussi G dans le tableau, car cette catégorie nous servira ensuite à distinguer les groupes sur le nuage. Regardez combien de pays sont encore disponibles, et si la sélection est vide, très petite ou qu'une variable prend toujours la même valeur, revenez à votre choix de variables en expliquant ce qui pose problème.
+
+
+```{r 0e224285}
+paires
+```
+
+Dans le bloc 8, copiez seulement à partir de `plot(...)`, puisque le chargement des données et la préparation de `paires` sont déjà faits.
+
+Que doit-on mettre à la place de `temperature_c` et `oxygene_mg_l` dans ce code ? Réfléchissez entre vous si besoin. Puis, remplacez-les par leurs nouvelles entrées dans notre situation, puis utilisez `etiquette_x1` et `etiquette_y` pour nommer les axes et adaptez le titre à votre question.
+
+Copiez le **bloc 8 « Nuage de points »** du cours dans la cellule suivante, puis appliquez les adaptations ci-dessus.
+
+
+```{r premier_nuage}
+# Bloc 8 : Nuage de points
+# Coller et adapter ici.
+```
+
+**Questions :** Que voyez-vous sur ce premier nuage, par exemple une tendance, une courbe, des amas de points ou quelques pays isolés ? Il est aussi possible qu'aucune structure ne soit vraiment visible. À partir de cette première lecture, quelle autre variable numérique X2 pourrait vous aider à approfondir votre question, et pourquoi ? Notez votre première impression avant de passer à la suite.
+
+
+
+**Votre réponse :** ...
+
+
+Choisissez maintenant **X2**, qui doit être différente de X1 et de Y. Pour comparer les deux pistes, nous allons garder les mêmes pays dans les graphiques suivants, grâce au code ci-dessous. Cela peut réduire le nombre de pays par rapport au premier essai, car certains n'ont pas de valeur pour X2, pensez donc à noter ce changement. Le tableau `donnees` reste inchangé, seule la sélection utilisée pour les graphiques est mise à jour.
+
+
+```{r paires_communes}
+colonne_x2 <- "NOM_EXACT_X2"
+etiquette_x2 <- "X2 (unité)"
+colonnes <- c(colonne_x1, colonne_x2, colonne_y, groupe)
+paires <- donnees[complete.cases(donnees[colonnes]), colonnes]
+names(paires) <- c("X1", "X2", "Y", "G")
+cat("n =", nrow(paires), "; exclus =", nrow(donnees)-nrow(paires), "\n")
+```
+
+Reprenez votre adaptation du **bloc 8** dans chacune des deux cellules suivantes, en gardant X1 dans la première et en la remplaçant par X2 dans la seconde, avec l'étiquette correspondante. Exécutez les deux cellules pour obtenir les nuages sur les mêmes pays, puis gardez aussi votre premier essai pour voir si le retrait de certains pays change votre lecture.
+
+Attention à ne pas comparer uniquement l'inclinaison des deux nuages, car X1 et X2 peuvent avoir des unités et des étendues différentes, ce qui change leur apparence.
+
+
+```{r nuage1}
+# Bloc 8 : X1, pays communs
+```
+
+```{r nuage2}
+# Bloc 8 : X2, pays communs
+```
+
+### Regarder une piste autrement
+
+
+Choisissez la piste que vous avez envie d'approfondir, avec X1 ou X2, et expliquez brièvement pourquoi. Le code ci-dessous reprend le nuage en distinguant les groupes par leur couleur et leur forme, ce qui permet de voir si votre première impression se retrouve dans chaque groupe ou si les groupes occupent des zones différentes. Vous devez uniquement adapter `axe` et `etiquette_x`, les pays représentés restent les mêmes.
+
+
+```{r groupes_nuage}
+axe <- "X1"
+etiquette_x <- etiquette_x1
+ggplot(paires, aes(x = .data[[axe]], y = Y,
+                   colour = factor(G), shape = factor(G))) +
+  geom_point(alpha = 0.65) +
+  labs(x = etiquette_x, y = etiquette_y,
+       colour = etiquette_groupe, shape = etiquette_groupe)
+```
+
+### Optionnel : une grille des effectifs
+
+
+Si beaucoup de points se superposent, vous pouvez essayer le **bloc 9 « Grille des effectifs »** à la place de la vue par groupes.
+
+La grille regroupe les pays dans des intervalles de X et de Y, puis utilise la couleur pour montrer combien de pays se trouvent dans chaque case. Elle ne représente donc ni une moyenne ni une corrélation. Les limites utilisées dans le cours correspondent aux données sur l'eau, il faut les remplacer par celles de vos variables grâce à la préparation ci-dessous.
+
+```{r grille_preparation}
+axe <- "X1"
+etiquette_x <- etiquette_x1
+limites_x <- seq(min(paires[[axe]]), max(paires[[axe]]), length.out = 11)
+limites_grille_y <- seq(min(paires$Y), max(paires$Y), length.out = 11)
+```
+
+Dans le bloc 9, ne recopiez pas les lignes qui définissent les limites du graphique du cours, puisque vous venez de préparer les vôtres. Utilisez `aes(x = .data[[axe]], y = Y)` et `breaks = list(x = limites_x, y = limites_grille_y)` pour représenter vos variables avec ces nouveaux intervalles.
+
+
+Pensez aussi à adapter les titres et les unités, et à préciser dans la légende que la couleur représente un nombre de pays. Si une variable prend toujours la même valeur, gardez le nuage de points plutôt que cette grille.
+
+Pour voir ce que change le regroupement, vous pouvez remplacer 11 par 6 dans les deux lignes qui préparent les limites (dans le bloc de code du dessus), vous passerez ainsi de dix à cinq intervalles par axe. Regardez ce qui devient plus visible ou, au contraire, ce qui disparaît, sans chercher à obtenir une grille qui confirme votre idée de départ.
+
+
+```{r grille}
+# Bloc 9 : Grille des effectifs (facultatif)
+```
+
+### Votre carnet d'exploration
+
+
+**Questions :** Qu'avez-vous cherché à voir dans chacun de vos essais, et qu'est-ce que le graphique vous a appris ? Complétez le tableau dans la cellule suivante, avec une ligne pour le premier essai, une pour chacun des deux nuages sur les pays communs et une pour la vue que vous avez choisie ensuite. Si vous avez abandonné une piste, notez-la aussi en expliquant pourquoi, quelques phrases suffisent.
+
+
+**Votre réponse :**
+
+| Essai et n | Ce que je cherche | Ce que je vois | Ce que cela change dans ma question |
+|---|---|---|---|
+| ... | ... | ... | ... |
+
+
+**Questions :** Comparez la vue par groupes, ou la grille des effectifs, au nuage de points correspondant. Que voyez-vous de plus, et cela change-t-il votre première interprétation ? Proposez deux explications possibles. Gardez en tête qu'une association ne suffit pas à démontrer une causalité, l'objectif est ici de formuler des pistes à approfondir.
+
+
+**Votre réponse :** ...
+
+
+## F. Retenir une piste et conclure
+
+
+Pour terminer, choisissez une figure parmi celles de D ou de E qui vous aide à présenter votre constat principal, vous n'avez pas besoin d'en produire une nouvelle. Donnez-lui un titre qui décrit ce que vous observez, puis vérifiez que les axes, les unités, la légende et le nombre de pays sont bien indiqués.
+
+Rédigez ensuite une synthèse de quelques lignes, en présentant le jeu de données et l'année, la question que vous avez retenue et ce que montre la figure. Expliquez aussi comment vos essais ont fait évoluer votre lecture, puis proposez une question à approfondir et les données supplémentaires qui pourraient aider à y répondre.
+
+Pensez aux limites qui concernent votre analyse, par exemple les pays pour lesquels des valeurs manquent, les petits groupes ou les différences de définition entre indicateurs. Ce que l'on observe entre pays ne décrit pas forcément ce qui se passe entre individus, et les pays disponibles ne constituent pas automatiquement un échantillon aléatoire. Vous pouvez tout à fait conclure qu'aucune relation nette n'apparaît, ce qui compte est de bien expliquer votre raisonnement.
+
+
+
+**Votre réponse :** ...
+
+
+Avant de rendre votre travail, redémarrez R puis utilisez **Knit**, cela permet de vérifier que le code fonctionne sans dépendre d'un essai précédent (si vous n'avez pas choisi la grille facultative, vous pouvez laisser ses cellules sans résultat). Enregistrez ensuite votre **`.Rmd` complété**, c'est ce fichier que vous devez rendre sur [Moodle](https://moodle.unige.ch/course/view.php?id=21845), et gardez le HTML pour relire vos résultats.

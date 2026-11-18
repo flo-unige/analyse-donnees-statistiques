@@ -1,0 +1,315 @@
+---
+title: "TP 3 VF"
+output: html_document
+lang: en
+---
+
+# Session 3 - Practical VF: exploring data through graphs
+
+
+Return to the dataset you used in practical 2. The aim of this session is to carry out an **exploratory analysis**, looking for differences between groups, an interesting association, an unusual value or a lack of pattern worth investigating. There is no particular result you are expected to find, as this will depend on the choices you make.
+
+You may submit this work individually or in pairs, and we strongly encourage you to work together to discuss your choices and mistakes!
+
+There are six stages, and some of the code is already provided in executable cells. Graphs to borrow from the course are identified by their **block number and title**. Copy the block into your own environment, keep its title comment and adapt it to your data. Make sure you run the cells in order to avoid redefining variables incorrectly.
+
+## A. Get your bearings
+
+
+Save this file alongside the `data` folder from practical 2 and rename it `Session3_VF_SURNAME_Firstname`, keeping its extension. For a pair, include both names. The [five practical datasets](https://flo-unige.github.io/analyse-donnees-statistiques/donnees/) are the same as those used in the previous session. Each file describes 195 countries, with one row per country, for 2021 or 2022.
+
+| Dataset | File inside `data/` |
+|---|---|
+| Ecological and social transition | `transition_ecologique_sociale_2021.csv` |
+| Energy | `energie_2021.csv` |
+| Climate impact | `impact_climatique_2021.csv` |
+| Water | `eau_2022.csv` |
+| Biodiversity | `biodiversite_2022.csv` |
+
+
+Open the document in RStudio and select **Session > Set Working Directory > To Source File Location** to work in the practical's folder. Use the green triangles to run blocks and write your answers in the spaces provided outside the code. The ggplot2 package is needed for boxes and violins, so if it is not installed, run `install.packages("ggplot2")` once in the console.
+
+
+The data-loading block is provided below, so you only need to change the CSV path. Keep this as the only loading step, as course Blocks 1, 4 and 8 also read the water dataset and those lines should not be copied again later in the practical.
+
+
+```{r charger}
+library(ggplot2)
+donnees <- read.csv("...", fileEncoding = "UTF-8")
+head(donnees)
+names(donnees)
+cat("n =", nrow(donnees), "\n")
+length(unique(donnees$country_code))
+```
+
+## B. Choose a starting question
+
+
+Choose a numerical measurement **Y** and a category **G**. For **G**, you can use `world_region`, `income_group` or `is_landlocked`, depending on what is relevant to your question. Define Y and its unit using practical 2, and ask for clarification if anything remains unclear.
+
+Possible measurements include electricity use per capita, GHG emissions per capita, material footprint per capita, access to drinking water, etc. Find the exact column name in the output from A, then formulate a question about differences between the groups.
+
+```{r choix}
+colonne_y <- "EXACT_NAME_Y"
+groupe <- "world_region"
+etiquette_y <- "Y (unit)"
+etiquette_groupe <- "World region"
+```
+
+**Questions:** What is your initial question? Explain what Y measures, give its unit and describe what G represents.
+
+
+
+**Your answer:** ...
+
+
+## C. Examine the dataset
+
+The following code sets up the categories, putting income groups in their natural order and sorting the other categories to make them easier to read.
+
+
+```{r ordre}
+ordre <- sort(unique(na.omit(donnees[[groupe]])))
+if (groupe == "income_group") {
+  ordre <- c("low_income", "lower_middle_income",
+             "upper_middle_income", "high_income")
+}
+```
+
+In Block 1, copy only from `effectifs` onwards, including the printed output. Replace every `donnees$classe_qualite` with `donnees[[groupe]]`, keeping the `ordre` prepared above.
+
+
+Copy **Block 1: Counts** from the course into the next cell, then apply the changes described above.
+
+
+```{r effectifs}
+# Block 1: Counts
+# Paste and adapt here.
+```
+
+Adapt the title and axes to show numbers of countries rather than the visits used in the course example. Keep the axes starting at zero, and if the labels overlap, enlarge the figure or rotate them.
+
+Copy **Block 2: Bar chart** from the course into the next cell, then apply the changes described above.
+
+**Tip:** You have already defined the axis labels in part B of this file. Try reusing those variables in the code below so you do not have to type the labels again!
+
+```{r barres}
+# Block 2: Bar chart
+# Paste and adapt here.
+```
+
+**Questions:**
+
+- Which groups are most and least represented? Report their counts and any missing categories.
+- Why do these bars not describe the distribution of the world's population? You can use code Block 3: Percentages (in the course) as optional support.
+
+**Your answer:** ...
+
+
+## D. Compare distributions
+
+
+**Questions:** Before plotting, what difference or similarity between groups seems plausible?
+
+
+
+**Your answer:** ...
+
+
+The code below keeps only rows where both G and Y are available. In this copy of the table, the columns are given the short names `G` and `Y`, referring to your choices in B. The count table helps you compare data availability across groups.
+
+
+```{r preparer_groupes}
+comparaison <- donnees[complete.cases(donnees[c(groupe, colonne_y)]), c(groupe, colonne_y)]
+names(comparaison) <- c("G", "Y")
+comparaison$G <- factor(comparaison$G, levels = ordre)
+total <- table(factor(donnees[[groupe]], levels = ordre))
+disponibles <- table(comparaison$G)
+print(data.frame(G = ordre, total = as.integer(total),
+                 disponibles = as.integer(disponibles),
+                 manquantes = as.integer(total - disponibles)))
+limites_y <- range(comparaison$Y)
+marge <- max(diff(limites_y) * 0.05, 0.01)
+limites_y <- limites_y + c(-marge, marge)
+```
+
+The `comparaison` table we have just created contains the value of your variable `Y` and your chosen category `G` for each country with usable data, meaning that rows with missing values have been left out.
+
+```{r f1aaa1f5}
+comparaison
+```
+
+If no values are available, return to B and choose another variable. When a group contains only one value, you cannot describe its spread, so mention this in your interpretation. If too few values are available to compare the groups, choose another variable and explain why. Keep the same vertical limits for both figures to make them easier to compare.
+
+
+For Blocks 6 and 7, you will need to replace `donnees`, `site` and `nitrates_mg_l` with other entries based on what we have already defined in this document. Take a moment to think about what should replace them, including in `aes()` and in the formula used to calculate the medians.
+
+In Block 6, replace the list defining the four sites with `ordre`, since the categories are already prepared. Keep the name `mesures`, as Block 7 will need it.
+
+Use `etiquette_groupe` and `etiquette_y` for the axes in `labs()`, then choose a title that describes your graph. Also add `+ coord_cartesian(ylim = limites_y)` after `labs(...)` in both blocks so the boxes and violins share the same vertical scale.
+
+Copy **Block 6: Compare sites** from the course into the next cell, then apply the changes described above.
+
+
+```{r boites}
+# Block 6: Compare sites
+# Paste and adapt here.
+```
+
+Copy **Block 7: Violin and observations** from the course into the next cell, then apply the changes described above.
+
+
+```{r violon}
+# Block 7: Violin and observations
+# Paste and adapt here.
+```
+
+As we saw in the course, the violin's width helps us see where values are concentrated, but it does not directly represent the number of countries. Its outline depends on the smoothing used, while the points show values actually present in the file. Several countries may share the same value and appear in the same place, so keep the counts nearby to avoid overlooking them. If a group has few values, look at the points first before interpreting the violin's shape.
+
+
+**Questions:**
+
+- What do you notice when comparing the medians, spreads and overlap between groups? Support your answer with at least one number and its unit.
+- Do the violins and points reveal anything that was less clear in the boxes?
+- Are all groups affected by missing values in the same way?
+
+If a country looks very different from the others, try to understand what makes it stand out, without removing it just because its value is unusual.
+
+**Your answer:** ...
+
+
+## E. Explore relationships
+
+
+We will now look at whether Y seems related to another numerical variable, which we will call **X1**. Choose a variable different from Y, explain why the relationship interests you, then enter its exact name and unit in the code below.
+
+```{r premiere_piste}
+colonne_x1 <- "EXACT_NAME_X1"
+etiquette_x1 <- "X1 (unit)"
+paires <- donnees[complete.cases(donnees[c(colonne_x1, colonne_y, groupe)]),
+                   c(colonne_x1, colonne_y, groupe)]
+names(paires) <- c("X1", "Y", "G")
+cat("n =", nrow(paires), "; excluded =", nrow(donnees)-nrow(paires), "\n")
+```
+
+We also keep G in the table because we will use it later to distinguish the groups in the scatterplot. Check how many countries are still available, and if the selection is empty, very small or a variable always has the same value, reconsider your choice of variables and explain the problem.
+
+
+```{r 0e224285}
+paires
+```
+
+In Block 8, copy only from `plot(...)` onwards, as loading the data and preparing `paires` have already been done.
+
+What should replace `temperature_c` and `oxygene_mg_l` in this code? Discuss this together if it helps. Then replace them with the entries that fit our situation, use `etiquette_x1` and `etiquette_y` to label the axes and adapt the title to your question.
+
+Copy **Block 8: Scatterplot** from the course into the next cell, then apply the changes described above.
+
+
+```{r premier_nuage}
+# Block 8: Scatterplot
+# Paste and adapt here.
+```
+
+**Questions:** What can you see in this first scatterplot, such as a trend, a curve, clusters or a few isolated countries? You may also find that no clear structure is visible. Based on this first reading, which other numerical variable X2 might help you explore your question further, and why? Record your first impression before continuing.
+
+
+
+**Your answer:** ...
+
+
+Now choose **X2**, which must be different from both X1 and Y. To compare the two possibilities, the code below keeps the same countries in the next graphs. This may leave fewer countries than in your first attempt because some have no value for X2, so remember to record the change. The original table `donnees` stays as it is, while only the selection used for the graphs is updated.
+
+
+```{r paires_communes}
+colonne_x2 <- "EXACT_NAME_X2"
+etiquette_x2 <- "X2 (unit)"
+colonnes <- c(colonne_x1, colonne_x2, colonne_y, groupe)
+paires <- donnees[complete.cases(donnees[colonnes]), colonnes]
+names(paires) <- c("X1", "X2", "Y", "G")
+cat("n =", nrow(paires), "; excluded =", nrow(donnees)-nrow(paires), "\n")
+```
+
+Copy your adapted **Block 8** into each of the next two cells, keeping X1 in the first and replacing it with X2 and its label in the second. Run both cells to plot the same countries, and keep your initial attempt too so you can see whether excluding some countries changes your reading.
+
+Be careful not to compare only the slopes of the two clouds, as X1 and X2 may have different units and ranges that affect how they look.
+
+
+```{r nuage1}
+# Block 8 : X1, common countries
+```
+
+```{r nuage2}
+# Block 8 : X2, common countries
+```
+
+### Look at one possibility differently
+
+
+Choose the relationship you would like to explore further, using X1 or X2, and briefly explain why. The code below draws the scatterplot again, using colour and shape to distinguish groups so you can see whether your first impression also holds within them or whether they occupy different parts of the plot. You only need to adapt `axe` and `etiquette_x`, while keeping the same countries.
+
+
+```{r groupes_nuage}
+axe <- "X1"
+etiquette_x <- etiquette_x1
+ggplot(paires, aes(x = .data[[axe]], y = Y,
+                   colour = factor(G), shape = factor(G))) +
+  geom_point(alpha = 0.65) +
+  labs(x = etiquette_x, y = etiquette_y,
+       colour = etiquette_groupe, shape = etiquette_groupe)
+```
+
+### Optional: a count grid
+
+If many points overlap, you can try **Block 9: Count grid** instead of the grouped view.
+
+The grid groups countries into intervals of X and Y, then uses colour to show how many countries fall in each cell. It therefore represents neither a mean nor a correlation. The boundaries used in the course are for the water dataset, so replace them with boundaries suited to your variables using the preparation below.
+
+```{r grille_preparation}
+axe <- "X1"
+etiquette_x <- etiquette_x1
+limites_x <- seq(min(paires[[axe]]), max(paires[[axe]]), length.out = 11)
+limites_grille_y <- seq(min(paires$Y), max(paires$Y), length.out = 11)
+```
+
+In Block 9, do not copy the lines defining the course graph's boundaries, as you have just prepared your own. Use `aes(x = .data[[axe]], y = Y)` and `breaks = list(x = limites_x, y = limites_grille_y)` to plot your variables using these new intervals.
+
+
+Remember to adapt the titles and units, and make it clear in the legend that colour represents a number of countries. If a variable always has the same value, keep the scatterplot instead of using this grid.
+
+To see what grouping changes, you can replace 11 with 6 in both lines that prepare the boundaries (in the code block above), moving from ten to five intervals on each axis. Look at what becomes easier to see and what disappears, without choosing a grid just to support your initial idea.
+
+```{r grille}
+# Block 9: Count grid (optional)
+```
+
+### Your exploration log
+
+
+**Questions:** What were you trying to see in each attempt, and what did the graph show you? Complete the table in the next cell, with one row for the initial attempt, one for each scatterplot using common countries and one for the alternative view you chose. If you abandoned a direction, include it and explain why, a few sentences are enough.
+
+**Your answer:**
+
+| Attempt and n | What I am looking for | What I observe | How it changes my question |
+|---|---|---|---|
+| ... | ... | ... | ... |
+
+**Questions:** Compare the grouped view, or the count grid, with the corresponding scatterplot. What else can you see, and does this change your first interpretation? Suggest two possible explanations. Keep in mind that an association is not enough to establish causation, as our aim here is to identify questions worth investigating.
+
+**Your answer:** ...
+
+
+## F. Select a finding and conclude
+
+
+To finish, choose a figure from D or E that helps you present your main finding, without producing a new one. Give it a title describing what you observe, then check that the axes, units, legend and number of countries are clearly stated.
+
+Write a few lines introducing the dataset and year, your final question and what the figure shows. Explain how your attempts changed your reading, then suggest a question to investigate further and the additional data that could help answer it.
+
+Consider the limitations relevant to your analysis, such as countries with missing values, small groups or differences in indicator definitions. What we observe between countries does not necessarily describe individuals, and the countries available do not automatically form a random sample. It is perfectly acceptable to conclude that no clear relationship appears, as what matters is explaining your reasoning.
+
+
+**Your answer:** ...
+
+
+Before submitting your work, restart R and use **Knit** to check that the code works without relying on an earlier attempt (if you did not choose the optional grid, you can leave its cells without results). Then save your **completed `.Rmd`**, which is the file you should submit on [Moodle](https://moodle.unige.ch/course/view.php?id=21845), and keep the HTML to review your results.

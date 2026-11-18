@@ -48,6 +48,7 @@ project:
     - cours/session-01/fichiers/**
     - tp/session-01/fichiers/**
     - tp/session-02/fichiers/**
+    - tp/session-03/fichiers/**
     - donnees/fichiers/**
     - "!tp/session-02/OLD/**"
     - assets/**
