@@ -1,0 +1,16 @@
+name: analyse-donnees-tp
+channels:
+  - conda-forge
+  - nodefaults
+dependencies:
+  - python=3.11
+  - jupyterlab>=4
+  - ipykernel
+  - ipython
+  - numpy>=1.23
+  - pandas>=2
+  - matplotlib>=3.7
+  - seaborn>=0.13
+  - scipy>=1.15
+  - statsmodels>=0.14
+  - openpyxl>=3.1

@@ -24,6 +24,12 @@ format:
 
 Choose the dataset for your specialisation. The same files work with **Python and R** and with both the French and English practicals. You only need to download them once, then keep them for later sessions.
 
+## Create your Python environment
+
+This file installs the Python tools you will need for the practicals. Download it and save it in your working folder so you can use it to create your Python environment.
+
+[Download environment-tp.yml](fichiers/environment-tp.yml){download="environment-tp.yml"}
+
 ## Download an individual dataset
 
 - **Ecological and social transition (2021)**: [download the CSV](fichiers/transition_ecologique_sociale_2021.csv){download="transition_ecologique_sociale_2021.csv"}.

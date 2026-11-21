@@ -24,6 +24,12 @@ format:
 
 Choisissez le jeu correspondant à votre spécialisation. Les fichiers sont identiques pour **Python et R**, ainsi que pour les versions française et anglaise des TP. Vous n'avez besoin de les télécharger qu'une seule fois, puis de les conserver pour les séances suivantes.
 
+## Créer l’environnement Python
+
+Ce fichier permet d’installer les outils Python nécessaires pour les TP. Téléchargez-le et conservez-le dans votre dossier de travail, vous l’utiliserez pour créer votre environnement Python.
+
+[Télécharger le fichier environment-tp.yml](fichiers/environment-tp.yml){download="environment-tp.yml"}
+
 ## Télécharger un jeu de données
 
 - **Transition écologique et sociale (2021)** : [télécharger le CSV](fichiers/transition_ecologique_sociale_2021.csv){download="transition_ecologique_sociale_2021.csv"}.
