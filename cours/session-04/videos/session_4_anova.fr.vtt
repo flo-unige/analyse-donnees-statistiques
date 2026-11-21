@@ -1,0 +1,343 @@
+WEBVTT
+
+1
+00:00:02.350 --> 00:00:05.550
+Les tests peuvent aussi
+être utilisés pour comparer,
+
+2
+00:00:05.550 --> 00:00:08.530
+et sont souvent utilisés pour comparer
+des choses assez simples.
+
+3
+00:00:08.530 --> 00:00:13.750
+La différence de moyenne entre
+deux groupes indépendants,
+
+4
+00:00:13.750 --> 00:00:18.430
+on a calculé par exemple ici
+de nouveau dans notre petit code R,
+
+5
+00:00:19.050 --> 00:00:22.250
+des tailles dans une population.
+
+6
+00:00:22.410 --> 00:00:25.330
+Et on a un groupe de six individus
+dont on a noté les tailles,
+
+7
+00:00:25.330 --> 00:00:28.650
+et un autre groupe B de six autres
+individus dont on a noté la taille.
+
+8
+00:00:28.650 --> 00:00:31.770
+On aimerait savoir si finalement
+la moyenne de taille du groupe
+
+9
+00:00:31.770 --> 00:00:35.910
+A est significativement différente
+de la moyenne du groupe B.
+
+10
+00:00:36.030 --> 00:00:38.710
+Et on va ici de nouveau utiliser un test
+
+11
+00:00:38.710 --> 00:00:44.930
+de t pour comparer la moyenne
+de ces deux échantillons.
+
+12
+00:00:46.430 --> 00:00:52.260
+Et puis, si la probabilité
+associée au résultat
+
+13
+00:00:52.260 --> 00:00:54.860
+de ce test est plus petite que 0,05,
+
+14
+00:00:54.940 --> 00:00:59.580
+on rejette l'égalité que ces deux
+groupes ont la même moyenne.
+
+15
+00:00:59.640 --> 00:01:02.040
+Si ce n'est pas le cas,
+on admet qu'ils ont la même moyenne.
+
+16
+00:01:02.040 --> 00:01:06.060
+Si notre échantillon ne suivait pas une
+distribution normale, on préférerait
+
+17
+00:01:06.060 --> 00:01:11.140
+au test de t un test de Wilcoxon fait
+pour des données dites non paramétriques.
+
+18
+00:01:11.180 --> 00:01:13.680
+Et on peut visualiser avec un boxplot ici,
+
+19
+00:01:13.780 --> 00:01:16.840
+en effet, la différence
+de ces tailles pour nos deux groupes.
+
+20
+00:01:16.840 --> 00:01:22.980
+Et imaginez que dans le cas
+précis, on aurait abouti
+
+21
+00:01:23.340 --> 00:01:26.480
+au fait de rejeter
+l'égalité de ces moyennes.
+
+22
+00:01:26.970 --> 00:01:29.330
+On peut faire le même genre de test,
+
+23
+00:01:29.370 --> 00:01:34.270
+pas seulement pour comparer la moyenne de
+juste deux échantillons ou deux groupes,
+
+24
+00:01:34.270 --> 00:01:38.090
+mais toujours sur notre même échantillon
+et éventuellement avoir trois groupes.
+
+25
+00:01:38.130 --> 00:01:41.250
+Ici, c'est un exemple qu'on génère,
+
+26
+00:01:41.370 --> 00:01:46.760
+qui simulerait
+des expériences agronomiques,
+
+27
+00:01:46.760 --> 00:01:49.585
+où on aurait trois types
+d'engrais, A, B, C,
+
+28
+00:01:49.585 --> 00:01:53.940
+D, et on a calculé après
+un certain temps la biomasse,
+
+29
+00:01:54.100 --> 00:01:57.400
+la croissance des plantes
+dans ces trois types d'engrais.
+
+30
+00:01:57.580 --> 00:02:02.140
+Avec l'engrais A, on a des biomasses
+qui auraient été dans cinq
+
+31
+00:02:02.140 --> 00:02:07.060
+parcelles différentes
+qui s'échantillonnent entre 6 et 10.
+
+32
+00:02:07.360 --> 00:02:12.220
+Avec l'engrais B,
+des valeurs entre 10 et 14.
+
+33
+00:02:12.460 --> 00:02:15.440
+Et avec l'engrais C,
+des valeurs entre 16 et 20.
+
+34
+00:02:15.460 --> 00:02:18.820
+Donc c'est purement hypothétique,
+comme c'est des données
+
+35
+00:02:18.820 --> 00:02:24.240
+générées pour démontrer
+l'utilisation de l'outil.
+
+36
+00:02:24.240 --> 00:02:28.180
+Et ici, comme test,
+pour comparer plus que deux moyennes,
+
+37
+00:02:28.180 --> 00:02:31.960
+on ne peut pas faire le test de t.
+On fait l'analyse de variance
+
+38
+00:02:31.960 --> 00:02:37.220
+pour pouvoir comparer des moyennes
+de plus que deux groupes à la fois.
+
+39
+00:02:38.300 --> 00:02:42.600
+L'hypothèse de base ici,
+c'est que toutes les moyennes sont égales.
+
+40
+00:02:42.780 --> 00:02:46.360
+Donc la moyenne A est égale à la moyenne
+B qui est égale à la moyenne C.
+
+41
+00:02:46.360 --> 00:02:51.700
+Et si une de ces moyennes est différente,
+on rejette l'hypothèse H0.
+
+42
+00:02:52.380 --> 00:02:57.660
+L'équivalent non paramétrique dans ce
+cas-là est le test de Kruskal-Wallis,
+
+43
+00:02:58.100 --> 00:03:02.940
+qui va plutôt travailler sur l'ordre
+des données que sur les valeurs brutes.
+
+44
+00:03:06.580 --> 00:03:09.400
+Arrêtons-nous un petit peu
+sur l'exemple de l'ANOVA
+
+45
+00:03:09.400 --> 00:03:11.960
+pour voir comment un test est fabriqué.
+
+46
+00:03:12.240 --> 00:03:16.380
+En effet, le test de l'ANOVA
+se base sur le test de Fisher,
+
+47
+00:03:16.820 --> 00:03:21.420
+qui lui-même essaie de regarder
+la différence entre la variation
+
+48
+00:03:21.420 --> 00:03:26.860
+que l'on a entre groupes et la variation
+que l'on a à l'intérieur des groupes.
+
+49
+00:03:26.860 --> 00:03:31.380
+On peut écrire ceci avec la petite
+formule mathématique ici,
+
+50
+00:03:31.560 --> 00:03:37.400
+où on a que la somme des carrés
+totaux est égale à la somme
+
+51
+00:03:37.400 --> 00:03:41.740
+de la valeur de chaque observation
+moins la moyenne générale,
+
+52
+00:03:41.740 --> 00:03:44.860
+qui est ce traitillé ici,
+le tout mis au carré
+
+53
+00:03:44.860 --> 00:03:50.160
+pour ne pas tenir compte
+des variations négatives ou positives.
+
+54
+00:03:50.680 --> 00:03:54.900
+Et cette variation totale
+peut se décomposer entre la variation
+
+55
+00:03:54.900 --> 00:03:58.980
+ici intra-groupe, chaque observation à
+la moyenne de son groupe, et la variation
+
+56
+00:03:58.980 --> 00:04:03.840
+inter-groupe, la moyenne de chaque
+groupe par rapport à la moyenne générale.
+
+57
+00:04:04.040 --> 00:04:05.820
+Ainsi, la somme des carrés totaux
+
+58
+00:04:05.820 --> 00:04:10.200
+peut se décomposer en somme
+des carrés inter et intra.
+
+59
+00:04:10.520 --> 00:04:13.540
+Dans notre exemple ici,
+on aurait des valeurs de somme
+
+60
+00:04:13.540 --> 00:04:18.200
+des carrés totaux de 283
+qui se décomposeraient en 253 et 30.
+
+61
+00:04:18.340 --> 00:04:22.600
+Pour faire le test de F, il faut
+tenir compte des degrés de liberté.
+
+62
+00:04:22.600 --> 00:04:25.840
+Comme on a trois groupes,
+on fait n-1 groupe
+
+63
+00:04:25.840 --> 00:04:32.420
+et on divise la valeur de somme
+des carrés inter par cette valeur de 2.
+
+64
+00:04:32.540 --> 00:04:36.320
+Et puis la somme des carrés intra,
+ça va être le nombre d'observations
+
+65
+00:04:44.920 --> 00:04:50.480
+moins 3 ici, qui nous donnera
+donc 30 divisé par 12.
+
+66
+00:04:50.590 --> 00:04:56.310
+Et donc la valeur de F serait ce 50,67
+qui ne nous dit rien en tant que tel.
+
+67
+00:04:56.630 --> 00:05:01.230
+Mais si on compare à la distribution
+connue d'une distribution de F avec 2
+
+68
+00:05:01.230 --> 00:05:07.210
+et 12 degrés de liberté,
+on peut voir que si on fait l'hypothèse
+
+69
+00:05:07.210 --> 00:05:13.570
+H0 ici que la moyenne de chacun
+des groupes est égale, qu'on va rejeter
+
+70
+00:05:13.570 --> 00:05:20.170
+cette hypothèse et qu'on admet qu'au moins
+un des groupes a une moyenne différente.

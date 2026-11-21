@@ -1,0 +1,987 @@
+---
+title: "Session 4 - Inferential statistics: hypotheses and tests"
+subtitle: "Understanding tests, applying them in R and interpreting the results"
+author: "Teaching materials for Anthony Lehmann’s course"
+lang: en
+sidebar: cours
+format:
+  html:
+    theme: cosmo
+    toc: true
+    toc-title: "On this page"
+    toc-depth: 3
+    number-sections: true
+    smooth-scroll: true
+    code-fold: false
+    code-tools: false
+    code-copy: true
+    code-summary: "Show R code"
+    embed-resources: false
+    fig-cap-location: bottom
+execute:
+  echo: true
+  warning: true
+  message: false
+  cache: false
+---
+
+```{=html}
+<div class="course-choices">
+<nav class="course-language" aria-label="Course language"><a href="index-r.html" lang="fr" hreflang="fr">Français</a><span aria-current="page" lang="en">English</span></nav>
+<nav class="course-code" aria-label="Example language"><a href="index-en.html">Python</a><span aria-current="page">R</span></nav>
+</div>
+```
+
+# Learning objectives and overview
+
+This course introduces the principles of statistical testing through examples of commonly used tests. The examples draw on data from Gapminder and are illustrated with R and Python code.
+
+By the end of this session, you should be able to:
+
+- understand how statistical tests work;
+- test the distribution of a variable;
+- choose an appropriate test;
+- carry out tests in R or Python;
+- interpret the results of a test.
+
+# Data
+
+## Gapminder data
+
+Gapminder provides a wide range of demographic, economic, social and environmental indicators for countries around the world.
+
+### Exploring Gapminder data
+
+Explore how the relationship between gross domestic product (GDP) and life expectancy (`lex`) has changed since 1800. We will then work with these variables.
+
+```{=html}
+<iframe
+  src="https://www.gapminder.org/tools/?embedded=true"
+  width="100%"
+  height="750"
+  style="border:0;"
+  title="Explore Gapminder data"
+  allowfullscreen>
+</iframe>
+
+<p>
+If the embedded page does not load,
+<a href="https://www.gapminder.org/data/" target="_blank" rel="noopener noreferrer">
+open Gapminder Data in a new tab
+</a>.
+</p>
+```
+
+## Loading the required packages
+
+```{r}
+#| label: packages
+# Block 1 
+# If needed, install these packages once:
+# install.packages("readxl")
+# install.packages("ggplot2")
+
+# Load the packages needed for the examples
+library(ggplot2)
+library(readxl)
+```
+
+## Loading the data in R
+
+The file used for the exercises is:
+
+`data/data 2025.xlsx`
+
+The worksheet is called `clean`. In the supplied file, population is stored in the `pop` column.
+
+```{r}
+#| label: import-data
+# Block 2 
+# Import an Excel file. Use read.csv() for a CSV file.
+data_path <- "data/data 2025.xlsx"
+data_2025 <- read_excel(data_path,sheet = "clean")
+
+# List the variables in the file
+names(data_2025)
+# Summarise them with summary()
+summary(data_2025)
+```
+
+### Calculating population density
+
+```{r}
+#| label: prepare-area-density
+# Block 3 
+# Divide population by the area of the country
+data_2025$denspop <- data_2025$pop / data_2025$area_km2
+head(data_2025)
+```
+
+Let us check the four regions and identify any countries with missing land-area data:
+
+```{r}
+#| label: check-regions-area
+# Block 4 
+
+# Sort regions by their number of countries
+sort(table(data_2025$region), decreasing = TRUE)
+
+# Keep countries with an area greater than 1,000 km²
+data_2025 <- data_2025[data_2025$area_km2>1000,]
+
+# Exclude countries with missing land-area data
+data_2025 <- data_2025[!is.na(data_2025$area_km2),]
+sort(table(data_2025$region), decreasing = TRUE)
+
+```
+
+# Concepts and examples
+
+## Random samples
+
+A **random sample** is a subset of observations selected in such a way that each observation has a known chance of being selected. Random sampling reduces the risk of selection bias and provides an important basis for statistical inference.
+
+::: {.content-visible when-format="html"}
+```{=html}
+<div class="cours-video">
+  <video id="video-s4-principes" class="video-js vjs-big-play-centered" data-cours-video
+         controls preload="metadata" playsinline aria-label="Principles of statistical inference">
+    <source src="https://mediaserver.unige.ch/proxy/319457/OCMzr4gOKcwk9qa9.mp4?from_player=true" type="video/mp4">
+    <track kind="subtitles" src="videos/session_4_principes.fr.vtt" srclang="fr" label="Français">
+    <track kind="subtitles" src="videos/session_4_principes.en.vtt" srclang="en" label="English" default>
+    <p>Your browser cannot display this video. Use the link below.</p>
+  </video>
+  <div class="cours-video-erreur" role="status" hidden>
+    <p>The video could not be loaded. Try again or open it using the link below.</p>
+    <button class="cours-video-reessayer" type="button">Try again</button>
+  </div>
+</div>
+```
+
+[Open the video](https://mediaserver.unige.ch/play/319457).
+:::
+
+::: {.content-visible unless-format="html"}
+*Principles of statistical inference. This video is available in the HTML version of the course.*
+:::
+
+### Drawing a random sample of `pop` values
+
+Here we randomly select 50 countries for which population data are available.
+
+```{r}
+#| label: random-pop-sample
+# Block 5 
+set.seed(123)
+
+# Exclude rows where pop is missing (NA)
+data_filtre <- data_2025[!is.na(data_2025$pop), ]
+
+# Randomly select 50 rows without replacement
+echantillon_pop <- data_filtre[sample(nrow(data_filtre), 50), ]
+
+# Select the name, region and pop columns
+resultat <- echantillon_pop[, c("name", "region", "pop")]
+
+# Display the first 10 rows
+head(resultat, 10)
+```
+
+### A histogram of the sample
+
+```{r}
+#| label: histogram-random-pop
+#| fig-cap: "Population distribution in a random sample of 50 countries."
+# Block 6 
+# Draw a histogram of the selected variable
+hist(echantillon_pop$pop,
+     breaks = 15,
+     col = "steelblue",
+     border = "white",
+     main = "Random sample of 50 values",
+     xlab = "Value",
+     ylab = "Count")
+```
+
+## How statistical tests work
+
+A statistical test usually starts with two hypotheses:
+
+- **H0**, the null hypothesis: no effect, no difference or no departure from a reference distribution;
+- **H1**, the alternative hypothesis: an effect, a difference or a departure from that distribution.
+
+The **p-value** is the probability of obtaining a result at least as extreme as the one observed, assuming that H0 is true.
+
+At the commonly used significance level of $\alpha = 0.05$:
+
+- if `p < 0.05`, we reject H0;
+- if `p >= 0.05`, we do not have sufficient evidence to reject H0.
+
+::: {.content-visible when-format="html"}
+```{=html}
+<div class="cours-video">
+  <video id="video-s4-moyennes" class="video-js vjs-big-play-centered" data-cours-video
+         controls preload="metadata" playsinline aria-label="From population to decision">
+    <source src="https://mediaserver.unige.ch/proxy/319449/GvsHdkE4KaApJVnW.mp4?from_player=true" type="video/mp4">
+    <track kind="subtitles" src="videos/session_4_moyennes.fr.vtt" srclang="fr" label="Français">
+    <track kind="subtitles" src="videos/session_4_moyennes.en.vtt" srclang="en" label="English" default>
+    <p>Your browser cannot display this video. Use the link below.</p>
+  </video>
+  <div class="cours-video-erreur" role="status" hidden>
+    <p>The video could not be loaded. Try again or open it using the link below.</p>
+    <button class="cours-video-reessayer" type="button">Try again</button>
+  </div>
+</div>
+```
+
+[Open the video](https://mediaserver.unige.ch/play/319449).
+:::
+
+::: {.content-visible unless-format="html"}
+*From population to decision. This video is available in the HTML version of the course.*
+:::
+
+We randomly generate 50 observations from a standard normal distribution, visualise their distribution and apply the **Shapiro–Wilk test**.
+
+For this test:
+
+- H0: the data are consistent with a normal distribution;
+- H1: the data are not consistent with a normal distribution.
+
+```{r}
+#| label: normal-sample
+# Block 7 
+# Generate a random sample from a normal distribution
+set.seed(123)
+echantillon_normal <- rnorm(
+  n = 50,
+  mean = 0,
+  sd = 1
+)
+
+# Draw a histogram
+hist(echantillon_normal,
+     breaks = 12,
+     col = "steelblue",
+     border = "white",
+     main = "Sample of 50 values from a normal distribution",
+     xlab = "Value",
+     ylab = "Count")
+
+# Test whether the sample follows a normal distribution
+shapiro.test(echantillon_normal)
+```
+
+### Example 2: a sample from a uniform distribution
+
+```{r}
+#| label: uniform-sample
+# Block 8
+# Generate a random sample from a uniform distribution
+set.seed(123)
+
+echantillon_uniforme <- runif(
+  n = 50,
+  min = 0,
+  max = 1
+)
+
+hist(echantillon_uniforme,
+     breaks = 12,
+     col = "steelblue",
+     border = "white",
+     main = "Sample of 50 values from a uniform distribution",
+     xlab = "Value",
+     ylab = "Count")
+
+shapiro.test(echantillon_uniforme)
+```
+
+**Keep in mind:** with only 50 observations, a normality test may fail to detect a departure from normality. Interpret the test alongside the graphs.
+
+### Example 3: testing the normality of `gdp`
+
+```{r}
+#| label: shapiro-gdp
+# Block 9
+# Exclude missing GDP values
+gdp_complete <- data_2025$gdp_pcap[!is.na(data_2025$gdp_pcap)]
+
+# Visualise the data
+hist(gdp_complete,
+     breaks = 30,
+     col = "steelblue",
+     border = "white",
+     main = "Distribution of GDP per capita",
+     xlab = "GDP per capita",
+     ylab = "Number of countries")
+
+# Test normality
+shapiro.test(gdp_complete)
+```
+
+### Example 4: testing the normality of `lex`
+
+```{r}
+#| label:  shapiro-lex
+# Block 10
+# Test the normality of LEX
+
+lex_complete <- data_2025$lex[!is.na(data_2025$lex)]
+
+hist(lex_complete,
+     breaks = 30,
+     col = "steelblue",
+     border = "white",
+     main = "Distribution of life expectancy across countries",
+     xlab = "Life expectancy",
+     ylab = "Number of countries")
+
+shapiro.test(lex_complete)
+```
+
+## Parametric or non-parametric?
+
+::: {.content-visible when-format="html"}
+```{=html}
+<div class="cours-video">
+  <video id="video-s4-normalite" class="video-js vjs-big-play-centered" data-cours-video
+         controls preload="metadata" playsinline aria-label="Normality of the data">
+    <source src="https://mediaserver.unige.ch/proxy/319458/jfABacjkFekXRfhq.mp4?from_player=true" type="video/mp4">
+    <track kind="subtitles" src="videos/session_4_normalite.fr.vtt" srclang="fr" label="Français">
+    <track kind="subtitles" src="videos/session_4_normalite.en.vtt" srclang="en" label="English" default>
+    <p>Your browser cannot display this video. Use the link below.</p>
+  </video>
+  <div class="cours-video-erreur" role="status" hidden>
+    <p>The video could not be loaded. Try again or open it using the link below.</p>
+    <button class="cours-video-reessayer" type="button">Try again</button>
+  </div>
+</div>
+```
+
+[Open the video](https://mediaserver.unige.ch/play/319458).
+:::
+
+::: {.content-visible unless-format="html"}
+*Normality of the data. This video is available in the HTML version of the course.*
+:::
+
+**Parametric tests** make assumptions about the distribution of the data or the residuals, often assuming normality. They generally have good power when these assumptions are reasonably satisfied.
+
+**Non-parametric tests** make fewer distributional assumptions and are often based on ranks. Their power relative to parametric tests depends on the data distribution and the assumptions of the tests being compared.
+
+| Question | Parametric | Non-parametric |
+|----------|------------|----------------|
+| Comparing 2 independent groups | Student’s t-test | Wilcoxon–Mann–Whitney |
+| Comparing more than 2 groups | ANOVA | Kruskal–Wallis |
+| Testing normality | Shapiro–Wilk | - |
+
+Do not base the choice solely on a normality test. Also examine the histograms, extreme values, sample sizes and assumptions of the test you are considering.
+
+### Testing the normality of all quantitative variables
+
+```{r}
+#| label:  normality-all-numeric
+# Block 11
+# Select the numeric variables in the data
+variables_quantitatives <- names(data_2025[,sapply(data_2025, is.numeric)])
+
+# Create an empty data frame to store the results
+resultats_normalite = data.frame()
+
+# Loop over all quantitative variables
+for (variable in variables_quantitatives) {
+  
+  # Extract the values of this variable
+  x = data_2025[[variable]]
+  
+  # Exclude missing or infinite values
+  x = x[is.finite(x)]
+  
+  # Check whether the Shapiro–Wilk test can be applied
+  if (length(x) >= 3 &&
+      length(x) <= 5000 &&
+      length(unique(x)) >= 3) {
+    
+    # Run the normality test
+    test = shapiro.test(x)
+    
+    W = unname(test$statistic)
+    p_value = test$p.value
+    
+    conclusion = ifelse(p_value < 0.05,
+                        "Normality rejected",
+                        "Normality not rejected")
+    
+  } else {
+    
+    W = NA
+    p_value = NA
+    conclusion = "Test not applicable"
+  }
+  
+  # Create a row of results
+  ligne = data.frame(
+    variable = variable,
+    n = length(x),
+    W = W,
+    p_value = p_value,
+    conclusion = conclusion
+  )
+  
+  # Add the row to the results table
+  resultats_normalite = rbind(resultats_normalite, ligne)
+}
+
+# Display the completed table
+print(resultats_normalite)
+```
+
+### Histograms of all quantitative variables
+
+```{r}
+#| label: histograms-all-numeric
+#| fig-width: 11
+#| fig-height: 8
+# Block 12 
+
+# Identify the numeric variables
+variables_quantitatives = names(data_2025)[sapply(data_2025, is.numeric)]
+
+# Arrange the plots in rows and columns
+par(mfrow = c(3, 3))
+
+# Draw a histogram for each variable
+for (variable in variables_quantitatives) {
+  hist(data_2025[[variable]],
+       main = variable,
+       xlab = "Value",
+       ylab = "Count",
+       col = "steelblue",
+       border = "white",
+       breaks = 12)
+}
+
+# Restore the usual plotting layout
+par(mfrow = c(1, 1))
+```
+
+## Comparing means
+
+::: {.content-visible when-format="html"}
+```{=html}
+<div class="cours-video">
+  <video id="video-s4-anova" class="video-js vjs-big-play-centered" data-cours-video
+         controls preload="metadata" playsinline aria-label="Comparing means and understanding ANOVA">
+    <source src="https://mediaserver.unige.ch/proxy/319450/DE33SXeSCh2OGmg3.mp4?from_player=true" type="video/mp4">
+    <track kind="subtitles" src="videos/session_4_anova.fr.vtt" srclang="fr" label="Français">
+    <track kind="subtitles" src="videos/session_4_anova.en.vtt" srclang="en" label="English" default>
+    <p>Your browser cannot display this video. Use the link below.</p>
+  </video>
+  <div class="cours-video-erreur" role="status" hidden>
+    <p>The video could not be loaded. Try again or open it using the link below.</p>
+    <button class="cours-video-reessayer" type="button">Try again</button>
+  </div>
+</div>
+```
+
+[Open the video](https://mediaserver.unige.ch/play/319450).
+:::
+
+::: {.content-visible unless-format="html"}
+*Comparing means and understanding ANOVA. This video is available in the HTML version of the course.*
+:::
+
+Here we compare **Europe** and **Africa**.
+
+### Life expectancy in European and African countries
+
+```{r}
+#| label:  hist-lex-europe-africa
+#| fig-width: 9
+#| fig-height: 4.5
+# Block 13
+# Extract data for the two regions
+europe_afrique <- data_2025[data_2025$region %in% c("europe", "africa"), ]
+
+# Draw histograms for the two regions
+ggplot(
+  europe_afrique,
+  aes(x = lex)
+) +
+  geom_histogram(bins = 20, na.rm = TRUE, fill = "steelblue", colour = "white", linewidth = 0.4) +
+  facet_wrap(
+    ~ region,
+    scales = "free_y"
+  ) +
+  labs(
+    title = "Life expectancy in European and African countries",
+    x = "Life expectancy",
+    y = "Number of countries"
+  ) +
+  theme_minimal()
+
+
+```
+
+### Student’s t-test
+
+We compare the means of the two groups.
+
+The hypotheses are:
+
+- H0: mean life expectancy is the same in Europe and Africa;
+- H1: mean life expectancy differs between the two regions.
+
+The classical Student’s t-test assumes independent observations, approximate normality within each group and equal variances. Here, `var.equal = TRUE` explicitly requests the classical version of the test.
+
+```{r}
+#| label:  student-europe-africa
+# Block 14
+test_student <- t.test(
+  lex ~ region,
+  data = europe_afrique,
+  var.equal = TRUE
+)
+
+test_student
+```
+
+### The Wilcoxon–Mann–Whitney test
+
+This non-parametric test compares the ranks of observations in the two groups. It does not require normality.
+
+```{r}
+#| label:  wilcoxon-europe-africa
+# Block 15
+test_wilcoxon <- wilcox.test(
+  lex ~ region,
+  data = europe_afrique,
+  exact = FALSE
+)
+
+test_wilcoxon
+```
+
+> The Wilcoxon–Mann–Whitney test is often described as a comparison of distributions. More specifically, it tests for a shift in ranks. Interpreting it as a comparison of medians requires, in particular, distributions with similar shapes.
+
+## Comparing more than 2 means
+
+### Life expectancy in the four regions
+
+```{r}
+#| label:  hist-lex-four-regions
+#| fig-width: 10
+#| fig-height: 7
+# Block 16
+# Select data for the four regions
+four_regions <- data_2025[data_2025$region %in% c("europe", "africa", "asia","americas"), ]
+
+# Draw histograms by region
+ggplot(four_regions, aes(x = lex, fill = region)) +
+  geom_histogram(
+    bins = 20,
+    colour = "white",
+    alpha = 0.85
+  ) +
+  facet_wrap(
+    ~ region,
+    scales = "free_y"
+  ) +
+  scale_x_log10(
+    labels = scales::label_number(big.mark = " ")
+  ) +
+  labs(
+    title = "Distribution of life expectancy",
+    subtitle = "Comparing the four continents",
+    x = "LEX",
+    y = "Number of countries"
+  ) +
+  guides(fill = "none")
+ 
+
+# Draw a boxplot by region
+ggplot(
+  four_regions,
+  aes(
+    x = region,
+    y = lex,
+    fill = region
+  )
+) +
+  geom_boxplot(
+    width = 0.65,
+    alpha = 0.7,
+    outlier.shape = NA
+  ) +
+  geom_jitter(
+    width = 0.15,
+    alpha = 0.5,
+    size = 1.8
+  ) +
+  labs(
+    title = "Life expectancy by region",
+    subtitle = "Comparing the four continents",
+    x = NULL,
+    y = "Years"
+  ) +
+  guides(fill = "none")
+```
+
+### ANOVA tests whether all the means can be considered equal
+
+- H0: the four regions have the same mean life expectancy;
+- H1: at least one mean differs.
+
+```{r}
+#| label:  anova-lex
+# Block 17
+modele_anova <- aov(
+  lex ~ region,
+  data = four_regions
+)
+
+summary(modele_anova)
+```
+
+A significant ANOVA result tells us that at least one mean differs, but not which one. Tukey’s post-hoc test allows us to explore pairwise differences:
+
+```{r}
+#| label:  tukey-posthoc
+# Block 18
+TukeyHSD(modele_anova)
+```
+
+### Checking the ANOVA residuals
+
+The normality assumption mainly concerns the **model residuals**, rather than necessarily the raw variable itself.
+
+```{r}
+#| label:  anova-diagnostics
+#| fig-width: 8 
+#| fig-height: 5
+# Block 19
+# Extract the ANOVA residuals
+residus_anova <- residuals(modele_anova)
+
+# Check the normality of the residuals
+shapiro.test(residus_anova)
+
+# Draw a histogram of the residuals
+hist(residus_anova,
+       breaks = 20,
+       probability = TRUE,
+       col = "steelblue",
+       border = "white",
+       main = "Distribution of ANOVA residuals",
+       xlab = "Residuals",
+       ylab = "Density")
+```
+
+### The Kruskal–Wallis test
+
+The Kruskal–Wallis test is a non-parametric alternative to one-way ANOVA.
+
+- H0: the groups have comparable rank distributions;
+- H1: at least one group differs.
+
+```{r}
+#| label:  kruskal-wallis-density
+# Block 20
+# Compare the regions using a non-parametric test
+test_kruskal <- kruskal.test(
+  lex ~ region,
+  data = four_regions
+)
+
+test_kruskal
+```
+
+## Independence between two categorical variables: the χ² test
+
+The previous tests compared a quantitative variable across groups. The **chi-square test of independence** looks for an association between **two categorical variables**, using a table of counts.
+
+### The question and the variables
+
+Is the proportion of countries with a life expectancy of at least 75 years the same in all four regions?
+
+We use the same dataset:
+
+- `region`: the region of the world;
+- `classe_lex`: life expectancy below 75 years, or at least 75 years.
+
+The threshold of 75 years is chosen for this exercise before looking at the result. Turning a quantitative variable into categories loses information. Here, we do so to illustrate the chi-square test.
+
+### Preparing the data
+
+Each country must appear only once and belong to a single category for each variable. Missing values are excluded.
+
+::: {.content-visible when-format="html"}
+```{=html}
+<div class="cours-video">
+  <video id="video-s4-chi2" class="video-js vjs-big-play-centered" data-cours-video
+         controls preload="metadata" playsinline aria-label="The chi-square test of independence">
+    <source src="https://mediaserver.unige.ch/proxy/319448/8ihCCodj3zFGHMLt.mp4?from_player=true" type="video/mp4">
+    <track kind="subtitles" src="videos/session_4_chi2.fr.vtt" srclang="fr" label="Français">
+    <track kind="subtitles" src="videos/session_4_chi2.en.vtt" srclang="en" label="English" default>
+    <p>Your browser cannot display this video. Use the link below.</p>
+  </video>
+  <div class="cours-video-erreur" role="status" hidden>
+    <p>The video could not be loaded. Try again or open it using the link below.</p>
+    <button class="cours-video-reessayer" type="button">Try again</button>
+  </div>
+</div>
+```
+
+[Open the video](https://mediaserver.unige.ch/play/319448).
+:::
+
+::: {.content-visible unless-format="html"}
+*The chi-square test of independence. This video is available in the HTML version of the course.*
+:::
+
+```{r}
+#| label:  chi2-prepare
+# Block 21
+# Keep only valid life-expectancy values
+donnees_chi2 <- subset(four_regions, is.finite(lex))
+
+# Treat region as a categorical variable
+donnees_chi2$region <- factor(donnees_chi2$region)
+
+# Create two life-expectancy categories
+donnees_chi2$classe_lex <- ifelse(donnees_chi2$lex < 75,
+                                 "Under 75 years",
+                                 "75 years or older")
+
+# Store the categories in their intended order
+donnees_chi2$classe_lex <- factor(
+  donnees_chi2$classe_lex,
+  levels = c("Under 75 years", "75 years or older")
+)
+
+# Display the first 10 observations
+head(donnees_chi2[, c("name", "region", "lex", "classe_lex")], 10)
+
+
+```
+
+### Building the contingency table
+
+A **contingency table** cross-tabulates the categories of the two variables. Each cell contains a count of countries, not a percentage.
+
+```{r}
+#| label: chi2-contingency
+# Block 22 
+# Create the contingency table
+tableau_chi2 <- xtabs(
+  ~ region + classe_lex,
+  data = donnees_chi2
+)
+
+# Observed counts and totals
+addmargins(tableau_chi2)
+
+# Percentages within each region
+round(100 * prop.table(tableau_chi2, margin = 1), 1)
+```
+
+### Visualising the proportions
+
+```{r}
+#| label:  chi2-proportions
+#| fig-width: 9
+#| fig-height: 5
+#| fig-cap: "Distribution of life-expectancy categories within each region."
+# Block 23
+# Plot the life-expectancy categories in each region
+ggplot(donnees_chi2, aes(x = region, fill = classe_lex)) +
+  geom_bar(position = "fill", colour = "white") +
+  scale_y_continuous(labels = scales::label_percent()) +
+  scale_fill_manual(values = c("#D98C45", "#4682B4")) +
+  labs(
+    title = "Life expectancy and world region",
+    subtitle = "Each region represents 100% of its countries",
+    x = "Region",
+    y = "Proportion of countries",
+    fill = "Life expectancy"
+  ) 
+```
+
+### Formulating the hypotheses
+
+- **H0:** region and life-expectancy category are independent. The proportions in the two categories are the same across regions in the reference population.
+- **H1:** the two variables are associated. At least one region has a different distribution across the categories.
+
+Under H0, the expected count in each cell is:
+
+$$
+E_{ij} =
+\frac{\text{total for row } i \times \text{total for column } j}
+{\text{overall count}}
+$$
+
+The test statistic measures the discrepancy between the observed and expected counts:
+
+$$
+\chi^2 = \sum_{i,j} \frac{(O_{ij} - E_{ij})^2}{E_{ij}}
+$$
+
+Larger discrepancies produce a larger statistic. For a table with four regions and two categories, the degrees of freedom are $(4-1)(2-1)=3$.
+
+### Checking the expected counts
+
+The chi-square approximation requires sufficiently large expected counts. A common rule of thumb is:
+
+- no expected count below 1;
+- at least 80% of the expected counts equal to or greater than 5.
+
+These conditions concern the **expected counts**, not the observed counts.
+
+```{r}
+#| label:  chi2-expected
+# Block 24
+# Calculate the expected counts under H0
+effectifs_attendus <- outer(
+  rowSums(tableau_chi2),
+  colSums(tableau_chi2)
+) / sum(tableau_chi2)
+
+dimnames(effectifs_attendus) <- dimnames(tableau_chi2)
+
+round(effectifs_attendus, 2)
+
+conditions_chi2 <- all(effectifs_attendus >= 1) &&
+  mean(effectifs_attendus >= 5) >= 0.80
+
+conditions_chi2
+```
+
+### Running the test
+
+If the expected counts are large enough, we use the usual approximation. Otherwise, we calculate a p-value using Monte Carlo simulation.
+
+```{r}
+#| label:  chi2-test
+# Block 25
+# Run the chi-square test
+
+
+set.seed(123)
+
+if (conditions_chi2) {
+  test_chi2 <- chisq.test(tableau_chi2, correct = FALSE)
+} else {
+  test_chi2 <- chisq.test(
+    tableau_chi2,
+    simulate.p.value = TRUE,
+    B = 99999
+  )
+}
+
+test_chi2
+```
+
+For a 2 × 2 table with small expected counts, Fisher’s exact test is another common option: `fisher.test(tableau)`.
+
+### Interpreting the result
+
+```{r}
+#| label:  chi2-interpretation
+# Block 26
+cat(
+  "Method:", test_chi2$method,
+  "\nChi-square statistic:", round(unname(test_chi2$statistic), 2),
+  "\np-value:", format.pval(test_chi2$p.value, digits = 3),
+  "\n\n"
+)
+
+if (test_chi2$p.value < 0.05) {
+  cat(
+    "At the 5% significance level, we reject H0:",
+    "the data indicate an association between region",
+    "and life-expectancy category."
+  )
+} else {
+  cat(
+    "At the 5% significance level, we do not reject H0:",
+    "the data do not provide sufficient evidence of an association.",
+    "This does not establish independence."
+  )
+}
+```
+
+A significant result indicates an **association**. It does not establish that region causes the differences in life expectancy.
+
+### Measuring the strength of association: Cramér’s V
+
+The p-value does not measure the strength of the association. **Cramér’s V** complements the test and ranges from 0 to 1. A value close to 0 indicates a weak association. Its importance should be interpreted in the context of the study.
+
+```{r}
+#| label:  chi2-cramer
+# Block 27
+n_chi2 <- sum(tableau_chi2)
+
+v_cramer <- sqrt(
+  unname(test_chi2$statistic) /
+    (n_chi2 * min(nrow(tableau_chi2) - 1, ncol(tableau_chi2) - 1))
+)
+
+data.frame(
+  "number_of_countries" = n_chi2,
+  "V_Cramer" = v_cramer
+)
+```
+
+### Limitations of this example
+
+The test assumes independent observations. However, countries may share geographical, historical or economic characteristics. Moreover, these data are a collection of countries with available information, rather than a random sample. Statistical inference therefore remains conditional on these assumptions.
+
+The conclusions apply only to the countries retained after filtering and to the categories defined by the 75-year threshold.
+
+# Interpreting tests
+
+We can follow four steps when interpreting a statistical test:
+
+1. **State H0 and H1** before looking at the result.
+2. **Check the test assumptions** and examine the data graphically.
+3. **Read the p-value** and compare it with the significance level $\alpha$, often set to 0.05.
+4. **Interpret the effect in context**, going beyond “significant” or “not significant”.
+
+Statistical significance alone does not tell us how important a difference is in practice. It is also useful to examine means or medians, variability, effect sizes and confidence intervals.
+
+# Summary: which test should we choose?
+
+The choice depends first on the types of variables, the question being asked and whether the observations are independent or paired. The table below concerns comparisons of independent groups.
+
+| Aim | Variables | Groups | Main assumptions and considerations | Test |
+|--------------------|--------------------|---------------|-------------------------|--------------------|
+| Test normality | One quantitative variable or a set of residuals | - | 3 to 5,000 values; supplement with a histogram and a Q–Q plot | Shapiro–Wilk |
+| Compare two means | One quantitative and one categorical variable | 2 | Independent observations; approximate normality within groups or sufficiently large samples; sensitivity to extreme values | Welch’s t-test; Student’s t-test if equal variances are justified |
+| Compare two distributions using ranks | One quantitative or ordinal variable and one categorical variable | 2 | Independent observations; similar distribution shapes to interpret a difference in location | Wilcoxon–Mann–Whitney |
+| Compare several means | One quantitative and one categorical variable | More than 2 | Independent observations; approximately normal residuals; comparable variances | Classical ANOVA; Welch’s ANOVA if variances differ |
+| Compare several distributions using ranks | One quantitative or ordinal variable and one categorical variable | More than 2 | Independent observations; similar distribution shapes to interpret a difference in location | Kruskal–Wallis |
+| Test an association between categories | Two categorical variables | At least 2 categories per variable | Independent country observations; sufficiently large expected counts | Chi-square test of independence |
+| Test an association with small counts | Two categorical variables | At least 2 categories per variable | Examine the expected counts and the dimensions of the table | Fisher’s exact test, particularly for 2 × 2 tables, or a chi-square test with a simulated p-value |
+
+**Key points:**
+
+- Do not choose a test solely on the basis of Shapiro–Wilk.
+- When comparing means, examine distributions within groups and model residuals, rather than just the overall distribution.
+- The chi-square test uses counts, not percentages directly.
+- A significant association does not demonstrate causality.
+- Always complement the p-value with graphs and a measure of the size of the effect.
+
+# Questions about this session {#questions-session-04}
+
+If a concept is still unclear, you would like to explore an example further, or you have any other question, feel free to ask it in the SpeakUp space below (anonymously or not). Take a moment to read other students' questions and vote for those you would like answered. Sorting by votes brings the questions of greatest interest to the group to the top. We will answer some questions directly on the platform and discuss others during our next in-person session.
+
+This space is shared by the French and English versions of the course and by students using Python or R. If your question is about code, mention the language you are using and the example you are working on.
+
+::: {.content-visible when-format="html"}
+<iframe class="speakup-room" src="https://web.speakup.info/room/join/50632?theme=UniGE&amp;lang=en" title="SpeakUp: questions and votes for session 4, room 50632" loading="lazy" style="display:block;width:100%;height:clamp(480px,80vh,760px);border:1px solid #ccd6dc;border-radius:6px"></iframe>
+
+If the room does not appear within this page, use the link below.
+:::
+
+[Open the SpeakUp room for session 4](https://web.speakup.info/room/join/50632?theme=UniGE&lang=en){target="_blank" rel="noopener"}. **Room code: 50632.**

@@ -1,0 +1,159 @@
+WEBVTT
+
+1
+00:00:01.200 --> 00:00:03.640
+We will now see how we can use
+
+2
+00:00:03.640 --> 00:00:08.480
+tests to examine
+the distribution of our sample.
+
+3
+00:00:08.780 --> 00:00:12.080
+Starting on the left, we test whether
+
+4
+00:00:12.080 --> 00:00:15.440
+our distribution is Gaussian, or normal.
+
+5
+00:00:15.900 --> 00:00:18.680
+We have a randomly drawn sample,
+
+6
+00:00:18.680 --> 00:00:20.820
+shown here as a histogram,
+
+7
+00:00:20.820 --> 00:00:26.160
+which we can visually compare
+with a normal distribution curve
+
+8
+00:00:26.160 --> 00:00:30.240
+with the same mean and standard
+deviation as our sample.
+
+9
+00:00:30.240 --> 00:00:35.580
+We use the Shapiro–Wilcoxon
+test, with its W statistic.
+
+10
+00:00:35.820 --> 00:00:39.900
+For our sample, the value of W is 0.976.
+
+11
+00:00:40.020 --> 00:00:42.420
+We cannot interpret this value on its own,
+
+12
+00:00:42.420 --> 00:00:48.700
+but it has an associated
+probability of wrongly rejecting H0
+
+13
+00:00:48.700 --> 00:00:54.900
+when H0 is true: 0.146,
+
+14
+00:00:55.920 --> 00:01:00.800
+or a 14.6% risk of being
+wrong if we reject H0.
+
+15
+00:01:00.940 --> 00:01:05.980
+That risk is too high,
+so we decide not to reject H0:
+
+16
+00:01:06.380 --> 00:01:09.760
+that this distribution is normal.
+
+17
+00:01:09.760 --> 00:01:12.660
+We therefore accept the hypothesis
+
+18
+00:01:12.660 --> 00:01:18.780
+that it does follow a normal distribution.
+
+19
+00:01:18.980 --> 00:01:23.400
+We can also look at graphs to assess this,
+
+20
+00:01:23.400 --> 00:01:26.380
+such as a normal Q–Q plot.
+
+21
+00:01:26.420 --> 00:01:31.600
+Here we compare the distribution
+of our observations with a
+
+22
+00:01:31.600 --> 00:01:37.440
+theoretical normal distribution.
+The more closely the sample's blue points
+
+23
+00:01:37.440 --> 00:01:43.160
+follow the theoretical line,
+the more clearly the plot suggests
+
+24
+00:01:43.160 --> 00:01:46.680
+that our sample follows
+a normal distribution.
+
+25
+00:01:47.900 --> 00:01:51.740
+For samples that follow
+a normal distribution,
+
+26
+00:01:51.980 --> 00:01:57.840
+we can then use our sample
+
+27
+00:01:57.840 --> 00:02:01.600
+in other types of tests,
+known as parametric tests,
+
+28
+00:02:01.600 --> 00:02:05.260
+which were developed
+for normally distributed data.
+
+29
+00:02:05.580 --> 00:02:10.040
+If, instead, as on the right, our sample
+
+30
+00:02:10.220 --> 00:02:13.180
+has been generated
+from a log-normal distribution,
+
+31
+00:02:13.360 --> 00:02:18.400
+the Wilcoxon test gives
+a very small p-value,
+
+32
+00:02:18.520 --> 00:02:23.660
+of 10⁻⁶. We therefore
+reject H0 that the sample
+
+33
+00:02:23.660 --> 00:02:28.200
+follows a normal distribution,
+as the Q–Q plot confirms.
+
+34
+00:02:28.260 --> 00:02:34.280
+We reject normality for this sample,
+
+35
+00:02:34.400 --> 00:02:38.400
+and turn instead to non-parametric tests.

@@ -1,0 +1,170 @@
+1
+00:00:01,200 --> 00:00:03,640
+Maintenant, nous allons voir
+comment on peut utiliser
+
+2
+00:00:03,640 --> 00:00:08,480
+les tests pour vérifier
+la distribution de notre échantillon.
+
+3
+00:00:08,780 --> 00:00:12,080
+Nous allons commencer
+à gauche par tester si
+
+4
+00:00:12,080 --> 00:00:15,440
+notre distribution suit une loi
+gaussienne, une loi normale.
+
+5
+00:00:15,900 --> 00:00:18,680
+Donc on a un échantillon
+qui a été tiré aléatoirement,
+
+6
+00:00:18,680 --> 00:00:20,820
+qui est représenté ici
+par cet histogramme,
+
+7
+00:00:20,820 --> 00:00:26,160
+que l'on peut comparer graphiquement
+à la courbe d'une distribution normale
+
+8
+00:00:26,160 --> 00:00:30,240
+de même moyenne et écart-type
+que celui de notre échantillon.
+
+9
+00:00:30,240 --> 00:00:35,580
+Et on va faire le test ici de
+Shapiro-Wilcoxon, qui a la statistique W,
+
+10
+00:00:35,820 --> 00:00:39,900
+dont la valeur est ici issue
+de notre échantillon de 0,976,
+
+11
+00:00:40,020 --> 00:00:42,420
+que l'on ne peut pas interpréter lui-même,
+
+12
+00:00:42,420 --> 00:00:48,700
+mais qui a une probabilité associée
+de se tromper en rejetant H0
+
+13
+00:00:48,700 --> 00:00:54,900
+alors qu'elle serait vraie,
+qui est de 0,146,
+
+14
+00:00:55,920 --> 00:01:00,800
+donc 14,6 % de se tromper en rejetant H0.
+
+15
+00:01:00,940 --> 00:01:05,980
+C'est un risque trop grand,
+donc on décide de ne pas rejeter H0,
+
+16
+00:01:06,380 --> 00:01:09,760
+qui est que cette distribution
+suit une loi normale,
+
+17
+00:01:09,760 --> 00:01:12,660
+et donc d'admettre l'hypothèse
+
+18
+00:01:12,660 --> 00:01:18,780
+qu'elle suit bien cette loi normale.
+
+19
+00:01:18,980 --> 00:01:23,400
+Une autre manière de se convaincre,
+c'est de regarder des graphiques,
+
+20
+00:01:23,400 --> 00:01:26,380
+comme le QQ-plot d'une
+distribution normale,
+
+21
+00:01:26,420 --> 00:01:31,600
+où on compare finalement la distribution
+de nos observations à celle d'une
+
+22
+00:01:31,600 --> 00:01:37,440
+distribution théorique normale, et plus
+les points bleus de notre échantillon
+
+23
+00:01:37,440 --> 00:01:43,160
+s'alignent sur la droite théorique,
+plus on constate graphiquement,
+
+24
+00:01:43,160 --> 00:01:46,680
+en effet, que notre échantillon
+suit la loi normale.
+
+25
+00:01:47,900 --> 00:01:51,740
+Ainsi, à partir d'échantillons
+qui suivraient une loi normale,
+
+26
+00:01:51,980 --> 00:01:57,840
+on va se diriger ensuite vers des tests
+pour utiliser notre échantillon
+
+27
+00:01:57,840 --> 00:02:01,600
+pour d'autres types de tests,
+qui seraient des tests dits paramétriques,
+
+28
+00:02:01,600 --> 00:02:05,260
+qui ont été construits pour des
+distributions suivant une loi normale.
+
+29
+00:02:05,580 --> 00:02:10,040
+Si au contraire, on le constate comme
+à droite, que notre échantillon ici,
+
+30
+00:02:10,220 --> 00:02:13,180
+qui a été généré à partir
+d'une loi log-normale,
+
+31
+00:02:13,360 --> 00:02:18,400
+avec le test de Wilcoxon,
+on a une p-value très petite,
+
+32
+00:02:18,520 --> 00:02:23,660
+de 10⁻⁶, donc on va rejeter
+l'hypothèse H0 que notre échantillon
+
+33
+00:02:23,660 --> 00:02:28,200
+suit une loi normale,
+on le vérifie par le graphique QQ-plot,
+
+34
+00:02:28,260 --> 00:02:34,280
+et ainsi on décide de rejeter
+la normalité de notre échantillon,
+
+35
+00:02:34,400 --> 00:02:38,400
+et on va se diriger plutôt vers
+des tests non paramétriques.

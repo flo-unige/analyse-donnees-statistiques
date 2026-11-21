@@ -33,6 +33,8 @@ project:
     - cours/session-03/index-r.qmd
     - cours/session-03/index-en-r.qmd
     - cours/session-04/index.qmd
+    - cours/session-04/index-r.qmd
+    - cours/session-04/index-en-r.qmd
     - cours/session-05/index.qmd
     - cours/session-06/index.qmd
     - cours/session-07/index.qmd
@@ -43,6 +45,10 @@ project:
     - cours/session-06/index-en.qmd
     - cours/session-07/index-en.qmd
   resources:
+    - cours/session-04/data/**
+    - cours/session-04/assets/**
+    - cours/session-04/videos/*.vtt
+    - cours/session-04/videos/*.srt
     - cours/session-03/data/**
     - cours/session-03/assets/**
     - cours/session-01/fichiers/**

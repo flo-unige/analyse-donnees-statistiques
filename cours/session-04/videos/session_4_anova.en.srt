@@ -1,0 +1,331 @@
+1
+00:00:02,350 --> 00:00:05,550
+Tests can also be used
+to make comparisons,
+
+2
+00:00:05,550 --> 00:00:08,530
+and are often used to compare
+fairly simple things:
+
+3
+00:00:08,530 --> 00:00:13,750
+for example, the difference in means
+between two independent groups.
+
+4
+00:00:13,750 --> 00:00:18,430
+Here, again, using our short
+piece of R code, we have generated
+
+5
+00:00:19,050 --> 00:00:22,250
+heights for a population.
+
+6
+00:00:22,410 --> 00:00:25,330
+We have one group of six individuals
+whose heights we recorded,
+
+7
+00:00:25,330 --> 00:00:28,650
+and another group, B, of six individuals
+whose heights we also recorded.
+
+8
+00:00:28,650 --> 00:00:31,770
+We want to know whether
+the mean height in group
+
+9
+00:00:31,770 --> 00:00:35,910
+A differs significantly
+from the mean in group B.
+
+10
+00:00:36,030 --> 00:00:38,710
+Again, we use a
+
+11
+00:00:38,710 --> 00:00:44,930
+t-test to compare the means
+of these two samples.
+
+12
+00:00:46,430 --> 00:00:52,260
+If the probability
+associated with the result
+
+13
+00:00:52,260 --> 00:00:54,860
+of this test is below 0.05,
+
+14
+00:00:54,940 --> 00:00:59,580
+we reject the hypothesis that the two
+groups have the same mean.
+
+15
+00:00:59,640 --> 00:01:02,040
+Otherwise, we accept
+that they have the same mean.
+
+16
+00:01:02,040 --> 00:01:06,060
+If our sample did not follow
+a normal distribution,
+
+17
+00:01:06,060 --> 00:01:11,140
+we would prefer a Wilcoxon test
+for non-parametric data to the t-test.
+
+18
+00:01:11,180 --> 00:01:13,680
+We can use this boxplot to visualise
+
+19
+00:01:13,780 --> 00:01:16,840
+the difference in heights
+between our two groups.
+
+20
+00:01:16,840 --> 00:01:22,980
+Suppose that, in this particular
+case, we had concluded
+
+21
+00:01:23,340 --> 00:01:26,480
+that we should reject
+equality of the two means.
+
+22
+00:01:26,970 --> 00:01:29,330
+We can carry out the same kind of test
+
+23
+00:01:29,370 --> 00:01:34,270
+not just to compare the means
+of two samples or groups,
+
+24
+00:01:34,270 --> 00:01:38,090
+but also within the same
+sample with, say, three groups.
+
+25
+00:01:38,130 --> 00:01:41,250
+Here we generate an example
+
+26
+00:01:41,370 --> 00:01:46,760
+simulating agricultural experiments,
+
+27
+00:01:46,760 --> 00:01:49,585
+with three types of fertiliser: A, B, C,
+
+28
+00:01:49,585 --> 00:01:53,940
+D. After a certain time,
+we calculate the biomass,
+
+29
+00:01:54,100 --> 00:01:57,400
+the growth of plants under
+these three types of fertiliser.
+
+30
+00:01:57,580 --> 00:02:02,140
+With fertiliser
+A, the biomass values in five
+
+31
+00:02:02,140 --> 00:02:07,060
+separate plots range from 6 to 10.
+
+32
+00:02:07,360 --> 00:02:12,220
+With fertiliser B,
+the values range from 10 to 14.
+
+33
+00:02:12,460 --> 00:02:15,440
+With fertiliser C,
+they range from 16 to 20.
+
+34
+00:02:15,460 --> 00:02:18,820
+This is entirely hypothetical:
+these data were
+
+35
+00:02:18,820 --> 00:02:24,240
+generated to demonstrate
+how to use the method.
+
+36
+00:02:24,240 --> 00:02:28,180
+To compare more than two means,
+
+37
+00:02:28,180 --> 00:02:31,960
+we cannot use the t-test.
+We use analysis of variance
+
+38
+00:02:31,960 --> 00:02:37,220
+to compare the means of more
+than two groups at once.
+
+39
+00:02:38,300 --> 00:02:42,600
+The null hypothesis is that all
+the means are equal.
+
+40
+00:02:42,780 --> 00:02:46,360
+The mean of A equals the mean of B,
+which equals the mean of C.
+
+41
+00:02:46,360 --> 00:02:51,700
+If one of these means
+differs, we reject H0.
+
+42
+00:02:52,380 --> 00:02:57,660
+The non-parametric counterpart
+is the Kruskal–Wallis test,
+
+43
+00:02:58,100 --> 00:03:02,940
+which works with the ordering
+of the data rather than the raw values.
+
+44
+00:03:06,580 --> 00:03:09,400
+Let us spend a moment on the ANOVA example
+
+45
+00:03:09,400 --> 00:03:11,960
+to see how a test is constructed.
+
+46
+00:03:12,240 --> 00:03:16,380
+ANOVA is based on Fisher's test,
+
+47
+00:03:16,820 --> 00:03:21,420
+which examines the difference
+between the variation
+
+48
+00:03:21,420 --> 00:03:26,860
+between groups
+and the variation within groups.
+
+49
+00:03:26,860 --> 00:03:31,380
+We can express this using
+the formula shown here:
+
+50
+00:03:31,560 --> 00:03:37,400
+the total sum of squares is the sum of
+
+51
+00:03:37,400 --> 00:03:41,740
+each observation's deviation
+from the overall mean,
+
+52
+00:03:41,740 --> 00:03:44,860
+shown by this dashed line,
+with each difference squared
+
+53
+00:03:44,860 --> 00:03:50,160
+so that positive and negative
+deviations do not cancel out.
+
+54
+00:03:50,680 --> 00:03:54,900
+This total variation
+can be split into variation
+
+55
+00:03:54,900 --> 00:03:58,980
+within groups: each observation
+relative to its group mean,
+
+56
+00:03:58,980 --> 00:04:03,840
+and between groups: each group
+mean relative to the overall mean.
+
+57
+00:04:04,040 --> 00:04:05,820
+So the total sum of squares
+
+58
+00:04:05,820 --> 00:04:10,200
+can be split into between-group
+and within-group sums of squares.
+
+59
+00:04:10,520 --> 00:04:13,540
+In this example, the total sum
+
+60
+00:04:13,540 --> 00:04:18,200
+of squares is 283, split into 253 and 30.
+
+61
+00:04:18,340 --> 00:04:22,600
+For the F-test, we must account
+for the degrees of freedom.
+
+62
+00:04:22,600 --> 00:04:25,840
+We have three groups,
+so we take n minus 1,
+
+63
+00:04:25,840 --> 00:04:32,420
+and divide the between-group
+sum of squares by 2.
+
+64
+00:04:32,540 --> 00:04:36,320
+For the within-group sum of squares,
+we take the number of observations
+
+65
+00:04:44,920 --> 00:04:50,480
+minus 3, giving us 30 divided by 12.
+
+66
+00:04:50,590 --> 00:04:56,310
+F is therefore 50.67,
+which tells us nothing on its own.
+
+67
+00:04:56,630 --> 00:05:01,230
+But if we compare it with the known
+F distribution, with 2
+
+68
+00:05:01,230 --> 00:05:07,210
+and 12 degrees of freedom,
+we can see that, if we assume
+
+69
+00:05:07,210 --> 00:05:13,570
+under H0 that all the group
+means are equal, we reject
+
+70
+00:05:13,570 --> 00:05:20,170
+that hypothesis and accept that at least
+one group has a different mean.

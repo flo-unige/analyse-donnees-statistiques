@@ -1,25 +1,880 @@
 ---
-title: "**Session 4** - Analyses inférentielles : hypothèses et tests"
+title: "Session 4 - Statistiques inférentielles : Hypothèses et tests"
+subtitle: "Comprendre les tests, les appliquer dans Python et interpréter leurs résultats"
+author: "Support pédagogique pour le cours d’Anthony Lehmann"
 lang: fr
-format-links: false
-toc: false
 sidebar: cours
+jupyter: python3
 format:
   html:
+    code-summary: "Afficher le code Python"
+    theme: cosmo
+    toc: true
+    toc-depth: 3
+    number-sections: true
+    smooth-scroll: false
+    code-fold: false
     code-tools: false
-    css:
-      - ../../styles.css
-      - ../../cours/session-02/assets/language.css
-      - ../../assets/accueil.css
-    include-after-body:
-      - text: |
-          <script src="../../assets/site-language.js"></script>
+    code-copy: true
+    embed-resources: false
+    fig-cap-location: bottom
+execute:
+  echo: true
+  warning: true
+  message: false
+  cache: false
 ---
 
 ```{=html}
 <div class="course-choices">
-<nav class="course-language" aria-label="Langue de la page"><span aria-current="page" lang="fr">Français</span><a href="index-en.html" lang="en" hreflang="en">English</a></nav>
+<nav class="course-language" aria-label="Langue du cours"><span aria-current="page" lang="fr">Français</span><a href="index-en.html" lang="en" hreflang="en">English</a></nav>
+<nav class="course-code" aria-label="Langage des exemples"><span aria-current="page">Python</span><a href="index-r.html">R</a></nav>
 </div>
 ```
 
-Le contenu de cette session sera bientôt disponible.
+# Objectifs et fil conducteur
+
+Ce cours présente les principes des tests statistiques avec des exemples des principaux tests utilisés qui sont illustrés avec des exemples créés à partir des données du site GapMinder et codés dans R et Python.
+
+À la fin de cette séance, vous devriez être capable de :
+
+- comprendre le principe des tests statistiques ;
+- tester la distribution d'une variable ;
+- savoir choisir le bon test ;
+- exécuter des tests avec R ou Python ;
+- savoir interpréter le résultat des tests.
+
+# Données
+
+## Gapminder data
+
+Gapminder met à disposition de nombreux indicateurs démographiques, économiques, sociaux et environnementaux par pays.
+
+### Explorer les données Gapminder
+
+Regarder comment la relation entre le Produit Intérieur Brut (GDP) et l'espérance de vie (Lex) a évolué depuis 1800. Nous allons travaillé ensuite avec ces variables.
+
+```{=html}
+<iframe
+  src="https://www.gapminder.org/tools/?embedded=true"
+  width="100%"
+  height="750"
+  style="border:0;"
+  allowfullscreen>
+</iframe>
+
+<p>
+Si la page ne s'affiche pas dans l'iframe,
+<a href="https://www.gapminder.org/data/" target="_blank" rel="noopener noreferrer">
+ouvrir Gapminder Data dans un nouvel onglet
+</a>.
+</p>
+```
+
+## Charger les librairies utiles
+
+Les blocs sont à exécuter dans l’ordre, du bloc 1 au bloc 27, dans le même carnet. Les données simulées et les échantillons aléatoires peuvent différer entre Python et R, même avec la même graine. Les analyses sur l’ensemble des pays utilisent les mêmes observations et les mêmes hypothèses.
+
+```{python}
+#| label: packages
+# Bloc 1
+# Imports utilisés dans les blocs suivants. SciPy 1.15 ou plus récent.
+import numpy as np
+import pandas as pd
+import matplotlib.pyplot as plt
+from matplotlib.ticker import PercentFormatter, ScalarFormatter
+from scipy import stats
+from statsmodels.formula.api import ols
+from statsmodels.stats.anova import anova_lm
+from statsmodels.stats.multicomp import pairwise_tukeyhsd
+from IPython.display import display
+```
+
+## Charger les données dans Python
+
+Le fichier utilisé pour les exercices est :
+
+`data/data 2025.xlsx`
+
+La feuille du classeur s'appelle `clean`. Dans le fichier fourni, la population est stockée dans la colonne `pop`.
+
+```{python}
+#| label: import-data
+# Bloc 2
+# Adapter le chemin et la feuille à votre fichier Excel.
+data_path = "data/data 2025.xlsx"
+data_2025 = pd.read_excel(data_path, sheet_name="clean")
+# Pour un CSV, utiliser pd.read_csv("data/mon_fichier.csv").
+display(data_2025.describe().T[["count", "mean", "std", "min", "max"]].round(2))
+display(data_2025.select_dtypes(exclude="number").describe().T)
+```
+
+
+### Calculer la densité de population
+
+```{python}
+#| label: prepare-area-density
+# Bloc 3
+# Rapporter la population à la superficie du pays.
+data_2025["denspop"] = data_2025["pop"] / data_2025["area_km2"]
+display(data_2025[["name", "region", "pop", "area_km2", "denspop"]].head())
+```
+
+Vérifions les quatre régions et les éventuels pays sans superficie associée :
+
+```{python}
+#| label: check-regions-area
+# Bloc 4
+display(data_2025["region"].value_counts())
+# Garder les pays de plus de 1 000 km² avec une superficie renseignée.
+data_2025 = data_2025.loc[
+    data_2025["area_km2"].notna() & (data_2025["area_km2"] > 1000)
+].copy()
+display(data_2025["region"].value_counts())
+```
+
+# Théories et exemples
+
+## Échantillons aléatoires
+
+Un **échantillon aléatoire** est un sous-ensemble d'observations sélectionnées de manière telle que chaque observation ait une chance connue d'être sélectionnée. L'échantillonnage aléatoire réduit le risque de biais de sélection et constitue une base importante de l'inférence statistique.
+
+::: {.content-visible when-format="html"}
+```{=html}
+<div class="cours-video">
+  <video id="video-s4-principes" class="video-js vjs-big-play-centered" data-cours-video
+         controls preload="metadata" playsinline aria-label="Principes des statistiques inférentielles">
+    <source src="https://mediaserver.unige.ch/proxy/319457/OCMzr4gOKcwk9qa9.mp4?from_player=true" type="video/mp4">
+    <track kind="subtitles" src="videos/session_4_principes.fr.vtt" srclang="fr" label="Français" default>
+    <track kind="subtitles" src="videos/session_4_principes.en.vtt" srclang="en" label="English">
+    <p>Votre navigateur ne peut pas afficher cette vidéo. Utilisez le lien ci-dessous.</p>
+  </video>
+  <div class="cours-video-erreur" role="status" hidden>
+    <p>La vidéo n’a pas pu être chargée. Vous pouvez réessayer ou l’ouvrir avec le lien ci-dessous.</p>
+    <button class="cours-video-reessayer" type="button">Réessayer</button>
+  </div>
+</div>
+```
+
+[Ouvrir la vidéo](https://mediaserver.unige.ch/play/319457).
+:::
+
+::: {.content-visible unless-format="html"}
+*Principes des statistiques inférentielles. Cette vidéo est disponible dans la version HTML du cours.*
+:::
+
+### Tirer aléatoirement des valeurs de `pop`
+
+Nous tirons ici 50 pays au hasard parmi ceux pour lesquels la population est renseignée.
+
+```{python}
+#| label: random-pop-sample
+# Bloc 5
+# Exclure seulement les populations manquantes, puis tirer 50 pays sans remise.
+data_filtre = data_2025.dropna(subset=["pop"])
+echantillon_pop = data_filtre.sample(n=50, replace=False, random_state=123)
+resultat = echantillon_pop[["name", "region", "pop"]]
+display(resultat.head(10))
+```
+
+### Histogramme de l'échantillon
+
+```{python}
+#| label: histogram-random-pop
+#| fig-cap: "Distribution de la population dans un échantillon aléatoire de 50 pays."
+# Bloc 6
+plt.figure(figsize=(7, 4))
+plt.hist(echantillon_pop["pop"], bins=15, color="steelblue", edgecolor="white", density=False)
+plt.title('Échantillon aléatoire de 50 pays')
+plt.xlabel('Population (habitants)')
+plt.ylabel('Nombre de pays')
+plt.tight_layout()
+plt.show()
+```
+
+## Principes des tests
+
+Un test statistique part généralement de deux hypothèses :
+
+- **H0**, l'hypothèse nulle : absence d'effet, de différence ou d'écart à une distribution de référence ;
+- **H1**, l'hypothèse alternative : présence d'un effet, d'une différence ou d'un écart.
+
+La **p-value** représente la probabilité d'obtenir un résultat au moins aussi extrême que celui observé si H0 est vraie.
+
+Avec un seuil usuel de (alpha = 0,05) :
+
+- si `p < 0.05`, on rejette H0 ;
+- si `p >= 0.05`, on ne dispose pas d'éléments suffisants pour rejeter H0.
+
+::: {.content-visible when-format="html"}
+```{=html}
+<div class="cours-video">
+  <video id="video-s4-moyennes" class="video-js vjs-big-play-centered" data-cours-video
+         controls preload="metadata" playsinline aria-label="De la population à la décision">
+    <source src="https://mediaserver.unige.ch/proxy/319449/GvsHdkE4KaApJVnW.mp4?from_player=true" type="video/mp4">
+    <track kind="subtitles" src="videos/session_4_moyennes.fr.vtt" srclang="fr" label="Français" default>
+    <track kind="subtitles" src="videos/session_4_moyennes.en.vtt" srclang="en" label="English">
+    <p>Votre navigateur ne peut pas afficher cette vidéo. Utilisez le lien ci-dessous.</p>
+  </video>
+  <div class="cours-video-erreur" role="status" hidden>
+    <p>La vidéo n’a pas pu être chargée. Vous pouvez réessayer ou l’ouvrir avec le lien ci-dessous.</p>
+    <button class="cours-video-reessayer" type="button">Réessayer</button>
+  </div>
+</div>
+```
+
+[Ouvrir la vidéo](https://mediaserver.unige.ch/play/319449).
+:::
+
+::: {.content-visible unless-format="html"}
+*De la population à la décision. Cette vidéo est disponible dans la version HTML du cours.*
+:::
+
+Nous générons aléatoirement 50 observations d'une loi normale standard, visualisons leur distribution et appliquons le test de **Shapiro-Wilk**.
+
+Pour ce test :
+
+- H0 : les données sont compatibles avec une distribution normale ;
+- H1 : les données ne sont pas compatibles avec une distribution normale.
+
+```{python}
+#| label: normal-sample
+# Bloc 7
+rng = np.random.default_rng(123)
+echantillon_normal = rng.normal(loc=0, scale=1, size=50)
+
+plt.figure(figsize=(7, 4))
+plt.hist(echantillon_normal, bins=12, color="steelblue", edgecolor="white", density=False)
+plt.title('Échantillon de 50 valeurs : loi normale')
+plt.xlabel('Valeur')
+plt.ylabel('Effectif')
+plt.tight_layout()
+plt.show()
+test_normalite = stats.shapiro(echantillon_normal)
+print(f"W = {test_normalite.statistic:.4f}, p-value = {test_normalite.pvalue:.3g}")
+```
+
+### Exemple 2 - échantillon issu d'une distribution uniforme
+
+```{python}
+#| label: uniform-sample
+# Bloc 8
+rng = np.random.default_rng(123)
+echantillon_uniforme = rng.uniform(low=0, high=1, size=50)
+
+plt.figure(figsize=(7, 4))
+plt.hist(echantillon_uniforme, bins=12, color="steelblue", edgecolor="white", density=False)
+plt.title('Échantillon de 50 valeurs : loi uniforme')
+plt.xlabel('Valeur')
+plt.ylabel('Effectif')
+plt.tight_layout()
+plt.show()
+test_normalite = stats.shapiro(echantillon_uniforme)
+print(f"W = {test_normalite.statistic:.4f}, p-value = {test_normalite.pvalue:.3g}")
+```
+
+**Attention :** avec seulement 50 observations, un test de normalité peut parfois ne pas détecter un écart à la normalité. Il faut donc interpréter le test conjointement avec les graphiques.
+
+### Exemple 3 - tester la normalité de `gdp`
+
+```{python}
+#| label: shapiro-gdp
+# Bloc 9
+gdp_complete = data_2025['gdp_pcap'].dropna()
+print("n =", len(gdp_complete))
+plt.figure(figsize=(7, 4))
+plt.hist(gdp_complete, bins=30, color="steelblue", edgecolor="white", density=False)
+plt.title('Distribution du PIB par personne')
+plt.xlabel('PIB par personne')
+plt.ylabel('Nombre de pays')
+plt.tight_layout()
+plt.show()
+test_normalite = stats.shapiro(gdp_complete)
+print(f"W = {test_normalite.statistic:.4f}, p-value = {test_normalite.pvalue:.3g}")
+```
+
+
+### Exemple 4 - tester la normalité de `lex`
+
+```{python}
+#| label:  shapiro-lex
+# Bloc 10
+lex_complete = data_2025['lex'].dropna()
+print("n =", len(lex_complete))
+plt.figure(figsize=(7, 4))
+plt.hist(lex_complete, bins=30, color="steelblue", edgecolor="white", density=False)
+plt.title('Distribution de l’espérance de vie des pays')
+plt.xlabel('Espérance de vie (années)')
+plt.ylabel('Nombre de pays')
+plt.tight_layout()
+plt.show()
+test_normalite = stats.shapiro(lex_complete)
+print(f"W = {test_normalite.statistic:.4f}, p-value = {test_normalite.pvalue:.3g}")
+```
+
+
+## Paramétrique ou pas ?
+
+::: {.content-visible when-format="html"}
+```{=html}
+<div class="cours-video">
+  <video id="video-s4-normalite" class="video-js vjs-big-play-centered" data-cours-video
+         controls preload="metadata" playsinline aria-label="Distribution normale des données">
+    <source src="https://mediaserver.unige.ch/proxy/319458/jfABacjkFekXRfhq.mp4?from_player=true" type="video/mp4">
+    <track kind="subtitles" src="videos/session_4_normalite.fr.vtt" srclang="fr" label="Français" default>
+    <track kind="subtitles" src="videos/session_4_normalite.en.vtt" srclang="en" label="English">
+    <p>Votre navigateur ne peut pas afficher cette vidéo. Utilisez le lien ci-dessous.</p>
+  </video>
+  <div class="cours-video-erreur" role="status" hidden>
+    <p>La vidéo n’a pas pu être chargée. Vous pouvez réessayer ou l’ouvrir avec le lien ci-dessous.</p>
+    <button class="cours-video-reessayer" type="button">Réessayer</button>
+  </div>
+</div>
+```
+
+[Ouvrir la vidéo](https://mediaserver.unige.ch/play/319458).
+:::
+
+::: {.content-visible unless-format="html"}
+*Distribution normale des données. Cette vidéo est disponible dans la version HTML du cours.*
+:::
+
+Les tests **paramétriques** utilisent des hypothèses sur la distribution des données ou des résidus, souvent la normalité. Ils sont généralement puissants lorsque leurs hypothèses sont raisonnablement satisfaites.
+
+Les tests **non paramétriques** reposent sur moins d'hypothèses distributionnelles et sont souvent basés sur les rangs. Leur puissance relative dépend de la distribution des données et des hypothèses des tests comparés.
+
+| Question                        | Paramétrique      | Non paramétrique      |
+|-------------------------------|-------------------|----------------------|
+| Comparer 2 groupes indépendants | test t de Student | Wilcoxon–Mann-Whitney |
+| Comparer plus de 2 groupes      | ANOVA             | Kruskal-Wallis        |
+| Tester la normalité             | Shapiro-Wilk      | -                     |
+
+La décision ne doit pas reposer uniquement sur un test de normalité. Il faut aussi examiner les histogrammes, les valeurs extrêmes, la taille des échantillons et les hypothèses propres au test envisagé.
+
+### Tester la normalité de toutes les variables quantitatives
+
+```{python}
+#| label:  normality-all-numeric
+# Bloc 11
+variables_quantitatives = data_2025.select_dtypes(include="number").columns
+lignes = []
+for variable in variables_quantitatives:
+    x = data_2025.loc[np.isfinite(data_2025[variable]), variable]
+    # Appliquer les mêmes limites que dans la version R.
+    if 3 <= len(x) <= 5000 and x.nunique() >= 3:
+        test = stats.shapiro(x)
+        W, p_value = test.statistic, test.pvalue
+        conclusion = (
+            'Rejet de la normalité' if p_value < 0.05
+            else 'Normalité non rejetée'
+        )
+    else:
+        W, p_value = np.nan, np.nan
+        conclusion = 'Test non applicable'
+    lignes.append({"variable": variable, "n": len(x), "W": W,
+                   "p_value": p_value, "conclusion": conclusion})
+resultats_normalite = pd.DataFrame(lignes)
+display(resultats_normalite)
+```
+
+### Histogrammes de toutes les variables quantitatives
+
+```{python}
+#| label: histograms-all-numeric
+#| fig-width: 11
+#| fig-height: 8
+# Bloc 12
+variables_quantitatives = data_2025.select_dtypes(include="number").columns
+# Afficher jusqu’à neuf variables par figure.
+for debut in range(0, len(variables_quantitatives), 9):
+    variables_page = variables_quantitatives[debut:debut + 9]
+    fig, axes = plt.subplots(3, 3, figsize=(10, 8))
+    for ax, variable in zip(axes.flat, variables_page):
+        x = data_2025.loc[np.isfinite(data_2025[variable]), variable]
+        ax.hist(x, bins=12, color="steelblue", edgecolor="white")
+        ax.set_title(variable)
+        ax.set_xlabel('Valeur')
+        ax.set_ylabel('Effectif')
+    for ax in list(axes.flat)[len(variables_page):]:
+        ax.set_visible(False)
+    fig.tight_layout()
+    plt.show()
+```
+
+## Comparaison de moyennes
+
+::: {.content-visible when-format="html"}
+```{=html}
+<div class="cours-video">
+  <video id="video-s4-anova" class="video-js vjs-big-play-centered" data-cours-video
+         controls preload="metadata" playsinline aria-label="Comparer des moyennes et comprendre l’ANOVA">
+    <source src="https://mediaserver.unige.ch/proxy/319450/DE33SXeSCh2OGmg3.mp4?from_player=true" type="video/mp4">
+    <track kind="subtitles" src="videos/session_4_anova.fr.vtt" srclang="fr" label="Français" default>
+    <track kind="subtitles" src="videos/session_4_anova.en.vtt" srclang="en" label="English">
+    <p>Votre navigateur ne peut pas afficher cette vidéo. Utilisez le lien ci-dessous.</p>
+  </video>
+  <div class="cours-video-erreur" role="status" hidden>
+    <p>La vidéo n’a pas pu être chargée. Vous pouvez réessayer ou l’ouvrir avec le lien ci-dessous.</p>
+    <button class="cours-video-reessayer" type="button">Réessayer</button>
+  </div>
+</div>
+```
+
+[Ouvrir la vidéo](https://mediaserver.unige.ch/play/319450).
+:::
+
+::: {.content-visible unless-format="html"}
+*Comparer des moyennes et comprendre l’ANOVA. Cette vidéo est disponible dans la version HTML du cours.*
+:::
+
+Nous comparons ici **l'Europe** et **l'Afrique**.
+
+### Life expectency des pays d'Europe et d'Afrique
+
+```{python}
+#| label:  hist-lex-europe-africa
+#| fig-width: 9
+#| fig-height: 4.5
+# Bloc 13
+europe_afrique = data_2025.loc[
+    data_2025["region"].isin(["europe", "africa"])
+].copy()
+# Les graphiques et les deux tests utilisent les mêmes valeurs renseignées.
+europe_afrique = europe_afrique.dropna(subset=["lex", "region"])
+display(europe_afrique.groupby("region")["lex"].agg(["count", "mean", "std"]))
+bornes = np.histogram_bin_edges(europe_afrique["lex"], bins=20)
+fig, axes = plt.subplots(1, 2, figsize=(9, 4), sharex=True)
+for ax, region in zip(axes, ["africa", "europe"]):
+    valeurs = europe_afrique.loc[europe_afrique["region"] == region, "lex"]
+    ax.hist(valeurs, bins=bornes, color="steelblue", edgecolor="white")
+    ax.set_title(region)
+    ax.set_xlabel('Espérance de vie (années)')
+    ax.set_ylabel('Nombre de pays')
+fig.tight_layout()
+plt.show()
+```
+
+### Test t de Student
+
+Nous comparons la moyenne des deux groupes.
+
+Hypothèses :
+
+- H0 : la lex est identique en Europe et en Afrique ;
+- H1 : les lex moyens diffèrent.
+
+La version classique du test de Student suppose notamment l'indépendance, une normalité raisonnable au sein des groupes et l'égalité des variances. Ici, `equal_var=True` demande explicitement la version classique de Student.
+
+```{python}
+#| label:  student-europe-africa
+# Bloc 14
+# Respecter l’ordre alphabétique des groupes utilisé par R.
+lex_afrique = europe_afrique.loc[europe_afrique["region"] == "africa", "lex"]
+lex_europe = europe_afrique.loc[europe_afrique["region"] == "europe", "lex"]
+test_student = stats.ttest_ind(lex_afrique, lex_europe, equal_var=True)
+print(f"t = {test_student.statistic:.3f}, p-value = {test_student.pvalue:.3g}")
+print("Degrés de liberté :", test_student.df)
+print('Différence moyenne Afrique − Europe (années) :',
+      round(lex_afrique.mean() - lex_europe.mean(), 3))
+intervalle = test_student.confidence_interval(confidence_level=0.95)
+print(f"Intervalle de confiance à 95 % : [{intervalle.low:.3f}, {intervalle.high:.3f}]")
+```
+
+### Test de Wilcoxon–Mann-Whitney
+
+Ce test non paramétrique compare les rangs des observations des deux groupes. Il ne nécessite pas l'hypothèse de normalité.
+
+Ici, `mannwhitneyu()` compare deux groupes indépendants, avec une approximation normale et une correction de continuité comme dans le code R. La statistique est notée U dans Python et W dans la sortie de R, mais elle correspond au même calcul avec le même ordre des groupes.
+
+```{python}
+#| label:  wilcoxon-europe-africa
+# Bloc 15
+test_wilcoxon = stats.mannwhitneyu(
+    lex_afrique, lex_europe, alternative="two-sided",
+    method="asymptotic", use_continuity=True
+)
+print(f"U = {test_wilcoxon.statistic:.1f}, p-value = {test_wilcoxon.pvalue:.3g}")
+```
+
+> Le test de Wilcoxon–Mann-Whitney est souvent présenté comme une comparaison des distributions. Plus précisément, il teste un décalage dans les rangs ; son interprétation comme comparaison de médianes suppose notamment des distributions de forme comparable.
+
+## Comparaison de plus de 2 moyennes
+
+### Espérance de vie dans les quatre régions
+
+```{python}
+#| label:  hist-lex-four-regions
+#| fig-width: 10
+#| fig-height: 7
+# Bloc 16
+ordre_regions = ["africa", "americas", "asia", "europe"]
+four_regions = data_2025.loc[
+    data_2025["region"].isin(ordre_regions)
+].dropna(subset=["lex", "region"]).copy()
+display(four_regions.groupby("region")["lex"].agg(["count", "mean", "std"]))
+# Classes régulières sur l’échelle logarithmique, comme dans la version R.
+bornes = np.geomspace(four_regions["lex"].min(), four_regions["lex"].max(), 21)
+couleurs = ["#D98C45", "#4682B4", "#55A868", "#9B6DB0"]
+fig, axes = plt.subplots(2, 2, figsize=(9, 6), sharex=True)
+for ax, region, couleur in zip(axes.flat, ordre_regions, couleurs):
+    valeurs = four_regions.loc[four_regions["region"] == region, "lex"]
+    ax.hist(valeurs, bins=bornes, color=couleur, edgecolor="white")
+    ax.set_xscale("log")
+    ax.set_xticks([50, 60, 70, 80, 90])
+    ax.xaxis.set_major_formatter(ScalarFormatter())
+    ax.minorticks_off()
+    ax.set_title(region)
+    ax.set_xlabel('Espérance de vie (années, échelle logarithmique)')
+    ax.set_ylabel('Nombre de pays')
+fig.tight_layout()
+plt.show()
+
+groupes_lex = [four_regions.loc[four_regions["region"] == r, "lex"]
+               for r in ordre_regions]
+fig, ax = plt.subplots(figsize=(8, 5))
+boites = ax.boxplot(groupes_lex, patch_artist=True, showfliers=False)
+rng = np.random.default_rng(123)
+for i, (valeurs, couleur, boite) in enumerate(
+        zip(groupes_lex, couleurs, boites["boxes"]), start=1):
+    boite.set_facecolor(couleur)
+    boite.set_alpha(0.7)
+    ax.scatter(i + rng.uniform(-0.15, 0.15, len(valeurs)), valeurs,
+               color=couleur, alpha=0.5, s=16)
+ax.set_xticks(range(1, 5), ordre_regions)
+ax.set_title('Espérance de vie par région')
+ax.set_ylabel('Espérance de vie (années)')
+fig.tight_layout()
+plt.show()
+```
+
+### L'ANOVA teste si toutes les moyennes peuvent être considérées comme identiques.
+
+- H0 : les quatres régions ont la même life expectency ;
+- H1 : au moins une moyenne diffère.
+
+```{python}
+#| label:  anova-lex
+# Bloc 17
+modele_anova = ols("lex ~ C(region)", data=four_regions).fit()
+tableau_anova = anova_lm(modele_anova, typ=1)
+display(tableau_anova)
+```
+
+Une ANOVA significative indique qu'au moins une moyenne diffère, mais ne précise pas laquelle. Un test post-hoc de Tukey permet d'explorer les différences deux à deux :
+
+```{=typst}
+#block(breakable: false)[
+```
+
+```{python}
+#| label:  tukey-posthoc
+# Bloc 18
+test_tukey = pairwise_tukeyhsd(
+    endog=four_regions["lex"], groups=four_regions["region"], alpha=0.05
+)
+print(test_tukey.summary())
+```
+
+```{=typst}
+]
+```
+
+Les p-values affichées comme 0,0000 dans le tableau de Tukey sont arrondies, elles ne sont pas exactement nulles.
+
+### Diagnostic des résidus de l'ANOVA
+
+L'hypothèse de normalité porte surtout sur les **résidus du modèle**, et non nécessairement sur la variable brute.
+
+```{python}
+#| label:  anova-diagnostics
+#| fig-width: 8
+#| fig-height: 5
+# Bloc 19
+residus_anova = modele_anova.resid
+print("n =", len(residus_anova))
+test_normalite = stats.shapiro(residus_anova)
+print(f"W = {test_normalite.statistic:.4f}, p-value = {test_normalite.pvalue:.3g}")
+plt.figure(figsize=(7, 4))
+plt.hist(residus_anova, bins=20, color="steelblue", edgecolor="white", density=True)
+plt.title('Distribution des résidus de l’ANOVA')
+plt.xlabel('Résidus (années)')
+plt.ylabel('Densité')
+plt.tight_layout()
+plt.show()
+```
+
+### Test de Kruskal-Wallis
+
+Le test de Kruskal-Wallis est l'alternative non paramétrique à l'ANOVA à un facteur.
+
+- H0 : les groupes ont des distributions de rangs comparables ;
+- H1 : au moins un groupe diffère.
+
+```{python}
+#| label:  kruskal-wallis-density
+# Bloc 20
+test_kruskal = stats.kruskal(*groupes_lex)
+print(f"H = {test_kruskal.statistic:.3f}, p-value = {test_kruskal.pvalue:.3g}")
+```
+
+## Indépendance entre deux variables qualitatives : test du χ²
+
+Les tests précédents comparaient une variable quantitative entre plusieurs groupes. Le **test du χ² d'indépendance** recherche une association entre **deux variables qualitatives**, à partir d'un tableau d'effectifs.
+
+### Question et variables utilisées
+
+La proportion de pays ayant une espérance de vie d'au moins 75 ans est-elle la même dans les quatre régions ?
+
+Nous utilisons le même jeu de données :
+
+- `region` : région du monde ;
+- `classe_lex` : espérance de vie inférieure à 75 ans ou d'au moins 75 ans.
+
+Le seuil de 75 ans est choisi pour cet exercice, avant d'examiner le résultat. Transformer une variable quantitative en catégories fait perdre de l'information : cette démarche sert ici à illustrer le test du χ².
+
+### Préparer les données
+
+Chaque pays doit apparaître une seule fois et appartenir à une seule modalité de chaque variable. Les valeurs manquantes sont exclues.
+
+::: {.content-visible when-format="html"}
+```{=html}
+<div class="cours-video">
+  <video id="video-s4-chi2" class="video-js vjs-big-play-centered" data-cours-video
+         controls preload="metadata" playsinline aria-label="Test du khi-deux d’indépendance">
+    <source src="https://mediaserver.unige.ch/proxy/319448/8ihCCodj3zFGHMLt.mp4?from_player=true" type="video/mp4">
+    <track kind="subtitles" src="videos/session_4_chi2.fr.vtt" srclang="fr" label="Français" default>
+    <track kind="subtitles" src="videos/session_4_chi2.en.vtt" srclang="en" label="English">
+    <p>Votre navigateur ne peut pas afficher cette vidéo. Utilisez le lien ci-dessous.</p>
+  </video>
+  <div class="cours-video-erreur" role="status" hidden>
+    <p>La vidéo n’a pas pu être chargée. Vous pouvez réessayer ou l’ouvrir avec le lien ci-dessous.</p>
+    <button class="cours-video-reessayer" type="button">Réessayer</button>
+  </div>
+</div>
+```
+
+[Ouvrir la vidéo](https://mediaserver.unige.ch/play/319448).
+:::
+
+::: {.content-visible unless-format="html"}
+*Test du khi-deux d’indépendance. Cette vidéo est disponible dans la version HTML du cours.*
+:::
+
+```{python}
+#| label:  chi2-prepare
+# Bloc 21
+donnees_chi2 = four_regions.loc[np.isfinite(four_regions["lex"])].copy()
+donnees_chi2["region"] = pd.Categorical(
+    donnees_chi2["region"], categories=ordre_regions
+)
+classes_lex = ['Moins de 75 ans', '75 ans ou plus']
+donnees_chi2["classe_lex"] = pd.Categorical(
+    np.where(donnees_chi2["lex"] < 75, classes_lex[0], classes_lex[1]),
+    categories=classes_lex, ordered=True
+)
+display(donnees_chi2[["name", "region", "lex", "classe_lex"]].head(10))
+```
+
+### Construire le tableau de contingence
+
+Un **tableau de contingence** croise les modalités des deux variables. Chaque cellule contient un nombre de pays, et non un pourcentage.
+
+```{python}
+#| label: chi2-contingency
+# Bloc 22
+tableau_chi2 = pd.crosstab(donnees_chi2["region"], donnees_chi2["classe_lex"])
+# Afficher les effectifs et les totaux.
+totaux = tableau_chi2.copy()
+totaux["Total"] = totaux.sum(axis=1)
+totaux.loc["Total"] = totaux.sum(axis=0)
+display(totaux)
+# Calculer les proportions à l’intérieur de chaque région.
+proportions = tableau_chi2.div(tableau_chi2.sum(axis=1), axis=0)
+display((100 * proportions).round(1))
+```
+
+### Visualiser les proportions
+
+```{python}
+#| label:  chi2-proportions
+#| fig-width: 9
+#| fig-height: 5
+#| fig-cap: "Répartition des classes d'espérance de vie dans chaque région."
+# Bloc 23
+ax = proportions.plot.bar(
+    stacked=True, color=["#D98C45", "#4682B4"],
+    edgecolor="white", rot=0, figsize=(9, 5)
+)
+ax.set_title('Espérance de vie et région du monde')
+ax.set_xlabel('Région')
+ax.set_ylabel('Proportion de pays')
+ax.yaxis.set_major_formatter(PercentFormatter(1))
+ax.legend(title='Espérance de vie', loc="upper left", bbox_to_anchor=(1, 1))
+plt.tight_layout()
+plt.show()
+```
+
+### Formuler les hypothèses
+
+- **H0 :** la région et la classe d'espérance de vie sont indépendantes. Les proportions des deux classes sont identiques entre les régions dans la population de référence.
+- **H1 :** les deux variables sont associées. Au moins une région présente une répartition différente.
+
+Sous H0, l'effectif attendu dans chaque cellule est :
+
+$$
+E_{ij} =
+\frac{\text{total de la ligne } i \times \text{total de la colonne } j}
+{\text{effectif total}}
+$$
+
+La statistique du test mesure l'écart entre effectifs observés et attendus :
+
+$$
+\chi^2 = \sum_{i,j} \frac{(O_{ij} - E_{ij})^2}{E_{ij}}
+$$
+
+Plus les écarts sont importants, plus la statistique est élevée. Pour un tableau de quatre régions et deux classes, le nombre de degrés de liberté est $(4-1)(2-1)=3$.
+
+### Vérifier les effectifs attendus
+
+L'approximation par la loi du χ² demande des effectifs attendus suffisamment grands. Une règle courante est :
+
+- aucun effectif attendu inférieur à 1 ;
+- au moins 80 % des effectifs attendus supérieurs ou égaux à 5.
+
+Ces conditions concernent les **effectifs attendus**, pas les effectifs observés.
+
+```{python}
+#| label:  chi2-expected
+# Bloc 24
+effectifs_attendus = pd.DataFrame(
+    stats.contingency.expected_freq(tableau_chi2),
+    index=tableau_chi2.index, columns=tableau_chi2.columns
+)
+display(effectifs_attendus.round(2))
+conditions_chi2 = (
+    (effectifs_attendus.to_numpy() >= 1).all()
+    and (effectifs_attendus.to_numpy() >= 5).mean() >= 0.80
+)
+print(conditions_chi2)
+```
+
+### Exécuter le test
+
+Si les effectifs sont suffisants, nous utilisons l'approximation classique. Sinon, nous calculons une p-value par simulation de Monte-Carlo.
+
+```{python}
+#| label:  chi2-test
+# Bloc 25
+if conditions_chi2:
+    test_chi2 = stats.chi2_contingency(tableau_chi2, correction=False)
+    methode_chi2 = 'χ² de Pearson, approximation classique'
+else:
+    # Simulation à marges fixées, comme dans chisq.test() en R.
+    simulation = stats.MonteCarloMethod(
+        n_resamples=99999, rng=np.random.default_rng(123)
+    )
+    test_chi2 = stats.chi2_contingency(
+        tableau_chi2, correction=False, method=simulation
+    )
+    methode_chi2 = 'χ² de Pearson, p-value simulée'
+print(f"χ² = {test_chi2.statistic:.3f}, p-value = {test_chi2.pvalue:.3g}")
+```
+
+Pour un tableau 2 × 2 avec de faibles effectifs attendus, le test exact de Fisher est également une solution courante : `stats.fisher_exact(tableau)`.
+
+### Interpréter le résultat
+
+```{python}
+#| label:  chi2-interpretation
+# Bloc 26
+print('Méthode :', methode_chi2)
+print('Statistique du χ² :', round(test_chi2.statistic, 2))
+print(f"p-value : {test_chi2.pvalue:.3g}")
+if test_chi2.pvalue < 0.05:
+    print('Au seuil de 5 %, on rejette H0 :',
+          'les données indiquent une association entre la région',
+          'et la classe d’espérance de vie.')
+else:
+    print('Au seuil de 5 %, on ne rejette pas H0 :',
+          'les données ne permettent pas de conclure à une association.',
+          'Cela ne démontre pas l’indépendance.')
+```
+
+Un résultat significatif indique une **association**, sans établir que la région cause les différences d'espérance de vie.
+
+### Quantifier l'association : V de Cramér
+
+La p-value ne mesure pas l'intensité de l'association. Le **V de Cramér** complète le test : il varie de 0 à 1. Une valeur proche de 0 indique une faible association ; son importance s'interprète dans le contexte de l'étude.
+
+```{python}
+#| label:  chi2-cramer
+# Bloc 27
+n_chi2 = tableau_chi2.to_numpy().sum()
+v_cramer = np.sqrt(
+    test_chi2.statistic / (n_chi2 * min(np.array(tableau_chi2.shape) - 1))
+)
+display(pd.DataFrame([{'nombre_pays': n_chi2,
+                       "V_Cramer": v_cramer}]))
+```
+
+### Limites de cet exemple
+
+Le test suppose l'indépendance des observations. Or les pays peuvent partager des caractéristiques géographiques, historiques ou économiques. De plus, ces données constituent un ensemble de pays disponibles plutôt qu'un échantillon aléatoire. L'interprétation inférentielle reste donc conditionnelle à ces hypothèses.
+
+Les conclusions portent uniquement sur les pays conservés après le filtrage et sur les classes définies par le seuil de 75 ans.
+
+# Interprétation générale
+
+Pour interpréter un test statistique, on peut suivre quatre étapes :
+
+1.  **Formuler H0 et H1** avant de regarder le résultat.
+2.  **Vérifier les hypothèses** du test et examiner graphiquement les données.
+3.  **Lire la p-value** en la comparant au seuil (\alpha), souvent fixé à 0,05.
+4.  **Interpréter l'effet dans son contexte**, sans limiter la conclusion à « significatif » ou « non significatif ».
+
+La significativité statistique ne renseigne pas à elle seule sur l'importance pratique d'une différence. Il est également utile d'examiner les moyennes ou médianes, la dispersion, les tailles d'effet et les intervalles de confiance.
+
+# Résumé : quel test choisir ?
+
+Le choix dépend d'abord du type de variables, de la question posée et de l'indépendance ou de l'appariement des observations. Le tableau ci-dessous concerne les comparaisons de groupes indépendants.
+
+| Objectif | Variables | Groupes | Conditions principales | Test |
+|---------------|---------------|---------------|---------------|---------------|
+| Tester la normalité | Une variable quantitative ou des résidus | - | 3 à 5 000 valeurs ; compléter par histogramme et QQplot | Shapiro-Wilk |
+| Comparer deux moyennes | Une quantitative et une qualitative | 2 | Observations indépendantes ; normalité raisonnable au sein des groupes ou effectifs suffisants ; sensibilité aux valeurs extrêmes | Test t de Welch ; Student si égalité des variances justifiée |
+| Comparer deux distributions à partir des rangs | Une quantitative ou ordinale et une qualitative | 2 | Observations indépendantes ; formes comparables pour interpréter une différence de position | Wilcoxon–Mann-Whitney |
+| Comparer plusieurs moyennes | Une quantitative et une qualitative | Plus de 2 | Observations indépendantes ; résidus approximativement normaux ; variances comparables | ANOVA classique ; ANOVA de Welch si variances inégales |
+| Comparer plusieurs distributions à partir des rangs | Une quantitative ou ordinale et une qualitative | Plus de 2 | Observations indépendantes ; formes comparables pour interpréter une différence de position | Kruskal-Wallis |
+| Tester une association entre catégories | Deux variables qualitatives | Au moins 2 modalités par variable | Effectifs de pays indépendants ; effectifs attendus suffisants | χ² d'indépendance |
+| Tester une association avec de faibles effectifs | Deux variables qualitatives | Au moins 2 modalités par variable | Examiner les effectifs attendus et les dimensions du tableau | Fisher, notamment en 2 × 2, ou χ² avec p-value simulée |
+
+```{=typst}
+#block(breakable: false)[
+```
+
+**À retenir :**
+
+- Ne pas choisir un test uniquement à partir de Shapiro-Wilk.
+- Pour comparer des moyennes, examiner la distribution au sein des groupes et les résidus, plutôt que seulement la distribution globale.
+- Le χ² utilise des effectifs, pas directement des pourcentages.
+- Une association significative ne démontre pas une relation causale.
+- Toujours compléter la p-value par des graphiques et une mesure de l'importance de l'effet.
+
+```{=typst}
+]
+```
+
+# Vos questions sur la session {#questions-session-04}
+
+Si une notion reste floue, si vous souhaitez approfondir un exemple ou si vous avez toute autre question, vous pouvez poser votre question dans l'espace SpeakUp ci-dessous (de manière anonyme ou non). Prenez aussi le temps de lire les questions des autres étudiant-es et de voter pour celles dont la réponse vous serait utile. Le classement par votes permet de retrouver les questions qui intéressent le plus le groupe. Nous prendrons le temps de répondre à certaines questions directement sur la plateforme et à d'autres lors de la prochaine séance en présentiel.
+
+Cet espace est commun aux versions française et anglaise du cours, ainsi qu'aux exemples en Python et en R. Si votre question porte sur un code, précisez le langage utilisé et l'exemple concerné.
+
+::: {.content-visible when-format="html"}
+<iframe class="speakup-room" src="https://web.speakup.info/room/join/50632?theme=UniGE&amp;lang=fr" title="SpeakUp : questions et votes de la session 4, salle 50632" loading="lazy" style="display:block;width:100%;height:clamp(480px,80vh,760px);border:1px solid #ccd6dc;border-radius:6px"></iframe>
+
+Si la salle ne s'affiche pas dans cette page, utilisez le lien ci-dessous.
+:::
+
+[Ouvrir la salle SpeakUp de la session 4](https://web.speakup.info/room/join/50632?theme=UniGE&lang=fr){target="_blank" rel="noopener"}. **Code de la salle : 50632.**

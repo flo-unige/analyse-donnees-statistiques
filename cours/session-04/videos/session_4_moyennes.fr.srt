@@ -1,0 +1,322 @@
+1
+00:00:02,900 --> 00:00:04,120
+Prenons un exemple.
+
+2
+00:00:04,300 --> 00:00:08,000
+Ici, nous allons
+nous intéresser à la taille
+
+3
+00:00:08,000 --> 00:00:11,500
+des personnes dans une population humaine.
+
+4
+00:00:11,880 --> 00:00:17,400
+Et donc, on va générer, grâce au petit
+code R que nous avons à droite,
+
+5
+00:00:17,600 --> 00:00:20,260
+une population de 10 000 habitants,
+
+6
+00:00:20,400 --> 00:00:26,440
+autour d'une moyenne de taille
+de 170 cm et d'un écart-type de 7.
+
+7
+00:00:27,320 --> 00:00:32,260
+À partir de cette distribution
+de 10 000 habitants,
+
+8
+00:00:32,400 --> 00:00:37,240
+on va prendre un échantillon
+de 40 personnes, aléatoirement,
+
+9
+00:00:37,840 --> 00:00:42,040
+et puis calculer la moyenne
+de la population mère, puisque là,
+
+10
+00:00:42,040 --> 00:00:46,660
+on l'a intégralement, on peut calculer
+la moyenne, qui sera de 170 cm,
+
+11
+00:00:46,920 --> 00:00:51,900
+et puis la moyenne de notre échantillon,
+qui va varier d'un échantillon à l'autre.
+
+12
+00:00:51,900 --> 00:00:54,660
+Et on va comparer, dans le graphique ici,
+
+13
+00:00:55,480 --> 00:01:01,580
+la moyenne de notre échantillon de base,
+on voit l'ensemble des valeurs,
+
+14
+00:01:01,740 --> 00:01:05,620
+des tailles des personnes, les 10
+000 personnes dans la population,
+
+15
+00:01:05,700 --> 00:01:09,980
+la moyenne de la population mère,
+et en rouge traitillé,
+
+16
+00:01:09,980 --> 00:01:14,420
+la moyenne de notre échantillon,
+qui une fois va être plus élevée,
+
+17
+00:01:14,460 --> 00:01:19,320
+une fois plus basse que la moyenne
+de la population mère.
+
+18
+00:01:19,320 --> 00:01:23,560
+À chaque tirage,
+on va observer une différence
+
+19
+00:01:23,560 --> 00:01:27,100
+positive ou négative autour
+de la moyenne de l'échantillon.
+
+20
+00:01:27,520 --> 00:01:33,820
+Donc la question, c'est de savoir si on
+peut utiliser l'échantillon pour estimer,
+
+21
+00:01:33,820 --> 00:01:39,280
+par un test, si notre population a
+
+22
+00:01:39,930 --> 00:01:43,530
+une moyenne de 170 cm.
+
+23
+00:01:43,530 --> 00:01:49,530
+Donc on va tester, sur notre échantillon,
+comme hypothèse de base H0,
+
+24
+00:01:49,770 --> 00:01:53,090
+le fait que la moyenne
+de la population mère,
+
+25
+00:01:53,110 --> 00:01:56,370
+mais du coup de notre échantillon,
+soit bien égale à 170 cm.
+
+26
+00:01:56,930 --> 00:02:02,050
+Si on rejette cette hypothèse,
+on admet l'hypothèse alternative H1,
+
+27
+00:02:02,090 --> 00:02:06,350
+que cette moyenne est différente de 171.
+
+28
+00:02:06,350 --> 00:02:09,150
+Donc un test sera toujours
+fabriqué de la même manière,
+
+29
+00:02:09,350 --> 00:02:14,300
+on décide d'une
+
+30
+00:02:14,300 --> 00:02:18,820
+hypothèse H0, on fait un test dessus,
+
+31
+00:02:19,020 --> 00:02:24,220
+et en fonction de l'erreur
+que l'on est prêt à prendre,
+
+32
+00:02:24,540 --> 00:02:30,080
+on va tâcher de rejeter ou pas l'hypothèse
+de H0, et donc d'admettre H1.
+
+33
+00:02:30,080 --> 00:02:34,940
+Plus précisément ici,
+dans le cas de notre test,
+
+34
+00:02:35,120 --> 00:02:38,740
+on utilise un test de t,
+donc à partir de notre échantillon,
+
+35
+00:02:38,740 --> 00:02:44,220
+on va calculer la valeur
+de t, et cette valeur
+
+36
+00:02:44,220 --> 00:02:50,440
+est fabriquée de telle sorte que, si
+la moyenne de notre échantillon
+
+37
+00:02:50,440 --> 00:02:56,280
+se rapproche de 170 cm, plus la différence
+
+38
+00:02:56,280 --> 00:03:02,450
+de moyenne entre notre échantillon
+et la valeur cible est petite,
+
+39
+00:03:03,070 --> 00:03:06,890
+plus la valeur de t va se rapprocher
+de 0, et plus elle s'en écarte,
+
+40
+00:03:06,930 --> 00:03:12,410
+plus elle va devenir positivement
+ou négativement éloignée de cette valeur
+
+41
+00:03:12,410 --> 00:03:17,530
+de 0, en suivant cette distribution
+ici de la statistique de t.
+
+42
+00:03:19,300 --> 00:03:22,700
+La surface qui est représentée sous
+cette courbe de la statistique de t,
+
+43
+00:03:23,080 --> 00:03:27,060
+au total, est égale à 1,
+et les petites parties qui sont ici
+
+44
+00:03:27,060 --> 00:03:31,120
+en orange sont égales au seuil
+qu'on s'est fixé, alpha,
+
+45
+00:03:31,200 --> 00:03:36,980
+divisé par 2, donc généralement
+alpha on le fixe à 0,05 ou 5 %,
+
+46
+00:03:36,980 --> 00:03:41,780
+et du coup ici on a 0,025
+
+47
+00:03:43,420 --> 00:03:48,260
+ou 2,5 % de la surface
+à droite ou à gauche.
+
+48
+00:03:48,260 --> 00:03:52,700
+Et donc quand on calcule la valeur
+de t sur notre échantillon,
+
+49
+00:03:52,780 --> 00:03:58,220
+si cette valeur de t s'écarte beaucoup
+du 0 positivement ou négativement,
+
+50
+00:03:58,220 --> 00:04:02,300
+on va tomber dans ces zones
+ici orange, et puis
+
+51
+00:04:02,300 --> 00:04:08,440
+on va décider finalement
+de rejeter notre hypothèse H0,
+
+52
+00:04:08,440 --> 00:04:11,760
+que la moyenne de notre échantillon
+est égale à 170 cm,
+
+53
+00:04:12,280 --> 00:04:17,780
+avec un risque de se tromper
+qui sera inférieur à 5 %,
+
+54
+00:04:17,780 --> 00:04:22,640
+donc c'est le risque
+que l'on admet de se tromper
+
+55
+00:04:22,640 --> 00:04:27,920
+si on rejette l'hypothèse H0
+au seuil plus petit que 5 %.
+
+56
+00:04:28,250 --> 00:04:31,550
+Donc tous les tests
+sont fabriqués comme ceci,
+
+57
+00:04:31,730 --> 00:04:38,350
+et donc on peut dire que finalement,
+dans le tableau ici en bas à droite,
+
+58
+00:04:38,530 --> 00:04:42,660
+on va prendre la décision
+de ne pas rejeter
+
+59
+00:04:42,660 --> 00:04:47,700
+ou de rejeter H0 alors
+qu'elle était vraie ou fausse.
+
+60
+00:04:48,260 --> 00:04:52,740
+Donc si on commence
+par la colonne de droite,
+
+61
+00:04:52,860 --> 00:04:56,710
+rejeter H0 alors qu'elle était
+fausse, ça c'est correct,
+
+62
+00:04:57,410 --> 00:05:02,370
+mais si on l'a rejetée alors qu'elle
+était vraie, ici, on fait une erreur
+
+63
+00:05:02,370 --> 00:05:07,370
+de type 1 qui correspond à l'erreur
+du seuil alpha que l'on s'est fixé.
+
+64
+00:05:07,910 --> 00:05:11,830
+Cela ne nous dit pas quelle
+est l'erreur de type 2,
+
+65
+00:05:11,930 --> 00:05:16,830
+donc l'erreur de ne pas rejeter
+H0 alors qu'elle était fausse,
+
+66
+00:05:17,390 --> 00:05:20,690
+celle-ci se calcule de manière différente
+
+67
+00:05:20,690 --> 00:05:25,250
+et ne peut pas être directement
+dérivée de notre échantillon.

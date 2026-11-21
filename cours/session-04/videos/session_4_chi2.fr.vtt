@@ -1,0 +1,166 @@
+WEBVTT
+
+1
+00:00:00.910 --> 00:00:03.750
+Voyons maintenant comment les tests
+peuvent aussi être appliqués
+
+2
+00:00:03.750 --> 00:00:07.710
+à des variables que l'on dirait
+plutôt qualitatives que quantitatives,
+
+3
+00:00:07.710 --> 00:00:11.990
+comme des moyennes, avec le test
+dit du khi carré d'indépendance.
+
+4
+00:00:12.170 --> 00:00:17.250
+On va par exemple se poser la question
+de savoir si la présence d'une
+
+5
+00:00:17.250 --> 00:00:22.780
+espèce est associée à un type
+d'habitat ou un autre.
+
+6
+00:00:22.780 --> 00:00:25.420
+Donc on a trois types
+d'habitat, forêt, prairie,
+
+7
+00:00:25.440 --> 00:00:30.560
+culture, et on a 40 observations
+dans chaque type d'habitat
+
+8
+00:00:30.560 --> 00:00:35.500
+qui vont donner lieu à l'observation
+ou pas de cette espèce.
+
+9
+00:00:35.580 --> 00:00:40.820
+Donc dans notre échantillon,
+en forêt, sur 40 échantillons,
+
+10
+00:00:40.820 --> 00:00:44.560
+on aura observé 30 fois l'espèce
+et 10 fois, on ne l'aura pas observé.
+
+11
+00:00:44.620 --> 00:00:48.000
+En prairie, 20 et 20,
+et en culture, 10 et 30.
+
+12
+00:00:48.000 --> 00:00:50.680
+Et ça, c'est notre observation.
+
+13
+00:00:51.360 --> 00:00:53.980
+Et donc notre hypothèse H0, c'est
+
+14
+00:00:53.980 --> 00:01:00.580
+que la présence de l'espèce
+est indépendante de son habitat.
+
+15
+00:01:00.840 --> 00:01:04.900
+Et donc pour pouvoir tester
+cette hypothèse, on va comparer
+
+16
+00:01:04.900 --> 00:01:08.340
+cette matrice que l'on a obtenue ici
+
+17
+00:01:08.340 --> 00:01:14.360
+avec la matrice que l'on
+attendrait des espérances sous H0,
+
+18
+00:01:14.360 --> 00:01:20.740
+qui serait qu'on ait la même proportion de
+l'espèce dans chacun des types d'habitat.
+
+19
+00:01:21.080 --> 00:01:26.740
+Ainsi, on fait le calcul et on compare
+
+20
+00:01:26.740 --> 00:01:31.740
+ces deux matrices pour pouvoir
+calculer la valeur du test
+
+21
+00:01:31.740 --> 00:01:36.780
+et décider si on rejette
+ou pas l'hypothèse du khi carré. Donc
+
+22
+00:01:38.580 --> 00:01:42.040
+on peut représenter les choses
+ici sous forme graphique,
+
+23
+00:01:42.060 --> 00:01:45.080
+où on voit nos 40 échantillons
+et chaque fois la proportion
+
+24
+00:01:45.080 --> 00:01:50.000
+que l'on a de présence
+dans chacun des types de milieux.
+
+25
+00:01:50.000 --> 00:01:55.780
+Et ici, on a le calcul, on va dire,
+du khi carré, qui est montré,
+
+26
+00:01:55.780 --> 00:02:00.500
+où on compare les effectifs
+observés aux effectifs attendus,
+
+27
+00:02:00.500 --> 00:02:04.020
+de nouveau mis au carré pour ne pas tenir
+compte des différents positifs
+
+28
+00:02:04.020 --> 00:02:09.240
+et négatifs, divisés par l'espérance
+moyenne attendue, en tenant compte
+
+29
+00:02:09.240 --> 00:02:14.460
+des degrés de liberté associés au nombre
+d'observations et de groupes analysés.
+
+30
+00:02:14.460 --> 00:02:17.280
+On obtient ici une certaine
+
+31
+00:02:17.280 --> 00:02:21.160
+valeur de khi avec une p-value
+associée qui est très petite,
+
+32
+00:02:21.220 --> 00:02:24.900
+donc beaucoup plus petite que le seuil
+de 55 % que l'on s'est fixé.
+
+33
+00:02:24.900 --> 00:02:29.740
+Donc on rejette l'hypothèse
+H0 que la présence
+
+34
+00:02:29.740 --> 00:02:32.540
+de notre espèce
+est indépendante de l'habitat.

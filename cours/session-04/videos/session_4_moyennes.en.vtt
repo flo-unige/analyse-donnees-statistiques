@@ -1,0 +1,304 @@
+WEBVTT
+
+1
+00:00:02.900 --> 00:00:04.120
+Let us take an example.
+
+2
+00:00:04.300 --> 00:00:08.000
+Here, we will look at the heights
+
+3
+00:00:08.000 --> 00:00:11.500
+of people in a human population.
+
+4
+00:00:11.880 --> 00:00:17.400
+Using the short piece of R
+code on the right, we generate
+
+5
+00:00:17.600 --> 00:00:20.260
+a population of 10,000 people,
+
+6
+00:00:20.400 --> 00:00:26.440
+with a mean height of 170 cm
+and a standard deviation of 7.
+
+7
+00:00:27.320 --> 00:00:32.260
+From this distribution of 10,000 people,
+
+8
+00:00:32.400 --> 00:00:37.240
+we randomly draw a sample of 40 people,
+
+9
+00:00:37.840 --> 00:00:42.040
+and calculate the population
+mean. In this case,
+
+10
+00:00:42.040 --> 00:00:46.660
+we have the entire population,
+so we can calculate its mean: 170 cm.
+
+11
+00:00:46.920 --> 00:00:51.900
+We also calculate the sample mean,
+which varies from one sample to another.
+
+12
+00:00:51.900 --> 00:00:54.660
+In this graph, we compare
+
+13
+00:00:55.480 --> 00:01:01.580
+the mean of our original sample.
+We can see all the values,
+
+14
+00:01:01.740 --> 00:01:05.620
+the heights of all 10,000
+people in the population,
+
+15
+00:01:05.700 --> 00:01:09.980
+the population mean,
+and, shown by the red dashed line,
+
+16
+00:01:09.980 --> 00:01:14.420
+our sample mean,
+which will sometimes be higher
+
+17
+00:01:14.460 --> 00:01:19.320
+and sometimes lower than
+the population mean.
+
+18
+00:01:19.320 --> 00:01:23.560
+With each draw, we observe a difference
+
+19
+00:01:23.560 --> 00:01:27.100
+above or below the sample mean.
+
+20
+00:01:27.520 --> 00:01:33.820
+The question is whether
+we can use the sample to assess,
+
+21
+00:01:33.820 --> 00:01:39.280
+using a test, whether our population has
+
+22
+00:01:39.930 --> 00:01:43.530
+a mean height of 170 cm.
+
+23
+00:01:43.530 --> 00:01:49.530
+We test our sample against
+the null hypothesis, H0,
+
+24
+00:01:49.770 --> 00:01:53.090
+that the mean
+of the underlying population,
+
+25
+00:01:53.110 --> 00:01:56.370
+and therefore of our sample,
+is indeed 170 cm.
+
+26
+00:01:56.930 --> 00:02:02.050
+If we reject it, we accept
+the alternative hypothesis, H1:
+
+27
+00:02:02.090 --> 00:02:06.350
+that this mean differs from 171.
+
+28
+00:02:06.350 --> 00:02:09.150
+A test is always
+constructed in the same way:
+
+29
+00:02:09.350 --> 00:02:14.300
+we choose
+
+30
+00:02:14.300 --> 00:02:18.820
+a null hypothesis, H0, and test it.
+
+31
+00:02:19.020 --> 00:02:24.220
+Depending on the risk of error
+we are willing to accept,
+
+32
+00:02:24.540 --> 00:02:30.080
+we decide whether to reject
+H0 and therefore accept H1.
+
+33
+00:02:30.080 --> 00:02:34.940
+More specifically, in this example,
+
+34
+00:02:35.120 --> 00:02:38.740
+we use a t-test. From our sample,
+
+35
+00:02:38.740 --> 00:02:44.220
+we calculate t. This statistic
+
+36
+00:02:44.220 --> 00:02:50.440
+is defined so that, when our sample mean
+
+37
+00:02:50.440 --> 00:02:56.280
+approaches 170 cm,
+the smaller the difference
+
+38
+00:02:56.280 --> 00:03:02.450
+between our sample mean
+and the target value,
+
+39
+00:03:03.070 --> 00:03:06.890
+the closer t gets to zero.
+The larger the difference,
+
+40
+00:03:06.930 --> 00:03:12.410
+the farther t moves from zero,
+in either direction,
+
+41
+00:03:12.410 --> 00:03:17.530
+following the t distribution shown here.
+
+42
+00:03:19.300 --> 00:03:22.700
+The total area under this
+curve of the t statistic
+
+43
+00:03:23.080 --> 00:03:27.060
+is equal to 1. The small areas shown here
+
+44
+00:03:27.060 --> 00:03:31.120
+in orange each correspond
+to our chosen threshold, alpha,
+
+45
+00:03:31.200 --> 00:03:36.980
+divided by 2. We usually
+set alpha to 0.05, or 5%,
+
+46
+00:03:36.980 --> 00:03:41.780
+so here we have 0.025,
+
+47
+00:03:43.420 --> 00:03:48.260
+or 2.5% of the area, on either side.
+
+48
+00:03:48.260 --> 00:03:52.700
+When we calculate t from our sample,
+
+49
+00:03:52.780 --> 00:03:58.220
+if it is far from zero,
+either positively or negatively,
+
+50
+00:03:58.220 --> 00:04:02.300
+it falls within these orange regions,
+
+51
+00:04:02.300 --> 00:04:08.440
+and we decide to reject
+our null hypothesis, H0,
+
+52
+00:04:08.440 --> 00:04:11.760
+that the sample mean is 170 cm,
+
+53
+00:04:12.280 --> 00:04:17.780
+with a risk of being wrong below 5%.
+
+54
+00:04:17.780 --> 00:04:22.640
+That is the risk of error we accept
+
+55
+00:04:22.640 --> 00:04:27.920
+when rejecting H0
+at a significance level below 5%.
+
+56
+00:04:28.250 --> 00:04:31.550
+All tests are constructed this way.
+
+57
+00:04:31.730 --> 00:04:38.350
+In the table at the bottom right,
+
+58
+00:04:38.530 --> 00:04:42.660
+we decide either not to reject
+
+59
+00:04:42.660 --> 00:04:47.700
+or to reject H0, which may
+actually be true or false.
+
+60
+00:04:48.260 --> 00:04:52.740
+Starting with the right-hand column,
+
+61
+00:04:52.860 --> 00:04:56.710
+rejecting H0 when it is false
+is the correct decision.
+
+62
+00:04:57.410 --> 00:05:02.370
+But if we reject it
+when it is true, we make
+
+63
+00:05:02.370 --> 00:05:07.370
+a type I error, corresponding
+to our chosen significance level, alpha.
+
+64
+00:05:07.910 --> 00:05:11.830
+This does not tell us
+the type II error rate:
+
+65
+00:05:11.930 --> 00:05:16.830
+the error of failing
+to reject H0 when it is false.
+
+66
+00:05:17.390 --> 00:05:20.690
+That is calculated differently
+
+67
+00:05:20.690 --> 00:05:25.250
+and cannot be derived
+directly from our sample.

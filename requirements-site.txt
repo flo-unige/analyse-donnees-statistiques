@@ -3,6 +3,8 @@ numpy>=1.23
 pandas>=2.0
 matplotlib>=3.7
 seaborn>=0.13
-scipy>=1.10
+scipy>=1.15
 pillow>=10.0
 
+statsmodels>=0.14
+openpyxl>=3.1

@@ -1,0 +1,160 @@
+1
+00:00:00,910 --> 00:00:03,750
+Let us now see how tests
+can also be applied
+
+2
+00:00:03,750 --> 00:00:07,710
+to categorical variables,
+rather than quantitative measures
+
+3
+00:00:07,710 --> 00:00:11,990
+such as means, using the chi-square
+test of independence.
+
+4
+00:00:12,170 --> 00:00:17,250
+For example, we can ask
+whether the presence of a
+
+5
+00:00:17,250 --> 00:00:22,780
+species is associated
+with a particular type of habitat.
+
+6
+00:00:22,780 --> 00:00:25,420
+We have three types of habitat:
+forest, grassland,
+
+7
+00:00:25,440 --> 00:00:30,560
+and cropland. We have 40
+observations in each habitat,
+
+8
+00:00:30,560 --> 00:00:35,500
+recording whether or not
+the species is present.
+
+9
+00:00:35,580 --> 00:00:40,820
+In our forest sample,
+out of 40 observations,
+
+10
+00:00:40,820 --> 00:00:44,560
+the species was present 30
+times and absent 10 times.
+
+11
+00:00:44,620 --> 00:00:48,000
+For grassland, the counts are 20
+and 20; for cropland, 10 and 30.
+
+12
+00:00:48,000 --> 00:00:50,680
+Those are our observations.
+
+13
+00:00:51,360 --> 00:00:53,980
+Our null hypothesis, H0, is
+
+14
+00:00:53,980 --> 00:01:00,580
+that the presence of the species
+is independent of its habitat.
+
+15
+00:01:00,840 --> 00:01:04,900
+To test this hypothesis, we compare
+
+16
+00:01:04,900 --> 00:01:08,340
+the matrix we obtained here
+
+17
+00:01:08,340 --> 00:01:14,360
+with the matrix of expected
+counts under H0,
+
+18
+00:01:14,360 --> 00:01:20,740
+where the proportion of the species
+is the same in every habitat type.
+
+19
+00:01:21,080 --> 00:01:26,740
+We perform the calculation and compare
+
+20
+00:01:26,740 --> 00:01:31,740
+these two matrices
+to obtain the test statistic
+
+21
+00:01:31,740 --> 00:01:36,780
+and decide whether to reject
+the chi-square test's null hypothesis.
+
+22
+00:01:38,580 --> 00:01:42,040
+We can display this graphically,
+
+23
+00:01:42,060 --> 00:01:45,080
+showing our 40 observations
+and the proportion
+
+24
+00:01:45,080 --> 00:01:50,000
+in which the species
+is present in each habitat.
+
+25
+00:01:50,000 --> 00:01:55,780
+Here we can see
+the chi-square calculation,
+
+26
+00:01:55,780 --> 00:02:00,500
+comparing observed and expected counts.
+
+27
+00:02:00,500 --> 00:02:04,020
+Again, the differences
+are squared so that positive
+
+28
+00:02:04,020 --> 00:02:09,240
+and negative values do not cancel out,
+then divided by the expected value,
+
+29
+00:02:09,240 --> 00:02:14,460
+accounting for degrees of freedom
+from the observations and groups analysed.
+
+30
+00:02:14,460 --> 00:02:17,280
+This gives us a certain
+
+31
+00:02:17,280 --> 00:02:21,160
+chi statistic with a very
+small associated p-value,
+
+32
+00:02:21,220 --> 00:02:24,900
+much smaller than
+our chosen threshold of 55%.
+
+33
+00:02:24,900 --> 00:02:29,740
+We therefore reject H0 that the presence
+
+34
+00:02:29,740 --> 00:02:32,540
+of our species is independent
+of its habitat.
