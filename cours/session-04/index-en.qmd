@@ -75,8 +75,6 @@ open Gapminder Data in a new tab
 
 ## Loading the required packages
 
-Run blocks 1 to 27 in order in the same notebook. Simulated values and random samples may differ between Python and R, even with the same seed. Analyses using all countries use the same observations and assumptions.
-
 ```{python}
 #| label: packages
 # Block 1
@@ -107,6 +105,8 @@ The worksheet is called `clean`. In the supplied file, population is stored in t
 data_path = "data/data 2025.xlsx"
 data_2025 = pd.read_excel(data_path, sheet_name="clean")
 # For a CSV file, use pd.read_csv("data/my_file.csv").
+
+# The file contains several variables, which we can summarise with describe()
 display(data_2025.describe().T[["count", "mean", "std", "min", "max"]].round(2))
 display(data_2025.select_dtypes(exclude="number").describe().T)
 ```
@@ -127,6 +127,7 @@ Let us check the four regions and identify any countries with missing land-area 
 #| label: check-regions-area
 # Block 4
 display(data_2025["region"].value_counts())
+
 # Keep countries over 1,000 km² with a recorded area.
 data_2025 = data_2025.loc[
     data_2025["area_km2"].notna() & (data_2025["area_km2"] > 1000)
@@ -171,10 +172,19 @@ Here we randomly select 50 countries for which population data are available.
 ```{python}
 #| label: random-pop-sample
 # Block 5
-# Exclude only missing population values, then sample 50 countries without replacement.
+
+# Exclude only missing population values
 data_filtre = data_2025.dropna(subset=["pop"])
-echantillon_pop = data_filtre.sample(n=50, replace=False, random_state=123)
+
+# Then sample 50 countries without replacement.
+taille_echantillon = 50
+graine_aléatoire = 123
+echantillon_pop = data_filtre.sample(n=taille_echantillon, replace=False, random_state=graine_aléatoire)
+
+# Select the name, region and pop columns
 resultat = echantillon_pop[["name", "region", "pop"]]
+
+# Display the first 10 rows
 display(resultat.head(10))
 ```
 
@@ -184,6 +194,7 @@ display(resultat.head(10))
 #| label: histogram-random-pop
 #| fig-cap: "Population distribution in a random sample of 50 countries."
 # Block 6
+# Plot a histogram of the selected variable
 plt.figure(figsize=(7, 4))
 plt.hist(echantillon_pop["pop"], bins=15, color="steelblue", edgecolor="white", density=False)
 plt.title('Random sample of 50 countries')
@@ -241,9 +252,16 @@ For this test:
 ```{python}
 #| label: normal-sample
 # Block 7
-rng = np.random.default_rng(123)
-echantillon_normal = rng.normal(loc=0, scale=1, size=50)
+# Generate a random sample from a normal distribution
+graine_aléatoire = 123
+rng = np.random.default_rng(graine_aléatoire)
 
+taille_echantillon = 50
+moyenne = 0
+écart_type = 1
+echantillon_normal = rng.normal(loc=moyenne, scale=écart_type, size=taille_echantillon)
+
+# Plot a histogram
 plt.figure(figsize=(7, 4))
 plt.hist(echantillon_normal, bins=12, color="steelblue", edgecolor="white", density=False)
 plt.title('Sample of 50 values: normal')
@@ -251,8 +269,10 @@ plt.xlabel('Value')
 plt.ylabel('Count')
 plt.tight_layout()
 plt.show()
+
+# Test whether the sample is consistent with a normal distribution
 test_normalite = stats.shapiro(echantillon_normal)
-print(f"W = {test_normalite.statistic:.4f}, p-value = {test_normalite.pvalue:.3g}")
+print(f"W = {test_normalite.statistic:.4f}, p-value = {test_normalite.pvalue:.4g}")
 ```
 
 ### Example 2: a sample from a uniform distribution
@@ -260,9 +280,15 @@ print(f"W = {test_normalite.statistic:.4f}, p-value = {test_normalite.pvalue:.3g
 ```{python}
 #| label: uniform-sample
 # Block 8
-rng = np.random.default_rng(123)
-echantillon_uniforme = rng.uniform(low=0, high=1, size=50)
+# Generate a random sample from a uniform distribution (constant density)
+graine_aléatoire = 123
+rng = np.random.default_rng(graine_aléatoire)
 
+taille_echantillon = 50
+bornes = (0, 1)
+echantillon_uniforme = rng.uniform(low=bornes[0], high=bornes[1], size=taille_echantillon)
+
+# Plot a histogram
 plt.figure(figsize=(7, 4))
 plt.hist(echantillon_uniforme, bins=12, color="steelblue", edgecolor="white", density=False)
 plt.title('Sample of 50 values: uniform')
@@ -270,8 +296,10 @@ plt.xlabel('Value')
 plt.ylabel('Count')
 plt.tight_layout()
 plt.show()
+
+# Test the normality of this sample drawn from a uniform distribution
 test_normalite = stats.shapiro(echantillon_uniforme)
-print(f"W = {test_normalite.statistic:.4f}, p-value = {test_normalite.pvalue:.3g}")
+print(f"W = {test_normalite.statistic:.4f}, p-value = {test_normalite.pvalue:.4g}")
 ```
 
 **Keep in mind:** with only 50 observations, a normality test may fail to detect a departure from normality. Interpret the test alongside the graphs.
@@ -281,8 +309,11 @@ print(f"W = {test_normalite.statistic:.4f}, p-value = {test_normalite.pvalue:.3g
 ```{python}
 #| label: shapiro-gdp
 # Block 9
+# Remove any missing GDP values
 gdp_complete = data_2025['gdp_pcap'].dropna()
 print("n =", len(gdp_complete))
+
+# Visualise the data
 plt.figure(figsize=(7, 4))
 plt.hist(gdp_complete, bins=30, color="steelblue", edgecolor="white", density=False)
 plt.title('Distribution of GDP per capita')
@@ -290,8 +321,10 @@ plt.xlabel('GDP per capita')
 plt.ylabel('Number of countries')
 plt.tight_layout()
 plt.show()
+
+# Test normality
 test_normalite = stats.shapiro(gdp_complete)
-print(f"W = {test_normalite.statistic:.4f}, p-value = {test_normalite.pvalue:.3g}")
+print(f"W = {test_normalite.statistic:.4f}, p-value = {test_normalite.pvalue:.4g}")
 ```
 
 ### Example 4: testing the normality of `lex`
@@ -299,8 +332,10 @@ print(f"W = {test_normalite.statistic:.4f}, p-value = {test_normalite.pvalue:.3g
 ```{python}
 #| label:  shapiro-lex
 # Block 10
+# Test the normality of LEX
 lex_complete = data_2025['lex'].dropna()
 print("n =", len(lex_complete))
+
 plt.figure(figsize=(7, 4))
 plt.hist(lex_complete, bins=30, color="steelblue", edgecolor="white", density=False)
 plt.title('Distribution of life expectancy across countries')
@@ -308,8 +343,9 @@ plt.xlabel('Life expectancy (years)')
 plt.ylabel('Number of countries')
 plt.tight_layout()
 plt.show()
+
 test_normalite = stats.shapiro(lex_complete)
-print(f"W = {test_normalite.statistic:.4f}, p-value = {test_normalite.pvalue:.3g}")
+print(f"W = {test_normalite.statistic:.4f}, p-value = {test_normalite.pvalue:.4g}")
 ```
 
 ## Parametric or non-parametric?
@@ -355,23 +391,39 @@ Do not base the choice solely on a normality test. Also examine the histograms, 
 ```{python}
 #| label:  normality-all-numeric
 # Block 11
+# Select the numeric variables in the data
 variables_quantitatives = data_2025.select_dtypes(include="number").columns
+
+# Create an empty list to store the results
 lignes = []
+
+# Loop through all the quantitative variables
 for variable in variables_quantitatives:
+    # Extract the values, excluding missing or infinite values
     x = data_2025.loc[np.isfinite(data_2025[variable]), variable]
-    # Use the same limits as in the R version.
-    if 3 <= len(x) <= 5000 and x.nunique() >= 3:
+
+    # Check whether the Shapiro-Wilk test can be applied
+    if len(x) >= 3 and len(x) <= 5000 and x.nunique() >= 3:
+        # Run the normality test
         test = stats.shapiro(x)
-        W, p_value = test.statistic, test.pvalue
-        conclusion = (
-            'Normality rejected' if p_value < 0.05
-            else 'Normality not rejected'
-        )
+        W = test.statistic
+        p_value = test.pvalue
+
+        if p_value < 0.05:
+            conclusion = 'Normality rejected'
+        else:
+            conclusion = 'Normality not rejected'
+
     else:
-        W, p_value = np.nan, np.nan
+        W = np.nan
+        p_value = np.nan
         conclusion = 'Test not applicable'
+
+    # Create a row of results
     lignes.append({"variable": variable, "n": len(x), "W": W,
                    "p_value": p_value, "conclusion": conclusion})
+
+# Create and display the final results table
 resultats_normalite = pd.DataFrame(lignes)
 display(resultats_normalite)
 ```
@@ -383,20 +435,25 @@ display(resultats_normalite)
 #| fig-width: 11
 #| fig-height: 8
 # Block 12
+# Identify the numeric variables
 variables_quantitatives = data_2025.select_dtypes(include="number").columns
-# Show up to nine variables per figure.
+
+# Show histograms in groups of 9 variables per figure
 for debut in range(0, len(variables_quantitatives), 9):
     variables_page = variables_quantitatives[debut:debut + 9]
-    fig, axes = plt.subplots(3, 3, figsize=(10, 8))
-    for ax, variable in zip(axes.flat, variables_page):
+    plt.figure(figsize=(10, 8))
+
+    # Choose a variable and its position in the grid
+    for i in range(len(variables_page)):
+        variable = variables_page[i]
         x = data_2025.loc[np.isfinite(data_2025[variable]), variable]
-        ax.hist(x, bins=12, color="steelblue", edgecolor="white")
-        ax.set_title(variable)
-        ax.set_xlabel('Value')
-        ax.set_ylabel('Count')
-    for ax in list(axes.flat)[len(variables_page):]:
-        ax.set_visible(False)
-    fig.tight_layout()
+        plt.subplot(3, 3, i + 1)
+        plt.hist(x, bins=12, color="steelblue", edgecolor="white")
+        plt.title(variable)
+        plt.xlabel('Value')
+        plt.ylabel('Count')
+
+    plt.tight_layout()
     plt.show()
 ```
 
@@ -435,15 +492,26 @@ Here we compare **Europe** and **Africa**.
 #| fig-width: 9
 #| fig-height: 4.5
 # Block 13
+# Extract the data for two regions
 europe_afrique = data_2025.loc[
     data_2025["region"].isin(["europe", "africa"])
 ].copy()
-# The plots and both tests use the same non-missing values.
+
+# Remove rows with missing lex or region values
 europe_afrique = europe_afrique.dropna(subset=["lex", "region"])
+
+# Display the count, mean and standard deviation
 display(europe_afrique.groupby("region")["lex"].agg(["count", "mean", "std"]))
+
+# Plot histograms for the two regions
 bornes = np.histogram_bin_edges(europe_afrique["lex"], bins=20)
 fig, axes = plt.subplots(1, 2, figsize=(9, 4), sharex=True)
-for ax, region in zip(axes, ["africa", "europe"]):
+
+# Choose a region and its corresponding plot
+regions = ["africa", "europe"]
+for i in range(len(regions)):
+    region = regions[i]
+    ax = axes[i]
     valeurs = europe_afrique.loc[europe_afrique["region"] == region, "lex"]
     ax.hist(valeurs, bins=bornes, color="steelblue", edgecolor="white")
     ax.set_title(region)
@@ -467,14 +535,21 @@ The classical Student’s t-test assumes independent observations, approximate n
 ```{python}
 #| label:  student-europe-africa
 # Block 14
-# Use the alphabetical group order used by R.
+
+# Select the lex values for each region
 lex_afrique = europe_afrique.loc[europe_afrique["region"] == "africa", "lex"]
 lex_europe = europe_afrique.loc[europe_afrique["region"] == "europe", "lex"]
+
+# Run Student's t-test on the two samples
 test_student = stats.ttest_ind(lex_afrique, lex_europe, equal_var=True)
+
+# Display the test results
 print(f"t = {test_student.statistic:.3f}, p-value = {test_student.pvalue:.3g}")
 print("Degrees of freedom:", test_student.df)
 print('Mean difference Africa − Europe (years):',
       round(lex_afrique.mean() - lex_europe.mean(), 3))
+    
+# Calculate and display the 95% confidence interval for the difference in means
 intervalle = test_student.confidence_interval(confidence_level=0.95)
 print(f"95% confidence interval: [{intervalle.low:.3f}, {intervalle.high:.3f}]")
 ```
@@ -502,21 +577,30 @@ print(f"U = {test_wilcoxon.statistic:.1f}, p-value = {test_wilcoxon.pvalue:.3g}"
 ### Life expectancy in the four regions
 
 ```{python}
-#| label:  hist-lex-four-regions
+#| label: hist-lex-four-regions
 #| fig-width: 10
 #| fig-height: 7
 # Block 16
+# Select the data for the four regions
 ordre_regions = ["africa", "americas", "asia", "europe"]
 four_regions = data_2025.loc[
     data_2025["region"].isin(ordre_regions)
 ].dropna(subset=["lex", "region"]).copy()
+
+# Display the count, mean and standard deviation for each region
 display(four_regions.groupby("region")["lex"].agg(["count", "mean", "std"]))
-# Use equally spaced bins on the log scale, as in the R version.
+
+# Create bins of equal width on the logarithmic scale
 bornes = np.geomspace(four_regions["lex"].min(), four_regions["lex"].max(), 21)
 couleurs = ["#D98C45", "#4682B4", "#55A868", "#9B6DB0"]
-fig, axes = plt.subplots(2, 2, figsize=(9, 6), sharex=True)
-for ax, region, couleur in zip(axes.flat, ordre_regions, couleurs):
+plt.figure(figsize=(9, 6))
+
+# Choose a region, its colour and its position in the grid
+for i in range(len(ordre_regions)):
+    region = ordre_regions[i]
+    couleur = couleurs[i]
     valeurs = four_regions.loc[four_regions["region"] == region, "lex"]
+    ax = plt.subplot(2, 2, i + 1)
     ax.hist(valeurs, bins=bornes, color=couleur, edgecolor="white")
     ax.set_xscale("log")
     ax.set_xticks([50, 60, 70, 80, 90])
@@ -525,21 +609,38 @@ for ax, region, couleur in zip(axes.flat, ordre_regions, couleurs):
     ax.set_title(region)
     ax.set_xlabel('Life expectancy (years, log scale)')
     ax.set_ylabel('Number of countries')
-fig.tight_layout()
+plt.tight_layout()
 plt.show()
+```
 
-groupes_lex = [four_regions.loc[four_regions["region"] == r, "lex"]
-               for r in ordre_regions]
+```{python}
+#| label: boxplot-lex-four-regions
+# Boxplot of the data prepared in block 16
+# Add the values for each region to a list
+groupes_lex = []
+for region in ordre_regions:
+    valeurs = four_regions.loc[four_regions["region"] == region, "lex"]
+    groupes_lex.append(valeurs)
+
 fig, ax = plt.subplots(figsize=(8, 5))
+# Colour the boxes and avoid plotting extreme points twice
+# All observations will be plotted with scatter, including extreme values
 boites = ax.boxplot(groupes_lex, patch_artist=True, showfliers=False)
-rng = np.random.default_rng(123)
-for i, (valeurs, couleur, boite) in enumerate(
-        zip(groupes_lex, couleurs, boites["boxes"]), start=1):
+rng = np.random.default_rng(graine_aléatoire)
+
+# Choose each box's colour and add the observations
+for i in range(len(groupes_lex)):
+    valeurs = groupes_lex[i]
+    couleur = couleurs[i]
+    boite = boites["boxes"][i]
     boite.set_facecolor(couleur)
     boite.set_alpha(0.7)
-    ax.scatter(i + rng.uniform(-0.15, 0.15, len(valeurs)), valeurs,
-               color=couleur, alpha=0.5, s=16)
-ax.set_xticks(range(1, 5), ordre_regions)
+    # The boxes are at positions 1, 2, 3 and 4, while the list starts at 0
+    position = i + 1
+    # Offset the points slightly to make overlapping observations easier to see
+    decalage = rng.uniform(-0.15, 0.15, len(valeurs))
+    ax.scatter(position + decalage, valeurs, color=couleur, alpha=0.5, s=16)
+ax.set_xticks(range(1, len(ordre_regions) + 1), ordre_regions)
 ax.set_title('Life expectancy by region')
 ax.set_ylabel('Life expectancy (years)')
 fig.tight_layout()
@@ -549,12 +650,15 @@ plt.show()
 ### ANOVA tests whether all the means can be considered equal
 
 - H0: the four regions have the same mean life expectancy;
-- H1: at least one mean differs.
+- H1: **at least one** mean differs.
 
 ```{python}
 #| label:  anova-lex
 # Block 17
+# Run an ANOVA on the four regions. C(region) treats region as a categorical variable
 modele_anova = ols("lex ~ C(region)", data=four_regions).fit()
+
+# Display the ANOVA table
 tableau_anova = anova_lm(modele_anova, typ=1)
 display(tableau_anova)
 ```
@@ -568,6 +672,7 @@ A significant ANOVA result tells us that at least one mean differs, but not whic
 ```{python}
 #| label:  tukey-posthoc
 # Block 18
+# Run Tukey's post-hoc test to compare means in pairs
 test_tukey = pairwise_tukeyhsd(
     endog=four_regions["lex"], groups=four_regions["region"], alpha=0.05
 )
@@ -578,7 +683,7 @@ print(test_tukey.summary())
 ]
 ```
 
-P-values displayed as 0.0000 in the Tukey table are rounded, not exactly zero.
+P-values displayed as 0.0 in the Tukey table are rounded, not exactly zero.
 
 ### Checking the ANOVA residuals
 
@@ -589,10 +694,20 @@ The normality assumption mainly concerns the **model residuals**, rather than ne
 #| fig-width: 8
 #| fig-height: 5
 # Block 19
+# Extract the ANOVA residuals
 residus_anova = modele_anova.resid
 print("n =", len(residus_anova))
+
+# Check the normality of the residuals
 test_normalite = stats.shapiro(residus_anova)
 print(f"W = {test_normalite.statistic:.4f}, p-value = {test_normalite.pvalue:.3g}")
+```
+
+The following block plots the residuals calculated in block 19.
+
+```{python}
+#| label: anova-residual-histogram
+# Plot a histogram of the residuals
 plt.figure(figsize=(7, 4))
 plt.hist(residus_anova, bins=20, color="steelblue", edgecolor="white", density=True)
 plt.title('Distribution of ANOVA residuals')
@@ -612,7 +727,11 @@ The Kruskal–Wallis test is a non-parametric alternative to one-way ANOVA.
 ```{python}
 #| label:  kruskal-wallis-density
 # Block 20
-test_kruskal = stats.kruskal(*groupes_lex)
+# Compare regions using a non-parametric test
+# Pass the values for the four regions separately, as prepared after block 16
+test_kruskal = stats.kruskal(
+    groupes_lex[0], groupes_lex[1], groupes_lex[2], groupes_lex[3]
+)
 print(f"H = {test_kruskal.statistic:.3f}, p-value = {test_kruskal.pvalue:.3g}")
 ```
 
@@ -662,32 +781,52 @@ Each country must appear only once and belong to a single category for each vari
 ```{python}
 #| label:  chi2-prepare
 # Block 21
+# Keep only valid life-expectancy values
 donnees_chi2 = four_regions.loc[np.isfinite(four_regions["lex"])].copy()
+
+# Convert region to a categorical variable
 donnees_chi2["region"] = pd.Categorical(
     donnees_chi2["region"], categories=ordre_regions
 )
+
+# Create two life-expectancy categories
 classes_lex = ['Under 75 years', '75 years or older']
+
+# Assign each country to a category based on its life expectancy
+donnees_chi2["classe_lex"] = classes_lex[1]
+donnees_chi2.loc[donnees_chi2["lex"] < 75, "classe_lex"] = classes_lex[0]
+
+# Set the order of the two categories in tables and graphs
 donnees_chi2["classe_lex"] = pd.Categorical(
-    np.where(donnees_chi2["lex"] < 75, classes_lex[0], classes_lex[1]),
-    categories=classes_lex, ordered=True
+    donnees_chi2["classe_lex"], categories=classes_lex, ordered=True
 )
+
+# Display the first 10 observations
 display(donnees_chi2[["name", "region", "lex", "classe_lex"]].head(10))
 ```
 
 ### Building the contingency table
 
-A **contingency table** cross-tabulates the categories of the two variables. Each cell contains a count of countries, not a percentage.
+A **contingency table** cross-tabulates the categories of the two variables. Each cell contains a **count of countries, not a percentage**.
 
 ```{python}
 #| label: chi2-contingency
 # Block 22
+# Create the contingency table
 tableau_chi2 = pd.crosstab(donnees_chi2["region"], donnees_chi2["classe_lex"])
-# Display counts and totals.
+
+# Copy the table to calculate totals
 totaux = tableau_chi2.copy()
+
+# Calculate row totals and add a Total column to the table
 totaux["Total"] = totaux.sum(axis=1)
+# Do the same for the columns
 totaux.loc["Total"] = totaux.sum(axis=0)
+# Display the table
 display(totaux)
-# Calculate proportions within each region.
+
+# Calculate proportions within each region
+# sum(axis=1) calculates row totals, and axis=0 divides each cell by its row total.
 proportions = tableau_chi2.div(tableau_chi2.sum(axis=1), axis=0)
 display((100 * proportions).round(1))
 ```
@@ -700,6 +839,7 @@ display((100 * proportions).round(1))
 #| fig-height: 5
 #| fig-cap: "Distribution of life-expectancy categories within each region."
 # Block 23
+# Plot the life-expectancy categories within each region
 ax = proportions.plot.bar(
     stacked=True, color=["#D98C45", "#4682B4"],
     edgecolor="white", rot=0, figsize=(9, 5)
@@ -746,11 +886,14 @@ These conditions concern the **expected counts**, not the observed counts.
 ```{python}
 #| label:  chi2-expected
 # Block 24
+# Calculate the expected counts under H0
 effectifs_attendus = pd.DataFrame(
     stats.contingency.expected_freq(tableau_chi2),
     index=tableau_chi2.index, columns=tableau_chi2.columns
 )
 display(effectifs_attendus.round(2))
+
+# Check the conditions for the chi-square approximation
 conditions_chi2 = (
     (effectifs_attendus.to_numpy() >= 1).all()
     and (effectifs_attendus.to_numpy() >= 5).mean() >= 0.80
@@ -765,18 +908,22 @@ If the expected counts are large enough, we use the usual approximation. Otherwi
 ```{python}
 #| label:  chi2-test
 # Block 25
+# Run the chi-square test
 if conditions_chi2:
+    # If expected counts are large enough, use the usual approximation
     test_chi2 = stats.chi2_contingency(tableau_chi2, correction=False)
     methode_chi2 = 'Pearson chi-square, asymptotic approximation'
 else:
-    # Simulate tables with fixed margins, as in R’s chisq.test().
+    # If expected counts are too small, use a Monte Carlo simulation
     simulation = stats.MonteCarloMethod(
-        n_resamples=99999, rng=np.random.default_rng(123)
+        n_resamples=99999, rng=np.random.default_rng(graine_aléatoire)
     )
     test_chi2 = stats.chi2_contingency(
         tableau_chi2, correction=False, method=simulation
     )
     methode_chi2 = 'Pearson chi-square, simulated p-value'
+
+# Display the statistic and p-value
 print(f"χ² = {test_chi2.statistic:.3f}, p-value = {test_chi2.pvalue:.3g}")
 ```
 
@@ -790,6 +937,8 @@ For a 2 × 2 table with small expected counts, Fisher’s exact test is another 
 print('Method:', methode_chi2)
 print('Chi-square statistic:', round(test_chi2.statistic, 2))
 print(f"p-value : {test_chi2.pvalue:.3g}")
+
+# Compare the p-value with the 5% significance level
 if test_chi2.pvalue < 0.05:
     print('At the 5% significance level, we reject H0:',
           'the data indicate an association between region',
@@ -804,15 +953,22 @@ A significant result indicates an **association**. It does not establish that re
 
 ### Measuring the strength of association: Cramér’s V
 
-The p-value does not measure the strength of the association. **Cramér’s V** complements the test and ranges from 0 to 1. A value close to 0 indicates a weak association. Its importance should be interpreted in the context of the study.
+The p-value **does not measure the strength of the association**. **Cramér’s V** complements the test and ranges from 0 to 1. A value close to 0 indicates a weak association. Its importance should be interpreted in the context of the study.
 
 ```{python}
 #| label:  chi2-cramer
 # Block 27
+# n_chi2 is the total number of countries in the contingency table
 n_chi2 = tableau_chi2.to_numpy().sum()
-v_cramer = np.sqrt(
-    test_chi2.statistic / (n_chi2 * min(np.array(tableau_chi2.shape) - 1))
-)
+
+# Count the rows and columns, then take the smaller dimension minus 1
+nombre_lignes = tableau_chi2.shape[0]
+nombre_colonnes = tableau_chi2.shape[1]
+dimension = min(nombre_lignes - 1, nombre_colonnes - 1)
+
+# Calculate Cramér's V
+v_cramer = np.sqrt(test_chi2.statistic / (n_chi2 * dimension))
+
 display(pd.DataFrame([{'number_of_countries': n_chi2,
                        "V_Cramer": v_cramer}]))
 ```
