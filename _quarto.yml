@@ -45,6 +45,7 @@ project:
     - cours/session-06/index-en.qmd
     - cours/session-07/index-en.qmd
   resources:
+    - ressources/fichiers/**
     - cours/session-04/data/**
     - cours/session-04/assets/**
     - cours/session-04/videos/*.vtt

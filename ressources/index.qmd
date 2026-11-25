@@ -23,6 +23,14 @@ format:
 </div>
 ```
 
+## Lire le code Python
+
+Un guide pour comprendre les fonctions principales, méthodes et syntaxes utilisées dans les **cours et les TP** et qui sera complété au fil des sessions.
+
+[Télécharger le guide Python - Français (PDF)](fichiers/Guide_Python_FR.pdf)
+
+[English version (PDF)](fichiers/Guide_Python_EN.pdf)
+
 ## Références bibliographiques
 
 - Campesato O. 2023. *Statistics Using Python*. Mercury Learning.
