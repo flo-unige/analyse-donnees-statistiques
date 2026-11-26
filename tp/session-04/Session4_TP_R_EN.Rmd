@@ -1,0 +1,200 @@
+---
+title: "Practical 4: Statistical inference 1"
+output: html_document
+lang: en
+editor_options:
+  markdown:
+    wrap: 72
+---
+
+# Session 4 — Practical: Statistical inference — hypotheses and tests
+
+Use the dataset for your specialisation that you worked with in practicals 2 and 3. In this session, you will carry out **inferential analyses (statistical tests)** to examine a variable's distribution and compare group means.
+
+You may submit this assignment individually or in pairs. We strongly encourage you to work together to discuss your choices and learn from mistakes.
+
+This practical has six parts. Some code is already provided in executable cells. The plotting code to copy from the course is identified by its **block number and title**. Copy each block into your working environment, keep its title comment, and adapt it. Run the cells in order to avoid accidentally overwriting variables with inappropriate values.
+
+## Getting started
+
+Save this file in a new working folder containing the `data` folder from practical 2. Rename it `Session4_EN_SURNAME_Firstname`, keeping its file extension. If you are working in a pair, include both names.
+
+The [five CSV files](https://flo-unige.github.io/analyse-donnees-statistiques/donnees/index-en.html) are the same as in the previous session. Each file contains data for 195 countries in 2021 or 2022, with one row per country.
+
+| Dataset | File in `data/` |
+|------------------------------------|------------------------------------|
+| Ecological and social transition | `transition_ecologique_sociale_2021.csv` |
+| Energy | `energie_2021.csv` |
+| Climate impact | `impact_climatique_2021.csv` |
+| Water | `eau_2022.csv` |
+| Biodiversity | `biodiversite_2022.csv` |
+
+Double-click the `.Rmd` file you created to open RStudio in the correct working folder. Alternatively, start RStudio, open the document, then choose **Session > Set Working Directory > To Source File Location** to work in the practical's folder. Run code chunks using the green triangles and write your answers in the spaces provided outside the code.
+
+# A. Data and preparation
+
+## Importing and checking the data
+
+```{r importation}
+donnees <- read.csv("...", fileEncoding = "UTF-8")
+head(donnees)
+names(donnees)
+cat("n =", nrow(donnees), "\n")
+length(unique(donnees$country_code))
+```
+
+## Choosing and preparing variables
+
+Choose **one quantitative variable** and **one grouping factor** with at least three categories, each containing enough observations.
+
+# B. Sampling and exploration
+
+## Random sampling, distributions and normality testing
+
+Adapt the random sampling example from the course to `y1`. Set a seed using `set.seed()`. Sample 50, then 25, then 10 countries without replacement. Plot a histogram and run the Shapiro–Wilk normality test for each sample. If you can, use a `for` loop to complete this exercise.
+
+```{r echantillon}
+# Use the course blocks as a guide 
+# Create echantillon50, echantillon25 and echantillon10 from the GDP per capita values 
+
+# Check the available variable names to choose y1 and the factor f1. Create a label for each variable.
+names(donnees)
+y1<-"..."
+f1<-"..."
+```
+
+## Interpretation
+
+*Written response: Compare the shapes of the histograms with the test results. Explain how the results change with sample size.*
+
+# C. Hypotheses, normality and test selection
+
+## Normality of the two observed variables
+
+State the null hypothesis H0 of a normality test. Choose your significance level before running the analyses (for example, $\alpha=0.05$). For `y1`, report the number of usable observations and produce a histogram and a Q–Q plot.
+
+```{r normalite-reelle}
+# Block 9: adapt the course instructions to y1 
+# Display the plots and test results.
+
+
+# Use summary() on the dataset to identify the number of missing values in y1 and f1.
+summary(donnees)
+```
+
+### Interpretation and choice of approach
+
+*Written response: Is the normality test result consistent with the shape of the histogram?*
+
+# D. Comparing two independent groups
+
+## Research question, groups and descriptive statistics
+
+Choose two categories of `groupe`, without selecting them to obtain a significant result. Use `y1` as the response variable and create `deux_groupes`. Report the sample size, mean, standard deviation, median and quartiles for each group. Also produce a histogram for each group and a boxplot showing the individual observations.
+
+*Write before running the test: State your research question, identify and justify your chosen groups, and formulate H0 and H1 for the comparison of means.*
+
+```{r description-deux-groupes}
+# Block 13: Paste and adapt the course code here.
+#
+```
+
+## t-test and confidence interval
+
+Reproduce the classical t-test from the course (`var.equal = TRUE`).
+
+```{r test-t}
+# Block 14: Paste and adapt the course code here.
+# Adapt t.test() to your data 
+#
+```
+
+## Wilcoxon–Mann–Whitney
+
+Adapt the Wilcoxon test for two independent groups and display its output. Explain whether an approximation is needed in the presence of tied values (`exact = FALSE`, as in the course).
+
+```{r wilcoxon}
+# Block 15: Paste and adapt the course code here.
+# Adapt wilcox.test(); keep the same countries as for the t-test.
+#
+```
+
+## Conclusion for two groups
+
+*Written response: State which test you retain and why, interpret its result, and discuss both practical importance and statistical significance.*
+
+# E. Comparing several groups
+
+## Description and hypotheses
+
+Use `y1` with at least three categories of `groupe` and create `plusieurs_groupes`. Display histograms and boxplots by group.
+
+```{r description-plusieurs-groupes}
+# Block 16: Paste and adapt the course code here.
+#
+# Select the data for the four regions
+```
+
+## One-way ANOVA and diagnostics
+
+Fit a one-way ANOVA as in the course. Display the ANOVA table, then examine the residuals using a histogram, a Q–Q plot, a residuals-versus-fitted-values plot and, where applicable, the Shapiro–Wilk test. Discuss the normality of the errors, constant variance and independence. Report F, the degrees of freedom and the p-value. ANOVA does not require `y1` to be normally distributed across all groups combined.
+
+```{r anova}
+# Blocks 17 and 19: Paste and adapt the course code here.
+# Add diagnostic plots and a normality test for the residuals.
+#
+```
+
+## Post-hoc comparisons
+
+If the classical ANOVA is justified and indicates differences, apply Tukey's test as in the course. Present a clear table of differences, confidence intervals and adjusted p-values. If you decide not to use this post-hoc test, explain why; do not conclude that all groups are equal.
+
+If the variances are clearly unequal, explain this limitation of the classical ANOVA. You may explore Welch's ANOVA as an additional analysis; Tukey's test is not automatically an appropriate post-hoc test for it.
+
+```{r tukey}
+# Block 18: Paste and adapt the course code here.
+# Adapt TukeyHSD() only if its use is justified.
+# Identify the direction of the differences and the adjustment for multiple comparisons.
+#
+```
+
+## Kruskal–Wallis
+
+Apply the Kruskal–Wallis test to the same data. Report its statistic, degrees of freedom and p-value. Compare the result with the ANOVA.
+
+*Written response: State the hypotheses and results, discuss whether the methods agree, identify the diagnostic findings that guide your decision, and give your conclusion. If you interpret the results in terms of medians, discuss whether the distributions have comparable shapes.*
+
+```{r kruskal}
+# Block 20: Paste and adapt the course code here.
+# Adapt kruskal.test() to y1 and groupe.
+#
+# Compare the regions using a non-parametric test
+```
+
+# F. Summary and discussion
+
+## Summary table
+
+Replace the placeholders with your results. When running multiple tests, distinguish exploratory analyses from questions specified in advance. If an analysis does not apply, write “not applicable” and explain why.
+
+| Analysis | Data and n | Statistic; df | p-value | Conclusion |
+|:--------------|:--------------|:--------------|:--------------|:--------------|
+| Shapiro: y1 | To complete | To complete | To complete | To complete |
+| t-test | To complete | To complete | To complete | To complete |
+| Wilcoxon | To complete | To complete | To complete | To complete |
+| ANOVA | To complete | To complete | To complete | To complete |
+| Tukey, if applicable | To complete | See separate table | Adjusted | To complete |
+| Kruskal–Wallis | To complete | To complete | To complete | To complete |
+
+Supplement this table with the difference in means and its confidence interval, as well as Cramér's V, and interpret these results.
+
+## General discussion
+
+Write a discussion of 300–500 words addressing the hypotheses you tested. Support your conclusions with the plots and tests you have produced.
+
+*Written response: Your discussion, followed by a conclusion of a few sentences.*
+
+# Submission
+
+Before submitting, restart R and use **Knit**. This checks that the code works without relying on earlier runs. If you have not chosen the optional grid, you may leave its cells without output. Then save your **completed `.Rmd` file** and submit it on [Moodle](https://moodle.unige.ch/course/view.php?id=21845). Keep the HTML file to review your results.
+

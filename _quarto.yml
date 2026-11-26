@@ -45,6 +45,10 @@ project:
     - cours/session-06/index-en.qmd
     - cours/session-07/index-en.qmd
   resources:
+    - tp/session-04/Session4_TP_Python_FR.ipynb
+    - tp/session-04/Session4_TP_Python_EN.ipynb
+    - tp/session-04/Session4_TP_R_FR.Rmd
+    - tp/session-04/Session4_TP_R_EN.Rmd
     - ressources/fichiers/**
     - cours/session-04/data/**
     - cours/session-04/assets/**

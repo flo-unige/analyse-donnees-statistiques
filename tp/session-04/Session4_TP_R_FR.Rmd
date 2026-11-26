@@ -1,0 +1,282 @@
+---
+title: "TP 4 VF: Analyses inférentielles 1"
+output: html_document
+lang: fr
+editor_options: 
+  markdown: 
+    wrap: 72
+---
+
+# Session 4 - TP VF : Analyses inférentielles: hypothèses et tests
+
+Reprenez le jeu de votre spécialisation utilisé au TP 2 et 3. Le but de
+cette session est de faire des **analyses inférentielles (tests)** :
+nous allons tester la distribution d'une variable et la différence entre
+des moyennes de groupes.
+
+Vous pouvez rendre ce travail individuellement ou en binôme, nous vous
+encourageons fortement à travailler à plusieurs pour discuter de vos
+choix et de vos erreurs !
+
+Ce TP comporte six étapes en tout, et certains codes sont déjà fournis
+dans les cellules exécutables. Les graphiques à emprunter au cours sont
+désignés par leur **numéro et leur titre**. Copiez le contenu du bloc
+dans votre environnement, gardez son commentaire de titre, puis
+adaptez-le. Exécutez bien les cellules dans l'ordre, pour ne pas risquer
+de mauvaises redéfinitions de variables.
+
+## Retrouver ses repères
+
+Enregistrez ce fichier dans un nouveau dossier de travail contenant le
+dossier `data` du TP 2 et renommez-le `Session4_VF_NOM_Prenom` en
+conservant son extension. Pour un binôme, indiquez les deux noms.
+
+Les [cinq CSV du
+TP](https://flo-unige.github.io/analyse-donnees-statistiques/donnees/)
+sont les mêmes que ceux utilisés lors de la session précédente. Chaque
+fichier décrit 195 pays, avec une ligne par pays, pour 2021 ou 2022.
+
+| Jeu                              | Fichier dans `data/`                     |
+|------------------------------------|------------------------------------|
+| Transition écologique et sociale | `transition_ecologique_sociale_2021.csv` |
+| Énergie                          | `energie_2021.csv`                       |
+| Impact climatique                | `impact_climatique_2021.csv`             |
+| Eau                              | `eau_2022.csv`                           |
+| Biodiversité                     | `biodiversite_2022.csv`                  |
+
+Double-cliquez le document .Rmd que vous avez créé pour ouvrir Rstudio
+dans le bon dossier de travail. Alternativement, vous pouvez démarrer
+Rstudio d'abord, puis choisir **Session \> Set Working Directory \> To
+Source File Location** pour travailler dans le dossier du TP, et ouvrez
+le document dans RStudio . Vous pouvez exécuter les blocs avec les
+triangles verts et écrire vos réponses dans les espaces prévus en dehors
+du code.
+
+# A. Données et préparation
+
+## Importation et contrôle du classeur
+
+```{r importation}
+
+donnees <- read.csv("...", fileEncoding = "UTF-8")
+head(donnees)
+names(donnees)
+cat("n =", nrow(donnees), "\n")
+length(unique(donnees$country_code))
+```
+
+## Choix des variables et préparation
+
+Choisissez **une variables quantitative** et **un facteur de
+regroupement** comportant au moins trois modalités suffisamment
+représentées.
+
+# B. Échantillonnage et exploration
+
+## Tirage aléatoire, dsitribution et test de normalite
+
+Reprenez le tirage aléatoire du cours sur `y1`. Fixez une graine avec
+`set.seed()`. Tirez 50, puis 25, puis 10 pays sans remise, faites
+l'histogramme et le test de shapiro de normalité sur chaque échantillon.
+Si vous y arrivez, faites une boucle "for" pour résoudre cet exercice.
+
+```{r echantillon}
+# En vous inspirant des blocs 
+# Créer echantillon50, echantillon25 et echantillon10 à partir des valeurs de gdp per capita 
+
+# vérifier le noms des variables disponibles pour choisir y1 et le facteur f1. Créez une étiquette pour chaque variables
+names(donnees)
+y1<-"..."
+f1<-"..."
+
+
+
+```
+
+## Interprétation
+
+*À rédiger : comparer la forme des histogrammes obtenus avec le résultat
+des tests. Expliquer ce qu'il se passe en fonction de la taille de
+l'échantillon*
+
+# C. Hypothèses, normalité et choix des tests
+
+## Normalité des deux variables réelles
+
+Identifiez l'hypothèse Ho d'un test de normalité. Fixez le seuil de
+décision avant les analyses (par exemple $\alpha=0{,}05$). Pour `y1` ,
+indiquez le nombre de valeurs utilisables, produisez un histogramme et
+un QQplot.
+
+```{r normalite-reelle}
+# Bloc 9: Inspirez-vous des instructions du cours pour y1 
+# Afficher les graphiques et les sorties de tests.
+
+
+# utiliser la fonction "summary" sur le jeu de données pour identifier le nombre de NA sur y1 et f1
+summary(donnees)
+
+
+
+```
+
+### Interprétation et stratégie
+
+*À rédiger : est-ce que le résultat du test de normalité est cohérent
+avec la forme de l'histogramme?*
+
+# D. Comparaison de deux groupes indépendants
+
+## Question, groupes et description
+
+Choisissez deux modalités de `groupe`, sans les sélectionner pour
+obtenir un résultat significatif. Utilisez `y1` comme réponse et créez
+`deux_groupes`. Présentez les effectifs, moyennes, écarts-types,
+médianes et quartiles par groupe, ainsi que des histogrammes par groupe
+et un boxplot avec les observations.
+
+*À rédiger avant le test : question, groupes retenus, justification, H0
+et H1 pour la comparaison des moyennes.*
+
+```{r description-deux-groupes}
+# Bloc 13: Collez et adaptez ici les instructions du cours.
+#
+
+```
+
+## Test t et intervalle de confiance
+
+Reproduisez le test t classique du cours (`var.equal = TRUE`).
+
+```{r test-t}
+# Bloc 14: Collez et adaptez ici les instructions du cours.
+# Adapter t.test() aux données 
+#
+
+
+```
+
+## Wilcoxon–Mann–Whitney
+
+Adaptez le test de Wilcoxon pour deux groupes indépendants et affichez
+sa sortie. Justifiez le recours éventuel à une approximation en présence
+d’ex æquo (`exact = FALSE`, comme dans le cours).
+
+```{r wilcoxon}
+# Bloc 15: Collez et adaptez ici les instructions du cours.
+# Adapter wilcox.test() ; conserver les mêmes pays que pour le test t.
+#
+
+```
+
+## Conclusion pour deux groupes
+
+*À rédiger : test retenu et interprétation et raisons pratique et
+significativité statistique.*
+
+# E. Comparaison de plusieurs groupes
+
+## Description et hypothèses
+
+Reprenez `y1` avec au moins trois modalités de `groupe` et créez
+`plusieurs_groupes`. Affichez les histogrammes et boxplots par groupe.
+
+```{r description-plusieurs-groupes}
+# Bloc 16: Collez et adaptez ici les instructions du cours.
+#
+# Sélectionner les données des 4 régions
+
+```
+
+## ANOVA à un facteur et diagnostics
+
+Ajustez une ANOVA à un facteur comme dans le cours. Affichez sa table,
+puis examinez les résidus : histogramme, QQplot, résidus en fonction des
+valeurs ajustées, et Shapiro–Wilk si applicable. Discutez la normalité
+des erreurs, la constance de leur variance et l’indépendance.
+
+Rapportez F, les degrés de liberté et la p-value. Une normalité globale
+de `y1` n’est pas une condition nécessaire de l’ANOVA.
+
+```{r anova}
+# Bloc 17 et 19: Collez et adaptez ici les instructions du cours.
+# Ajouter les graphiques de diagnostic et le test de normalité des résidus.
+#
+
+```
+
+## Comparaisons post-hoc
+
+Si l’ANOVA classique est justifiée et indique des différences, appliquez
+Tukey comme dans le cours. Présentez un tableau lisible des différences,
+intervalles de confiance et p-values ajustées. Si vous ne retenez pas ce
+post-hoc, expliquez pourquoi ; ne concluez pas à une égalité de tous les
+groupes.
+
+En cas de variances manifestement inégales, signalez la limite de
+l’ANOVA classique. Une ANOVA de Welch peut être explorée en complément ;
+Tukey ne constitue pas son post-hoc automatique.
+
+```{r tukey}
+# Bloc 18: Collez et adaptez ici les instructions du cours.
+# Adapter TukeyHSD() uniquement si son utilisation est justifiée.
+# Identifier le sens des différences et l’ajustement des comparaisons multiples.
+#
+
+```
+
+## Kruskal–Wallis
+
+Appliquez le test de Kruskal–Wallis aux mêmes données. Rapportez sa
+statistique, ses degrés de liberté et sa p-value. Comparez avec l’ANOVA.
+
+*À rédiger : hypothèses, résultats, accord ou désaccord entre les
+méthodes, diagnostic déterminant et conclusion retenue. Pour parler de
+médianes, discutez la comparabilité des formes de distribution.*
+
+```{r kruskal}
+# Bloc 20: Collez et adaptez ici les instructions du cours.
+# Adapter kruskal.test() à y1 et groupe.
+#
+# Comparer les régions avec un test non-paramétrique
+
+```
+
+# F. Synthèse et discussion
+
+## Tableau de synthèse
+
+Remplacez les cases à compléter par vos résultats. Pour les tests
+multiples, distinguez les analyses exploratoires des questions définies
+à l’avance. Si une analyse n’est pas applicable, indiquez « non
+applicable » et la raison.
+
+| Analyse              | Données et n | Statistique ; ddl  | p-value     | Conclusion  |
+|:--------------|:--------------|:--------------|:--------------|:--------------|
+| Shapiro : y1         | À compléter  | À compléter        | À compléter | À compléter |
+| Test t               | À compléter  | À compléter        | À compléter | À compléter |
+| Wilcoxon             | À compléter  | À compléter        | À compléter | À compléter |
+| ANOVA                | À compléter  | À compléter        | À compléter | À compléter |
+| Tukey, si applicable | À compléter  | Voir tableau dédié | Ajustées    | À compléter |
+| Kruskal–Wallis       | À compléter  | À compléter        | À compléter | À compléter |
+
+Complétez ce tableau par la différence de moyennes et son intervalle de
+confiance, ainsi que par le V de Cramér, avec leurs interprétations.
+
+## Discussion générale
+
+Rédigez une discussion de 300 à 500 mots qui répond à vos hypothèses
+testées. Appuyez vos conclusions sur les graphiques et les tests
+effectués.
+
+*À rédiger : votre discussion, puis une conclusion de quelques phrases.*
+
+# Travail à rendre
+
+Avant de rendre votre travail, redémarrez R puis utilisez **Knit**, cela
+permet de vérifier que le code fonctionne sans dépendre d'un essai
+précédent (si vous n'avez pas choisi la grille facultative, vous pouvez
+laisser ses cellules sans résultat). Enregistrez ensuite votre **`.Rmd`
+complété**, c'est ce fichier que vous devez rendre sur
+[Moodle](https://moodle.unige.ch/course/view.php?id=21845), et gardez le
+HTML pour relire vos résultats.
