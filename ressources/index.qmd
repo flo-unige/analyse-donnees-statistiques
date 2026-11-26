@@ -31,6 +31,12 @@ Un guide pour comprendre les fonctions principales, méthodes et syntaxes utilis
 
 [English version (PDF)](fichiers/Guide_Python_EN.pdf)
 
+## Aide-mémoire R
+
+Ceci est un aide-mémoire (en anglais) qui rassemble les principales commandes et fonctions de R.
+
+[Télécharger l’aide-mémoire R (PDF, en anglais)](fichiers/R_reference_card_big.pdf)
+
 ## Références bibliographiques
 
 - Campesato O. 2023. *Statistics Using Python*. Mercury Learning.

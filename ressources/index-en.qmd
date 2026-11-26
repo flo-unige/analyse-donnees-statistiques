@@ -31,6 +31,12 @@ A guide to the functions, methods and syntax used in the **lectures and practica
 
 [Version française (PDF)](fichiers/Guide_Python_FR.pdf)
 
+## R reference card
+
+This reference card (in English) brings together the main R commands and functions.
+
+[Download the R reference card (PDF, in English)](fichiers/R_reference_card_big.pdf)
+
 ## Bibliographic references
 
 - Campesato O. 2023. *Statistics Using Python*. Mercury Learning.
