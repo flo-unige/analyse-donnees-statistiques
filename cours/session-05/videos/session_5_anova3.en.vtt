@@ -1,0 +1,163 @@
+WEBVTT
+
+1
+00:00:00.370 --> 00:00:04.650
+So, let's take an example. We will
+return to these simple examples involving
+
+2
+00:00:04.650 --> 00:00:09.050
+heights in a population, but this
+time we will have two factors:
+
+3
+00:00:09.050 --> 00:00:14.230
+sex, male or female, and nationality,
+with several nationalities.
+
+4
+00:00:14.310 --> 00:00:19.510
+We will generate data to see what
+happens with and without an interaction
+
+5
+00:00:19.510 --> 00:00:24.770
+and see how we can visualize this
+concept of interaction graphically.
+
+6
+00:00:27.640 --> 00:00:33.460
+So, in the first example, where
+we would simply have main effects
+
+7
+00:00:33.460 --> 00:00:39.660
+with an interaction term, we will
+see that height is ultimately
+
+8
+00:00:39.860 --> 00:00:45.300
+a function of the mean height
+of all the people measured,
+
+9
+00:00:46.040 --> 00:00:51.040
+plus the effect of sex, plus
+the effect of nationality,
+
+10
+00:00:51.140 --> 00:00:55.720
+plus the effect of the interactions
+between them, and of course,
+
+11
+00:00:55.720 --> 00:01:01.440
+an error in our sample. There
+will always be an error.
+
+12
+00:01:01.660 --> 00:01:04.880
+People belonging to the same group and the
+
+13
+00:01:04.880 --> 00:01:07.760
+same nationality do not all
+have exactly the same height.
+
+14
+00:01:10.350 --> 00:01:13.890
+So, in R, for example, we
+can write this as an ANOVA
+
+15
+00:01:13.890 --> 00:01:18.330
+where height is a function
+of sex times nationality,
+
+16
+00:01:18.370 --> 00:01:24.050
+meaning the fixed effects of sex and
+nationality, plus their interaction.
+
+17
+00:01:26.500 --> 00:01:30.140
+In a first example, we
+generated data that gave us
+
+18
+00:01:30.140 --> 00:01:34.340
+the following results. The
+mean height of women of
+
+19
+00:01:34.340 --> 00:01:39.780
+nationality A is 162, and for
+nationality B it is 170: they are taller.
+
+20
+00:01:40.000 --> 00:01:44.860
+For men, it is 174 for nationality
+A and 182 for nationality B.
+
+21
+00:01:45.040 --> 00:01:50.700
+If we plot these values on a graph
+like this, we can connect the mean
+
+22
+00:01:50.700 --> 00:01:57.040
+heights of men with the orange line,
+and of women with the blue line,
+
+23
+00:01:57.060 --> 00:02:01.180
+and see that we obtain two parallel lines,
+
+24
+00:02:01.240 --> 00:02:06.980
+which indicates that the variation
+due to nationality is the same,
+
+25
+00:02:12.900 --> 00:02:16.860
+12 cm, whether we are looking
+at nationality A or B.
+
+26
+00:02:24.070 --> 00:02:29.010
+Here, in the example with an
+interaction, we generated data such that
+
+27
+00:02:29.010 --> 00:02:36.150
+the height difference is not the
+same for nationality A as for
+
+28
+00:02:36.150 --> 00:02:39.990
+nationality B between men and
+women. So, when we plot the graphs,
+
+29
+00:02:39.990 --> 00:02:43.930
+we see that our lines are no
+longer parallel, indicating the
+
+30
+00:02:43.930 --> 00:02:50.150
+presence of an interaction, which
+we can interpret as height being
+
+31
+00:02:50.150 --> 00:02:57.310
+a function of both nationality
+and sex at the same time, and
+
+32
+00:02:57.310 --> 00:03:03.330
+the height differences by
+sex will not be the same
+
+33
+00:03:03.330 --> 00:03:05.470
+depending on nationality, or vice versa.

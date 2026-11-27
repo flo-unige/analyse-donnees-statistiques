@@ -1,0 +1,115 @@
+1
+00:00:00,460 --> 00:00:04,420
+So, last time, we saw how ANOVA
+
+2
+00:00:04,420 --> 00:00:09,760
+allowed us to compare means
+across more than two groups.
+
+3
+00:00:10,420 --> 00:00:15,660
+So, we have a factor that defines
+several groups, several levels.
+
+4
+00:00:15,760 --> 00:00:20,380
+And when our variables
+are normally distributed,
+
+5
+00:00:20,380 --> 00:00:26,900
+we typically choose ANOVA to compare the means
+
+6
+00:00:26,900 --> 00:00:31,360
+across these different groups. Here,
+the null hypothesis is that the mean
+
+7
+00:00:31,360 --> 00:00:35,000
+of group 1 equals the mean of
+group 2 and the mean of group 3.
+
+8
+00:00:35,040 --> 00:00:39,680
+If we reject this null hypothesis,
+with a p-value below 0.05,
+
+9
+00:00:40,720 --> 00:00:45,560
+we accept the alternative hypothesis
+that one of these means is different,
+
+10
+00:00:45,560 --> 00:00:47,900
+statistically different from the other two.
+
+11
+00:00:49,000 --> 00:00:53,440
+If, on the other hand, our data are
+not normally distributed, we will
+
+12
+00:00:53,440 --> 00:00:59,240
+prefer the nonparametric equivalent of
+ANOVA, which here would be Kruskal-Wallis.
+
+13
+00:01:02,290 --> 00:01:07,610
+Today, we will see how to generalize
+this ANOVA with one factor and
+
+14
+00:01:07,610 --> 00:01:12,830
+several levels to an ANOVA with
+several factors defining the groups.
+
+15
+00:01:13,010 --> 00:01:20,410
+Here, this graph shows means
+plotted according to one factor
+
+16
+00:01:20,410 --> 00:01:27,810
+and the group means for that
+factor, and vertically, a
+
+17
+00:01:27,810 --> 00:01:35,050
+second factor and the means for
+the levels of that second factor.
+
+18
+00:01:35,510 --> 00:01:38,030
+With an ANOVA like this, with several factors,
+
+19
+00:01:38,050 --> 00:01:41,270
+we are ultimately testing
+several hypotheses at once.
+
+20
+00:01:41,410 --> 00:01:47,750
+The effect of factor 1 on the
+mean: that the mean of each
+
+21
+00:01:47,750 --> 00:01:53,510
+group of factor 1 is equal; and the
+effect of factor 2 on the means,
+
+22
+00:01:53,510 --> 00:01:58,270
+where all the groups of factor
+2 would have the same mean.
+
+23
+00:01:58,850 --> 00:02:04,690
+We test these hypotheses twice, with
+two associated p-values, and we can
+
+24
+00:02:04,690 --> 00:02:12,170
+reject the effect of factor 1,
+factor 2, or both in the result.

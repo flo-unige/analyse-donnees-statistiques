@@ -1,0 +1,117 @@
+1
+00:00:00,460 --> 00:00:04,420
+Donc, la dernière fois, nous
+avions vu comment l'ANOVA nous
+
+2
+00:00:04,420 --> 00:00:09,760
+permettait de comparer des moyennes
+entre plus que deux groupes.
+
+3
+00:00:10,420 --> 00:00:15,660
+Donc, on a un facteur qui détermine
+plusieurs groupes, plusieurs niveaux.
+
+4
+00:00:15,760 --> 00:00:20,380
+Et quand nos variables sont
+distribuées normalement,
+
+5
+00:00:20,380 --> 00:00:26,900
+on va choisir le test typiquement d'ANOVA
+pour comparer les moyennes que l'on a
+
+6
+00:00:26,900 --> 00:00:31,360
+entre ces différents groupes et typiquement
+l'hypothèse H0 ici, c'est que la moyenne
+
+7
+00:00:31,360 --> 00:00:35,000
+du groupe 1 est égale à la moyenne du
+groupe 2 et égale à la moyenne du groupe 3.
+
+8
+00:00:35,040 --> 00:00:39,680
+Si on rejette cette hypothèse H0, c'est
+avec une p-value plus petite que 0,05,
+
+9
+00:00:40,720 --> 00:00:45,560
+on admet à l'hypothèse alternative que
+l'une de ces moyennes est différente,
+
+10
+00:00:45,560 --> 00:00:47,900
+statistiquement différente des deux autres.
+
+11
+00:00:49,000 --> 00:00:53,440
+Si nos données, contrairement, ne suivent
+pas une distribution normale, on va
+
+12
+00:00:53,440 --> 00:00:59,240
+préférer l'équivalent non paramétrique de
+l'ANOVA, qui serait ici le Kruskal-Wallis.
+
+13
+00:01:02,290 --> 00:01:07,610
+Aujourd'hui, on va voir comment on peut
+généraliser cette ANOVA à un facteur à
+
+14
+00:01:07,610 --> 00:01:12,830
+plusieurs niveaux, à une ANOVA avec plusieurs
+facteurs qui définissent les groupes.
+
+15
+00:01:13,010 --> 00:01:20,410
+On a ici sur ce graphique des moyennes qui
+sont représentées en fonction d'un facteur
+
+16
+00:01:20,410 --> 00:01:27,810
+et de ses moyennes par groupe selon
+ce facteur, et verticalement d'un
+
+17
+00:01:27,810 --> 00:01:35,050
+deuxième facteur et des moyennes que l'on
+a selon les niveaux de ce deuxième facteur.
+
+18
+00:01:35,510 --> 00:01:38,030
+Avec une ANOVA comme ça, à plusieurs facteurs,
+
+19
+00:01:38,050 --> 00:01:41,270
+on teste finalement plusieurs
+hypothèses à la fois.
+
+20
+00:01:41,410 --> 00:01:47,750
+C'est l'effet du facteur 1 sur la
+moyenne, que toute la moyenne de chacun
+
+21
+00:01:47,750 --> 00:01:53,510
+des groupes du facteur 1 est égale, et
+l'effet du facteur 2 sur les moyennes,
+
+22
+00:01:53,510 --> 00:01:58,270
+où tous les groupes du facteur
+2 auraient la même moyenne.
+
+23
+00:01:58,850 --> 00:02:04,690
+On teste deux fois ces hypothèses, et
+puis on a deux p-values associées, on peut
+
+24
+00:02:04,690 --> 00:02:12,170
+rejeter l'effet du facteur 1 ou du
+facteur 2 ou des deux dans le résultat.

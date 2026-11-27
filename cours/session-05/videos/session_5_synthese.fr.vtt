@@ -1,0 +1,211 @@
+WEBVTT
+
+1
+00:00:00.880 --> 00:00:05.200
+Voilà, en résumé, des deux sessions
+consacrées aux statistiques inférentielles,
+
+2
+00:00:05.240 --> 00:00:09.320
+on peut regarder de manière
+synthétique ce que l'on a vu.
+
+3
+00:00:09.900 --> 00:00:13.060
+Tout d'abord, quand vous
+récupérez un jeu de données,
+
+4
+00:00:13.160 --> 00:00:16.740
+ou que vous créez un jeu de
+données avec vos observations,
+
+5
+00:00:17.400 --> 00:00:23.020
+vous allez décrire un peu les
+variables que vous avez à disposition.
+
+6
+00:00:23.480 --> 00:00:27.540
+Une des choses importantes à regarder,
+c'est la distribution de ces variables,
+
+7
+00:00:27.540 --> 00:00:31.480
+et notamment savoir si votre variable
+d'intérêt, la croissance d'une
+
+8
+00:00:31.480 --> 00:00:36.020
+plante ou l'effet d'un médicament,
+suit ou pas une distribution normale.
+
+9
+00:00:36.140 --> 00:00:39.420
+On peut le regarder graphiquement,
+mais on peut aussi utiliser un test
+
+10
+00:00:39.420 --> 00:00:44.200
+comme le Shapiro test pour tester la
+normalité de nos variables d'intérêt.
+
+11
+00:00:44.520 --> 00:00:48.860
+Si cette variable suit une distribution
+gaussienne, dite paramétrique,
+
+12
+00:00:49.480 --> 00:00:55.060
+on va pouvoir effectuer sur cette
+variable des tests dits paramétriques.
+
+13
+00:00:55.060 --> 00:01:02.560
+et s'il s'agit de comparer par
+exemple les moyennes avec un facteur
+
+14
+00:01:02.560 --> 00:01:07.260
+qui aurait deux niveaux, donc deux groupes,
+on va avoir le test de t à disposition.
+
+15
+00:01:07.540 --> 00:01:11.360
+Si on a un facteur avec plus que
+deux niveaux, on va avoir l'ANOVA.
+
+16
+00:01:11.520 --> 00:01:15.480
+On va aussi pouvoir utiliser l'ANOVA quand
+on a plusieurs facteurs avec plusieurs
+
+17
+00:01:15.480 --> 00:01:20.700
+niveaux chacun et aussi regarder les
+interactions entre les différents facteur.
+
+18
+00:01:20.920 --> 00:01:24.380
+Si au contraire nos données ne suivent
+pas une distribution paramétrique,
+
+19
+00:01:24.560 --> 00:01:31.120
+on va préférer les équivalents non
+paramétriques des tests, donc le Wilcoxon
+
+20
+00:01:31.120 --> 00:01:35.480
+à la place du t-test et le Kruskal-Wallis
+à la place de l'ANOVA à un facteur.
+
+21
+00:01:35.520 --> 00:01:39.780
+On n'aura pas d'équivalent non paramétrique
+à l'ANOVA à plusieurs facteurs.
+
+22
+00:01:40.460 --> 00:01:44.600
+On a aussi vu d'autres types de tests,
+pas basés sur les différences de moyenne,
+
+23
+00:01:44.640 --> 00:01:51.960
+mais plutôt qui s'intéresse à la dépendance
+qu'il y a entre différentes catégories
+
+24
+00:01:51.960 --> 00:01:57.060
+et sur des effectifs de population que
+l'on a dans ces différentes catégories.
+
+25
+00:01:58.200 --> 00:02:04.640
+Pour ce faire, on va comparer les
+effectifs attendus aux effectifs observés
+
+26
+00:02:04.640 --> 00:02:10.260
+et utiliser typiquement le chi carré
+comme test pour faire ces analyses.
+
+27
+00:02:11.400 --> 00:02:15.500
+Finalement, toutes les statistiques
+que l'on aura vu, des plus simples aux
+
+28
+00:02:15.500 --> 00:02:20.360
+plus complexes, d'une moyenne à un
+chi carré, peuvent être bootstrappés,
+
+29
+00:02:20.440 --> 00:02:24.760
+c'est-à-dire qu'on va prendre notre
+échantillon de base et générer des dizaines,
+
+30
+00:02:24.760 --> 00:02:29.400
+des centaines, des milliers d'échantillons
+similaires basés sur l'échantillon
+
+31
+00:02:29.400 --> 00:02:36.760
+initial et recalculer notre variable
+d'intérêt et ainsi pouvoir regarder la
+
+32
+00:02:36.760 --> 00:02:43.180
+distribution obtenue sur ces rééchantillonnages
+et typiquement calculer par exemple
+
+33
+00:02:43.180 --> 00:02:47.020
+l'intervalle de confiance que l'on peut
+avoir autour de notre statistique d'intérêt.
+
+34
+00:02:48.700 --> 00:02:52.900
+Donc ce que je voulais raconter, que
+j'ai monté pour ce cours, vous allez le
+
+35
+00:02:52.900 --> 00:02:58.020
+retrouver par exemple ici dans un autre
+site où vous avez les tests d'hypothèse,
+
+36
+00:02:58.060 --> 00:03:01.900
+le choix entre paramétrique et non
+paramétrique, s'il y en a un ou plusieurs
+
+37
+00:03:01.900 --> 00:03:05.160
+échantillons sur lesquels on travaille, et
+puis les différents tests que l'on a vus.
+
+38
+00:03:05.160 --> 00:03:07.820
+On ne les a pas tous vus,
+mais beaucoup d'entre eux.
+
+39
+00:03:08.200 --> 00:03:11.800
+Bien sûr, il en existe d'autres
+spécifiques à tel ou tel type
+
+40
+00:03:11.800 --> 00:03:15.380
+de situation et plein d'options
+derrière chacun de ces tests.
+
+41
+00:03:15.560 --> 00:03:19.760
+Mais avec ce que l'on a vu, je pense
+qu'on couvre à peu près 80% de ce que vous
+
+42
+00:03:19.760 --> 00:03:27.020
+risquez de rencontrer dans la littérature
+ou d'avoir besoin dans vos études futures.

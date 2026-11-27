@@ -1,0 +1,686 @@
+---
+title: "Session 5  - Statistiques inférentielles 2 : ANOVA, plans d’expérience et bootstrap"
+subtitle: "Comprendre les modèles, les appliquer dans R, et interpréter leurs résultats"
+author: "Travaux pratiques du cours d’Anthony Lehmann"
+lang: fr
+format:
+  html:
+    theme: cosmo
+    toc: true
+    toc-depth: 3
+    number-sections: true
+    smooth-scroll: false
+    code-fold: false
+    code-tools: false
+    code-summary: "Afficher le code R"
+    code-copy: true
+    embed-resources: false
+    fig-cap-location: bottom
+execute:
+  echo: true
+  warning: true
+  message: false
+  cache: false
+sidebar: cours
+toc-title: "Sur cette page"
+---
+
+```{=html}
+<div class="course-choices">
+<nav class="course-language" aria-label="Langue du cours"><span aria-current="page" lang="fr">Français</span><a href="index-en-r.html" lang="en" hreflang="en">English</a></nav>
+<nav class="course-code" aria-label="Langage des exemples"><a href="index.html">Python</a><span aria-current="page">R</span></nav>
+</div>
+```
+
+# Objectifs et fil conducteur
+
+Ce cours prolonge le chapitre « Hypothèses et tests » et poursuit l'exploration des Statistiques inférentielles avec : ANOVA, interactions, plans d’expérience, modèles linéaires mixtes et bootstrap. Chaque partie associe une explication, du code R exécutable et des graphiques.
+
+À la fin de la séance, vous devriez pouvoir :
+
+- comparer plusieurs moyennes et interpréter la statistique F ;
+- vérifier les hypothèses d’un modèle et choisir une alternative adaptée ;
+- distinguer effets principaux et interaction entre deux facteurs ;
+- construire un plan complètement randomisé, un carré latin et un plan en blocs ;
+- distinguer effets fixes et aléatoires dans un modèle linéaire mixte ;
+- estimer l’incertitude par bootstrap en respectant l’unité d’échantillonnage.
+
+# Préparer la séance
+
+## Installation des packages
+
+Les packages s’installent une seule fois dans la console R :
+
+```{r}
+#| label: configuration
+#| message: false
+#| warning: false
+
+# Bloc 1: Installe les packages manquants
+packages = c("ggplot2", "readxl", "emmeans", "lme4", "lmerTest", "boot")
+
+for (pkg in packages) {
+  if (!requireNamespace(pkg, quietly = TRUE)) {
+    install.packages(pkg)
+  }
+  library(pkg, character.only = TRUE)
+}
+
+# Définit un theme pour les graphiques de ggplot
+theme_set(theme_minimal(base_size = 13))
+
+# Crée une fonction pour calculer l'Interval de Confiance de moyenne fondé sur t, sans dépendance au package Hmisc.
+ic_moyenne <- function(x) {
+  x <- x[is.finite(x)]
+  marge <- qt(.975, df = length(x) - 1) * sd(x) / sqrt(length(x))
+  data.frame(y = mean(x), ymin = mean(x) - marge, ymax = mean(x) + marge)
+}
+
+# définir des paramètres globaux de la session
+options(contrasts = c("contr.treatment", "contr.poly"), digits = 4)
+
+# définir une valueur de seed pour les tirages aléatoires.
+set.seed(2026)
+```
+
+## Importer et contrôler les données
+
+Le fichier **data 2025.xlsx** comporte les feuilles `data`, `clean` et `legend`. Nous utilisons `clean`, qui contient des valeurs numériques et les facteurs utilisés.
+
+```{r}
+#| label: importation
+# Bloc 2 
+# Importater depuis un fichier excel, utilisez read.csv() si vos données sont dans un fichier texte (.csv)
+data_path <- "data/data 2025.xlsx"
+data_2025 <- read_excel(data_path,sheet = "clean")
+
+# Le fichier contient les variables suivantes 
+names(data_2025)
+# que nous pouvons résumer avec la fonction summary
+summary(data_2025)
+```
+
+On élimine éventuellement les lignes (observations) pour lesquels il y a des données manquantes sur certaines variables.
+
+```{r}
+#| label: controle-donnees
+# Bloc 3
+# Eliminer les pays qui n'auraient pas de données pour les variables PA_land et gdp_pcap
+data_2025 <- data_2025[!is.na(data_2025$PA_land),]
+data_2025 <- data_2025[!is.na(data_2025$gdp_pcap),]
+summary(data_2025[,c("region","lex", "en_brd", "PA_land", "gdp_pcap")])
+```
+
+::: {.callout-important title="Quelle population vise-t-on ?"}
+Le classeur couvre une grande partie des pays et ne représente pas un échantillon aléatoire simple de pays. Les tests ci-dessous servent à apprendre une démarche d’inférence sous un modèle. La dépendance spatiale, les histoires communes des pays et les différences de mesure limitent leur interprétation.
+:::
+
+# ANOVA à un facteur : comparer plusieurs moyennes
+
+::: {.content-visible when-format="html"}
+```{=html}
+<div class="cours-video">
+  <video id="video-session_5_anova2" class="video-js vjs-big-play-centered" data-cours-video
+         controls preload="metadata" playsinline>
+    <source src="https://mediaserver.unige.ch/proxy/320471/VK2KexpLPIQork1l.mp4?from_player=true" type="video/mp4">
+    <track kind="subtitles" src="videos/session_5_anova2.fr.vtt" srclang="fr" label="Français" default>
+    <track kind="subtitles" src="videos/session_5_anova2.en.vtt" srclang="en" label="English">
+    <p>Votre navigateur ne peut pas afficher cette vidéo. Utilisez le lien ci-dessous.</p>
+  </video>
+  <div class="cours-video-erreur" role="status" hidden>
+    <p>La vidéo n’a pas pu être chargée. Vous pouvez réessayer ou l’ouvrir avec le lien ci-dessous.</p>
+    <button class="cours-video-reessayer" type="button">Réessayer</button>
+  </div>
+</div>
+```
+
+[Ouvrir la vidéo](https://mediaserver.unige.ch/proxy/320471/VK2KexpLPIQork1l.mp4?width=1920&height=1080&start=0).
+:::
+
+## Question, hypothèses et modèle
+
+**Question :** l’espérance de vie moyenne est-elle identique dans toutes les régions ?
+
+Pour $k$ régions, l’hypothèse nulle est $H_0 : \mu_1=\cdots=\mu_k$. L’alternative est qu’au moins une moyenne diffère. Le modèle s’écrit :
+
+$$Y_{ij}=\mu+\alpha_i+\varepsilon_{ij}.$$
+
+$Y_{ij}$ est l’espérance de vie du pays $j$ dans la région $i$, $\mu$ un niveau de référence et $\alpha_i$ l’effet de la région. L’ANOVA compare la variabilité **entre groupes** à la variabilité **résiduelle au sein des groupes**.
+
+```{r}
+#| label: description-regions
+# Bloc 4
+
+# boxplot par groupe
+ggplot(data_2025 , aes(region, lex, fill = region)) +
+  geom_boxplot(width = .55, alpha = .45, outlier.shape = NA) +
+  geom_point(position = position_jitter(width = .12, seed = 1), alpha = .55) +
+  stat_summary(fun = mean, geom = "point", shape = 23, size = 3, fill = "white") +
+  labs(x = "Région", y = "Espérance de vie (années)") +
+  guides(fill = "none")
+```
+
+Les boîtes décrivent les distributions, les losanges blancs indiquent les moyennes. Une différence visuelle ne suffit pas à quantifier l’incertitude et ne révèle pas sa cause.
+
+## Décomposer la variance et calculer F
+
+$$SS_{total}=SS_{entre}+SS_{résiduel}, \qquad
+F=\frac{SS_{entre}/(k-1)}{SS_{résiduel}/(n-k)}.$$
+
+Sous les hypothèses du modèle et sous $H_0$, cette statistique suit une loi F à $k-1$ et $n-k$ degrés de liberté. Une valeur élevée indique que les différences entre moyennes sont grandes relativement à la dispersion résiduelle.
+
+```{r}
+#| label: anova-un-facteur
+# Bloc 5 ANOVA à 1 Facteur
+
+# calcul de l'anova avec la fonction aov
+
+d <- data_2025 
+m1 <- aov(lex ~ region, data = d)
+summary(m1)
+
+# calcul de l'anova par étape
+n <- nrow(d)
+k <- nlevels(as.factor(d$region))
+moyennes <- ave(d$lex, d$region, FUN = mean)
+ss_entre <- sum((moyennes - mean(d$lex))^2)
+ss_res <- sum((d$lex - moyennes)^2)
+F_calcule <- (ss_entre / (k - 1)) / (ss_res / (n - k))
+p_calcule <- pf(F_calcule, k - 1, n - k, lower.tail = FALSE)
+knitr::kable(data.frame(F = F_calcule, ddl1 = k - 1, ddl2 = n - k,
+                        p.value = p_calcule))
+
+```
+
+Une petite p-value indique une incompatibilité avec l’égalité de toutes les moyennes, sous le modèle. Elle n’identifie pas les régions qui diffèrent et ne mesure pas l’importance de la différence.
+
+## Vérifier les hypothèses
+
+L’ANOVA classique suppose des erreurs indépendantes, de variance commune et approximativement normales pour l’inférence exacte. La normalité concerne les **erreurs conditionnelles**, examinées par les résidus, et non la distribution de toutes les observations mélangées.
+
+```{r}
+#| label: diagnostics-anova
+#| fig-width: 9
+#| fig-height: 4.5
+# Bloc 7 diagnostic
+ancien <- par(mfrow = c(1, 2))
+plot(m1, which = 1)
+plot(m1, which = 2)
+par(ancien)
+shapiro.test(residuals(m1))
+
+```
+
+Le graphique résidus–valeurs ajustées aide à repérer des dispersions différentes et des valeurs atypiques. Le QQ-plot examine la forme de la distribution des résidus.
+
+## Quelles régions diffèrent ?
+
+Multiplier des tests t sans correction augmente le risque d’au moins un faux positif. Les comparaisons de Tukey contrôlent ce risque pour la famille des comparaisons par paires sous les hypothèses classiques.
+
+```{r}
+#| label: tukey
+# Bloc 8 test de Tukey
+comparaisons <- TukeyHSD(m1)
+comparaisons
+plot(comparaisons, las = 1)
+```
+
+Un intervalle de différence qui exclut zéro indique une différence détectée avec l’ajustement de Tukey.
+
+## Alternative fondée sur les rangs
+
+Kruskal–Wallis compare les distributions à partir des rangs. Il ne teste pas en général l’égalité des moyennes, ni uniquement celle des médianes. Une lecture en termes de décalage de position exige notamment des distributions de forme comparable.
+
+```{r}
+#| label: kruskal
+# Bloc 9 test kruskal
+kruskal.test(lex ~ region, data = d)
+pairwise.wilcox.test(d$lex, d$region, p.adjust.method = "holm", exact = FALSE)
+```
+
+# ANOVA à deux facteurs et interactions
+
+::: {.content-visible when-format="html"}
+```{=html}
+<div class="cours-video">
+  <video id="video-session_5_anova3" class="video-js vjs-big-play-centered" data-cours-video
+         controls preload="metadata" playsinline>
+    <source src="https://mediaserver.unige.ch/proxy/320472/UPvMPZKH7KS74ICF.mp4?from_player=true" type="video/mp4">
+    <track kind="subtitles" src="videos/session_5_anova3.fr.vtt" srclang="fr" label="Français" default>
+    <track kind="subtitles" src="videos/session_5_anova3.en.vtt" srclang="en" label="English">
+    <p>Votre navigateur ne peut pas afficher cette vidéo. Utilisez le lien ci-dessous.</p>
+  </video>
+  <div class="cours-video-erreur" role="status" hidden>
+    <p>La vidéo n’a pas pu être chargée. Vous pouvez réessayer ou l’ouvrir avec le lien ci-dessous.</p>
+    <button class="cours-video-reessayer" type="button">Réessayer</button>
+  </div>
+</div>
+```
+
+[Ouvrir la vidéo](https://mediaserver.unige.ch/proxy/320472/UPvMPZKH7KS74ICF.mp4?width=1920&height=1080&start=0).
+:::
+
+## Quand l’effet d’un facteur dépend de l’autre
+
+L'exemple ici utilise la taille adulte selon le sexe et deux nationalités fictives A et B. Ces catégories servent uniquement à expliquer le calcul. On simule des individus, car le classeur par pays ne contient pas cette structure expérimentale.
+
+$$Y_{ijk}=\mu+\alpha_i+\beta_j+(\alpha\beta)_{ij}+\varepsilon_{ijk}.$$
+
+Dans R, `sexe * nationalite` développe `sexe + nationalite + sexe:nationalite`. Sans interaction, l’écart entre sexes reste constant d’une nationalité à l’autre. Avec interaction, cet écart change. Les lignes peuvent être non parallèles sans se croiser.
+
+## Simuler les deux situations avec ou sans interactions
+
+```{r}
+#| label: simulation-interactions
+# Bloc 10 Interactions
+simuler_tailles <- function(moyennes, graine) {
+  set.seed(graine)
+  z <- expand.grid(individu = seq_len(40),
+                   sexe = c("F", "H"), nationalite = c("A", "B"))
+  z$sexe <- factor(z$sexe, levels = c("F", "H"))
+  z$nationalite <- factor(z$nationalite, levels = c("A", "B"))
+  cle <- paste(z$sexe, z$nationalite, sep = "_")
+  z$taille <- unname(moyennes[cle]) + rnorm(nrow(z), sd = 4)
+  z
+}
+sans <- simuler_tailles(c(F_A = 162, H_A = 174, F_B = 170, H_B = 182), 31)
+avec <- simuler_tailles(c(F_A = 160, H_A = 176, F_B = 172, H_B = 180), 32)
+sans$situation <- "Sans interaction dans le modèle générateur"
+avec$situation <- "Avec interaction dans le modèle générateur"
+tailles <- rbind(sans, avec)
+```
+
+```{r}
+#| label: fig-interactions
+#| fig-cap: "Moyennes observées et IC à 95 % de la moyenne par cellule. Les fluctuations d’échantillonnage peuvent créer un léger non-parallélisme même sans interaction théorique."
+#| fig-width: 10
+#| fig-height: 5
+# Bloc 11 Figure interaction
+ggplot(tailles, aes(nationalite, taille, color = sexe, group = sexe)) +
+  stat_summary(fun = mean, geom = "line", linewidth = 1) +
+  stat_summary(fun = mean, geom = "point", size = 3) +
+  stat_summary(fun.data = ic_moyenne, geom = "errorbar", width = .08) +
+  facet_wrap(~ situation) +
+  labs(x = "Nationalité fictive", y = "Taille (cm)", color = "Sexe")
+```
+
+## Ajuster et tester l’interaction
+
+```{r}
+#| label: modeles-interactions
+# Bloc 12: modèle avec ou sans interaction
+m_sans <- lm(taille ~ sexe * nationalite, data = sans)
+m_avec <- lm(taille ~ sexe * nationalite, data = avec)
+anova(m_sans)
+anova(m_avec)
+# Comparaison de modèles emboîtés : apport de l’interaction.
+anova(update(m_sans, . ~ . - sexe:nationalite), m_sans)
+anova(update(m_avec, . ~ . - sexe:nationalite), m_avec)
+```
+
+Sous le modèle générateur sans interaction, les deux écarts attendus sont de 12 cm. Avec interaction, ils sont de 16 cm en A et de 8 cm en B. La différence des différences vaut donc $8-16=-8$ cm.
+
+# Plans d’expérience : quatre engrais sur 16 parcelles
+
+::: {.content-visible when-format="html"}
+```{=html}
+<div class="cours-video">
+  <video id="video-session_5_plan_experience" class="video-js vjs-big-play-centered" data-cours-video
+         controls preload="metadata" playsinline>
+    <source src="https://mediaserver.unige.ch/proxy/320470/zhHpWm6LTfc9pU0c.mp4?from_player=true" type="video/mp4">
+    <track kind="subtitles" src="videos/session_5_plan_experience.fr.vtt" srclang="fr" label="Français" default>
+    <track kind="subtitles" src="videos/session_5_plan_experience.en.vtt" srclang="en" label="English">
+    <p>Votre navigateur ne peut pas afficher cette vidéo. Utilisez le lien ci-dessous.</p>
+  </video>
+  <div class="cours-video-erreur" role="status" hidden>
+    <p>La vidéo n’a pas pu être chargée. Vous pouvez réessayer ou l’ouvrir avec le lien ci-dessous.</p>
+    <button class="cours-video-reessayer" type="button">Réessayer</button>
+  </div>
+</div>
+```
+
+[Ouvrir la vidéo](https://mediaserver.unige.ch/proxy/320470/zhHpWm6LTfc9pU0c.mp4?width=1920&height=1080&start=0).
+:::
+
+## Unité expérimentale, répétition et randomisation
+
+L’unité expérimentale est la **parcelle** à laquelle un engrais est attribué. Quatre mesures de plantes sur une même parcelle ne deviennent pas quatre répétitions indépendantes du traitement. La randomisation limite les biais d’attribution, tandis que les blocs contrôlent une hétérogénéité connue.
+
+Nous prenons les deux gradients : l’humidité augmente selon les lignes, l’ensoleillement selon les colonnes. Les valeurs de rendement ci-dessous sont entièrement simulées et exprimées dans une unité illustrative.
+
+## Construire les trois plans
+
+```{r}
+#| label: randomiser-plans
+# Bloc 14 plan d'expérience
+set.seed(101)
+grille <- expand.grid(colonne = seq_len(4), ligne = seq_len(4))
+
+# 1. Randomisation globale, avec quatre répétitions par engrais.
+aleatoire <- grille
+aleatoire$engrais <- sample(rep(LETTERS[1:4], each = 4))
+
+# 2. Carré latin : permuter lignes, colonnes et étiquettes.
+carre_initial <- outer(0:3, 0:3, function(i, j) (i + j) %% 4 + 1)
+carre <- carre_initial[sample(4), sample(4)]
+etiquettes <- sample(LETTERS[1:4])
+latin <- grille
+latin$engrais <- etiquettes[carre[cbind(latin$ligne, latin$colonne)]]
+
+# 3. Blocs complets : une permutation indépendante dans chaque ligne.
+blocs <- grille
+blocs$engrais <- unlist(lapply(seq_len(4), function(i) sample(LETTERS[1:4])))
+
+preparer <- function(z, nom) {
+  z$plan <- nom
+  z$humidite <- z$ligne
+  z$ensoleillement <- z$colonne
+  z$ligne <- factor(z$ligne)
+  z$colonne <- factor(z$colonne)
+  z$bloc <- z$ligne
+  z$engrais <- factor(z$engrais, levels = LETTERS[1:4])
+  z
+}
+aleatoire <- preparer(aleatoire, "Complètement randomisé")
+latin <- preparer(latin, "Carré latin")
+blocs <- preparer(blocs, "Blocs complets")
+stopifnot(all(table(aleatoire$engrais) == 4),
+          all(table(latin$ligne, latin$engrais) == 1),
+          all(table(latin$colonne, latin$engrais) == 1),
+          all(table(blocs$bloc, blocs$engrais) == 1))
+plans <- rbind(aleatoire, latin, blocs)
+```
+
+```{r}
+#| label: fig-plans
+#| fig-width: 11
+#| fig-height: 4.5
+#| fig-cap: "Exemples de répartitions randomisées. Humidité croissante du haut vers le bas ; ensoleillement croissant de gauche à droite."
+# Bloc 15: figure plan d'expérience
+ggplot(plans, aes(colonne, ligne, fill = engrais)) +
+  geom_tile(color = "white", linewidth = 1.5) +
+  geom_text(aes(label = engrais), size = 6) +
+  scale_y_discrete(limits = rev(levels(plans$ligne))) +
+  scale_fill_brewer(palette = "Pastel1") + coord_equal() +
+  facet_wrap(~ plan) + labs(x = "Colonne : ensoleillement", y = "Ligne : humidité") +
+  theme(panel.grid = element_blank(), legend.position = "none")
+```
+
+| Plan | Contrainte | Modèle classique | Ddl résiduels sans covariable |
+|------------------|------------------|------------------|------------------|
+| Complètement randomisé | 4 parcelles par engrais | `rendement ~ engrais` | 12 |
+| Carré latin | Chaque engrais une fois par ligne et colonne | `rendement ~ engrais + ligne + colonne` | 6 |
+| Blocs complets | Chaque engrais une fois dans chaque bloc | `rendement ~ engrais + bloc` | 9 |
+
+Le carré latin contrôle deux directions au prix de degrés de liberté. Il n’y a qu’une observation par combinaison ligne–colonne : les interactions spatiales et avec les traitements ne sont pas estimables séparément dans le modèle classique de ce petit plan. Le plan en blocs contrôle une direction, sans imposer un équilibre par colonne.
+
+## Générer les rendements
+
+```{r}
+#| label: rendements
+# Bloc 16: rendements générés
+ajouter_rendement <- function(z, graine) {
+  set.seed(graine)
+  effet <- c(A = 0, B = 2, C = 4, D = 6)
+  z$rendement <- 30 + unname(effet[as.character(z$engrais)]) +
+    2 * (z$humidite - 2.5) + 1.5 * (z$ensoleillement - 2.5) +
+    rnorm(nrow(z), sd = 1.5)
+  z
+}
+aleatoire <- ajouter_rendement(aleatoire, 201)
+latin <- ajouter_rendement(latin, 202)
+blocs <- ajouter_rendement(blocs, 203)
+knitr::kable(latin, digits = 2)
+```
+
+Ces simulations partagent les mêmes effets théoriques, mais possèdent des erreurs différentes. Une seule réalisation ne permet pas de classer les plans selon leur puissance. Une comparaison de performance demanderait de répéter chaque expérience un grand nombre de fois sous des scénarios définis.
+
+## Analyser un plan complètement randomisé
+
+```{r}
+#| label: modele-randomise
+# Bloc 17: plan randomisé
+m_aleatoire <- lm(rendement ~ engrais, data = aleatoire)
+anova(m_aleatoire)
+# Ajustement des gradients mesurés, sous une hypothèse d’effet linéaire.
+m_ajuste <- lm(rendement ~ engrais + humidite + ensoleillement, data = aleatoire)
+anova(m_ajuste)
+emmeans::emmeans(m_ajuste, pairwise ~ engrais, adjust = "tukey")
+```
+
+La randomisation globale n’assure pas l’équilibre exact des gradients dans une expérience de 16 parcelles. Des covariables définies avant l’analyse peuvent améliorer la précision. L’ordre séquentiel de la table `anova` doit être pris en compte ; les comparaisons d’engrais ajustées ci-dessus utilisent le modèle complet.
+
+## Analyser le carré latin
+
+```{r}
+#| label: modele-latin
+# Bloc 18: carré latin
+m_latin <- lm(rendement ~ engrais + ligne + colonne, data = latin)
+anova(m_latin)
+emmeans::emmeans(m_latin, pairwise ~ engrais, adjust = "tukey")
+stopifnot(df.residual(m_latin) == 6)
+```
+
+Ici lignes et colonnes sont traitées comme effets fixes de contrôle. C’est une analyse classique adaptée au carré observé. Les traiter comme effets aléatoires implique une autre hypothèse sur leur population d’origine, développée ci-dessous.
+
+## Analyser les blocs complets
+
+```{r}
+#| label: modele-blocs
+# Bloc 19 en bloc
+m_blocs <- lm(rendement ~ engrais + bloc, data = blocs)
+anova(m_blocs)
+emmeans::emmeans(m_blocs, pairwise ~ engrais, adjust = "tukey")
+
+```
+
+Les traitements sont comparés en tenant compte des différences entre blocs. Si les blocs sont les seuls niveaux qui nous intéressent, un effet fixe est naturel. S’ils représentent des unités échangeables issues d’une population de blocs, un effet aléatoire peut convenir.
+
+# Modèles linéaires mixtes (LMM)
+
+## Effets fixes et aléatoires
+
+Un effet fixe décrit les différences entre niveaux précis que l’on souhaite comparer, par exemple les quatre engrais. Un intercept aléatoire décrit une variation entre unités groupées, par exemple des sites ou blocs considérés comme échangeables. Les observations d’un même groupe partagent cet intercept et deviennent corrélées marginalement.
+
+Pour le plan en blocs :
+
+$$Y_{bk}=\mu+\alpha_k+u_b+\varepsilon_{bk},\qquad
+u_b\sim\mathcal N(0,\sigma_b^2),\quad
+\varepsilon_{bk}\sim\mathcal N(0,\sigma^2).$$
+
+Les effets aléatoires sont supposés indépendants des erreurs et des prédicteurs. L’hypothèse d’échangeabilité mérite attention : des lignes ordonnées le long d’un gradient peuvent être mieux décrites par une covariable mesurée que par des intercepts indépendants.
+
+```{r}
+#| label: lmm-blocs
+# Bloc 20: modèle mixte
+m_mixte <- lmerTest::lmer(rendement ~ engrais + (1 | bloc), data = blocs)
+summary(m_mixte)
+# Tests F approchés, ddl de Satterthwaite.
+anova(m_mixte, ddf = "Satterthwaite")
+as.data.frame(lme4::VarCorr(m_mixte))
+lme4::isSingular(m_mixte)
+emmeans::emmeans(m_mixte, pairwise ~ engrais, adjust = "tukey",
+                  lmer.df = "satterthwaite")
+```
+
+Avec seulement quatre blocs, l’estimation de la variance entre blocs est fragile. Un ajustement singulier indique notamment une variance estimée à la frontière, souvent proche de zéro. Cela appelle une réévaluation du modèle et du plan ; ce n’est pas une preuve d’absence de variabilité biologique.
+
+## Effets croisés dans le carré latin
+
+```{r}
+#| label: lmm-latin
+# Bloc 21: carré latin
+m_latin_mixte <- lmerTest::lmer(
+  rendement ~ engrais + (1 | ligne) + (1 | colonne), data = latin)
+summary(m_latin_mixte)
+lme4::isSingular(m_latin_mixte)
+```
+
+Les effets ligne et colonne sont **croisés**, car chaque ligne rencontre chaque colonne. Ce modèle reprend celui du PPTX, mais son usage dépend du statut des lignes et colonnes. Il reste additif et ne résout pas l’absence de réplication permettant d’identifier toutes les interactions. Avec quatre niveaux par effet aléatoire, présenter l’incertitude et considérer l’analyse à effets fixes.
+
+## Diagnostics et corrélation intra-groupe
+
+```{r}
+#| label: diagnostic-mixte
+#| fig-width: 9
+#| fig-height: 4.5
+# Bloc 22: diagnostic
+ancien <- par(mfrow = c(1, 2))
+plot(fitted(m_mixte), residuals(m_mixte),
+     xlab = "Valeur ajustée", ylab = "Résidu conditionnel")
+abline(h = 0, lty = 2)
+qqnorm(residuals(m_mixte)); qqline(residuals(m_mixte))
+par(ancien)
+vc <- as.data.frame(lme4::VarCorr(m_mixte))
+variance_bloc <- vc$vcov[vc$grp == "bloc"]
+variance_erreur <- sigma(m_mixte)^2
+icc <- variance_bloc / (variance_bloc + variance_erreur)
+icc
+```
+
+L’ICC exprime la part de variance attribuée au bloc dans ce modèle à intercept aléatoire. Elle est estimée avec une grande incertitude ici. Pour comparer des modèles ayant des effets fixes différents par rapport de vraisemblance, les réajuster avec `REML = FALSE` ; ne pas comparer directement leurs vraisemblances REML.
+
+# Bootstrap : estimer l’incertitude par rééchantillonnage
+
+::: {.content-visible when-format="html"}
+```{=html}
+<div class="cours-video">
+  <video id="video-session_5_bootstrap" class="video-js vjs-big-play-centered" data-cours-video
+         controls preload="metadata" playsinline>
+    <source src="https://mediaserver.unige.ch/proxy/320473/k6IAaXNp5HPrrVJH.mp4?from_player=true" type="video/mp4">
+    <track kind="subtitles" src="videos/session_5_bootstrap.fr.vtt" srclang="fr" label="Français" default>
+    <track kind="subtitles" src="videos/session_5_bootstrap.en.vtt" srclang="en" label="English">
+    <p>Votre navigateur ne peut pas afficher cette vidéo. Utilisez le lien ci-dessous.</p>
+  </video>
+  <div class="cours-video-erreur" role="status" hidden>
+    <p>La vidéo n’a pas pu être chargée. Vous pouvez réessayer ou l’ouvrir avec le lien ci-dessous.</p>
+    <button class="cours-video-reessayer" type="button">Réessayer</button>
+  </div>
+</div>
+```
+
+[Ouvrir la vidéo](https://mediaserver.unige.ch/proxy/320473/k6IAaXNp5HPrrVJH.mp4?width=1920&height=1080&start=0).
+:::
+
+## Le principe
+
+À partir de $n$ observations, on tire **avec remise** $n$ observations. Certaines apparaissent plusieurs fois, d’autres sont absentes. On recalcule une statistique, puis on répète cette opération $B$ fois. La distribution obtenue approxime la distribution d’échantillonnage de la statistique sous les hypothèses du rééchantillonnage.
+
+Le bootstrap ne crée pas de nouveaux individus indépendants et ne corrige pas un échantillon biaisé. Il ne requiert pas de normalité des observations pour ces exemples, mais dépend notamment de la représentativité et de la structure de dépendance. Un petit échantillon peut mal représenter les valeurs extrêmes.
+
+## Visualiser un tirage avec remise
+
+```{r}
+#| label: un-tirage-bootstrap
+# Bloc 23: Bootstrap
+set.seed(7)
+x <- c(158, 162, 165, 168, 170, 172, 174, 177, 179, 184)
+indices <- sample.int(length(x), size = length(x), replace = TRUE)
+knitr::kable(data.frame(position_tirage = seq_along(x),
+                        individu_tire = indices, taille_tiree = x[indices]))
+c(moyenne_originale = mean(x), moyenne_reechantillon = mean(x[indices]))
+```
+
+## Distribution de la moyenne et IC percentile
+
+```{r}
+#| label: bootstrap-tailles
+# Bloc 24: Bootstrap taille
+set.seed(7)
+B <- 2000
+b <- replicate(B, mean(sample(x, length(x), replace = TRUE)))
+ic <- quantile(b, c(.025, .975))
+knitr::kable(data.frame(estimation = mean(x),
+  moyenne_bootstrap = mean(b), biais_estime = mean(b) - mean(x),
+  erreur_standard_bootstrap = sd(b), borne_025 = ic[1], borne_975 = ic[2]),
+  row.names = FALSE, digits = 2)
+ggplot(data.frame(moyenne = b), aes(moyenne)) +
+  geom_histogram(bins = 35, fill = "#367CA5", color = "white") +
+  geom_vline(xintercept = mean(x), linewidth = 1) +
+  geom_vline(xintercept = ic, linetype = 2, color = "#BB4B32") +
+  labs(x = "Moyenne bootstrap de taille (cm)", y = "Nombre de rééchantillons")
+```
+
+Les pointillés délimitent l’IC percentile à 95 %. Dans une répétition idéale de l’ensemble de la procédure d’échantillonnage et de calcul, une méthode bien calibrée couvrirait le paramètre dans environ 95 % des cas. Cela n’attribue pas une probabilité de 95 % au paramètre fixe après observation de cet intervalle particulier.
+
+## Reprendre les données du classeur
+
+Nous utilisons la moyenne de `lex` parmi les pays africains disponibles. Il s’agit toujours d’une moyenne **par pays**. L’intervalle est une illustration de ce que donnerait un modèle de pays indépendants et échangeables, pas une correction de la dépendance géographique.
+
+```{r}
+#| label: bootstrap-pays
+# Bloc 25: Bootstrap pays
+xaf <- d$lex[d$region == "africa"]
+stopifnot(length(xaf) > 2)
+set.seed(301)
+B <- 4999
+baf <- replicate(B, mean(sample(xaf, length(xaf), replace = TRUE)))
+knitr::kable(data.frame(n = length(xaf), moyenne = mean(xaf),
+  se_boot = sd(baf), bas = unname(quantile(baf, .025)),
+  haut = unname(quantile(baf, .975))), digits = 2)
+t.test(xaf)$conf.int
+```
+
+Comparer l’intervalle bootstrap à celui fondé sur la loi t. Une ressemblance n’établit pas que toutes les hypothèses sont satisfaites. Augmenter $B$ stabilise numériquement les quantiles, sans augmenter le nombre de pays ni supprimer les biais de données.
+
+## IC BCa avec le package boot
+
+Le PPTX présente aussi un intervalle BCa. Les corrections de biais et d’accélération tiennent compte de certaines asymétries ; l’IC BCa peut différer de l’IC percentile. Aucun des deux ne garantit une couverture correcte pour toute distribution ou tout petit échantillon.
+
+```{r}
+#| label: bootstrap-bca
+# Bloc 26: Bootstrap entre quantile
+set.seed(302)
+stat_moyenne <- function(donnees, indices) mean(donnees[indices])
+objet_boot <- boot::boot(data = xaf, statistic = stat_moyenne, R = 4999)
+objet_boot
+boot::boot.ci(objet_boot, type = c("perc", "bca"))
+```
+
+# Synthèse : choisir une démarche cohérente
+
+::: {.content-visible when-format="html"}
+```{=html}
+<div class="cours-video">
+  <video id="video-session_5_synthese" class="video-js vjs-big-play-centered" data-cours-video
+         controls preload="metadata" playsinline>
+    <source src="https://mediaserver.unige.ch/proxy/320474/f5WwLYqZXdcKD2S0.mp4?from_player=true" type="video/mp4">
+    <track kind="subtitles" src="videos/session_5_synthese.fr.vtt" srclang="fr" label="Français" default>
+    <track kind="subtitles" src="videos/session_5_synthese.en.vtt" srclang="en" label="English">
+    <p>Votre navigateur ne peut pas afficher cette vidéo. Utilisez le lien ci-dessous.</p>
+  </video>
+  <div class="cours-video-erreur" role="status" hidden>
+    <p>La vidéo n’a pas pu être chargée. Vous pouvez réessayer ou l’ouvrir avec le lien ci-dessous.</p>
+    <button class="cours-video-reessayer" type="button">Réessayer</button>
+  </div>
+</div>
+```
+
+[Ouvrir la vidéo](https://mediaserver.unige.ch/proxy/320474/f5WwLYqZXdcKD2S0.mp4?width=1920&height=1080&start=0).
+:::
+
+| Question ou structure | Outil possible | Point à vérifier |
+|------------------------|------------------------|------------------------|
+| Plusieurs moyennes, un facteur | ANOVA classique | Résidus, variances, indépendance |
+| Moyennes avec variances différentes | Welch | Indépendance et influence des valeurs extrêmes |
+| Comparaison par rangs | Kruskal–Wallis | La cible n’est pas en général la moyenne |
+| Deux facteurs | Modèle factoriel avec interaction | Effets simples et équilibre du plan |
+| Hétérogénéité connue | Blocs ou carré latin | Randomisation et contraintes du plan |
+| Observations groupées | LMM | Statut des groupes et nombre de niveaux |
+| Incertitude d’une statistique | Bootstrap | Unité de rééchantillonnage et représentativité |
+
+Un compte rendu indique la question, l’unité statistique, le modèle, les effectifs, les estimations avec intervalles, les diagnostics et les limites. Une p-value complète cette description ; elle ne la remplace pas.
+
+# Vos questions sur la session {#questions-session-05}
+
+Si une notion reste floue, si vous souhaitez approfondir un exemple ou si vous avez toute autre question, vous pouvez poser votre question dans l'espace SpeakUp ci-dessous (de manière anonyme ou non). Prenez aussi le temps de lire les questions des autres étudiant-es et de voter pour celles dont la réponse vous serait utile. Le classement par votes permet de retrouver les questions qui intéressent le plus le groupe. Nous prendrons le temps de répondre à certaines questions directement sur la plateforme et à d'autres lors de la prochaine séance en présentiel.
+
+Cet espace est commun aux versions française et anglaise du cours, ainsi qu'aux exemples en Python et en R. Si votre question porte sur un code, précisez le langage utilisé et l'exemple concerné.
+
+::: {.content-visible when-format="html"}
+<iframe class="speakup-room" src="https://web.speakup.info/room/join/15971?theme=UniGE&amp;lang=fr" title="SpeakUp : questions et votes de la session 5, salle 15971" loading="lazy" style="display:block;width:100%;height:clamp(480px,80vh,760px);border:1px solid #ccd6dc;border-radius:6px"></iframe>
+
+Si la salle ne s'affiche pas dans cette page, utilisez le lien ci-dessous.
+:::
+
+[Ouvrir la salle SpeakUp de la session 5](https://web.speakup.info/room/join/15971?theme=UniGE&lang=fr){target="_blank" rel="noopener"}. **Code de la salle : 15971.**

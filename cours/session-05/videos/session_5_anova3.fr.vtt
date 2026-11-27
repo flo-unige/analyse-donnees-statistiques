@@ -1,0 +1,165 @@
+WEBVTT
+
+1
+00:00:00.370 --> 00:00:04.650
+Donc, prenons un exemple. Ici, on va
+reprendre ces exemples simples liés
+
+2
+00:00:04.650 --> 00:00:09.050
+à des tailles de population, mais
+cette fois, on aura deux facteurs,
+
+3
+00:00:09.050 --> 00:00:14.230
+donc le facteur sexe, homme-femme, et le
+facteur nationalité, plusieurs nationalités.
+
+4
+00:00:14.310 --> 00:00:19.510
+Et on va générer des données pour voir
+ce qui se passe avec ou sans interaction
+
+5
+00:00:19.510 --> 00:00:24.770
+et voir comment graphiquement on peut
+visualiser ce concept d'interaction.
+
+6
+00:00:27.640 --> 00:00:33.460
+Donc, dans le premier exemple, où on
+aurait simplement des effets principaux
+
+7
+00:00:33.460 --> 00:00:39.660
+avec un terme d'interaction, on
+va voir que la taille, finalement,
+
+8
+00:00:39.860 --> 00:00:45.300
+est fonction de la valeur moyenne de la
+taille de toutes les personnes mesurées,
+
+9
+00:00:46.040 --> 00:00:51.040
+plus l'effet lié au sexe, plus
+l'effet lié à la nationalité,
+
+10
+00:00:51.140 --> 00:00:55.720
+plus l'effet des interactions
+entre les deux, Et bien sûr,
+
+11
+00:00:55.720 --> 00:01:01.440
+une erreur dans notre échantillon,
+à chaque fois on aura une erreur.
+
+12
+00:01:01.660 --> 00:01:04.880
+Toutes les personnes appartenant
+au même groupe et à la
+
+13
+00:01:04.880 --> 00:01:07.760
+même nationalité n'ont pas
+exactement la même taille.
+
+14
+00:01:10.350 --> 00:01:13.890
+Donc ceci peut s'écrire dans
+R par exemple comme une ANOVA
+
+15
+00:01:13.890 --> 00:01:18.330
+où la taille est fonction
+du sexe fois la nationalité,
+
+16
+00:01:18.370 --> 00:01:24.050
+ce qui veut dire l'effet fixe du sexe, de
+la nationalité plus aussi de l'interaction.
+
+17
+00:01:26.500 --> 00:01:30.140
+Dans un premier exemple, on a généré
+des données qui nous ont donné
+
+18
+00:01:30.140 --> 00:01:34.340
+les résultats suivants. On a une
+moyenne de taille des femmes de la
+
+19
+00:01:34.340 --> 00:01:39.780
+nationalité A de 162 et de la nationalité
+B de 170, elles sont plus grandes,
+
+20
+00:01:40.000 --> 00:01:44.860
+et des hommes de 174 pour la nationalité
+A et 182 pour la nationalité B.
+
+21
+00:01:45.040 --> 00:01:50.700
+Si on représente ces valeurs sur un graphique
+comme ça, on peut relier les moyennes
+
+22
+00:01:50.700 --> 00:01:57.040
+de taille des hommes avec la ligne orange,
+et puis des femmes avec la ligne bleue,
+
+23
+00:01:57.060 --> 00:02:01.180
+et voir qu'on obtient quelque
+chose avec deux lignes parallèles,
+
+24
+00:02:01.240 --> 00:02:06.980
+ce qui nous indique que la variation liée
+finalement à la nationalité est la même
+
+25
+00:02:12.900 --> 00:02:16.860
+de 12 cm qu'on soit dans
+la nationalité A ou B.
+
+26
+00:02:24.070 --> 00:02:29.010
+Ici, dans l'exemple avec interaction, on a
+généré des données qui font que finalement
+
+27
+00:02:29.010 --> 00:02:36.150
+la différence de taille n'est pas la
+même dans la nationalité A que dans la
+
+28
+00:02:36.150 --> 00:02:39.990
+nationalité B entre hommes et femmes, ce
+qui fait que quand on fait les graphiques,
+
+29
+00:02:39.990 --> 00:02:43.930
+on constate que nos droites ne sont
+plus parallèles, ce qui nous indique la
+
+30
+00:02:43.930 --> 00:02:50.150
+présence d'une interaction que l'on peut
+interpréter comme le fait que la taille est
+
+31
+00:02:50.150 --> 00:02:57.310
+fonction de la nationalité mais
+également du sexe en même temps et
+
+32
+00:02:57.310 --> 00:03:03.330
+qu'on n'aura pas les mêmes différences
+de taille en fonction du sexe,
+
+33
+00:03:03.330 --> 00:03:05.470
+en fonction de la nationalité ou inversement.

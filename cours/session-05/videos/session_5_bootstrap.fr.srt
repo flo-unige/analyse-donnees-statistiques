@@ -1,0 +1,184 @@
+1
+00:00:01,300 --> 00:00:07,260
+Avec ces exemples, on montre comment
+les tests et l'inférence et les tests
+
+2
+00:00:07,260 --> 00:00:11,620
+relativement simples de comparaison de
+moyenne sont devenus les outils essentiels
+
+3
+00:00:11,620 --> 00:00:17,000
+de toutes les sciences dites expérimentales
+qui nous permettent de tester des
+
+4
+00:00:17,000 --> 00:00:22,860
+différences significatives, typiquement
+entre groupes, sur des variables d'intérêt.
+
+5
+00:00:24,380 --> 00:00:28,040
+Maintenant, toutes ces méthodes
+statistiques, ça fait plus de 100 ans que les
+
+6
+00:00:28,040 --> 00:00:31,740
+statisticiens les développent. Par
+contre, ça fait 30-40 ans qu'ils ont des
+
+7
+00:00:31,740 --> 00:00:37,300
+ordinateurs pour pouvoir calculer les valeurs
+de ces statistiques et assez rapidement,
+
+8
+00:00:37,300 --> 00:00:41,880
+ils se sont rendus compte que finalement,
+ça pourrait être intéressant de ne pas se
+
+9
+00:00:41,880 --> 00:00:46,700
+limiter à calculer une fois, par exemple,
+la valeur d'une moyenne, mais typiquement,
+
+10
+00:00:46,800 --> 00:00:51,940
+de potentiellement la recalculer des
+dizaines, des centaines, voire des milliers de
+
+11
+00:00:51,940 --> 00:00:58,700
+fois sur la base de notre échantillon de
+base censé représenter la population mère.
+
+12
+00:00:58,700 --> 00:01:04,060
+Donc ici on a un petit exemple où on
+a généré aléatoirement des variables
+
+13
+00:01:04,060 --> 00:01:09,260
+de taille de 158 à 184 cm qui
+forment notre échantillon de base,
+
+14
+00:01:09,440 --> 00:01:12,980
+mais simplement plutôt que de
+calculer une fois la moyenne de x,
+
+15
+00:01:13,240 --> 00:01:20,180
+on va créer un
+rééchantillonnage, on va calculer
+
+16
+00:01:20,180 --> 00:01:26,920
+2000 fois la moyenne issue en faisant
+un sample sur ces variables de base,
+
+17
+00:01:27,000 --> 00:01:32,520
+un sample aléatoire. On va tirer
+un nouvel échantillon de 10 valeurs
+
+18
+00:01:32,520 --> 00:01:37,180
+issues aléatoirement des valeurs
+disponibles dans le premier échantillon.
+
+19
+00:01:37,380 --> 00:01:42,480
+Et ainsi, on calcule 2000 moyennes
+plutôt qu'une seule. Et on peut
+
+20
+00:01:42,480 --> 00:01:49,420
+visualiser avec un histogramme et
+calculer les quantiles de distribution
+
+21
+00:01:50,680 --> 00:01:55,200
+de ces 2000 moyennes
+calculées. Donc à la base,
+
+22
+00:01:55,220 --> 00:01:59,760
+on doit avoir la moyenne de base de
+l'échantillon. On va pouvoir comparer à la
+
+23
+00:01:59,760 --> 00:02:05,100
+moyenne des 2000 échantillons obtenus et
+aussi regarder l'intervalle de confiance
+
+24
+00:02:05,100 --> 00:02:10,900
+que l'on a autour de la position de la
+moyenne calculée sur cet échantillon.
+
+25
+00:02:11,780 --> 00:02:16,580
+Voilà une autre manière de représenter
+ces méthodes dites de bootstrap qui
+
+26
+00:02:16,580 --> 00:02:21,680
+sont particulièrement utiles et
+intéressantes quand notre échantillon est
+
+27
+00:02:21,680 --> 00:02:25,760
+petit parce que quand on a beaucoup
+d'observations dans un échantillon,
+
+28
+00:02:25,800 --> 00:02:29,740
+finalement la variable, la moyenne
+que l'on calcule ou le test
+
+29
+00:02:29,740 --> 00:02:33,760
+que l'on fait sur ces observations
+sont déjà très fiables.
+
+30
+00:02:33,900 --> 00:02:40,280
+La quantité d'observation
+dans l'échantillon améliore la
+
+31
+00:02:40,280 --> 00:02:45,220
+qualité de l'inférence que l'on
+peut faire sur cet échantillon.
+
+32
+00:02:45,840 --> 00:02:49,620
+Donc c'est quand les échantillons ont des
+petites tailles qu'il devient intéressant
+
+33
+00:02:49,620 --> 00:02:53,380
+de faire du bootstrap pour avoir une
+meilleure idée de la distribution
+
+34
+00:02:53,380 --> 00:02:57,540
+de notre statistique d'intérêt
+moyenne ou test de t ou p-value.
+
+35
+00:02:57,860 --> 00:03:02,900
+Quelle que soit la statistique qui nous
+intéresse, on peut la recalculer des dizaines,
+
+36
+00:03:02,900 --> 00:03:06,840
+des centaines, voire des milliers
+de fois et avoir une idée de
+
+37
+00:03:06,840 --> 00:03:12,360
+la dispersion de nos résultats
+autour de la valeur initiale.

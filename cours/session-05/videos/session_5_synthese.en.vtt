@@ -1,0 +1,209 @@
+WEBVTT
+
+1
+00:00:00.880 --> 00:00:05.200
+So, to summarize these two
+sessions on inferential statistics,
+
+2
+00:00:05.240 --> 00:00:09.320
+we can take an overview
+of what we have covered.
+
+3
+00:00:09.900 --> 00:00:13.060
+First, when you obtain a dataset,
+
+4
+00:00:13.160 --> 00:00:16.740
+or create one from your observations,
+
+5
+00:00:17.400 --> 00:00:23.020
+you will describe the
+variables available to you.
+
+6
+00:00:23.480 --> 00:00:27.540
+One important thing to examine is
+the distribution of these variables,
+
+7
+00:00:27.540 --> 00:00:31.480
+particularly whether your variable
+of interest, such as plant
+
+8
+00:00:31.480 --> 00:00:36.020
+growth or the effect of a drug,
+follows a normal distribution.
+
+9
+00:00:36.140 --> 00:00:39.420
+We can examine this graphically,
+but we can also use a test
+
+10
+00:00:39.420 --> 00:00:44.200
+such as the Shapiro test to test our
+variables of interest for normality.
+
+11
+00:00:44.520 --> 00:00:48.860
+If this variable follows a Gaussian
+distribution, described as parametric,
+
+12
+00:00:49.480 --> 00:00:55.060
+we can perform so-called
+parametric tests on it.
+
+13
+00:00:55.060 --> 00:01:02.560
+If, for example, we want to
+compare means with a factor
+
+14
+00:01:02.560 --> 00:01:07.260
+that has two levels, hence two
+groups, we can use the t-test.
+
+15
+00:01:07.540 --> 00:01:11.360
+If we have a factor with more
+than two levels, we have ANOVA.
+
+16
+00:01:11.520 --> 00:01:15.480
+We can also use ANOVA with
+several factors, each with several
+
+17
+00:01:15.480 --> 00:01:20.700
+levels, and examine interactions
+between the different factors.
+
+18
+00:01:20.920 --> 00:01:24.380
+If, on the other hand, our data do
+not follow a parametric distribution,
+
+19
+00:01:24.560 --> 00:01:31.120
+we will prefer the nonparametric
+equivalents of these tests: Wilcoxon
+
+20
+00:01:31.120 --> 00:01:35.480
+instead of the t-test, and
+Kruskal-Wallis instead of one-way ANOVA.
+
+21
+00:01:35.520 --> 00:01:39.780
+There is no nonparametric equivalent
+of ANOVA with several factors.
+
+22
+00:01:40.460 --> 00:01:44.600
+We also saw other types of tests,
+based not on differences in means,
+
+23
+00:01:44.640 --> 00:01:51.960
+but rather on the dependence
+between different categories
+
+24
+00:01:51.960 --> 00:01:57.060
+and on the population counts
+in those different categories.
+
+25
+00:01:58.200 --> 00:02:04.640
+To do this, we compare the expected
+counts with the observed counts
+
+26
+00:02:04.640 --> 00:02:10.260
+and typically use the chi-square
+test for these analyses.
+
+27
+00:02:11.400 --> 00:02:15.500
+Finally, all the statistics we
+have seen, from the simplest to the
+
+28
+00:02:15.500 --> 00:02:20.360
+most complex, from a mean to a chi-square
+statistic, can be bootstrapped.
+
+29
+00:02:20.440 --> 00:02:24.760
+That is, we take our original
+sample and generate dozens,
+
+30
+00:02:24.760 --> 00:02:29.400
+hundreds, or thousands of similar
+samples based on the original
+
+31
+00:02:29.400 --> 00:02:36.760
+sample, then recalculate our variable
+of interest. This lets us examine the
+
+32
+00:02:36.760 --> 00:02:43.180
+distribution obtained from this
+resampling and, for example, calculate
+
+33
+00:02:43.180 --> 00:02:47.020
+the confidence interval around
+our statistic of interest.
+
+34
+00:02:48.700 --> 00:02:52.900
+So, what I wanted to explain, which I
+put together for this course, you can
+
+35
+00:02:52.900 --> 00:02:58.020
+find here, for example, on another
+website, with hypothesis tests,
+
+36
+00:02:58.060 --> 00:03:01.900
+the choice between parametric and nonparametric
+methods, whether we have one or more
+
+37
+00:03:01.900 --> 00:03:05.160
+samples to work with, and the
+different tests we have seen.
+
+38
+00:03:05.160 --> 00:03:07.820
+We have not covered all of
+them, but we have covered many.
+
+39
+00:03:08.200 --> 00:03:11.800
+Of course, others are
+specific to particular types
+
+40
+00:03:11.800 --> 00:03:15.380
+of situations, with many
+options available for each test.
+
+41
+00:03:15.560 --> 00:03:19.760
+But with what we have covered, I
+think we cover about 80% of what you
+
+42
+00:03:19.760 --> 00:03:27.020
+are likely to encounter in the literature
+or need in your future studies.

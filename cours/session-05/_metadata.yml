@@ -1,0 +1,27 @@
+format:
+  html:
+    css: [../../styles.css, assets/language.css, assets/video/vendor/videojs-8.23.8/video-js.min.css, assets/video/lecteur.css]
+    include-in-header:
+      - text: |
+          <style>
+          main.content p, main.content li, main.content figcaption { text-align: justify; hyphens: auto; }
+          main.content pre, main.content .cours-video p { text-align: left; }
+          @media (max-width: 767px) {
+            main table { display: block; max-width: 100%; overflow-x: auto; }
+            main mjx-container[display="true"] { max-width: 100%; overflow-x: auto; overflow-y: hidden; padding-block: .2em; }
+          }
+          </style>
+    include-after-body:
+      - text: |
+          <script src="assets/language.js"></script>
+          <script src="assets/video/charger-lecteur.js"></script>
+  typst:
+    toc: true
+    papersize: a4
+    margin: {x: 2.2cm, y: 2.2cm}
+    fig-format: png
+    include-in-header:
+      - text: |
+          #set par(justify: true)
+execute:
+  error: false

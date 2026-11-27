@@ -1,0 +1,294 @@
+WEBVTT
+
+1
+00:00:01.680 --> 00:00:07.600
+Donc, ces outils de statistiques
+inférentielles liés aux tests de différence
+
+2
+00:00:07.600 --> 00:00:11.040
+de moyenne, que ce soit le test de T
+ou les équivalents non paramétriques
+
+3
+00:00:11.040 --> 00:00:16.120
+et surtout l'ANOVA, ça a l'air d'être
+finalement des outils assez simples,
+
+4
+00:00:16.920 --> 00:00:23.620
+mais ils sont en fait la base de toute
+la science expérimentale qui a été
+
+5
+00:00:23.620 --> 00:00:27.620
+développée typiquement dans des domaines
+comme l'agronomie et la pharmaceutique
+
+6
+00:00:27.620 --> 00:00:33.920
+depuis bien longtemps, où on va créer
+des expériences où on va essayer de voir
+
+7
+00:00:33.920 --> 00:00:38.660
+l'effet d'un facteur ou de plusieurs
+facteurs sur la variable qui nous intéresse,
+
+8
+00:00:38.780 --> 00:00:43.280
+la croissance d'une plante ou l'effet d'un
+médicament, par exemple sur la tension.
+
+9
+00:00:45.520 --> 00:00:49.140
+Donc, en fait, c'est vraiment les
+outils qui nous permettent de tester
+
+10
+00:00:49.140 --> 00:00:54.900
+s'il y a un effet significatif d'un
+traitement sur ce qui nous intéresse.
+
+11
+00:00:55.560 --> 00:01:00.720
+et du coup c'est aussi des domaines
+où faire une expérience ça coûte très
+
+12
+00:01:00.720 --> 00:01:08.140
+cher donc on aimerait si possible
+optimiser nos expériences et la manière
+
+13
+00:01:08.140 --> 00:01:12.320
+dont on les mène, ce qui nous amène
+au concept de plan d'expérience.
+
+14
+00:01:12.600 --> 00:01:17.600
+On va regarder dans le domaine
+agronomique un exemple où comment vous
+
+15
+00:01:17.600 --> 00:01:22.820
+auriez à disposition 16 parcelles et
+vous aimeriez tester s'il y a un effet
+
+16
+00:01:22.820 --> 00:01:27.540
+positif de différents types d'engrais
+sur la croissance de ces plantes,
+
+17
+00:01:27.560 --> 00:01:31.100
+également si éventuellement
+il y a un effet de variation
+
+18
+00:01:31.100 --> 00:01:34.280
+d'ensoleillement et d'humidité
+selon les parcelles.
+
+19
+00:01:34.920 --> 00:01:41.520
+Donc dans un premier exemple, on va
+répartir aléatoirement sur chacune
+
+20
+00:01:41.520 --> 00:01:46.840
+des 16 parcelles un des types
+d'engrais, ce qui fait qu'on peut avoir
+
+21
+00:01:46.840 --> 00:01:50.740
+sur la première ligne par exemple
+deux fois le même engrais et pas
+
+22
+00:01:50.740 --> 00:01:57.680
+l'engrais C ou ici deux fois l'engrais
+A, mais pas l'engrais B, etc.
+
+23
+00:01:58.080 --> 00:02:02.060
+On peut retrouver de manière
+aléatoire chacun des types d'engrais.
+
+24
+00:02:02.160 --> 00:02:08.440
+On a aussi cinq fois l'engrais C et 4
+
+25
+00:02:10.840 --> 00:02:17.700
+fois le A, 4 fois le B et seulement
+3 fois le D qui sont représentés
+
+26
+00:02:17.700 --> 00:02:21.800
+dans l'ensemble de l'expérience.
+donc un effort finalement de
+
+27
+00:02:21.800 --> 00:02:27.940
+représentation qui est différent
+finalement entre nos engrais.
+
+28
+00:02:29.460 --> 00:02:34.760
+Et ça, c'est un plan d'expérience
+totalement aléatoire que l'on génère.
+
+29
+00:02:34.960 --> 00:02:39.140
+Dans le deuxième exemple qu'on appelle le
+plan carré latin, on va s'arranger pour
+
+30
+00:02:39.140 --> 00:02:44.580
+avoir chacun des engrais chaque fois en
+ligne et en colonne et ainsi on va beaucoup
+
+31
+00:02:44.580 --> 00:02:48.940
+mieux représenter aussi les variations
+que l'on peut observer horizontalement
+
+32
+00:02:48.940 --> 00:02:53.480
+en fonction du taux d'humidité ou taux
+d'ensoleillement sur nos parcelles.
+
+33
+00:02:54.060 --> 00:02:58.680
+Et finalement on pourrait aussi
+préférer s'intéresser à un des
+
+34
+00:02:58.680 --> 00:03:02.820
+covariables de changement qui
+serait l'humidité et s'arranger pour
+
+35
+00:03:02.820 --> 00:03:07.400
+avoir tous les engrais en fonction
+de tous les niveaux d'humidité mais
+
+36
+00:03:07.400 --> 00:03:11.800
+choisir aléatoirement l'emplacement
+en fonction de l'ensoleillement.
+
+37
+00:03:11.900 --> 00:03:17.200
+On va renforcer un peu la qualité de
+notre échantillonnage, de notre plan
+
+38
+00:03:17.200 --> 00:03:22.460
+d'expérience pour interpréter les
+différences entre les blocs d'humidité.
+
+39
+00:03:23.880 --> 00:03:26.640
+Voilà comment ça se traduit
+un peu mathématiquement.
+
+40
+00:03:26.660 --> 00:03:32.020
+Ici, la randomisation totale,
+où on retrouve notre expérience,
+
+41
+00:03:32.240 --> 00:03:36.200
+dans laquelle on a choisi aléatoirement
+les engrais dans les parcelles.
+
+42
+00:03:36.200 --> 00:03:40.300
+Et on peut donc, du coup, écrire ça
+dans un modèle classique à effet fixe,
+
+43
+00:03:40.300 --> 00:03:46.300
+ou la valeur de croissance
+qu'on attend dans une parcelle
+
+44
+00:03:46.300 --> 00:03:49.000
+ou une autre en fonction de la
+croissance moyenne de toutes
+
+45
+00:03:49.000 --> 00:03:54.260
+les parcelles plus l'effet
+associé au type d'engrais utilisé.
+
+46
+00:03:56.640 --> 00:04:01.160
+Dans le deuxième exemple, carré latin,
+
+47
+00:04:01.200 --> 00:04:08.640
+on va avoir la possibilité de distinguer
+entre un effet fixe lié à l'engrais
+
+48
+00:04:08.640 --> 00:04:13.280
+et puis des effets aléatoires où on
+a choisi de répartir aléatoirement
+
+49
+00:04:13.280 --> 00:04:18.180
+les engrais en fonction de chaque
+ligne et en fonction de chaque colonne.
+
+50
+00:04:18.200 --> 00:04:23.300
+Donc on va pouvoir tester
+aussi l'effet des lignes
+
+51
+00:04:23.300 --> 00:04:26.460
+et des colonnes en plus de
+l'effet fixe de l'engrais.
+
+52
+00:04:27.280 --> 00:04:31.280
+Et là on commence à parler de modèles
+linéaires mixtes que l'on peut écrire
+
+53
+00:04:31.280 --> 00:04:35.740
+typiquement dans R avec des fonctions
+de modèles mixtes où on retrouve
+
+54
+00:04:35.740 --> 00:04:40.400
+l'effet fixe de l'engrais et les effets
+aléatoires sur les lignes et sur les colonnes.
+
+55
+00:04:41.900 --> 00:04:44.600
+Et finalement, dans le dernier
+exemple, un peu similaire,
+
+56
+00:04:44.660 --> 00:04:49.240
+mais on a les blocs et on va avoir
+l'effet fixe de l'engrais plus l'effet
+
+57
+00:04:49.240 --> 00:04:53.280
+aléatoire du bloc et on ne pourra
+pas dire grand-chose sur l'effet
+
+58
+00:04:53.280 --> 00:04:59.020
+des colonnes dans notre résultat,
+mais on aura renforcé l'inférence,
+
+59
+00:04:59.020 --> 00:05:03.120
+la qualité des tests que l'on
+fait sur le bloc lié à l'humidité.

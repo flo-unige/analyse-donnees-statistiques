@@ -1,0 +1,183 @@
+WEBVTT
+
+1
+00:00:01.300 --> 00:00:07.260
+These examples show how tests and
+inference, and relatively simple
+
+2
+00:00:07.260 --> 00:00:11.620
+tests for comparing means,
+have become essential tools
+
+3
+00:00:11.620 --> 00:00:17.000
+in all the so-called experimental
+sciences, allowing us to test for
+
+4
+00:00:17.000 --> 00:00:22.860
+significant differences, typically
+between groups, in variables of interest.
+
+5
+00:00:24.380 --> 00:00:28.040
+Statisticians have been developing
+all these statistical methods for
+
+6
+00:00:28.040 --> 00:00:31.740
+over 100 years. But they have had
+
+7
+00:00:31.740 --> 00:00:37.300
+computers to calculate these statistics
+for 30 to 40 years, and quite quickly,
+
+8
+00:00:37.300 --> 00:00:41.880
+they realized that it might
+be useful to go beyond
+
+9
+00:00:41.880 --> 00:00:46.700
+calculating a mean, for
+example, just once, and instead
+
+10
+00:00:46.800 --> 00:00:51.940
+potentially recalculate it dozens,
+hundreds, or even thousands of
+
+11
+00:00:51.940 --> 00:00:58.700
+times, using our original sample, which is
+meant to represent the parent population.
+
+12
+00:00:58.700 --> 00:01:04.060
+So, here is a small example
+where we randomly generated
+
+13
+00:01:04.060 --> 00:01:09.260
+heights from 158 to 184 cm,
+forming our original sample.
+
+14
+00:01:09.440 --> 00:01:12.980
+But rather than simply
+calculating the mean of x once,
+
+15
+00:01:13.240 --> 00:01:20.180
+we will resample and calculate
+
+16
+00:01:20.180 --> 00:01:26.920
+the mean 2,000 times by sampling
+from these original values,
+
+17
+00:01:27.000 --> 00:01:32.520
+taking a random sample. We will
+draw a new sample of 10 values
+
+18
+00:01:32.520 --> 00:01:37.180
+selected randomly from the values
+available in the first sample.
+
+19
+00:01:37.380 --> 00:01:42.480
+We therefore calculate 2,000
+means instead of just one. We can
+
+20
+00:01:42.480 --> 00:01:49.420
+display them in a histogram and calculate
+the quantiles of the distribution
+
+21
+00:01:50.680 --> 00:01:55.200
+of these 2,000 calculated
+means. So, to begin with,
+
+22
+00:01:55.220 --> 00:01:59.760
+we need the original sample
+mean. We can compare it with the
+
+23
+00:01:59.760 --> 00:02:05.100
+mean of the 2,000 samples obtained, and
+also examine the confidence interval
+
+24
+00:02:05.100 --> 00:02:10.900
+around the location of the mean
+calculated from this sample.
+
+25
+00:02:11.780 --> 00:02:16.580
+This is another way of presenting these
+so-called bootstrap methods, which
+
+26
+00:02:16.580 --> 00:02:21.680
+are particularly useful and
+interesting when our sample is
+
+27
+00:02:21.680 --> 00:02:25.760
+small, because when a sample
+contains many observations,
+
+28
+00:02:25.800 --> 00:02:29.740
+ultimately, the variable, the
+mean we calculate or the test
+
+29
+00:02:29.740 --> 00:02:33.760
+we perform on these observations
+is already very reliable.
+
+30
+00:02:33.900 --> 00:02:40.280
+The number of observations
+in the sample improves the
+
+31
+00:02:40.280 --> 00:02:45.220
+quality of the inference we
+can make from that sample.
+
+32
+00:02:45.840 --> 00:02:49.620
+So, it is when samples are
+small that it becomes useful
+
+33
+00:02:49.620 --> 00:02:53.380
+to use bootstrapping to get a
+better idea of the distribution
+
+34
+00:02:53.380 --> 00:02:57.540
+of our statistic of interest:
+a mean, a t-test, or a p-value.
+
+35
+00:02:57.860 --> 00:03:02.900
+Whatever statistic we are interested
+in, we can recalculate it dozens,
+
+36
+00:03:02.900 --> 00:03:06.840
+hundreds, or even thousands
+of times and get an idea of
+
+37
+00:03:06.840 --> 00:03:12.360
+how our results vary around the initial value.

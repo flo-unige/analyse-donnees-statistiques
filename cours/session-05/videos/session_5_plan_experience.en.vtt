@@ -1,0 +1,290 @@
+WEBVTT
+
+1
+00:00:01.680 --> 00:00:07.600
+So, these tools of inferential
+statistics for testing differences
+
+2
+00:00:07.600 --> 00:00:11.040
+between means, whether the t-test
+or its nonparametric equivalents,
+
+3
+00:00:11.040 --> 00:00:16.120
+and especially ANOVA, ultimately
+seem like fairly simple tools,
+
+4
+00:00:16.920 --> 00:00:23.620
+but they are actually the basis
+of all the experimental science
+
+5
+00:00:23.620 --> 00:00:27.620
+developed in fields such as
+agronomy and pharmaceuticals
+
+6
+00:00:27.620 --> 00:00:33.920
+over a very long time. We design
+experiments to try to examine
+
+7
+00:00:33.920 --> 00:00:38.660
+the effect of one or more factors
+on the variable of interest:
+
+8
+00:00:38.780 --> 00:00:43.280
+plant growth, or a drug's effect
+on blood pressure, for example.
+
+9
+00:00:45.520 --> 00:00:49.140
+So, these really are the
+tools that allow us to test
+
+10
+00:00:49.140 --> 00:00:54.900
+whether a treatment significantly
+affects what we are interested in.
+
+11
+00:00:55.560 --> 00:01:00.720
+These are also fields where
+conducting an experiment is very
+
+12
+00:01:00.720 --> 00:01:08.140
+expensive, so we would like to
+optimize our experiments and how
+
+13
+00:01:08.140 --> 00:01:12.320
+we conduct them, which brings us to
+the concept of experimental design.
+
+14
+00:01:12.600 --> 00:01:17.600
+We will look at an example
+in agronomy: suppose you
+
+15
+00:01:17.600 --> 00:01:22.820
+had 16 plots available and
+wanted to test whether different
+
+16
+00:01:22.820 --> 00:01:27.540
+types of fertilizer have a positive
+effect on the growth of these plants,
+
+17
+00:01:27.560 --> 00:01:31.100
+and whether variations in
+
+18
+00:01:31.100 --> 00:01:34.280
+sunlight and moisture between
+plots also have an effect.
+
+19
+00:01:34.920 --> 00:01:41.520
+So, in a first example, we
+randomly assign one of the
+
+20
+00:01:41.520 --> 00:01:46.840
+fertilizer types to each of the 16
+plots. This means we might have,
+
+21
+00:01:46.840 --> 00:01:50.740
+in the first row, for example,
+the same fertilizer twice and no
+
+22
+00:01:50.740 --> 00:01:57.680
+fertilizer C, or here, fertilizer A
+twice, but no fertilizer B, and so on.
+
+23
+00:01:58.080 --> 00:02:02.060
+Each type of fertilizer can occur at random.
+
+24
+00:02:02.160 --> 00:02:08.440
+Fertilizer C also occurs five times, and A
+
+25
+00:02:10.840 --> 00:02:17.700
+four times, B four times,
+and D only three times,
+
+26
+00:02:17.700 --> 00:02:21.800
+across the experiment as
+a whole. So, ultimately,
+
+27
+00:02:21.800 --> 00:02:27.940
+the degree of representation
+differs between our fertilizers.
+
+28
+00:02:29.460 --> 00:02:34.760
+This is an experimental design that
+we generate entirely at random.
+
+29
+00:02:34.960 --> 00:02:39.140
+In the second example, called a
+Latin square design, we arrange for
+
+30
+00:02:39.140 --> 00:02:44.580
+each fertilizer to occur in every row
+and column. This also gives us a much
+
+31
+00:02:44.580 --> 00:02:48.940
+better representation of the
+variations we can observe horizontally
+
+32
+00:02:48.940 --> 00:02:53.480
+with the moisture level or
+sunlight level on our plots.
+
+33
+00:02:54.060 --> 00:02:58.680
+Finally, we might also
+prefer to focus on one of the
+
+34
+00:02:58.680 --> 00:03:02.820
+covariates of change, namely
+moisture, and arrange for
+
+35
+00:03:02.820 --> 00:03:07.400
+all fertilizers to occur at
+every moisture level, but
+
+36
+00:03:07.400 --> 00:03:11.800
+choose their positions randomly
+with respect to sunlight.
+
+37
+00:03:11.900 --> 00:03:17.200
+We will improve the quality of
+our sampling, our experimental
+
+38
+00:03:17.200 --> 00:03:22.460
+design, to interpret differences
+between moisture blocks.
+
+39
+00:03:23.880 --> 00:03:26.640
+Here is how this translates
+into mathematical terms.
+
+40
+00:03:26.660 --> 00:03:32.020
+Here, with complete randomization,
+we have our experiment,
+
+41
+00:03:32.240 --> 00:03:36.200
+in which we randomly assigned
+the fertilizers to the plots.
+
+42
+00:03:36.200 --> 00:03:40.300
+We can therefore write this as
+a standard fixed-effects model,
+
+43
+00:03:40.300 --> 00:03:46.300
+where the growth value we expect in one plot
+
+44
+00:03:46.300 --> 00:03:49.000
+or another depends on the
+mean growth across all
+
+45
+00:03:49.000 --> 00:03:54.260
+the plots, plus the effect associated
+with the fertilizer type used.
+
+46
+00:03:56.640 --> 00:04:01.160
+In the second example, the Latin square,
+
+47
+00:04:01.200 --> 00:04:08.640
+we can distinguish a fixed effect
+associated with the fertilizer
+
+48
+00:04:08.640 --> 00:04:13.280
+and random effects, where
+we chose to distribute
+
+49
+00:04:13.280 --> 00:04:18.180
+the fertilizers randomly within
+each row and each column.
+
+50
+00:04:18.200 --> 00:04:23.300
+So, we can also test the effects of the rows
+
+51
+00:04:23.300 --> 00:04:26.460
+and columns, in addition to the
+fixed effect of the fertilizer.
+
+52
+00:04:27.280 --> 00:04:31.280
+Here, we start talking about linear
+mixed models, which we can write
+
+53
+00:04:31.280 --> 00:04:35.740
+in R, using mixed-model
+functions, where we have the
+
+54
+00:04:35.740 --> 00:04:40.400
+fixed effect of fertilizer and
+random effects for rows and columns.
+
+55
+00:04:41.900 --> 00:04:44.600
+Finally, in the last example,
+which is somewhat similar,
+
+56
+00:04:44.660 --> 00:04:49.240
+we have blocks, and we will have the
+fixed effect of fertilizer plus the
+
+57
+00:04:49.240 --> 00:04:53.280
+random effect of the block. We will not
+be able to say much about the effect
+
+58
+00:04:53.280 --> 00:04:59.020
+of columns in our result, but we
+will have strengthened the inference,
+
+59
+00:04:59.020 --> 00:05:03.120
+the quality of the tests we perform
+on the block associated with moisture.

@@ -1,0 +1,686 @@
+---
+title: "Session 5 - Inferential statistics 2: ANOVA, experimental design and bootstrap"
+subtitle: "Understand models, apply them in R, and interpret their results"
+author: "Practical work for Anthony Lehmann’s course"
+lang: en
+format:
+  html:
+    theme: cosmo
+    toc: true
+    toc-depth: 3
+    number-sections: true
+    smooth-scroll: false
+    code-fold: false
+    code-tools: false
+    code-summary: "Show R code"
+    code-copy: true
+    embed-resources: false
+    fig-cap-location: bottom
+execute:
+  echo: true
+  warning: true
+  message: false
+  cache: false
+sidebar: cours
+toc-title: "On this page"
+---
+
+```{=html}
+<div class="course-choices">
+<nav class="course-language" aria-label="Course language"><a href="index-r.html" lang="fr" hreflang="fr">Français</a><span aria-current="page" lang="en">English</span></nav>
+<nav class="course-code" aria-label="Code language"><a href="index-en.html">Python</a><span aria-current="page">R</span></nav>
+</div>
+```
+
+# Objectives and overview
+
+This course builds on the chapter on hypotheses and tests and continues our exploration of inferential statistics through ANOVA, interactions, experimental design, linear mixed models and bootstrap. Each section combines an explanation, executable R code, and graphs.
+
+By the end of the session, you should be able to:
+
+- compare several means and interpret the F statistic;
+- check a model’s assumptions and choose a suitable alternative;
+- distinguish main effects from an interaction between two factors;
+- construct a completely randomised design, a Latin square and a block design;
+- distinguish fixed and random effects in a linear mixed model;
+- estimate uncertainty using bootstrap while respecting the sampling unit.
+
+# Preparing for the session
+
+## Installing packages
+
+Packages only need to be installed once in the R console:
+
+```{r}
+#| label: configuration
+#| message: false
+#| warning: false
+
+# Block 1: Install any missing packages
+packages = c("ggplot2", "readxl", "emmeans", "lme4", "lmerTest", "boot")
+
+for (pkg in packages) {
+  if (!requireNamespace(pkg, quietly = TRUE)) {
+    install.packages(pkg)
+  }
+  library(pkg, character.only = TRUE)
+}
+
+# Set a theme for ggplot graphs
+theme_set(theme_minimal(base_size = 13))
+
+# Create a function to calculate a t-based confidence interval for the mean, without depending on the Hmisc package.
+ic_moyenne <- function(x) {
+  x <- x[is.finite(x)]
+  marge <- qt(.975, df = length(x) - 1) * sd(x) / sqrt(length(x))
+  data.frame(y = mean(x), ymin = mean(x) - marge, ymax = mean(x) + marge)
+}
+
+# Set global options for the session
+options(contrasts = c("contr.treatment", "contr.poly"), digits = 4)
+
+# Set a seed for random draws.
+set.seed(2026)
+```
+
+## Importing and checking the data
+
+The file **data 2025.xlsx** contains the sheets `data`, `clean` and `legend`. We use `clean`, which contains the numerical values and factors we need.
+
+```{r}
+#| label: importation
+# Block 2
+# Import from an Excel file; use read.csv() if your data are in a text file (.csv)
+data_path <- "data/data 2025.xlsx"
+data_2025 <- read_excel(data_path,sheet = "clean")
+
+# The file contains the following variables
+names(data_2025)
+# which we can summarise with the summary function
+summary(data_2025)
+```
+
+If necessary, we remove rows (observations) with missing data for particular variables.
+
+```{r}
+#| label: controle-donnees
+# Block 3
+# Remove countries with missing data for PA_land or gdp_pcap
+data_2025 <- data_2025[!is.na(data_2025$PA_land),]
+data_2025 <- data_2025[!is.na(data_2025$gdp_pcap),]
+summary(data_2025[,c("region","lex", "en_brd", "PA_land", "gdp_pcap")])
+```
+
+::: {.callout-important title="What is our target population?"}
+The workbook covers a large proportion of countries and is not a simple random sample of countries. The tests below help us learn how to make inferences under a model. Spatial dependence, countries’ shared histories and differences in measurement limit how we can interpret them.
+:::
+
+# One-way ANOVA: comparing several means
+
+::: {.content-visible when-format="html"}
+```{=html}
+<div class="cours-video">
+  <video id="video-session_5_anova2" class="video-js vjs-big-play-centered" data-cours-video
+         controls preload="metadata" playsinline>
+    <source src="https://mediaserver.unige.ch/proxy/320471/VK2KexpLPIQork1l.mp4?from_player=true" type="video/mp4">
+    <track kind="subtitles" src="videos/session_5_anova2.fr.vtt" srclang="fr" label="Français">
+    <track kind="subtitles" src="videos/session_5_anova2.en.vtt" srclang="en" label="English" default>
+    <p>Your browser cannot display this video. Use the link below.</p>
+  </video>
+  <div class="cours-video-erreur" role="status" hidden>
+    <p>The video could not be loaded. You can try again or open it using the link below.</p>
+    <button class="cours-video-reessayer" type="button">Try again</button>
+  </div>
+</div>
+```
+
+[Open the video](https://mediaserver.unige.ch/proxy/320471/VK2KexpLPIQork1l.mp4?width=1920&height=1080&start=0).
+:::
+
+## Question, hypotheses and model
+
+**Question:** is mean life expectancy the same in every region?
+
+For $k$ regions, the null hypothesis is $H_0 : \mu_1=\cdots=\mu_k$. The alternative is that at least one mean differs. The model is:
+
+$$Y_{ij}=\mu+\alpha_i+\varepsilon_{ij}.$$
+
+$Y_{ij}$ is the life expectancy of country $j$ in region $i$, $\mu$ is a reference level and $\alpha_i$ is the effect of the region. ANOVA compares **between-group** variability with **residual variability within groups**.
+
+```{r}
+#| label: description-regions
+# Block 4
+
+# Boxplot for each group
+ggplot(data_2025 , aes(region, lex, fill = region)) +
+  geom_boxplot(width = .55, alpha = .45, outlier.shape = NA) +
+  geom_point(position = position_jitter(width = .12, seed = 1), alpha = .55) +
+  stat_summary(fun = mean, geom = "point", shape = 23, size = 3, fill = "white") +
+  labs(x = "Region", y = "Life expectancy (years)") +
+  guides(fill = "none")
+```
+
+The boxes describe the distributions, and the white diamonds show the means. A visual difference alone does not quantify uncertainty or reveal its cause.
+
+## Decomposing variance and calculating F
+
+$$SS_{total}=SS_{between}+SS_{residual}, \qquad
+F=\frac{SS_{between}/(k-1)}{SS_{residual}/(n-k)}.$$
+
+Under the model’s assumptions and $H_0$, this statistic follows an F distribution with $k-1$ and $n-k$ degrees of freedom. A high value indicates that differences between means are large relative to the residual variation.
+
+```{r}
+#| label: anova-un-facteur
+# Block 5: One-way ANOVA
+
+# Calculate the ANOVA with the aov function
+
+d <- data_2025
+m1 <- aov(lex ~ region, data = d)
+summary(m1)
+
+# Calculate the ANOVA step by step
+n <- nrow(d)
+k <- nlevels(as.factor(d$region))
+moyennes <- ave(d$lex, d$region, FUN = mean)
+ss_entre <- sum((moyennes - mean(d$lex))^2)
+ss_res <- sum((d$lex - moyennes)^2)
+F_calcule <- (ss_entre / (k - 1)) / (ss_res / (n - k))
+p_calcule <- pf(F_calcule, k - 1, n - k, lower.tail = FALSE)
+knitr::kable(data.frame(F = F_calcule, df1 = k - 1, df2 = n - k,
+                        p.value = p_calcule))
+
+```
+
+A small p-value indicates incompatibility with all means being equal, under the model. It does not identify which regions differ or measure the size of the difference.
+
+## Checking the assumptions
+
+Classical ANOVA assumes independent errors with a common variance and an approximately normal distribution for exact inference. Normality concerns the **conditional errors**, examined through the residuals, rather than the distribution of all observations pooled together.
+
+```{r}
+#| label: diagnostics-anova
+#| fig-width: 9
+#| fig-height: 4.5
+# Block 7: Diagnostics
+ancien <- par(mfrow = c(1, 2))
+plot(m1, which = 1)
+plot(m1, which = 2)
+par(ancien)
+shapiro.test(residuals(m1))
+
+```
+
+The residuals-versus-fitted-values plot helps identify differences in spread and unusual values. The QQ plot examines the shape of the residual distribution.
+
+## Which regions differ?
+
+Running multiple t-tests without adjustment increases the risk of at least one false positive. Tukey comparisons control this risk across the family of pairwise comparisons under the classical assumptions.
+
+```{r}
+#| label: tukey
+# Block 8: Tukey test
+comparaisons <- TukeyHSD(m1)
+comparaisons
+plot(comparaisons, las = 1)
+```
+
+An interval for a difference that excludes zero indicates a difference detected with the Tukey adjustment.
+
+## A rank-based alternative
+
+Kruskal–Wallis compares distributions using ranks. In general, it does not test equality of means or only equality of medians. Interpreting it as a shift in location requires, among other things, distributions with comparable shapes.
+
+```{r}
+#| label: kruskal
+# Block 9: Kruskal–Wallis test
+kruskal.test(lex ~ region, data = d)
+pairwise.wilcox.test(d$lex, d$region, p.adjust.method = "holm", exact = FALSE)
+```
+
+# Two-way ANOVA and interactions
+
+::: {.content-visible when-format="html"}
+```{=html}
+<div class="cours-video">
+  <video id="video-session_5_anova3" class="video-js vjs-big-play-centered" data-cours-video
+         controls preload="metadata" playsinline>
+    <source src="https://mediaserver.unige.ch/proxy/320472/UPvMPZKH7KS74ICF.mp4?from_player=true" type="video/mp4">
+    <track kind="subtitles" src="videos/session_5_anova3.fr.vtt" srclang="fr" label="Français">
+    <track kind="subtitles" src="videos/session_5_anova3.en.vtt" srclang="en" label="English" default>
+    <p>Your browser cannot display this video. Use the link below.</p>
+  </video>
+  <div class="cours-video-erreur" role="status" hidden>
+    <p>The video could not be loaded. You can try again or open it using the link below.</p>
+    <button class="cours-video-reessayer" type="button">Try again</button>
+  </div>
+</div>
+```
+
+[Open the video](https://mediaserver.unige.ch/proxy/320472/UPvMPZKH7KS74ICF.mp4?width=1920&height=1080&start=0).
+:::
+
+## When the effect of one factor depends on another
+
+This example uses adult height by sex and two fictional nationalities, A and B. These categories are used only to explain the calculation. We simulate individuals because the country-level workbook does not contain this experimental structure.
+
+$$Y_{ijk}=\mu+\alpha_i+\beta_j+(\alpha\beta)_{ij}+\varepsilon_{ijk}.$$
+
+In R, `sexe * nationalite` expands to `sexe + nationalite + sexe:nationalite`. Without an interaction, the difference between sexes stays constant across nationalities. With an interaction, this difference changes. Lines can be non-parallel without crossing.
+
+## Simulating the two situations, with and without interaction
+
+```{r}
+#| label: simulation-interactions
+# Block 10: Interactions
+simuler_tailles <- function(moyennes, graine) {
+  set.seed(graine)
+  z <- expand.grid(individu = seq_len(40),
+                   sexe = c("F", "H"), nationalite = c("A", "B"))
+  z$sexe <- factor(z$sexe, levels = c("F", "H"))
+  z$nationalite <- factor(z$nationalite, levels = c("A", "B"))
+  cle <- paste(z$sexe, z$nationalite, sep = "_")
+  z$taille <- unname(moyennes[cle]) + rnorm(nrow(z), sd = 4)
+  z
+}
+sans <- simuler_tailles(c(F_A = 162, H_A = 174, F_B = 170, H_B = 182), 31)
+avec <- simuler_tailles(c(F_A = 160, H_A = 176, F_B = 172, H_B = 180), 32)
+sans$situation <- "No interaction in the generating model"
+avec$situation <- "Interaction in the generating model"
+tailles <- rbind(sans, avec)
+```
+
+```{r}
+#| label: fig-interactions
+#| fig-cap: "Observed means and 95% confidence intervals for each cell mean. Sampling variation can make the lines slightly non-parallel even without a theoretical interaction."
+#| fig-width: 10
+#| fig-height: 5
+# Block 11: Interaction plot
+ggplot(tailles, aes(nationalite, taille, color = sexe, group = sexe)) +
+  stat_summary(fun = mean, geom = "line", linewidth = 1) +
+  stat_summary(fun = mean, geom = "point", size = 3) +
+  stat_summary(fun.data = ic_moyenne, geom = "errorbar", width = .08) +
+  facet_wrap(~ situation) +
+  labs(x = "Fictional nationality", y = "Height (cm)", color = "Sex")
+```
+
+## Fitting and testing the interaction
+
+```{r}
+#| label: modeles-interactions
+# Block 12: Models with and without interaction
+m_sans <- lm(taille ~ sexe * nationalite, data = sans)
+m_avec <- lm(taille ~ sexe * nationalite, data = avec)
+anova(m_sans)
+anova(m_avec)
+# Compare nested models to assess the contribution of the interaction.
+anova(update(m_sans, . ~ . - sexe:nationalite), m_sans)
+anova(update(m_avec, . ~ . - sexe:nationalite), m_avec)
+```
+
+Under the generating model without interaction, both expected differences are 12 cm. With interaction, they are 16 cm in A and 8 cm in B. The difference in differences is therefore $8-16=-8$ cm.
+
+# Experimental design: four fertilisers on 16 plots
+
+::: {.content-visible when-format="html"}
+```{=html}
+<div class="cours-video">
+  <video id="video-session_5_plan_experience" class="video-js vjs-big-play-centered" data-cours-video
+         controls preload="metadata" playsinline>
+    <source src="https://mediaserver.unige.ch/proxy/320470/zhHpWm6LTfc9pU0c.mp4?from_player=true" type="video/mp4">
+    <track kind="subtitles" src="videos/session_5_plan_experience.fr.vtt" srclang="fr" label="Français">
+    <track kind="subtitles" src="videos/session_5_plan_experience.en.vtt" srclang="en" label="English" default>
+    <p>Your browser cannot display this video. Use the link below.</p>
+  </video>
+  <div class="cours-video-erreur" role="status" hidden>
+    <p>The video could not be loaded. You can try again or open it using the link below.</p>
+    <button class="cours-video-reessayer" type="button">Try again</button>
+  </div>
+</div>
+```
+
+[Open the video](https://mediaserver.unige.ch/proxy/320470/zhHpWm6LTfc9pU0c.mp4?width=1920&height=1080&start=0).
+:::
+
+## Experimental unit, replication and randomisation
+
+The experimental unit is the **plot** to which a fertiliser is assigned. Four plant measurements on the same plot do not become four independent treatment replicates. Randomisation limits allocation bias, while blocks control known heterogeneity.
+
+We consider two gradients: moisture increases along the rows, and sunlight along the columns. The yield values below are entirely simulated and expressed in an illustrative unit.
+
+## Constructing the three designs
+
+```{r}
+#| label: randomiser-plans
+# Block 14: Experimental design
+set.seed(101)
+grille <- expand.grid(colonne = seq_len(4), ligne = seq_len(4))
+
+# 1. Complete randomisation, with four replicates per fertiliser.
+aleatoire <- grille
+aleatoire$engrais <- sample(rep(LETTERS[1:4], each = 4))
+
+# 2. Latin square: permute rows, columns and labels.
+carre_initial <- outer(0:3, 0:3, function(i, j) (i + j) %% 4 + 1)
+carre <- carre_initial[sample(4), sample(4)]
+etiquettes <- sample(LETTERS[1:4])
+latin <- grille
+latin$engrais <- etiquettes[carre[cbind(latin$ligne, latin$colonne)]]
+
+# 3. Complete blocks: an independent permutation within each row.
+blocs <- grille
+blocs$engrais <- unlist(lapply(seq_len(4), function(i) sample(LETTERS[1:4])))
+
+preparer <- function(z, nom) {
+  z$plan <- nom
+  z$humidite <- z$ligne
+  z$ensoleillement <- z$colonne
+  z$ligne <- factor(z$ligne)
+  z$colonne <- factor(z$colonne)
+  z$bloc <- z$ligne
+  z$engrais <- factor(z$engrais, levels = LETTERS[1:4])
+  z
+}
+aleatoire <- preparer(aleatoire, "Completely randomised")
+latin <- preparer(latin, "Latin square")
+blocs <- preparer(blocs, "Complete blocks")
+stopifnot(all(table(aleatoire$engrais) == 4),
+          all(table(latin$ligne, latin$engrais) == 1),
+          all(table(latin$colonne, latin$engrais) == 1),
+          all(table(blocs$bloc, blocs$engrais) == 1))
+plans <- rbind(aleatoire, latin, blocs)
+```
+
+```{r}
+#| label: fig-plans
+#| fig-width: 11
+#| fig-height: 4.5
+#| fig-cap: "Examples of randomised allocations. Moisture increases from top to bottom; sunlight increases from left to right."
+# Block 15: Experimental design plot
+ggplot(plans, aes(colonne, ligne, fill = engrais)) +
+  geom_tile(color = "white", linewidth = 1.5) +
+  geom_text(aes(label = engrais), size = 6) +
+  scale_y_discrete(limits = rev(levels(plans$ligne))) +
+  scale_fill_brewer(palette = "Pastel1") + coord_equal() +
+  facet_wrap(~ plan) + labs(x = "Column: sunlight", y = "Row: moisture") +
+  theme(panel.grid = element_blank(), legend.position = "none")
+```
+
+| Design | Constraint | Classical model | Residual df without covariates |
+|------------------|------------------|------------------|------------------|
+| Completely randomised | 4 plots per fertiliser | `rendement ~ engrais` | 12 |
+| Latin square | Each fertiliser once per row and column | `rendement ~ engrais + ligne + colonne` | 6 |
+| Complete blocks | Each fertiliser once in each block | `rendement ~ engrais + bloc` | 9 |
+
+The Latin square controls two directions at the cost of degrees of freedom. There is only one observation per row–column combination: spatial interactions and interactions with treatments cannot be estimated separately in the classical model for this small design. The block design controls one direction without requiring balance across columns.
+
+## Generating yields
+
+```{r}
+#| label: rendements
+# Block 16: Generated yields
+ajouter_rendement <- function(z, graine) {
+  set.seed(graine)
+  effet <- c(A = 0, B = 2, C = 4, D = 6)
+  z$rendement <- 30 + unname(effet[as.character(z$engrais)]) +
+    2 * (z$humidite - 2.5) + 1.5 * (z$ensoleillement - 2.5) +
+    rnorm(nrow(z), sd = 1.5)
+  z
+}
+aleatoire <- ajouter_rendement(aleatoire, 201)
+latin <- ajouter_rendement(latin, 202)
+blocs <- ajouter_rendement(blocs, 203)
+knitr::kable(latin, digits = 2)
+```
+
+These simulations share the same theoretical effects but have different errors. A single realisation is not enough to rank the designs by power. Comparing their performance would require repeating each experiment many times under specified scenarios.
+
+## Analysing a completely randomised design
+
+```{r}
+#| label: modele-randomise
+# Block 17: Randomised design
+m_aleatoire <- lm(rendement ~ engrais, data = aleatoire)
+anova(m_aleatoire)
+# Adjust for the measured gradients, assuming linear effects.
+m_ajuste <- lm(rendement ~ engrais + humidite + ensoleillement, data = aleatoire)
+anova(m_ajuste)
+emmeans::emmeans(m_ajuste, pairwise ~ engrais, adjust = "tukey")
+```
+
+Complete randomisation does not ensure exact balance of the gradients in an experiment with 16 plots. Covariates specified before the analysis can improve precision. The sequential order of the `anova` table must be taken into account; the adjusted fertiliser comparisons above use the full model.
+
+## Analysing the Latin square
+
+```{r}
+#| label: modele-latin
+# Block 18: Latin square
+m_latin <- lm(rendement ~ engrais + ligne + colonne, data = latin)
+anova(m_latin)
+emmeans::emmeans(m_latin, pairwise ~ engrais, adjust = "tukey")
+stopifnot(df.residual(m_latin) == 6)
+```
+
+Here, rows and columns are treated as fixed effects used to control variation. This is a classical analysis suited to the observed square. Treating them as random effects involves a different assumption about the population they come from, discussed below.
+
+## Analysing complete blocks
+
+```{r}
+#| label: modele-blocs
+# Block 19: Block design
+m_blocs <- lm(rendement ~ engrais + bloc, data = blocs)
+anova(m_blocs)
+emmeans::emmeans(m_blocs, pairwise ~ engrais, adjust = "tukey")
+
+```
+
+Treatments are compared while accounting for differences between blocks. If the blocks are the only levels of interest, a fixed effect is a natural choice. If they represent exchangeable units from a population of blocks, a random effect may be suitable.
+
+# Linear mixed models (LMM)
+
+## Fixed and random effects
+
+A fixed effect describes differences between specific levels we want to compare, such as the four fertilisers. A random intercept describes variation between grouped units, such as sites or blocks considered exchangeable. Observations in the same group share this intercept and are therefore marginally correlated.
+
+For the block design:
+
+$$Y_{bk}=\mu+\alpha_k+u_b+\varepsilon_{bk},\qquad
+u_b\sim\mathcal N(0,\sigma_b^2),\quad
+\varepsilon_{bk}\sim\mathcal N(0,\sigma^2).$$
+
+Random effects are assumed to be independent of the errors and predictors. The exchangeability assumption needs careful consideration: rows ordered along a gradient may be better described by a measured covariate than by independent intercepts.
+
+```{r}
+#| label: lmm-blocs
+# Block 20: Mixed model
+m_mixte <- lmerTest::lmer(rendement ~ engrais + (1 | bloc), data = blocs)
+summary(m_mixte)
+# Approximate F-tests, with Satterthwaite degrees of freedom.
+anova(m_mixte, ddf = "Satterthwaite")
+as.data.frame(lme4::VarCorr(m_mixte))
+lme4::isSingular(m_mixte)
+emmeans::emmeans(m_mixte, pairwise ~ engrais, adjust = "tukey",
+                  lmer.df = "satterthwaite")
+```
+
+With only four blocks, the between-block variance is difficult to estimate reliably. A singular fit can indicate a variance estimated at the boundary, often close to zero. This calls for reassessing the model and design; it is not proof that there is no biological variability.
+
+## Crossed effects in the Latin square
+
+```{r}
+#| label: lmm-latin
+# Block 21: Latin square
+m_latin_mixte <- lmerTest::lmer(
+  rendement ~ engrais + (1 | ligne) + (1 | colonne), data = latin)
+summary(m_latin_mixte)
+lme4::isSingular(m_latin_mixte)
+```
+
+The row and column effects are **crossed**, because every row meets every column. This is the model shown in the PPTX, but its use depends on how the rows and columns are regarded. It remains additive and does not overcome the lack of replication needed to identify all interactions. With four levels per random effect, report the uncertainty and consider the fixed-effects analysis.
+
+## Diagnostics and within-group correlation
+
+```{r}
+#| label: diagnostic-mixte
+#| fig-width: 9
+#| fig-height: 4.5
+# Block 22: Diagnostics
+ancien <- par(mfrow = c(1, 2))
+plot(fitted(m_mixte), residuals(m_mixte),
+     xlab = "Fitted value", ylab = "Conditional residual")
+abline(h = 0, lty = 2)
+qqnorm(residuals(m_mixte)); qqline(residuals(m_mixte))
+par(ancien)
+vc <- as.data.frame(lme4::VarCorr(m_mixte))
+variance_bloc <- vc$vcov[vc$grp == "bloc"]
+variance_erreur <- sigma(m_mixte)^2
+icc <- variance_bloc / (variance_bloc + variance_erreur)
+icc
+```
+
+The ICC is the proportion of variance attributed to the block in this random-intercept model. Its estimate is highly uncertain here. To compare models with different fixed effects using a likelihood-ratio test, refit them with `REML = FALSE`; do not compare their REML likelihoods directly.
+
+# Bootstrap: estimating uncertainty by resampling
+
+::: {.content-visible when-format="html"}
+```{=html}
+<div class="cours-video">
+  <video id="video-session_5_bootstrap" class="video-js vjs-big-play-centered" data-cours-video
+         controls preload="metadata" playsinline>
+    <source src="https://mediaserver.unige.ch/proxy/320473/k6IAaXNp5HPrrVJH.mp4?from_player=true" type="video/mp4">
+    <track kind="subtitles" src="videos/session_5_bootstrap.fr.vtt" srclang="fr" label="Français">
+    <track kind="subtitles" src="videos/session_5_bootstrap.en.vtt" srclang="en" label="English" default>
+    <p>Your browser cannot display this video. Use the link below.</p>
+  </video>
+  <div class="cours-video-erreur" role="status" hidden>
+    <p>The video could not be loaded. You can try again or open it using the link below.</p>
+    <button class="cours-video-reessayer" type="button">Try again</button>
+  </div>
+</div>
+```
+
+[Open the video](https://mediaserver.unige.ch/proxy/320473/k6IAaXNp5HPrrVJH.mp4?width=1920&height=1080&start=0).
+:::
+
+## The principle
+
+Starting from $n$ observations, we draw $n$ observations **with replacement**. Some appear several times, while others are absent. We recalculate a statistic and repeat this process $B$ times. The resulting distribution approximates the statistic’s sampling distribution under the assumptions of the resampling procedure.
+
+Bootstrap does not create new independent individuals or correct a biased sample. It does not require normally distributed observations in these examples, but it depends, among other things, on representativeness and the dependence structure. A small sample may represent extreme values poorly.
+
+## Visualising one draw with replacement
+
+```{r}
+#| label: un-tirage-bootstrap
+# Block 23: Bootstrap
+set.seed(7)
+x <- c(158, 162, 165, 168, 170, 172, 174, 177, 179, 184)
+indices <- sample.int(length(x), size = length(x), replace = TRUE)
+knitr::kable(data.frame(draw_position = seq_along(x),
+                        sampled_individual = indices, sampled_height = x[indices]))
+c(original_mean = mean(x), resample_mean = mean(x[indices]))
+```
+
+## Distribution of the mean and percentile confidence interval
+
+```{r}
+#| label: bootstrap-tailles
+# Block 24: Bootstrap for height
+set.seed(7)
+B <- 2000
+b <- replicate(B, mean(sample(x, length(x), replace = TRUE)))
+ic <- quantile(b, c(.025, .975))
+knitr::kable(data.frame(estimate = mean(x),
+  bootstrap_mean = mean(b), estimated_bias = mean(b) - mean(x),
+  bootstrap_standard_error = sd(b), lower_025 = ic[1], upper_975 = ic[2]),
+  row.names = FALSE, digits = 2)
+ggplot(data.frame(moyenne = b), aes(moyenne)) +
+  geom_histogram(bins = 35, fill = "#367CA5", color = "white") +
+  geom_vline(xintercept = mean(x), linewidth = 1) +
+  geom_vline(xintercept = ic, linetype = 2, color = "#BB4B32") +
+  labs(x = "Bootstrap mean height (cm)", y = "Number of resamples")
+```
+
+The dashed lines mark the 95% percentile confidence interval. If the entire sampling and calculation procedure were ideally repeated, a well-calibrated method would cover the parameter in about 95% of cases. This does not assign a 95% probability to the fixed parameter after observing this particular interval.
+
+## Returning to the workbook data
+
+We use the mean of `lex` among the available African countries. This is still a mean **across countries**. The interval illustrates what a model of independent, exchangeable countries would produce; it does not correct for geographical dependence.
+
+```{r}
+#| label: bootstrap-pays
+# Block 25: Bootstrap for countries
+xaf <- d$lex[d$region == "africa"]
+stopifnot(length(xaf) > 2)
+set.seed(301)
+B <- 4999
+baf <- replicate(B, mean(sample(xaf, length(xaf), replace = TRUE)))
+knitr::kable(data.frame(n = length(xaf), mean = mean(xaf),
+  bootstrap_se = sd(baf), lower = unname(quantile(baf, .025)),
+  upper = unname(quantile(baf, .975))), digits = 2)
+t.test(xaf)$conf.int
+```
+
+Compare the bootstrap interval with the one based on the t distribution. Similarity does not establish that all assumptions are satisfied. Increasing $B$ makes the numerical quantile estimates more stable without increasing the number of countries or removing bias in the data.
+
+## BCa confidence intervals with the boot package
+
+The PPTX also presents a BCa interval. Bias and acceleration corrections account for some forms of asymmetry; the BCa interval may differ from the percentile interval. Neither guarantees correct coverage for every distribution or every small sample.
+
+```{r}
+#| label: bootstrap-bca
+# Block 26: Bootstrap quantile intervals
+set.seed(302)
+stat_moyenne <- function(donnees, indices) mean(donnees[indices])
+objet_boot <- boot::boot(data = xaf, statistic = stat_moyenne, R = 4999)
+objet_boot
+boot::boot.ci(objet_boot, type = c("perc", "bca"))
+```
+
+# Summary: choosing a coherent approach
+
+::: {.content-visible when-format="html"}
+```{=html}
+<div class="cours-video">
+  <video id="video-session_5_synthese" class="video-js vjs-big-play-centered" data-cours-video
+         controls preload="metadata" playsinline>
+    <source src="https://mediaserver.unige.ch/proxy/320474/f5WwLYqZXdcKD2S0.mp4?from_player=true" type="video/mp4">
+    <track kind="subtitles" src="videos/session_5_synthese.fr.vtt" srclang="fr" label="Français">
+    <track kind="subtitles" src="videos/session_5_synthese.en.vtt" srclang="en" label="English" default>
+    <p>Your browser cannot display this video. Use the link below.</p>
+  </video>
+  <div class="cours-video-erreur" role="status" hidden>
+    <p>The video could not be loaded. You can try again or open it using the link below.</p>
+    <button class="cours-video-reessayer" type="button">Try again</button>
+  </div>
+</div>
+```
+
+[Open the video](https://mediaserver.unige.ch/proxy/320474/f5WwLYqZXdcKD2S0.mp4?width=1920&height=1080&start=0).
+:::
+
+| Question or structure | Possible tool | What to check |
+|------------------------|------------------------|------------------------|
+| Several means, one factor | Classical ANOVA | Residuals, variances, independence |
+| Means with unequal variances | Welch | Independence and the influence of extreme values |
+| Rank-based comparison | Kruskal–Wallis | The target is generally not the mean |
+| Two factors | Factorial model with interaction | Simple effects and balance of the design |
+| Known heterogeneity | Blocks or Latin square | Randomisation and design constraints |
+| Grouped observations | LMM | How groups are regarded and the number of levels |
+| Uncertainty in a statistic | Bootstrap | Resampling unit and representativeness |
+
+A report states the question, the statistical unit, the model, the sample sizes, the estimates with intervals, the diagnostics and the limitations. A p-value complements this description; it does not replace it.
+
+# Questions about this session {#questions-session-05}
+
+If a concept is still unclear, you would like to explore an example further, or you have any other question, feel free to ask it in the SpeakUp space below (anonymously or not). Take a moment to read other students' questions and vote for those you would like answered. Sorting by votes brings the questions of greatest interest to the group to the top. We will answer some questions directly on the platform and discuss others during our next in-person session.
+
+This space is shared by the French and English versions of the course and by students using Python or R. If your question is about code, mention the language you are using and the example you are working on.
+
+::: {.content-visible when-format="html"}
+<iframe class="speakup-room" src="https://web.speakup.info/room/join/15971?theme=UniGE&amp;lang=en" title="SpeakUp: questions and votes for session 5, room 15971" loading="lazy" style="display:block;width:100%;height:clamp(480px,80vh,760px);border:1px solid #ccd6dc;border-radius:6px"></iframe>
+
+If the room does not appear within this page, use the link below.
+:::
+
+[Open the SpeakUp room for session 5](https://web.speakup.info/room/join/15971?theme=UniGE&lang=en){target="_blank" rel="noopener"}. **Room code: 15971.**
